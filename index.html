@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanando Mi Historia Familiar — Autoconstelación Guiada</title>
+<meta name="description" content="Encuentra la raíz familiar de lo que se repite en tu vida y suéltala. Consulta guiada, mapa familiar y rituales, paso a paso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xu3at5303h");
+</script>
+<style>
+  :root{
+    --crema:#F5F0E8;
+    --crema-2:#EFE7D8;
+    --cafe:#3D3228;
+    --cafe-suave:#6b5c4d;
+    --linea:#DDD2BE;
+    --acento:#8C4A3B;
+    --acento-2:#5A6B4E;
+    --dorado:#B8925A;
+    --blanco:#FFFDF9;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--crema);
+    color:var(--cafe);
+    font-family:'Lato', system-ui, sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond', serif;}
+  .wrap{max-width:480px; margin:0 auto; padding:0 22px;}
+  section{padding:56px 0;}
+  .center{text-align:center;}
+  strong.mark{color:var(--acento); font-weight:900;}
+  .eyebrow{
+    display:inline-block; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--acento); font-weight:900; margin-bottom:10px;
+  }
+  h2.titulo{font-size:30px; font-weight:700; line-height:1.15; margin-bottom:14px;}
+  p.sub{font-size:16.5px; color:var(--cafe-suave); margin-bottom:26px;}
+
+  /* animación de entrada */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(180deg, #2A221A 0%, #3D3228 60%, #3D3228 100%);
+    color:var(--crema);
+    padding:44px 0 34px;
+    position:relative;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(184,146,90,.18), transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(140,74,59,.22), transparent 45%);
+    pointer-events:none;
+  }
+  .brand-row{display:flex; align-items:center; gap:8px; font-size:13px; opacity:.75; margin-bottom:22px; position:relative; z-index:1;}
+  .brand-dot{width:6px; height:6px; border-radius:50%; background:var(--dorado);}
+  .hero h1{
+    font-size:34px; font-weight:700; line-height:1.14; margin-bottom:16px; position:relative; z-index:1;
+  }
+  .hero h1 em{font-style:normal; color:var(--dorado);}
+  .hero p.sub{color:#D9CDBB; font-size:16px; margin-bottom:24px; position:relative; z-index:1;}
+  .hero-visual{
+    background:var(--crema); border-radius:20px; padding:20px 18px 18px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    margin-bottom:24px; position:relative; z-index:1;
+  }
+  .hero-visual .frase-tag{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--acento); font-weight:900; margin-bottom:8px;}
+  .hero-visual .frase{font-family:'Cormorant Garamond', serif; font-size:20px; font-weight:600; font-style:italic; color:var(--cafe); margin-bottom:14px;}
+  .hero-visual .mini-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .mini-chip{
+    background:var(--blanco); border:1px solid var(--linea); border-radius:12px;
+    padding:8px 10px; font-size:12.5px; display:flex; align-items:center; gap:6px; color:var(--cafe-suave);
+  }
+  .cta-btn{
+    display:block; width:100%; text-align:center; text-decoration:none;
+    background:var(--acento); color:#fff; font-weight:900; font-size:16.5px;
+    padding:17px 20px; border-radius:14px; letter-spacing:.01em;
+    box-shadow:0 10px 25px rgba(140,74,59,.4);
+    position:relative; z-index:1; border:none; cursor:pointer;
+  }
+  .cta-sub{font-size:12.5px; color:#C9BCA6; text-align:center; margin-top:10px; position:relative; z-index:1;}
+  .proof-strip{
+    margin-top:22px; display:flex; gap:10px; position:relative; z-index:1;
+    border-top:1px solid rgba(255,255,255,.12); padding-top:18px;
+  }
+  .proof-item{flex:1; text-align:center;}
+  .proof-num{font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; color:var(--dorado);}
+  .proof-label{font-size:11px; color:#C9BCA6; line-height:1.25;}
+
+  /* ---------- PROBLEMA ---------- */
+  .problema{background:var(--crema);}
+  .preg-card{
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--blanco); border:1px solid var(--linea); border-radius:16px;
+    padding:16px; margin-bottom:12px;
+  }
+  .preg-ico{font-size:22px; line-height:1;}
+  .preg-txt{font-size:15.5px; font-weight:700; color:var(--cafe);}
+
+  /* ---------- AGITACION ---------- */
+  .agitacion{background:var(--cafe); color:var(--crema);}
+  .agitacion .eyebrow{color:var(--dorado);}
+  .agitacion h2.titulo{color:var(--crema);}
+  .agitacion p.sub{color:#C9BCA6;}
+  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px;}
+  .stat-card{
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+    border-radius:14px; padding:16px 14px;
+  }
+  .stat-num{font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:700; color:var(--dorado); line-height:1;}
+  .stat-txt{font-size:12.5px; color:#D9CDBB; margin-top:6px;}
+  .callout{
+    background:rgba(184,146,90,.14); border-left:3px solid var(--dorado);
+    border-radius:8px; padding:14px 16px; font-size:15px; font-weight:700;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--crema);
+  }
+
+  /* ---------- MECANISMO ---------- */
+  .mecanismo{background:var(--crema-2);}
+  .paso{
+    display:flex; gap:14px; margin-bottom:18px; align-items:flex-start;
+  }
+  .paso-num{
+    flex:none; width:38px; height:38px; border-radius:50%;
+    background:var(--acento); color:#fff; display:flex; align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond',serif; font-weight:700; font-size:17px;
+  }
+  .paso-body h3{font-size:17px; font-weight:700; margin-bottom:3px;}
+  .paso-body p{font-size:14.5px; color:var(--cafe-suave);}
+  .mecanismo-nombre{
+    text-align:center; font-family:'Cormorant Garamond',serif; font-size:15px; font-style:italic;
+    color:var(--acento); font-weight:700; margin-top:6px; margin-bottom:26px;
+  }
+
+  /* ---------- CARRUSEL ---------- */
+  .carrusel-wrap{background:var(--crema); overflow:hidden;}
+  .carrusel-track{
+    display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding:4px 22px 14px; -webkit-overflow-scrolling:touch;
+  }
+  .carrusel-track::-webkit-scrollbar{display:none;}
+  .feat-card{
+    scroll-snap-align:center; flex:none; width:78%; max-width:280px;
+    background:var(--cafe); color:var(--crema); border-radius:18px; padding:20px;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .feat-ico{font-size:30px;}
+  .feat-card h3{font-size:18px; font-weight:700;}
+  .feat-card p{font-size:13.5px; color:#D9CDBB;}
+  .dots{display:flex; justify-content:center; gap:6px; margin-top:4px;}
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--linea);}
+  .dot.active{background:var(--acento); width:16px; border-radius:4px;}
+
+  /* ---------- OFERTA ---------- */
+  .oferta{background:var(--cafe); color:var(--crema);}
+  .oferta .eyebrow{color:var(--dorado);}
+  .oferta h2.titulo{color:var(--crema);}
+  .price-card{
+    background:var(--crema); color:var(--cafe); border-radius:20px; padding:26px 22px;
+    box-shadow:0 20px 45px rgba(0,0,0,.3); margin-bottom:16px;
+  }
+  .price-badge{
+    display:inline-block; background:var(--acento); color:#fff; font-size:11.5px; font-weight:900;
+    letter-spacing:.08em; text-transform:uppercase; padding:5px 10px; border-radius:20px; margin-bottom:12px;
+  }
+  .price-big{font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:700; line-height:1;}
+  .price-note{font-size:13.5px; color:var(--cafe-suave); margin:6px 0 16px;}
+  .price-list{list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:18px;}
+  .price-list li{display:flex; gap:9px; font-size:14.5px; align-items:flex-start;}
+  .check{flex:none; color:var(--acento-2); font-weight:900;}
+  .oferta .cta-btn{margin-bottom:8px;}
+  .oferta-foot{font-size:12px; color:#C9BCA6; text-align:center;}
+
+  /* ---------- GARANTIA / COMPROMISO ---------- */
+  .compromiso{background:var(--crema);}
+  .garantia-card{
+    background:var(--blanco); border:1px solid var(--linea); border-radius:18px; padding:24px 22px;
+    text-align:center;
+  }
+  .garantia-card img{width:110px; height:110px; margin:0 auto 16px; object-fit:contain;}
+  .garantia-card h3{font-size:20px; font-weight:700; margin-bottom:10px;}
+  .garantia-card p{font-size:14.5px; color:var(--cafe-suave);}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--crema-2);}
+  .faq-item{
+    background:var(--blanco); border:1px solid var(--linea); border-radius:14px;
+    margin-bottom:10px; overflow:hidden;
+  }
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:16px 44px 16px 16px; font-size:15px; font-weight:700; color:var(--cafe);
+    font-family:'Lato',sans-serif; position:relative;
+  }
+  .faq-q::after{
+    content:"+"; position:absolute; right:16px; top:50%; transform:translateY(-50%);
+    font-size:20px; color:var(--acento); font-weight:900; transition:transform .25s ease;
+  }
+  .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg);}
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .3s ease;
+  }
+  .faq-a-inner{padding:0 16px 16px; font-size:14.5px; color:var(--cafe-suave);}
+  .faq-item.open .faq-a{max-height:260px;}
+
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{
+    background:linear-gradient(180deg, var(--cafe) 0%, #2A221A 100%); color:var(--crema);
+  }
+  .cta-final h2.titulo{color:var(--crema); font-size:28px;}
+  .cta-final p.sub{color:#D9CDBB;}
+  .ps-box{
+    margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.14);
+    font-size:13.5px; color:#C9BCA6;
+  }
+  .ps-box b{color:var(--dorado);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#2A221A; color:#9C8E7A; padding:32px 0; font-size:12.5px;}
+  footer .foot-brand{color:var(--crema); font-weight:900; font-family:'Cormorant Garamond',serif; font-size:16px; margin-bottom:8px;}
+  footer a{color:#C9BCA6; text-decoration:underline;}
+  footer .foot-links{display:flex; flex-wrap:wrap; gap:10px 16px; margin:14px 0;}
+  footer .disclaimer{margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,.08); line-height:1.6;}
+
+  @media (min-width:600px){
+    .wrap{max-width:600px;}
+    .hero h1{font-size:40px;}
+  }
+
+  /* ---------- WHATSAPP FLOTANTE ---------- */
+  .wa-float{
+    position:fixed; right:18px; bottom:18px; z-index:999;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+    text-decoration:none; font-size:30px;
+    animation:wa-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes wa-pulse{
+    0%,100%{ box-shadow:0 8px 20px rgba(0,0,0,.35), 0 0 0 0 rgba(37,211,102,.5); }
+    50%{ box-shadow:0 8px 20px rgba(0,0,0,.35), 0 0 0 10px rgba(37,211,102,0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="brand-row"><img src="assets/logo.png" alt="Vibras Consentido" style="width:22px; height:22px; border-radius:50%; object-fit:cover;"> @vibrasconsentido · autoconstelación guiada</div>
+    <h1 class="reveal">Lo que se repite en tu vida <em>no empezó contigo</em></h1>
+    <p class="sub reveal">Una app para encontrar la raíz familiar de tus patrones —dinero, pareja, vacío— y <strong style="color:#fff">soltarla paso a paso</strong>, sin salir de casa.</p>
+
+    <div class="hero-visual reveal">
+      <div class="frase-tag">Tu frase de hoy</div>
+      <div class="frase">"Hacer las paces con tu origen te devuelve tu fuerza."</div>
+      <div class="mini-row">
+        <div class="mini-chip">🔮 Consulta guiada</div>
+        <div class="mini-chip">✨ Mapa familiar</div>
+        <div class="mini-chip">🕯️ 20 rituales</div>
+      </div>
+    </div>
+
+    <a href="#oferta" class="cta-btn reveal">Quiero encontrar mi patrón →</a>
+    <div class="cta-sub reveal">Acceso inmediato · pago único, sin mensualidades</div>
+
+    <div class="proof-strip reveal">
+      <div class="proof-item">
+        <div class="proof-num">6</div>
+        <div class="proof-label">herramientas guiadas dentro de la app</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">20</div>
+        <div class="proof-label">rituales de sanación por tema</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">1</div>
+        <div class="proof-label">pago, acceso de por vida</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. PROBLEMA ============ -->
+<section class="problema">
+  <div class="wrap">
+    <div class="eyebrow reveal">¿Te suena esto?</div>
+    <h2 class="titulo reveal">Preguntas que quizás nunca te habías hecho así</h2>
+    <p class="sub reveal">Si alguna de estas resuena, no es casualidad — es un patrón que tu sistema familiar viene repitiendo.</p>
+
+    <div class="preg-card reveal">
+      <div class="preg-ico">💰</div>
+      <div class="preg-txt">¿Por qué el dinero se me escapa justo cuando parece que va a alcanzar?</div>
+    </div>
+    <div class="preg-card reveal">
+      <div class="preg-ico">💔</div>
+      <div class="preg-txt">¿Por qué termino en el mismo tipo de relación que me hace daño?</div>
+    </div>
+    <div class="preg-card reveal">
+      <div class="preg-ico">🌳</div>
+      <div class="preg-txt">¿Qué cargo sin resolver con mi mamá o mi papá que sigue apareciendo?</div>
+    </div>
+    <div class="preg-card reveal">
+      <div class="preg-ico">🫥</div>
+      <div class="preg-txt">¿Por qué siento un vacío o que "no soy suficiente", sin razón clara?</div>
+    </div>
+    <div class="preg-card reveal">
+      <div class="preg-ico">🕯️</div>
+      <div class="preg-txt">¿Por qué mi cuerpo repite el mismo malestar una y otra vez?</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. AGITACION ============ -->
+<section class="agitacion">
+  <div class="wrap">
+    <div class="eyebrow reveal">Lo que pasa si lo dejas igual</div>
+    <h2 class="titulo reveal">Cada ciclo sin mirar, se repite otra vez</h2>
+    <p class="sub reveal">No es falta de voluntad ni de terapia. Es un patrón que no se ve. Y lo que no se ve, se repite.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card reveal">
+        <div class="stat-num">+1</div>
+        <div class="stat-txt">relación más "igual a las anteriores" si no se nombra el patrón</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num">+1</div>
+        <div class="stat-txt">año cargando lo mismo con tu familia de origen</div>
+      </div>
+    </div>
+
+    <div class="callout reveal">"Intenté terapia, pensar positivo, hasta cambiar de ciudad — y el patrón siempre volvía a aparecer."</div>
+  </div>
+</section>
+
+<!-- ============ 4. MECANISMO ============ -->
+<section class="mecanismo">
+  <div class="wrap">
+    <div class="eyebrow reveal">Cómo funciona</div>
+    <h2 class="titulo reveal">El método de la Autoconstelación Guiada</h2>
+    <p class="sub reveal">Lo mismo que trabajarías en una sesión de constelaciones familiares — pero auto-guiado, en tu tiempo, dentro de la app.</p>
+
+    <div class="paso reveal">
+      <div class="paso-num">1</div>
+      <div class="paso-body"><h3>🔮 Haces tu consulta</h3><p>Eliges qué se repite (dinero, pareja, vínculo con tus padres) y la app te guía a la raíz.</p></div>
+    </div>
+    <div class="paso reveal">
+      <div class="paso-num">2</div>
+      <div class="paso-body"><h3>✨ Colocas tu mapa familiar</h3><p>Ubicas a los tuyos y sientes el sistema completo, visualmente.</p></div>
+    </div>
+    <div class="paso reveal">
+      <div class="paso-num">3</div>
+      <div class="paso-body"><h3>🔦 El detector revela lo oculto</h3><p>Encuentras a quién nadie nombra en tu familia — ahí suele estar la raíz.</p></div>
+    </div>
+    <div class="paso reveal">
+      <div class="paso-num">4</div>
+      <div class="paso-body"><h3>🕊️ Sueltas con un ritual guiado</h3><p>Perdonas y sueltas paso a paso, con rituales pensados para ese tema exacto.</p></div>
+    </div>
+    <div class="mecanismo-nombre reveal">Autoconstelación Guiada™ · tu sistema, tu tiempo, tu ritmo</div>
+  </div>
+</section>
+
+<!-- ============ 5. CARRUSEL DE LA APP ============ -->
+<section class="carrusel-wrap">
+  <div class="wrap" style="padding-bottom:0;">
+    <div class="eyebrow reveal">Dentro de la app</div>
+    <h2 class="titulo reveal">Todo lo que tienes al entrar</h2>
+  </div>
+  <div class="carrusel-track" id="carrusel">
+    <div class="feat-card"><div class="feat-ico">🔮</div><h3>Hacer mi consulta</h3><p>Descubre la raíz de lo que se repite, en minutos.</p></div>
+    <div class="feat-card"><div class="feat-ico">✨</div><h3>Mapa de mi familia</h3><p>Coloca a los tuyos y siente el sistema completo.</p></div>
+    <div class="feat-card"><div class="feat-ico">🕯️</div><h3>Rituales de sanación</h3><p>20 rituales por tema, adaptados a tus días.</p></div>
+    <div class="feat-card"><div class="feat-ico">🕊️</div><h3>Rituales guiados</h3><p>Perdonar y soltar, paso a paso, sin quedarte a medias.</p></div>
+    <div class="feat-card"><div class="feat-ico">🔦</div><h3>Detector de exclusiones</h3><p>Encuentra a quién nadie nombra en tu familia.</p></div>
+    <div class="feat-card"><div class="feat-ico">📖</div><h3>Mi diario</h3><p>Guarda cada momento y mira tu propio avance.</p></div>
+  </div>
+  <div class="dots" id="dots"></div>
+  <div style="height:36px;"></div>
+</section>
+
+<!-- ============ 6. OFERTA ============ -->
+<section class="oferta" id="oferta">
+  <div class="wrap">
+    <div class="eyebrow reveal">Tu acceso</div>
+    <h2 class="titulo reveal">Un solo pago. Acceso para siempre.</h2>
+    <p class="sub reveal">Sin mensualidades, sin letra pequeña: pagas una vez y la app queda contigo.</p>
+
+    <div class="price-card reveal">
+      <span class="price-badge">Pago único</span>
+      <div class="price-big">$14.99 <span style="font-size:16px; font-weight:400; color:var(--cafe-suave);">USD</span></div>
+      <div class="price-note">pago único, sin mensualidades</div>
+      <ul class="price-list">
+        <li><span class="check">✓</span> Consulta guiada ilimitada</li>
+        <li><span class="check">✓</span> Mapa de familia interactivo</li>
+        <li><span class="check">✓</span> 20 rituales de sanación + rituales guiados</li>
+        <li><span class="check">✓</span> Detector de exclusiones familiares</li>
+        <li><span class="check">✓</span> Diario personal para guardar tu proceso</li>
+        <li><span class="check">✓</span> Acceso de por vida, sin suscripción</li>
+        <li><span class="check">✓</span> Garantía de 7 días, 100% reembolso</li>
+      </ul>
+      <a href="https://pay.hotmart.com/P106079287R" class="cta-btn" style="box-shadow:none;">Quiero mi acceso ahora →</a>
+      <div class="oferta-foot" style="color:var(--cafe-suave); margin-top:10px;">Pago seguro procesado por Hotmart</div>
+    </div>
+    <div class="oferta-foot">Grupo Amart · entrega digital inmediata tras la compra</div>
+  </div>
+</section>
+
+<!-- ============ 7. GARANTÍA ============ -->
+<section class="compromiso">
+  <div class="wrap">
+    <div class="eyebrow reveal">Sin riesgo</div>
+    <h2 class="titulo reveal">Garantía de 7 días, 100% reembolso</h2>
+    <div class="garantia-card reveal">
+      <img src="assets/garantia-7dias.png" alt="Garantía 7 días, 100% reembolso">
+      <h3>Pruébala sin miedo</h3>
+      <p>Si durante los primeros 7 días consideras que la aplicación no era lo que esperabas, puedes solicitar la devolución según nuestra política de garantía.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="eyebrow reveal">Preguntas frecuentes</div>
+    <h2 class="titulo reveal">Antes de que preguntes</h2>
+
+    <div class="faq-item">
+      <button class="faq-q">¿Esto reemplaza terapia psicológica?</button>
+      <div class="faq-a"><div class="faq-a-inner">No. Es un acompañamiento de constelaciones familiares.<br><br>No reemplaza terapia — es un complemento.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Necesito saber de constelaciones familiares para usarla?</button>
+      <div class="faq-a"><div class="faq-a-inner">No. La app tiene una sección de "aprende constelaciones" y la consulta guiada te lleva de la mano paso a paso, sin conocimiento previo.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Cuánto tiempo toma usarla al día?</button>
+      <div class="faq-a"><div class="faq-a-inner">Entre 5 y 15 minutos, según el ritual o herramienta que elijas ese día. No exige rutinas largas.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Es una suscripción o pago único?</button>
+      <div class="faq-a"><div class="faq-a-inner">Es un pago único de $14.99 USD.<br><br>No hay cobros recurrentes ni mensualidades.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Cómo recibo el acceso después de pagar?</button>
+      <div class="faq-a"><div class="faq-a-inner">El pago se procesa de forma segura por Hotmart y recibes el acceso a la app de forma inmediata al confirmarse la compra.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Y si no me identifico con nada "esotérico"?</button>
+      <div class="faq-a"><div class="faq-a-inner">Es un método sistémico, no una creencia religiosa.<br><br>Todo con lenguaje simple y ejercicios concretos.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. CTA FINAL EMOCIONAL ============ -->
+<section class="cta-final">
+  <div class="wrap center">
+    <div class="eyebrow reveal">Imagina esto</div>
+    <h2 class="titulo reveal">La próxima vez que la historia quiera repetirse, tú ya sabrás de dónde viene</h2>
+    <p class="sub reveal">No para cargarla otra vez — para ponerla en su lugar y seguir con lo tuyo, más liviana.</p>
+    <a href="https://pay.hotmart.com/P106079287R" class="cta-btn reveal">Empezar mi Autoconstelación Guiada →</a>
+    <div class="cta-sub reveal">Acceso inmediato · pago único · $14.99 USD</div>
+    <div class="ps-box reveal">
+      <b>PS:</b> lo que no se nombra, se repite. Lo que se nombra, se puede soltar. Hoy puedes empezar a mirar tu patrón — no dentro de un mes, hoy.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. FOOTER LEGAL ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-brand" style="display:flex; align-items:center; gap:8px;"><img src="assets/logo.png" alt="Vibras Consentido" style="width:24px; height:24px; border-radius:50%; object-fit:cover;"> @vibrasconsentido</div>
+    <div>Sanando Mi Historia Familiar · App interactiva de autoconstelación guiada</div>
+    <div class="foot-links">
+      <a href="#faq">Preguntas frecuentes</a>
+      <a href="mailto:contacto@vibrasconsentido.com">Contacto</a>
+      <a href="https://pay.hotmart.com/P106079287R">Comprar</a>
+    </div>
+    <div class="disclaimer">
+      Acompañamiento de constelaciones familiares. No sustituye atención psicológica profesional. Producto y contenido a cargo de Grupo Amart; el pago es procesado por Hotmart, quien no tiene responsabilidad sobre el contenido del producto. © 2026 Sanando Mi Historia Familiar.
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/573052860835?text=%C2%A1Hola%2C%20tengo%20una%20duda%20sobre%20la%20app%20!" class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" width="32" height="32" fill="#fff"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.22.6 4.29 1.66 6.08L4 29l8.1-1.63a11.9 11.9 0 0 0 3.92.66h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.8c-1.36 0-2.68-.36-3.83-1.05l-.27-.16-4.8.97.98-4.68-.18-.28a9.75 9.75 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.8-9.8 2.62 0 5.08 1.02 6.93 2.87a9.72 9.72 0 0 1 2.87 6.93c0 5.4-4.4 9.8-9.8 9.8zm5.37-7.34c-.29-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.66.15-.2.29-.76.96-.93 1.16-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.6-.91-2.19-.24-.57-.48-.5-.66-.51h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44s1.05 2.83 1.19 3.03c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.84.12.56-.08 1.74-.71 1.98-1.4.25-.68.25-1.27.17-1.4-.07-.12-.26-.19-.55-.34z"/></svg>
+</a>
+
+<script>
+  // reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  reveals.forEach(el=>io.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click', ()=>{
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>o.classList.remove('open'));
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // carrusel dots + auto-scroll
+  const track = document.getElementById('carrusel');
+  const dotsWrap = document.getElementById('dots');
+  const cards = track.children.length;
+  for(let i=0;i<cards;i++){
+    const d = document.createElement('div');
+    d.className = 'dot' + (i===0 ? ' active' : '');
+    dotsWrap.appendChild(d);
+  }
+  function updateDots(){
+    const scrollLeft = track.scrollLeft;
+    const cardWidth = track.children[0].offsetWidth + 14;
+    const idx = Math.round(scrollLeft / cardWidth);
+    [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active', i===idx));
+  }
+  track.addEventListener('scroll', ()=>{ requestAnimationFrame(updateDots); });
+
+  let autoIdx = 0;
+  let userInteracted = false;
+  track.addEventListener('touchstart', ()=>userInteracted = true, {passive:true});
+  track.addEventListener('mousedown', ()=>userInteracted = true);
+  setInterval(()=>{
+    if(userInteracted) return;
+    autoIdx = (autoIdx + 1) % cards;
+    const cardWidth = track.children[0].offsetWidth + 14;
+    track.scrollTo({left: autoIdx * cardWidth, behavior:'smooth'});
+  }, 3200);
+</script>
+</body>
+</html>
