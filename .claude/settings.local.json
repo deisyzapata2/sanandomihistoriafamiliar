@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/deisy/AppData/Local/Temp -iname \"*.png\" -newer /c/Proyectos/vibrasconsentido/index.html 2>/dev/null | head -20 *)",
+      "Bash(xargs -I{} ls -la \"{}\")",
+      "Bash(sort -k6,7)",
+      "Bash(cp \"/c/Users/deisy/Downloads/Garantia.jpeg\" \"/c/Proyectos/vibrasconsentido/assets/garantia-7dias.png\" *)",
+      "Bash(python3 -c ' *)",
+      "Bash(base64 -w0 assets/logo.png)",
+      "Bash(base64 -w0 assets/garantia-7dias.png)",
+      "Bash(curl -sI https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtC.woff2)",
+      "Bash(curl -s \"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lato:wght@400;700;900&display=swap\" -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36\" -o /tmp/fonts.css)"
+    ]
+  }
+}

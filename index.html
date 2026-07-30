@@ -162,6 +162,12 @@
   .feat-ico{font-size:30px;}
   .feat-card h3{font-size:18px; font-weight:700;}
   .feat-card p{font-size:13.5px; color:#D9CDBB;}
+  .feat-card.has-img{padding:0 0 18px;}
+  .feat-card.has-img img{
+    width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top;
+    border-radius:18px 18px 0 0; margin-bottom:4px;
+  }
+  .feat-card.has-img h3, .feat-card.has-img p{padding:0 18px;}
   .dots{display:flex; justify-content:center; gap:6px; margin-top:4px;}
   .dot{width:6px; height:6px; border-radius:50%; background:var(--linea);}
   .dot.active{background:var(--acento); width:16px; border-radius:4px;}
@@ -382,12 +388,12 @@
     <h2 class="titulo reveal">Todo lo que tienes al entrar</h2>
   </div>
   <div class="carrusel-track" id="carrusel">
-    <div class="feat-card"><div class="feat-ico">🔮</div><h3>Hacer mi consulta</h3><p>Descubre la raíz de lo que se repite, en minutos.</p></div>
-    <div class="feat-card"><div class="feat-ico">✨</div><h3>Mapa de mi familia</h3><p>Coloca a los tuyos y siente el sistema completo.</p></div>
+    <div class="feat-card has-img"><img src="assets/mockup-respira.png" alt="Pantalla de consulta guiada"><h3>🔮 Hacer mi consulta</h3><p>Descubre la raíz de lo que se repite, en minutos.</p></div>
+    <div class="feat-card has-img"><img src="assets/mockup-mapa.png" alt="Mapa de familia interactivo"><h3>✨ Mapa de mi familia</h3><p>Coloca a los tuyos y siente el sistema completo.</p></div>
     <div class="feat-card"><div class="feat-ico">🕯️</div><h3>Rituales de sanación</h3><p>20 rituales por tema, adaptados a tus días.</p></div>
     <div class="feat-card"><div class="feat-ico">🕊️</div><h3>Rituales guiados</h3><p>Perdonar y soltar, paso a paso, sin quedarte a medias.</p></div>
-    <div class="feat-card"><div class="feat-ico">🔦</div><h3>Detector de exclusiones</h3><p>Encuentra a quién nadie nombra en tu familia.</p></div>
-    <div class="feat-card"><div class="feat-ico">📖</div><h3>Mi diario</h3><p>Guarda cada momento y mira tu propio avance.</p></div>
+    <div class="feat-card has-img"><img src="assets/mockup-aprende.png" alt="Sección aprende constelaciones"><h3>📚 Aprende constelaciones</h3><p>Entiende qué haces y por qué transforma.</p></div>
+    <div class="feat-card has-img"><img src="assets/mockup-diario.png" alt="Diario personal de sanación"><h3>📖 Mi diario</h3><p>Guarda cada momento y mira tu propio avance.</p></div>
   </div>
   <div class="dots" id="dots"></div>
   <div style="height:36px;"></div>
