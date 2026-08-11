@@ -1,0 +1,7 @@
+node_modules/
+.env
+auth/
+bot.log
+conversaciones.json
+qr.png
+test-full-results.json
