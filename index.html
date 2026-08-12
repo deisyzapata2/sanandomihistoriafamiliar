@@ -94,6 +94,14 @@
     position:relative; z-index:1; border:none; cursor:pointer;
   }
   .cta-sub{font-size:12.5px; color:#C9BCA6; text-align:center; margin-top:10px; position:relative; z-index:1;}
+  .hero-price{
+    display:flex; align-items:baseline; gap:10px; justify-content:center;
+    margin-bottom:12px; position:relative; z-index:1;
+  }
+  .hero-price .strike{font-size:16px; color:#B8A98F; text-decoration:line-through;}
+  .hero-price .now{font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:700; color:var(--dorado);}
+  .hero-price-note{font-size:12.5px; color:#D9CDBB; text-align:center; margin-bottom:12px; position:relative; z-index:1;}
+  .price-strike{font-size:18px; color:var(--cafe-suave); text-decoration:line-through; font-weight:400; margin-right:8px;}
   .proof-strip{
     margin-top:22px; display:flex; gap:10px; position:relative; z-index:1;
     border-top:1px solid rgba(255,255,255,.12); padding-top:18px;
@@ -282,6 +290,8 @@
       </div>
     </div>
 
+    <div class="hero-price reveal"><span class="strike">$29.99</span><span class="now">$14.99</span></div>
+    <div class="hero-price-note reveal">acceso completo, un solo pago</div>
     <a href="#oferta" class="cta-btn reveal">Quiero encontrar mi patrón →</a>
     <div class="cta-sub reveal">Acceso inmediato · pago único, sin mensualidades</div>
 
@@ -307,7 +317,7 @@
   <div class="wrap">
     <div class="eyebrow reveal">¿Te suena esto?</div>
     <h2 class="titulo reveal">Preguntas que quizás nunca te habías hecho así</h2>
-    <p class="sub reveal">Si alguna de estas resuena, no es casualidad — es un patrón que tu sistema familiar viene repitiendo.</p>
+    <p class="sub reveal">Si alguna resuena, no es casualidad.</p>
 
     <div class="preg-card reveal">
       <div class="preg-ico">💰</div>
@@ -322,12 +332,8 @@
       <div class="preg-txt">¿Qué cargo sin resolver con mi mamá o mi papá que sigue apareciendo?</div>
     </div>
     <div class="preg-card reveal">
-      <div class="preg-ico">🫥</div>
-      <div class="preg-txt">¿Por qué siento un vacío o que "no soy suficiente", sin razón clara?</div>
-    </div>
-    <div class="preg-card reveal">
       <div class="preg-ico">🕯️</div>
-      <div class="preg-txt">¿Por qué mi cuerpo repite el mismo malestar una y otra vez?</div>
+      <div class="preg-txt">¿Por qué siento la misma tensión, cansancio o ansiedad una y otra vez, sin saber por qué?</div>
     </div>
   </div>
 </section>
@@ -337,24 +343,49 @@
   <div class="wrap">
     <div class="eyebrow reveal">Lo que pasa si lo dejas igual</div>
     <h2 class="titulo reveal">Cada ciclo sin mirar, se repite otra vez</h2>
-    <p class="sub reveal">No es falta de voluntad ni de terapia. Es un patrón que no se ve. Y lo que no se ve, se repite.</p>
+    <p class="sub reveal">Es un patrón que no se ve. Y lo que no se ve, se repite.</p>
 
     <div class="stat-grid">
       <div class="stat-card reveal">
         <div class="stat-num">+1</div>
-        <div class="stat-txt">relación más "igual a las anteriores" si no se nombra el patrón</div>
+        <div class="stat-txt">relación "igual a las anteriores" si no se nombra el patrón</div>
       </div>
       <div class="stat-card reveal">
         <div class="stat-num">+1</div>
         <div class="stat-txt">año cargando lo mismo con tu familia de origen</div>
       </div>
     </div>
-
-    <div class="callout reveal">"Intenté terapia, pensar positivo, hasta cambiar de ciudad — y el patrón siempre volvía a aparecer."</div>
   </div>
 </section>
 
-<!-- ============ 4. MECANISMO ============ -->
+<!-- ============ 4. OFERTA ============ -->
+<section class="oferta" id="oferta">
+  <div class="wrap">
+    <div class="eyebrow reveal">Tu acceso</div>
+    <h2 class="titulo reveal">Un solo pago. Acceso para siempre.</h2>
+    <p class="sub reveal">Sin mensualidades, sin letra pequeña: pagas una vez y la app queda contigo.</p>
+
+    <div class="price-card reveal">
+      <span class="price-badge">Pago único</span>
+      <div class="price-big"><span class="price-strike">$29.99</span>$14.99 <span style="font-size:16px; font-weight:400; color:var(--cafe-suave);">USD</span></div>
+      <div class="price-note">pago único, sin mensualidades</div>
+      <ul class="price-list">
+        <li><span class="check">✓</span> Consulta guiada ilimitada</li>
+        <li><span class="check">✓</span> Mapa de familia interactivo</li>
+        <li><span class="check">✓</span> 20 rituales de sanación + rituales guiados</li>
+        <li><span class="check">✓</span> Detector de exclusiones familiares</li>
+        <li><span class="check">✓</span> Diario personal para guardar tu proceso</li>
+        <li><span class="check">✓</span> Acceso de por vida, sin suscripción</li>
+        <li><span class="check">✓</span> Garantía de 7 días, 100% reembolso</li>
+      </ul>
+      <a href="https://pay.hotmart.com/P106079287R" class="cta-btn" style="box-shadow:none;">Quiero mi acceso ahora →</a>
+      <div class="oferta-foot" style="color:var(--cafe-suave); margin-top:10px;">Pago seguro procesado por Hotmart</div>
+    </div>
+    <div class="oferta-foot">Grupo Amart · entrega digital inmediata tras la compra</div>
+  </div>
+</section>
+
+<!-- ============ 5. MECANISMO ============ -->
 <section class="mecanismo">
   <div class="wrap">
     <div class="eyebrow reveal">Cómo funciona</div>
@@ -378,10 +409,12 @@
       <div class="paso-body"><h3>🕊️ Sueltas con un ritual guiado</h3><p>Perdonas y sueltas paso a paso, con rituales pensados para ese tema exacto.</p></div>
     </div>
     <div class="mecanismo-nombre reveal">Autoconstelación Guiada™ · tu sistema, tu tiempo, tu ritmo</div>
+    <a href="https://pay.hotmart.com/P106079287R" class="cta-btn reveal">Quiero mi acceso ahora →</a>
+    <div class="cta-sub reveal" style="color:var(--cafe-suave);">Acceso inmediato · pago único · $14.99 USD</div>
   </div>
 </section>
 
-<!-- ============ 5. CARRUSEL DE LA APP ============ -->
+<!-- ============ 6. CARRUSEL DE LA APP ============ -->
 <section class="carrusel-wrap">
   <div class="wrap" style="padding-bottom:0;">
     <div class="eyebrow reveal">Dentro de la app</div>
@@ -396,34 +429,12 @@
     <div class="feat-card has-img"><img src="assets/mockup-diario.png" alt="Diario personal de sanación"><h3>📖 Mi diario</h3><p>Guarda cada momento y mira tu propio avance.</p></div>
   </div>
   <div class="dots" id="dots"></div>
-  <div style="height:36px;"></div>
-</section>
-
-<!-- ============ 6. OFERTA ============ -->
-<section class="oferta" id="oferta">
+  <div style="height:24px;"></div>
   <div class="wrap">
-    <div class="eyebrow reveal">Tu acceso</div>
-    <h2 class="titulo reveal">Un solo pago. Acceso para siempre.</h2>
-    <p class="sub reveal">Sin mensualidades, sin letra pequeña: pagas una vez y la app queda contigo.</p>
-
-    <div class="price-card reveal">
-      <span class="price-badge">Pago único</span>
-      <div class="price-big">$14.99 <span style="font-size:16px; font-weight:400; color:var(--cafe-suave);">USD</span></div>
-      <div class="price-note">pago único, sin mensualidades</div>
-      <ul class="price-list">
-        <li><span class="check">✓</span> Consulta guiada ilimitada</li>
-        <li><span class="check">✓</span> Mapa de familia interactivo</li>
-        <li><span class="check">✓</span> 20 rituales de sanación + rituales guiados</li>
-        <li><span class="check">✓</span> Detector de exclusiones familiares</li>
-        <li><span class="check">✓</span> Diario personal para guardar tu proceso</li>
-        <li><span class="check">✓</span> Acceso de por vida, sin suscripción</li>
-        <li><span class="check">✓</span> Garantía de 7 días, 100% reembolso</li>
-      </ul>
-      <a href="https://pay.hotmart.com/P106079287R" class="cta-btn" style="box-shadow:none;">Quiero mi acceso ahora →</a>
-      <div class="oferta-foot" style="color:var(--cafe-suave); margin-top:10px;">Pago seguro procesado por Hotmart</div>
-    </div>
-    <div class="oferta-foot">Grupo Amart · entrega digital inmediata tras la compra</div>
+    <a href="https://pay.hotmart.com/P106079287R" class="cta-btn reveal">Quiero mi acceso ahora →</a>
+    <div class="cta-sub reveal" style="color:var(--cafe-suave);">Acceso inmediato · pago único · $14.99 USD</div>
   </div>
+  <div style="height:36px;"></div>
 </section>
 
 <!-- ============ 7. GARANTÍA ============ -->
