@@ -94,6 +94,14 @@
     position:relative; z-index:1; border:none; cursor:pointer;
   }
   .cta-sub{font-size:12.5px; color:#C9BCA6; text-align:center; margin-top:10px; position:relative; z-index:1;}
+  .hero-photo{
+    width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top;
+    border-radius:18px; margin-bottom:22px; box-shadow:0 20px 50px rgba(0,0,0,.4);
+    position:relative; z-index:1; filter:saturate(.9);
+  }
+  .hero-copy p{position:relative; z-index:1; margin-bottom:16px; color:#EAE1D2;}
+  .hero-copy p.lede{font-size:14.5px; line-height:1.7; color:#D9CDBB;}
+  .hero-final{font-size:13px; color:#B8A98F; text-align:center; margin-top:12px; position:relative; z-index:1; letter-spacing:.02em;}
   .hero-price{
     display:flex; align-items:baseline; gap:10px; justify-content:center;
     margin-bottom:12px; position:relative; z-index:1;
@@ -277,41 +285,18 @@
 <section class="hero">
   <div class="wrap">
     <div class="brand-row"><img src="assets/logo.png" alt="Vibras Consentido" style="width:22px; height:22px; border-radius:50%; object-fit:cover;"> @vibrasconsentido · autoconstelación guiada</div>
-    <h1 class="reveal">Lo que se repite en tu vida <em>no empezó contigo</em></h1>
-    <p class="sub reveal">Una app para encontrar la raíz familiar de tus patrones —dinero, pareja, vacío— y <strong style="color:#fff">soltarla paso a paso</strong>, sin salir de casa.</p>
 
-    <div class="hero-visual reveal">
-      <div class="frase-tag">Tu frase de hoy</div>
-      <div class="frase">"Hacer las paces con tu origen te devuelve tu fuerza."</div>
-      <div class="mini-row">
-        <div class="mini-chip">🔮 Consulta guiada</div>
-        <div class="mini-chip">✨ Mapa familiar</div>
-        <div class="mini-chip">🕯️ 20 rituales</div>
-        <div class="mini-chip">🕊️ Rituales guiados</div>
-        <div class="mini-chip">📚 Aprende</div>
-        <div class="mini-chip">📖 Mi diario</div>
-      </div>
+    <img src="assets/hero-ritual.png" alt="Ritual de sanación familiar" class="hero-photo reveal">
+
+    <h1 class="reveal" style="text-transform:lowercase; font-size:30px;">lo que se repite en tu vida no es mala suerte.<br>es tu linaje. <em>y se puede soltar.</em></h1>
+
+    <div class="hero-copy">
+      <p class="lede reveal">el dinero que no llega. el amor que no se queda. la fuerza de cargar sola.<br>no empezó con vos. y no tiene que terminar en tus hijos.</p>
+      <p class="lede reveal">sanando mi historia familiar es un proceso guiado, paso a paso, para identificar tu patrón y dejar de cargar lo que no te toca — a tu ritmo, en privado, desde la raíz.</p>
     </div>
 
-    <div class="hero-price reveal"><span class="strike">$29.99</span><span class="now">$14.99</span></div>
-    <div class="hero-price-note reveal">acceso completo, un solo pago</div>
-    <a href="#oferta" class="cta-btn reveal">Quiero encontrar mi patrón →</a>
-    <div class="cta-sub reveal">Acceso inmediato · pago único, sin mensualidades</div>
-
-    <div class="proof-strip reveal">
-      <div class="proof-item">
-        <div class="proof-num">6</div>
-        <div class="proof-label">herramientas guiadas dentro de la app</div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-num">20</div>
-        <div class="proof-label">rituales de sanación por tema</div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-num">1</div>
-        <div class="proof-label">pago, acceso de por vida</div>
-      </div>
-    </div>
+    <a href="https://pay.hotmart.com/P106079287R" class="cta-btn reveal" style="text-transform:lowercase;">quiero empezar mi proceso →</a>
+    <div class="hero-final reveal">sin apuros. a tu ritmo. para siempre tuyo.</div>
   </div>
 </section>
 
