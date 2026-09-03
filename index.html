@@ -130,6 +130,23 @@
     background:var(--blanco); border:1px solid var(--linea); border-radius:16px; padding:22px;
     text-align:center; font-size:16px; text-transform:lowercase;
   }
+  .garantia-sello{width:130px; margin:0 auto 16px;}
+
+  /* ---------- DESGLOSE ---------- */
+  .desglose{background:var(--crema-2);}
+  .desglose-card{
+    background:var(--blanco); border:1px solid var(--linea); border-radius:16px; padding:20px 20px 6px;
+  }
+  .desglose-item{
+    display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+    padding:12px 0; border-bottom:1px solid var(--linea); font-size:14.5px; text-transform:lowercase;
+  }
+  .desglose-item .valor{color:var(--cafe-suave); text-decoration:line-through; white-space:nowrap;}
+  .desglose-total{
+    display:flex; justify-content:space-between; align-items:center; gap:10px;
+    padding:18px 0; font-size:16px; font-weight:900; text-transform:lowercase;
+  }
+  .desglose-total .valor-real{font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:700; color:var(--acento); text-decoration:none;}
 
   /* ---------- FAQ ---------- */
   .faq{background:var(--crema-2);}
@@ -168,9 +185,10 @@
   <div class="wrap">
     <div class="brand-row"><span class="brand-dot"></span> @vibrasconsentido · autoconstelación guiada</div>
     <img src="assets/hero-ritual.jpg" alt="ritual de sanación familiar" class="hero-photo reveal">
-    <h1 class="reveal">¿sentís que repetís historias que no son tuyas?</h1>
-    <p class="sub reveal">en 7 días hacés tu primera constelación completa —a tu ritmo, sin años de terapia— y empezás a soltar lo que no te toca cargar.</p>
-    <a href="https://pay.hotmart.com/P106079287R" class="cta-btn reveal">quiero empezar mi proceso</a>
+    <h1 class="reveal">lo que se repite en tu vida —el dinero que no llega, el amor que duele, lo mismo que vivió tu mamá— no es mala suerte. es tu linaje.</h1>
+    <p class="sub reveal">sanando mi historia familiar es una app interactiva que te acompaña, paso a paso, a encontrar el patrón que heredaste y a cerrarlo. para que termine en ti y no lo carguen quienes vienen detrás.</p>
+    <a href="https://pay.hotmart.com/P106079287R" class="cta-btn reveal">empezar mi proceso</a>
+    <div class="cta-sub reveal">acceso inmediato · pago seguro</div>
   </div>
 </section>
 
@@ -190,7 +208,7 @@
 <section class="quees">
   <div class="wrap">
     <div class="eyebrow reveal">qué es</div>
-    <p class="reveal">sanando mi historia familiar es un proceso guiado de autoconstelación, paso a paso, para reconocer el patrón que heredaste y soltar lo que no te pertenece. a tu ritmo y en privado.</p>
+    <p class="reveal">sanando mi historia familiar es una app interactiva de autoconstelación que usás paso a paso desde tu celular, para reconocer el patrón que heredaste y soltar lo que no te pertenece. a tu ritmo y en privado.</p>
   </div>
 </section>
 
@@ -226,7 +244,8 @@
     <div class="price-card reveal">
       <div class="price-big"><span class="price-strike">$29.99</span>$14.99 <span style="font-size:15px; font-weight:400; color:var(--cafe-suave); text-transform:none;">USD</span></div>
       <div class="price-note">pago único, acceso de por vida</div>
-      <a href="https://pay.hotmart.com/P106079287R" class="cta-btn" style="box-shadow:none;">quiero empezar mi proceso</a>
+      <a href="https://pay.hotmart.com/P106079287R" class="cta-btn" style="box-shadow:none;">empezar mi proceso</a>
+      <div class="cta-sub" style="color:var(--cafe-suave);">acceso inmediato · pago seguro</div>
     </div>
   </div>
 </section>
@@ -234,7 +253,31 @@
 <!-- ============ 7. GARANTÍA ============ -->
 <section class="garantia">
   <div class="wrap">
-    <div class="garantia-card reveal">garantía de 7 días. si no es para vos, te devuelvo el 100%.</div>
+    <div class="garantia-card reveal">
+      <img src="assets/garantia-7dias.png" alt="garantía de 7 días" class="garantia-sello">
+      garantía de 7 días. si no es para vos, te devuelvo el 100%.
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7.5 DESGLOSE DE LA OFERTA ============ -->
+<section class="desglose">
+  <div class="wrap">
+    <div class="eyebrow reveal">todo lo que incluye</div>
+    <h2 class="titulo reveal">esto es lo que recibís en la app</h2>
+    <div class="desglose-card reveal">
+      <div class="desglose-item"><span>consulta guiada personalizada</span><span class="valor">$19</span></div>
+      <div class="desglose-item"><span>mapa interactivo de tu sistema familiar</span><span class="valor">$29</span></div>
+      <div class="desglose-item"><span>biblioteca de 20 rituales (7 temas)</span><span class="valor">$39</span></div>
+      <div class="desglose-item"><span>rituales guiados paso a paso</span><span class="valor">$19</span></div>
+      <div class="desglose-item"><span>detector de exclusiones</span><span class="valor">$19</span></div>
+      <div class="desglose-item"><span>sección educativa</span><span class="valor">$9</span></div>
+      <div class="desglose-item" style="border-bottom:none;"><span>diario interactivo con seguimiento</span><span class="valor">$19</span></div>
+      <div class="desglose-total" style="border-top:2px solid var(--cafe);">
+        <span>hoy, todo por</span>
+        <span class="valor-real">$14.99</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -246,19 +289,19 @@
 
     <div class="faq-item">
       <button class="faq-q">¿necesito saber de constelaciones?</button>
-      <div class="faq-a"><div class="faq-a-inner">no, está todo explicado paso a paso.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">no, la app te explica todo paso a paso dentro de cada módulo.</div></div>
     </div>
     <div class="faq-item">
       <button class="faq-q">¿es teoría o práctica?</button>
-      <div class="faq-a"><div class="faq-a-inner">100% práctico, con ejercicios que aplicás ya.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">100% práctico. es una app interactiva con ejercicios que hacés directamente ahí, no un curso para leer.</div></div>
     </div>
     <div class="faq-item">
       <button class="faq-q">¿cuánto tardo?</button>
-      <div class="faq-a"><div class="faq-a-inner">a tu ritmo; en 7 días podés tener tu primera constelación.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">a tu ritmo; en 7 días podés completar tu primera constelación dentro de la app.</div></div>
     </div>
     <div class="faq-item">
       <button class="faq-q">¿cómo lo recibo?</button>
-      <div class="faq-a"><div class="faq-a-inner">acceso inmediato y de por vida, desde el celular.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">acceso inmediato a la app, de por vida, desde tu celular.</div></div>
     </div>
   </div>
 </section>
@@ -267,8 +310,9 @@
 <section class="cta-final">
   <div class="wrap">
     <h2 class="titulo reveal" style="color:var(--crema);">¿empezamos?</h2>
-    <p class="sub reveal">tu primera constelación te puede estar esperando desde hoy.</p>
-    <a href="https://pay.hotmart.com/P106079287R" class="cta-btn reveal">quiero empezar mi proceso</a>
+    <p class="sub reveal">abrí la app y empezá tu primera constelación hoy mismo.</p>
+    <a href="https://pay.hotmart.com/P106079287R" class="cta-btn reveal">empezar mi proceso</a>
+    <div class="cta-sub reveal">acceso inmediato · pago seguro</div>
   </div>
 </section>
 
