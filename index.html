@@ -104,6 +104,25 @@
   .logro-ico{flex:none; font-size:20px;}
   .logro-txt{font-size:15.5px; text-transform:lowercase; padding-top:1px;}
 
+  /* ---------- CARRUSEL ---------- */
+  .carrusel-wrap{background:var(--crema); overflow:hidden;}
+  .carrusel-track{
+    display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding:4px 22px 14px; -webkit-overflow-scrolling:touch;
+  }
+  .carrusel-track::-webkit-scrollbar{display:none;}
+  .feat-card{
+    scroll-snap-align:center; flex:none; width:78%; max-width:280px;
+    background:var(--cafe); color:var(--crema); border-radius:18px; padding:0 0 18px;
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .feat-card img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; border-radius:18px 18px 0 0;}
+  .feat-card h3{font-size:16.5px; font-weight:700; text-transform:lowercase; padding:0 16px;}
+  .feat-card p{font-size:13.5px; color:#D9CDBB; text-transform:lowercase; padding:0 16px;}
+  .dots{display:flex; justify-content:center; gap:6px; margin-top:4px;}
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--linea);}
+  .dot.active{background:var(--acento); width:16px; border-radius:4px;}
+
   /* ---------- TESTIMONIOS ---------- */
   .testimonios{background:var(--crema-2);}
   .testi-img{
@@ -224,6 +243,24 @@
   </div>
 </section>
 
+<!-- ============ 4.5 CARRUSEL DE LA APP ============ -->
+<section class="carrusel-wrap">
+  <div class="wrap" style="padding-bottom:0;">
+    <div class="eyebrow reveal">dentro de la app</div>
+    <h2 class="titulo reveal">así se ve, paso a paso</h2>
+  </div>
+  <div class="carrusel-track" id="carrusel">
+    <div class="feat-card"><img src="assets/mockup-respira.png" alt="pantalla de consulta guiada"><h3>hacer mi consulta</h3><p>descubre la raíz de lo que se repite, en minutos.</p></div>
+    <div class="feat-card"><img src="assets/mockup-mapa.png" alt="mapa de familia interactivo"><h3>mapa de mi familia</h3><p>coloca a los tuyos y siente el sistema completo.</p></div>
+    <div class="feat-card"><img src="assets/mockup-rituales.png" alt="biblioteca de rituales de sanación"><h3>rituales de sanación</h3><p>20 rituales por tema, adaptados a tus días.</p></div>
+    <div class="feat-card"><img src="assets/mockup-rituales-guiados.png" alt="rituales guiados paso a paso"><h3>rituales guiados</h3><p>perdonar y soltar, paso a paso, sin quedarte a medias.</p></div>
+    <div class="feat-card"><img src="assets/mockup-aprende.png" alt="sección aprende constelaciones"><h3>aprende constelaciones</h3><p>entiende qué haces y por qué transforma.</p></div>
+    <div class="feat-card"><img src="assets/mockup-diario.png" alt="diario personal de sanación"><h3>mi diario</h3><p>guarda cada momento y mira tu propio avance.</p></div>
+  </div>
+  <div class="dots" id="dots"></div>
+  <div style="height:12px;"></div>
+</section>
+
 <!-- ============ 5. TESTIMONIOS ============ -->
 <section class="testimonios">
   <div class="wrap">
@@ -336,6 +373,35 @@
       if(!wasOpen) item.classList.add('open');
     });
   });
+
+  // carrusel: puntos + auto-scroll (sin librerías, JS simple)
+  const track = document.getElementById('carrusel');
+  if(track){
+    const dotsWrap = document.getElementById('dots');
+    const cards = track.children.length;
+    for(let i=0;i<cards;i++){
+      const d = document.createElement('div');
+      d.className = 'dot' + (i===0 ? ' active' : '');
+      dotsWrap.appendChild(d);
+    }
+    function updateDots(){
+      const cardWidth = track.children[0].offsetWidth + 14;
+      const idx = Math.round(track.scrollLeft / cardWidth);
+      [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active', i===idx));
+    }
+    track.addEventListener('scroll', ()=>{ requestAnimationFrame(updateDots); });
+
+    let autoIdx = 0;
+    let userInteracted = false;
+    track.addEventListener('touchstart', ()=>userInteracted = true, {passive:true});
+    track.addEventListener('mousedown', ()=>userInteracted = true);
+    setInterval(()=>{
+      if(userInteracted) return;
+      autoIdx = (autoIdx + 1) % cards;
+      const cardWidth = track.children[0].offsetWidth + 14;
+      track.scrollTo({left: autoIdx * cardWidth, behavior:'smooth'});
+    }, 3200);
+  }
 </script>
 </body>
 </html>
