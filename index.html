@@ -91,18 +91,29 @@
   .espejo-txt{font-size:15px; text-transform:lowercase;}
 
   /* ---------- QUÉ ES ---------- */
-  .quees{background:var(--crema-2);}
-  .quees p{font-size:16.5px; line-height:1.7; text-transform:lowercase;}
+  .quees{
+    background:linear-gradient(180deg, #2A221A 0%, #3D3228 100%);
+    color:var(--crema); text-align:center; padding:56px 0;
+  }
+  .quees .eyebrow{color:var(--dorado);}
+  .quees .quote-mark{font-family:'Cormorant Garamond',serif; font-size:54px; color:var(--dorado); line-height:.5; margin-bottom:6px;}
+  .quees p{
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600;
+    font-size:22px; line-height:1.5; text-transform:lowercase; color:#F2EAD9;
+  }
 
   /* ---------- LOGROS ---------- */
   .logros{background:var(--crema);}
+  .logro-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
   .logro-item{
-    display:flex; gap:12px; align-items:flex-start;
-    padding:12px 0; border-bottom:1px solid var(--linea);
+    display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+    background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:16px 14px;
   }
-  .logro-item:last-child{border-bottom:none;}
-  .logro-ico{flex:none; font-size:20px;}
-  .logro-txt{font-size:15.5px; text-transform:lowercase; padding-top:1px;}
+  .logro-ico{
+    flex:none; width:38px; height:38px; border-radius:50%;
+    background:var(--crema-2); display:flex; align-items:center; justify-content:center; font-size:18px;
+  }
+  .logro-txt{font-size:14.5px; text-transform:lowercase; line-height:1.35;}
 
   /* ---------- CARRUSEL ---------- */
   .carrusel-wrap{background:var(--crema); overflow:hidden;}
@@ -226,7 +237,7 @@
 <!-- ============ 3. QUÉ ES ============ -->
 <section class="quees">
   <div class="wrap">
-    <div class="eyebrow reveal">qué es</div>
+    <div class="quote-mark reveal">"</div>
     <p class="reveal">sanando mi historia familiar es una app interactiva de autoconstelación que usás paso a paso desde tu celular, para reconocer el patrón que heredaste y soltar lo que no te pertenece. a tu ritmo y en privado.</p>
   </div>
 </section>
@@ -235,11 +246,13 @@
 <section class="logros">
   <div class="wrap">
     <h2 class="titulo reveal">qué vas a lograr</h2>
-    <div class="logro-item reveal"><div class="logro-ico">🕊️</div><div class="logro-txt">tomar decisiones sin culpa</div></div>
-    <div class="logro-item reveal"><div class="logro-ico">🌱</div><div class="logro-txt">recibir sin sentir que traicionás a los tuyos</div></div>
-    <div class="logro-item reveal"><div class="logro-ico">💛</div><div class="logro-txt">relaciones más sanas</div></div>
-    <div class="logro-item reveal"><div class="logro-ico">🌳</div><div class="logro-txt">una relación distinta con el dinero</div></div>
-    <div class="logro-item reveal"><div class="logro-ico">🕯️</div><div class="logro-txt">paz con tu historia familiar</div></div>
+    <div class="logro-grid">
+      <div class="logro-item reveal"><div class="logro-ico">🕊️</div><div class="logro-txt">tomar decisiones sin culpa</div></div>
+      <div class="logro-item reveal"><div class="logro-ico">🌱</div><div class="logro-txt">recibir sin sentir que traicionás a los tuyos</div></div>
+      <div class="logro-item reveal"><div class="logro-ico">💛</div><div class="logro-txt">relaciones más sanas</div></div>
+      <div class="logro-item reveal"><div class="logro-ico">🌳</div><div class="logro-txt">una relación distinta con el dinero</div></div>
+      <div class="logro-item reveal" style="grid-column:1 / -1;"><div class="logro-ico">🕯️</div><div class="logro-txt">paz con tu historia familiar</div></div>
+    </div>
   </div>
 </section>
 
@@ -248,6 +261,7 @@
   <div class="wrap" style="padding-bottom:0;">
     <div class="eyebrow reveal">dentro de la app</div>
     <h2 class="titulo reveal">así se ve, paso a paso</h2>
+    <div class="reveal" style="font-size:13px; color:var(--cafe-suave); margin-bottom:6px;">deslizá para ver más →</div>
   </div>
   <div class="carrusel-track" id="carrusel">
     <div class="feat-card"><img src="assets/mockup-respira.png" alt="pantalla de consulta guiada"><h3>hacer mi consulta</h3><p>descubre la raíz de lo que se repite, en minutos.</p></div>
