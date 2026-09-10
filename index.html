@@ -131,16 +131,17 @@
   .espejo-txt{font-size:15px; text-transform:lowercase;}
   .espejo-bridge{font-size:15px; color:var(--cafe-suave); text-align:center; margin-top:18px; line-height:1.6; text-transform:lowercase;}
 
-  /* ---------- QUÉ ES ---------- */
+  /* ---------- TE PRESENTO / QUÉ ES ---------- */
   .quees{
     background:var(--crema-2);
     color:var(--cafe); text-align:center; padding:56px 0;
   }
   .quees .eyebrow{color:var(--acento);}
   .quees .quote-mark{font-family:'Playfair Display',serif; font-size:54px; color:var(--dorado); line-height:.5; margin-bottom:6px;}
+  .quees h2.titulo{text-align:center;}
   .quees p{
     font-family:'Playfair Display',serif; font-style:italic; font-weight:600;
-    font-size:22px; line-height:1.5; text-transform:lowercase; color:var(--cafe);
+    font-size:19px; line-height:1.55; text-transform:lowercase; color:var(--cafe);
   }
 
   /* ---------- CÓMO FUNCIONA ---------- */
@@ -171,7 +172,7 @@
   .logros-nota{font-size:13px; color:var(--cafe-suave); text-align:center; margin-top:18px; text-transform:lowercase; font-style:italic;}
 
   /* ---------- CARRUSEL ---------- */
-  .carrusel-wrap{background:var(--crema-2); overflow:hidden;}
+  .carrusel-wrap{background:var(--crema); overflow:hidden;}
   .carrusel-wrap .eyebrow, .carrusel-wrap h2.titulo{text-align:center;}
   .carrusel-track{
     display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory;
@@ -191,7 +192,7 @@
   .dot.active{background:var(--acento); width:16px; border-radius:4px;}
 
   /* ---------- POR QUÉ ES DIFERENTE ---------- */
-  .diferente{background:var(--crema);}
+  .diferente{background:var(--crema-2);}
   .diferente .eyebrow, .diferente h2.titulo{text-align:center;}
   .paso5-grid{display:flex; flex-direction:column; gap:10px;}
   .paso5-item{display:flex; gap:14px; align-items:center; background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:14px 16px;}
@@ -199,9 +200,9 @@
   .paso5-item h3{font-size:14.5px; font-weight:700; text-transform:lowercase; font-family:'Playfair Display',serif; color:var(--acento);}
   .paso5-item p{font-size:13px; color:var(--cafe-suave); text-transform:lowercase;}
 
-  /* ---------- DESGLOSE ---------- */
-  .desglose{background:var(--crema-2);}
-  .desglose .eyebrow, .desglose h2.titulo{text-align:center;}
+  /* ---------- OFERTA (desglose + precio) ---------- */
+  .oferta{background:var(--crema);}
+  .oferta .eyebrow, .oferta h2.titulo{text-align:center;}
   .desglose-card{
     background:var(--blanco); border:1px solid var(--linea); border-radius:16px; padding:20px 20px 6px;
   }
@@ -210,24 +211,11 @@
     padding:12px 0; border-bottom:1px solid var(--linea); font-size:14.5px; text-transform:lowercase;
   }
   .desglose-item .valor{color:var(--cafe-suave); text-decoration:line-through; white-space:nowrap;}
-  .desglose-total{
-    display:flex; justify-content:space-between; align-items:center; gap:10px;
-    padding:18px 0; font-size:16px; font-weight:900; text-transform:lowercase;
-  }
-  .desglose-total .valor-real{font-family:'Playfair Display',serif; font-size:30px; font-weight:700; color:var(--acento); text-decoration:none;}
-
-  /* ---------- OFERTA ---------- */
-  .oferta{background:var(--crema-2); color:var(--cafe);}
-  .oferta .eyebrow{color:var(--acento); text-align:center; display:block;}
-  .oferta h2.titulo{color:var(--cafe); text-align:center;}
   .price-card{
-    background:var(--blanco); color:var(--cafe); border-radius:20px; padding:26px 22px;
-    box-shadow:0 12px 30px rgba(60,41,32,.12); margin-bottom:16px; text-align:center;
+    background:var(--crema-2); color:var(--cafe); border-radius:20px; padding:26px 22px;
+    box-shadow:0 12px 30px rgba(60,41,32,.1); text-align:center;
     border:1px solid var(--linea);
   }
-  .incluye-list{list-style:none; text-align:left; display:flex; flex-direction:column; gap:9px; margin-bottom:18px;}
-  .incluye-list li{display:flex; gap:9px; align-items:flex-start; font-size:14px; text-transform:lowercase;}
-  .incluye-list li b{color:var(--acento-2); flex:none;}
   .valor-total{font-size:13px; color:var(--cafe-suave); text-align:center; margin-bottom:6px; text-transform:lowercase;}
   .price-strike{font-size:16px; color:var(--cafe-suave); text-decoration:line-through; font-weight:400; display:block;}
   .price-big{font-family:'Playfair Display',serif; font-size:44px; font-weight:700; line-height:1;}
@@ -235,7 +223,8 @@
   .price-note{font-size:13.5px; color:var(--cafe-suave); margin:14px 0 18px; text-transform:lowercase;}
 
   /* ---------- GARANTÍA ---------- */
-  .garantia{background:var(--crema);}
+  .garantia{background:var(--crema-2);}
+  .garantia .eyebrow, .garantia h2.titulo{text-align:center;}
   .garantia-card{
     background:var(--blanco); border:1px solid var(--linea); border-radius:16px; padding:22px;
     text-align:center; font-size:16px; text-transform:lowercase;
@@ -354,24 +343,67 @@
   <div class="wrap">
     <div class="eyebrow reveal">esto es para ti si…</div>
     <h2 class="titulo reveal">quizás te suene alguna de estas</h2>
-    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿sientes que repites situaciones que juraste que nunca ibas a repetir?</div></div>
-    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿amas a tu mamá o a tu papá, pero esa relación te sigue doliendo y no sabes cómo sanar sin alejarte?</div></div>
-    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿das todo por los tuyos y sientes que en el camino te fuiste perdiendo a ti misma?</div></div>
-    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿te cuesta recibir amor, dinero o ayuda sin sentir que traicionas a tu familia?</div></div>
-    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿sientes que cargas una historia que empezó mucho antes que tú?</div></div>
-    <p class="espejo-bridge reveal">si algo de esto te resultó familiar, no estás sola. y no necesitas seguir intentando entenderlo todo por tu cuenta.</p>
+    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿sientes que la historia de tu familia te persigue y no te deja avanzar?</div></div>
+    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿terminas en el mismo tipo de relación que te lastima, aunque juraste que no la ibas a repetir?</div></div>
+    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿cargas con la presión de ser "la fuerte" de la familia, mientras por dentro sientes que te vas quedando sin nada?</div></div>
+    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿amas a tu mamá o a tu papá, pero esa relación te sigue doliendo, y no sabes cómo sanar sin sentir que los traicionas?</div></div>
+    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿sientes que debes hacer felices a los demás, aunque eso te impida vivir en plenitud?</div></div>
+    <div class="espejo-item reveal"><div class="espejo-ico">✦</div><div class="espejo-txt">¿el dinero se te escapa una y otra vez, sin que entiendas realmente por qué?</div></div>
+    <p class="espejo-bridge reveal">si te identificaste con alguna de estas, no estás sola. hay una forma de mirar esto de frente, sin culpa, y empezar a soltarlo.</p>
   </div>
 </section>
 
-<!-- ============ 3. QUÉ ES ============ -->
+<!-- ============ 3. TE PRESENTO EL PRODUCTO ============ -->
 <section class="quees">
   <div class="wrap">
     <div class="quote-mark reveal">"</div>
-    <p class="reveal">sanando mi historia familiar es una app interactiva de autoconstelación que usás paso a paso desde tu celular, para reconocer el patrón que heredaste y soltar lo que no te pertenece. a tu ritmo y en privado.</p>
+    <div class="eyebrow reveal">te presento</div>
+    <h2 class="titulo reveal" style="font-style:italic;">sanando mi historia familiar</h2>
+    <p class="reveal">no es solo una app. es una experiencia guiada, basada en constelaciones familiares, diseñada para llevarte de la mano a explorar las raíces de tu historia, descubrir los hilos invisibles que la sostienen y, finalmente, soltar lo que ya no te pertenece.</p>
   </div>
 </section>
 
-<!-- ============ 3.5 CÓMO FUNCIONA ============ -->
+<!-- ============ 3.5 PRUEBA SOCIAL NÚMEROS ============ -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="reveal"><div class="stat-num">130,000+</div><div class="stat-txt">personas siguen este proceso</div></div>
+      <div class="reveal"><div class="stat-num">4.9★</div><div class="stat-txt">valoración promedio</div></div>
+      <div class="reveal"><div class="stat-num">7 días</div><div class="stat-txt">garantía sin preguntas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. TESTIMONIOS ============ -->
+<section class="testimonios">
+  <div class="wrap">
+    <div class="eyebrow reveal">experiencias reales</div>
+    <h2 class="titulo reveal">mensajes de personas que hicieron el proceso</h2>
+    <img src="assets/testimonio-1.jpg" alt="testimonio real de clienta" class="testi-img reveal">
+    <img src="assets/testimonio-2.jpg" alt="testimonio real de clienta" class="testi-img reveal">
+    <img src="assets/testimonio-3.jpg" alt="testimonio real de clienta" class="testi-img reveal">
+    <img src="assets/testimonio-4.jpg" alt="testimonio real de clienta" class="testi-img reveal">
+    <p class="testimonios-cierre reveal">no estás sola en esto… y sí es posible empezar a cambiarlo.</p>
+  </div>
+</section>
+
+<!-- ============ 5. QUÉ VAS A LOGRAR ============ -->
+<section class="logros">
+  <div class="wrap">
+    <div class="eyebrow reveal">qué vas a lograr</div>
+    <h2 class="titulo reveal">esto es lo que empieza a transformarse</h2>
+    <div class="logro-grid">
+      <div class="logro-item reveal"><div class="logro-ico">🕊️</div><div class="logro-txt">sanar la culpa de ser distinta a tu familia, sin sentir que los traicionas</div></div>
+      <div class="logro-item reveal"><div class="logro-ico">🌱</div><div class="logro-txt">dejar de complacer a los demás y empezar a vivir en tu verdad</div></div>
+      <div class="logro-item reveal"><div class="logro-ico">💛</div><div class="logro-txt">transformar tu relación con el dinero y con el amor</div></div>
+      <div class="logro-item reveal"><div class="logro-ico">🌳</div><div class="logro-txt">recuperar tu voz y construir relaciones sanas</div></div>
+      <div class="logro-item reveal" style="grid-column:1 / -1;"><div class="logro-ico">🔍</div><div class="logro-txt">sentir paz con tu historia, y tomar decisiones sin miedo ni culpa</div></div>
+    </div>
+    <p class="logros-nota reveal">esta experiencia está diseñada para ayudarte a explorar y comprender tu historia. no reemplaza la atención psicológica profesional.</p>
+  </div>
+</section>
+
+<!-- ============ 6. CÓMO FUNCIONA ============ -->
 <section class="funciona">
   <div class="wrap">
     <div class="eyebrow reveal">cómo funciona</div>
@@ -386,7 +418,7 @@
   </div>
 </section>
 
-<!-- ============ 4. CARRUSEL DE LA APP ============ -->
+<!-- ============ 7. CARRUSEL DE LA APP ============ -->
 <section class="carrusel-wrap">
   <div class="wrap" style="padding-bottom:0;">
     <div class="eyebrow reveal">vista previa real</div>
@@ -405,23 +437,7 @@
   <div style="height:12px;"></div>
 </section>
 
-<!-- ============ 4.5 QUÉ VAS A LOGRAR ============ -->
-<section class="logros">
-  <div class="wrap">
-    <div class="eyebrow reveal">qué podrías empezar a transformar</div>
-    <h2 class="titulo reveal">qué vas a lograr</h2>
-    <div class="logro-grid">
-      <div class="logro-item reveal"><div class="logro-ico">🔍</div><div class="logro-txt">comprender patrones que parecen repetirse</div></div>
-      <div class="logro-item reveal"><div class="logro-ico">🌳</div><div class="logro-txt">observar tu historia familiar desde otra perspectiva</div></div>
-      <div class="logro-item reveal"><div class="logro-ico">💛</div><div class="logro-txt">reconocer emociones y creencias que influyen en cómo te relacionas</div></div>
-      <div class="logro-item reveal"><div class="logro-ico">🕊️</div><div class="logro-txt">crear un espacio para reflexionar sobre lo que estás viviendo</div></div>
-      <div class="logro-item reveal" style="grid-column:1 / -1;"><div class="logro-ico">🌱</div><div class="logro-txt">construir una relación distinta con tu propia historia</div></div>
-    </div>
-    <p class="logros-nota reveal">esta experiencia está diseñada para ayudarte a explorar y comprender tu historia. no reemplaza la atención psicológica profesional.</p>
-  </div>
-</section>
-
-<!-- ============ 4.6 POR QUÉ ES DIFERENTE ============ -->
+<!-- ============ 7.5 POR QUÉ ES DIFERENTE ============ -->
 <section class="diferente">
   <div class="wrap">
     <div class="eyebrow reveal">¿por qué es diferente?</div>
@@ -437,11 +453,12 @@
   </div>
 </section>
 
-<!-- ============ 5. DESGLOSE DE LA OFERTA ============ -->
-<section class="desglose">
+<!-- ============ 8. HOY RECIBES TODO ESTO (desglose + oferta) ============ -->
+<section class="oferta" id="oferta">
   <div class="wrap">
-    <div class="eyebrow reveal">lo que recibes</div>
-    <h2 class="titulo reveal">todo lo que recibes hoy</h2>
+    <div class="eyebrow reveal">tu acceso</div>
+    <h2 class="titulo reveal">¡hoy recibes todo esto!</h2>
+    <p class="sub reveal" style="text-align:center;">acceso completo y de por vida a sanando mi historia familiar:</p>
     <div class="desglose-card reveal">
       <div class="desglose-item"><span>consulta guiada personalizada</span><span class="valor">$19</span></div>
       <div class="desglose-item"><span>mapa interactivo de tu sistema familiar</span><span class="valor">$29</span></div>
@@ -450,34 +467,12 @@
       <div class="desglose-item"><span>detector de exclusiones</span><span class="valor">$19</span></div>
       <div class="desglose-item"><span>sección educativa</span><span class="valor">$9</span></div>
       <div class="desglose-item" style="border-bottom:none;"><span>diario interactivo con seguimiento</span><span class="valor">$19</span></div>
-      <div class="desglose-total" style="border-top:2px solid var(--cafe);">
-        <span>hoy, todo por</span>
-        <span class="valor-real">$14.99</span>
-      </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ 6. TU ACCESO / OFERTA ============ -->
-<section class="oferta" id="oferta">
-  <div class="wrap">
-    <div class="eyebrow reveal">tu acceso</div>
-    <h2 class="titulo reveal">comienza hoy tu proceso</h2>
-    <div class="price-card reveal">
-      <ul class="incluye-list">
-        <li><b>✅</b> acceso completo a la aplicación interactiva</li>
-        <li><b>✅</b> 12 módulos guiados</li>
-        <li><b>✅</b> test inicial y mapa de tu sistema</li>
-        <li><b>✅</b> diario: tu camino de sanación</li>
-        <li><b>✅</b> biblioteca y rituales guiados</li>
-        <li><b>✅</b> respiraciones y prácticas de calma</li>
-        <li><b>✅</b> acceso inmediato y de por vida</li>
-        <li><b>✅</b> garantía de 7 días</li>
-      </ul>
-      <div class="valor-total">valor total: $68 usd</div>
-      <div class="price-strike">$68 usd</div>
+    <div class="price-card reveal" style="margin-top:16px;">
+      <div class="valor-total">valor total: $153 usd</div>
+      <div class="price-strike">$153 usd</div>
       <div class="price-big">$14.99 <span style="font-size:15px; font-weight:400; color:var(--cafe-suave); text-transform:none;">usd</span></div>
-      <div class="price-off">78% off</div>
+      <div class="price-off">90% off</div>
       <div class="price-note">pago único · acceso de por vida · garantía de 7 días</div>
       <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-btn" style="box-shadow:none;">quiero acceder a la app</a>
       <div class="cta-sub" style="color:var(--cafe-suave);">acceso inmediato • pago seguro</div>
@@ -485,11 +480,11 @@
   </div>
 </section>
 
-<!-- ============ 7. GARANTÍA ============ -->
+<!-- ============ 9. GARANTÍA ============ -->
 <section class="garantia">
   <div class="wrap">
-    <div class="eyebrow reveal" style="text-align:center; display:block;">sin riesgo</div>
-    <h2 class="titulo reveal" style="text-align:center;">prueba la experiencia sin riesgo</h2>
+    <div class="eyebrow reveal">sin riesgo</div>
+    <h2 class="titulo reveal">prueba la experiencia sin riesgo</h2>
     <div class="garantia-card reveal">
       <img src="assets/garantia-7dias.png" alt="garantía de 7 días" class="garantia-sello">
       tienes 7 días para conocer la aplicación por dentro. si durante ese tiempo consideras que no era lo que esperabas, puedes solicitar la devolución según la política de garantía.
@@ -497,31 +492,7 @@
   </div>
 </section>
 
-<!-- ============ 7.5 PRUEBA SOCIAL NÚMEROS ============ -->
-<section class="stats">
-  <div class="wrap">
-    <div class="stats-grid">
-      <div class="reveal"><div class="stat-num">130,000+</div><div class="stat-txt">personas siguen este proceso</div></div>
-      <div class="reveal"><div class="stat-num">4.9★</div><div class="stat-txt">valoración promedio</div></div>
-      <div class="reveal"><div class="stat-num">7 días</div><div class="stat-txt">garantía sin preguntas</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. TESTIMONIOS ============ -->
-<section class="testimonios">
-  <div class="wrap">
-    <div class="eyebrow reveal">experiencias reales</div>
-    <h2 class="titulo reveal">mensajes de personas que hicieron el proceso</h2>
-    <img src="assets/testimonio-1.jpg" alt="testimonio real de clienta" class="testi-img reveal">
-    <img src="assets/testimonio-2.jpg" alt="testimonio real de clienta" class="testi-img reveal">
-    <img src="assets/testimonio-3.jpg" alt="testimonio real de clienta" class="testi-img reveal">
-    <img src="assets/testimonio-4.jpg" alt="testimonio real de clienta" class="testi-img reveal">
-    <p class="testimonios-cierre reveal">no estás sola en esto… y sí es posible empezar a cambiarlo.</p>
-  </div>
-</section>
-
-<!-- ============ 9. MI HISTORIA ============ -->
+<!-- ============ 10. MI HISTORIA ============ -->
 <section class="historia">
   <div class="wrap">
     <div class="eyebrow reveal">mi historia</div>
@@ -538,7 +509,7 @@
   </div>
 </section>
 
-<!-- ============ 10. ES PARA TI / NO ES PARA TI ============ -->
+<!-- ============ 11. ES PARA TI / NO ES PARA TI ============ -->
 <section class="filtro">
   <div class="wrap">
     <div class="eyebrow reveal">antes de empezar</div>
@@ -561,7 +532,7 @@
   </div>
 </section>
 
-<!-- ============ 11. FAQ ============ -->
+<!-- ============ 12. FAQ ============ -->
 <section class="faq">
   <div class="wrap">
     <div class="eyebrow reveal">preguntas frecuentes</div>
@@ -598,7 +569,7 @@
   </div>
 </section>
 
-<!-- ============ 12. CTA FINAL ============ -->
+<!-- ============ 13. CTA FINAL ============ -->
 <section class="cta-final">
   <div class="wrap">
     <div class="stars reveal">✦ ✦ ✦</div>
