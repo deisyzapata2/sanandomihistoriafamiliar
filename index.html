@@ -82,19 +82,19 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    background:linear-gradient(180deg, var(--oscuro) 0%, var(--oscuro-2) 60%, var(--oscuro-2) 100%);
-    color:var(--crema);
-    padding:30px 0 34px;
+    background:var(--crema);
+    color:var(--cafe);
+    padding:14px 0 34px;
     position:relative;
   }
-  .hero .eyebrow{color:var(--dorado); text-align:center; display:block;}
+  .hero .eyebrow{color:var(--acento); text-align:center; display:block;}
   .hero-photo{
-    width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top;
-    border-radius:18px; margin-bottom:22px; box-shadow:0 20px 50px rgba(0,0,0,.4);
+    width:100%; aspect-ratio:16/9; object-fit:cover; object-position:top;
+    border-radius:18px; margin-bottom:22px; box-shadow:0 12px 30px rgba(60,41,32,.18);
     filter:saturate(.9);
   }
-  .hero-video-wrap{position:relative; border-radius:18px; overflow:hidden; margin-bottom:22px; box-shadow:0 20px 50px rgba(0,0,0,.4);}
-  .hero-video-wrap video{width:100%; aspect-ratio:4/5; object-fit:cover; display:block; background:#000;}
+  .hero-video-wrap{position:relative; border-radius:18px; overflow:hidden; margin-bottom:22px; box-shadow:0 12px 30px rgba(60,41,32,.18);}
+  .hero-video-wrap video{width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#000;}
   .hero-play-btn{
     position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
     background:rgba(0,0,0,.25); border:none; cursor:pointer; padding:0;
@@ -109,12 +109,13 @@
     font-size:11px; padding:5px 10px; border-radius:999px; text-transform:lowercase;
   }
   .hero h1{
-    font-size:26px; font-weight:700; line-height:1.3; margin-bottom:14px; text-align:center;
+    font-size:26px; font-weight:700; font-style:italic; line-height:1.3; margin-bottom:14px; text-align:center; color:var(--cafe);
   }
-  .hero p.sub{color:#D9CDBB; font-size:15.5px; margin-bottom:22px; text-align:center;}
-  .hero .cta-sub{color:#C9BCA6;}
+  .hero p.sub{color:var(--cafe-suave); font-size:15.5px; margin-bottom:22px; text-align:center;}
+  .hero p.sub strong{color:var(--cafe);}
+  .hero .cta-sub{color:var(--cafe-suave);}
   .hero-check{list-style:none; margin:20px 0 6px; display:flex; flex-direction:column; gap:9px;}
-  .hero-check li{display:flex; gap:8px; align-items:flex-start; font-size:14px; color:#EAE1D2;}
+  .hero-check li{display:flex; gap:8px; align-items:flex-start; font-size:14px; color:var(--cafe);}
   .hero-check li b{color:var(--verde); font-weight:900;}
 
   /* ---------- LISTA ESPEJO ---------- */
@@ -340,7 +341,7 @@
       <li><b>✓</b> desde tu celular</li>
       <li><b>✓</b> sin necesidad de experiencia previa</li>
     </ul>
-    <p class="sub reveal" style="margin-bottom:14px; margin-top:14px;">accede hoy a la experiencia completa por <strong style="color:#fff;">$14.99 usd</strong> · pago único</p>
+    <p class="sub reveal" style="margin-bottom:14px; margin-top:14px;">accede hoy a la experiencia completa por <strong style="color:var(--cafe);">$14.99 usd</strong> · pago único</p>
     <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-btn reveal">quiero acceder a la app</a>
     <div class="cta-sub reveal">acceso inmediato • desde tu celular • pago seguro</div>
   </div>
