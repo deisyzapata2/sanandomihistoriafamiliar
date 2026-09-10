@@ -133,14 +133,14 @@
 
   /* ---------- QUÉ ES ---------- */
   .quees{
-    background:linear-gradient(180deg, var(--oscuro) 0%, var(--oscuro-2) 100%);
-    color:var(--crema); text-align:center; padding:56px 0;
+    background:var(--crema-2);
+    color:var(--cafe); text-align:center; padding:56px 0;
   }
-  .quees .eyebrow{color:var(--dorado);}
+  .quees .eyebrow{color:var(--acento);}
   .quees .quote-mark{font-family:'Playfair Display',serif; font-size:54px; color:var(--dorado); line-height:.5; margin-bottom:6px;}
   .quees p{
     font-family:'Playfair Display',serif; font-style:italic; font-weight:600;
-    font-size:22px; line-height:1.5; text-transform:lowercase; color:#F2EAD9;
+    font-size:22px; line-height:1.5; text-transform:lowercase; color:var(--cafe);
   }
 
   /* ---------- CÓMO FUNCIONA ---------- */
@@ -217,12 +217,13 @@
   .desglose-total .valor-real{font-family:'Playfair Display',serif; font-size:30px; font-weight:700; color:var(--acento); text-decoration:none;}
 
   /* ---------- OFERTA ---------- */
-  .oferta{background:var(--cafe); color:var(--crema);}
-  .oferta .eyebrow{color:var(--dorado); text-align:center; display:block;}
-  .oferta h2.titulo{color:var(--crema); text-align:center;}
+  .oferta{background:var(--crema-2); color:var(--cafe);}
+  .oferta .eyebrow{color:var(--acento); text-align:center; display:block;}
+  .oferta h2.titulo{color:var(--cafe); text-align:center;}
   .price-card{
-    background:var(--crema); color:var(--cafe); border-radius:20px; padding:26px 22px;
-    box-shadow:0 20px 45px rgba(0,0,0,.3); margin-bottom:16px; text-align:center;
+    background:var(--blanco); color:var(--cafe); border-radius:20px; padding:26px 22px;
+    box-shadow:0 12px 30px rgba(60,41,32,.12); margin-bottom:16px; text-align:center;
+    border:1px solid var(--linea);
   }
   .incluye-list{list-style:none; text-align:left; display:flex; flex-direction:column; gap:9px; margin-bottom:18px;}
   .incluye-list li{display:flex; gap:9px; align-items:flex-start; font-size:14px; text-transform:lowercase;}
@@ -258,14 +259,15 @@
   .testimonios-cierre{font-family:'Playfair Display',serif; font-style:italic; font-size:18px; text-align:center; margin-top:18px; color:var(--acento);}
 
   /* ---------- MI HISTORIA ---------- */
-  .historia{background:linear-gradient(180deg, var(--oscuro) 0%, var(--oscuro-2) 100%); color:var(--crema);}
-  .historia .eyebrow{color:var(--dorado); text-align:center; display:block;}
+  .historia{background:var(--crema); color:var(--cafe);}
+  .historia .eyebrow{color:var(--acento); text-align:center; display:block;}
   .historia .quote-mark{font-family:'Playfair Display',serif; font-size:54px; color:var(--dorado); line-height:.5; margin-bottom:6px; text-align:center;}
-  .historia h2.titulo{color:var(--crema); text-align:center; font-style:italic;}
-  .historia p{font-size:15px; color:#EAE1D2; margin-bottom:14px;}
-  .historia-firma{margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,.14); text-align:center;}
-  .historia-firma b{font-family:'Playfair Display',serif; font-size:17px; color:var(--dorado); display:block;}
-  .historia-firma span{font-size:12px; color:#C9BCA6;}
+  .historia h2.titulo{color:var(--cafe); text-align:center; font-style:italic;}
+  .historia p{font-size:15px; color:var(--cafe-suave); margin-bottom:14px;}
+  .historia-foto{width:96px; height:96px; border-radius:50%; object-fit:cover; margin:0 auto 16px; border:3px solid var(--blanco); box-shadow:0 6px 18px rgba(60,41,32,.2);}
+  .historia-firma{margin-top:20px; padding-top:16px; border-top:1px solid var(--linea); text-align:center;}
+  .historia-firma b{font-family:'Playfair Display',serif; font-size:17px; color:var(--acento); display:block; text-transform:none;}
+  .historia-firma span{font-size:12px; color:var(--cafe-suave);}
 
   /* ---------- ES PARA TI / NO ES PARA TI ---------- */
   .filtro{background:var(--crema-2);}
@@ -523,14 +525,14 @@
 <section class="historia">
   <div class="wrap">
     <div class="eyebrow reveal">mi historia</div>
-    <div class="quote-mark reveal">"</div>
+    <img src="assets/valentina.png" alt="Valentina Ríos" class="historia-foto reveal">
     <h2 class="titulo reveal">durante años pensé que el problema era mi mala suerte…</h2>
     <p class="reveal">yo también estuve donde tú estás hoy.</p>
     <p class="reveal">repetía las mismas relaciones, las mismas culpas, los mismos bloqueos. y creía que era casualidad — que simplemente me tocaba a mí.</p>
     <p class="reveal">hasta que entendí que no estaba repitiendo "mi" historia. estaba repitiendo historias que ni siquiera habían empezado conmigo.</p>
     <p class="reveal">cuando comprendí eso, algo empezó a moverse. y por eso creé este proceso guiado: para acompañarte, paso a paso, a comprender el origen de lo que repites, y empezar a soltarlo.</p>
     <div class="historia-firma reveal">
-      <b>valentina ríos</b>
+      <b>Valentina Ríos</b>
       <span>creadora de sanando mi historia familiar · más de 130,000 personas siguen este proceso</span>
     </div>
   </div>
