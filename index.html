@@ -6,7 +6,7 @@
 <title>sanando mi historia familiar — autoconstelación guiada</title>
 <meta name="description" content="una app interactiva que te acompaña, paso a paso, a encontrar el patrón que heredaste y a cerrarlo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -16,16 +16,18 @@
 </script>
 <style>
   :root{
-    --crema:#F5F0E8;
-    --crema-2:#EFE7D8;
-    --cafe:#3D3228;
-    --cafe-suave:#6b5c4d;
-    --linea:#DDD2BE;
-    --acento:#8C4A3B;
-    --acento-2:#5A6B4E;
-    --dorado:#B8925A;
-    --blanco:#FFFDF9;
+    --crema:#F8F4ED;
+    --crema-2:#EFE9DC;
+    --cafe:#3C2920;
+    --cafe-suave:#7A6A5C;
+    --linea:rgba(196,159,79,.35);
+    --acento:#C49F4F;
+    --acento-2:#25B12A;
+    --dorado:#C49F4F;
+    --blanco:#FAF7F1;
     --verde:#25B12A;
+    --oscuro:#1A140E;
+    --oscuro-2:#3C2920;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -37,7 +39,7 @@
     overflow-x:hidden;
   }
   img{max-width:100%; display:block;}
-  h1,h2,.serif{font-family:'Cormorant Garamond', serif;}
+  h1,h2,.serif{font-family:'Playfair Display', serif;}
   .wrap{max-width:480px; margin:0 auto; padding:0 22px;}
   section{padding:48px 0;}
   strong.mark{color:var(--acento); font-weight:900;}
@@ -63,7 +65,7 @@
 
   /* ---------- BARRA DE URGENCIA + HEADER STICKY ---------- */
   .urgencia-bar{
-    background:#B3231C; color:#fff; text-align:center; font-size:12px; font-weight:700;
+    background:#DC2626; color:#fff; text-align:center; font-size:12px; font-weight:700;
     padding:7px 10px; letter-spacing:.02em;
   }
   .urgencia-bar span.count{font-variant-numeric:tabular-nums; font-weight:900;}
@@ -71,7 +73,7 @@
     position:sticky; top:0; z-index:50; background:var(--crema); border-bottom:1px solid var(--linea);
     display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 16px;
   }
-  .top-header .brand{display:flex; align-items:center; gap:8px; font-family:'Cormorant Garamond',serif; font-weight:700; font-size:14px; line-height:1.15;}
+  .top-header .brand{display:flex; align-items:center; gap:8px; font-family:'Playfair Display',serif; font-weight:700; font-size:14px; line-height:1.15;}
   .top-header .brand img{width:26px; height:26px; border-radius:50%; object-fit:cover;}
   .top-header .cta-mini{
     background:var(--verde); color:#fff; font-weight:900; font-size:11.5px; text-transform:uppercase;
@@ -80,7 +82,7 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    background:linear-gradient(180deg, #2A221A 0%, #3D3228 60%, #3D3228 100%);
+    background:linear-gradient(180deg, var(--oscuro) 0%, var(--oscuro-2) 60%, var(--oscuro-2) 100%);
     color:var(--crema);
     padding:30px 0 34px;
     position:relative;
@@ -90,6 +92,21 @@
     width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top;
     border-radius:18px; margin-bottom:22px; box-shadow:0 20px 50px rgba(0,0,0,.4);
     filter:saturate(.9);
+  }
+  .hero-video-wrap{position:relative; border-radius:18px; overflow:hidden; margin-bottom:22px; box-shadow:0 20px 50px rgba(0,0,0,.4);}
+  .hero-video-wrap video{width:100%; aspect-ratio:4/5; object-fit:cover; display:block; background:#000;}
+  .hero-play-btn{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:rgba(0,0,0,.25); border:none; cursor:pointer; padding:0;
+  }
+  .hero-play-btn .circle{
+    width:60px; height:60px; border-radius:50%; background:rgba(255,255,255,.95);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,.3);
+  }
+  .hero-play-btn .circle svg{margin-left:4px;}
+  .hero-video-hint{
+    position:absolute; left:12px; bottom:12px; background:rgba(0,0,0,.55); color:#fff;
+    font-size:11px; padding:5px 10px; border-radius:999px; text-transform:lowercase;
   }
   .hero h1{
     font-size:26px; font-weight:700; line-height:1.3; margin-bottom:14px; text-align:center;
@@ -115,13 +132,13 @@
 
   /* ---------- QUÉ ES ---------- */
   .quees{
-    background:linear-gradient(180deg, #2A221A 0%, #3D3228 100%);
+    background:linear-gradient(180deg, var(--oscuro) 0%, var(--oscuro-2) 100%);
     color:var(--crema); text-align:center; padding:56px 0;
   }
   .quees .eyebrow{color:var(--dorado);}
-  .quees .quote-mark{font-family:'Cormorant Garamond',serif; font-size:54px; color:var(--dorado); line-height:.5; margin-bottom:6px;}
+  .quees .quote-mark{font-family:'Playfair Display',serif; font-size:54px; color:var(--dorado); line-height:.5; margin-bottom:6px;}
   .quees p{
-    font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600;
+    font-family:'Playfair Display',serif; font-style:italic; font-weight:600;
     font-size:22px; line-height:1.5; text-transform:lowercase; color:#F2EAD9;
   }
 
@@ -134,7 +151,7 @@
     padding:15px 16px; margin-bottom:10px;
   }
   .herramienta-ico{flex:none; font-size:22px;}
-  .herramienta-item h3{font-size:15.5px; font-weight:700; text-transform:lowercase; margin-bottom:2px; font-family:'Cormorant Garamond',serif; color:var(--acento);}
+  .herramienta-item h3{font-size:15.5px; font-weight:700; text-transform:lowercase; margin-bottom:2px; font-family:'Playfair Display',serif; color:var(--acento);}
   .herramienta-item p{font-size:13.5px; color:var(--cafe-suave); text-transform:lowercase;}
 
   /* ---------- LOGROS ---------- */
@@ -178,7 +195,7 @@
   .paso5-grid{display:flex; flex-direction:column; gap:10px;}
   .paso5-item{display:flex; gap:14px; align-items:center; background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:14px 16px;}
   .paso5-ico{flex:none; width:34px; height:34px; border-radius:50%; background:var(--acento); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px;}
-  .paso5-item h3{font-size:14.5px; font-weight:700; text-transform:lowercase; font-family:'Cormorant Garamond',serif; color:var(--acento);}
+  .paso5-item h3{font-size:14.5px; font-weight:700; text-transform:lowercase; font-family:'Playfair Display',serif; color:var(--acento);}
   .paso5-item p{font-size:13px; color:var(--cafe-suave); text-transform:lowercase;}
 
   /* ---------- DESGLOSE ---------- */
@@ -196,7 +213,7 @@
     display:flex; justify-content:space-between; align-items:center; gap:10px;
     padding:18px 0; font-size:16px; font-weight:900; text-transform:lowercase;
   }
-  .desglose-total .valor-real{font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:700; color:var(--acento); text-decoration:none;}
+  .desglose-total .valor-real{font-family:'Playfair Display',serif; font-size:30px; font-weight:700; color:var(--acento); text-decoration:none;}
 
   /* ---------- OFERTA ---------- */
   .oferta{background:var(--cafe); color:var(--crema);}
@@ -211,7 +228,7 @@
   .incluye-list li b{color:var(--acento-2); flex:none;}
   .valor-total{font-size:13px; color:var(--cafe-suave); text-align:center; margin-bottom:6px; text-transform:lowercase;}
   .price-strike{font-size:16px; color:var(--cafe-suave); text-decoration:line-through; font-weight:400; display:block;}
-  .price-big{font-family:'Cormorant Garamond',serif; font-size:44px; font-weight:700; line-height:1;}
+  .price-big{font-family:'Playfair Display',serif; font-size:44px; font-weight:700; line-height:1;}
   .price-off{display:inline-block; background:var(--acento); color:#fff; font-size:11px; font-weight:900; padding:4px 10px; border-radius:20px; margin-top:6px; text-transform:uppercase;}
   .price-note{font-size:13.5px; color:var(--cafe-suave); margin:14px 0 18px; text-transform:lowercase;}
 
@@ -226,7 +243,7 @@
   /* ---------- PRUEBA SOCIAL NÚMEROS ---------- */
   .stats{background:var(--crema-2);}
   .stats-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; text-align:center;}
-  .stat-num{font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:700; color:var(--acento);}
+  .stat-num{font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--acento);}
   .stat-txt{font-size:11px; color:var(--cafe-suave); text-transform:lowercase; line-height:1.3;}
 
   /* ---------- TESTIMONIOS ---------- */
@@ -237,23 +254,23 @@
     box-shadow:0 10px 30px rgba(0,0,0,.15); background:#000;
   }
   .testi-img:last-child{margin-bottom:0;}
-  .testimonios-cierre{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; text-align:center; margin-top:18px; color:var(--acento);}
+  .testimonios-cierre{font-family:'Playfair Display',serif; font-style:italic; font-size:18px; text-align:center; margin-top:18px; color:var(--acento);}
 
   /* ---------- MI HISTORIA ---------- */
-  .historia{background:linear-gradient(180deg, #2A221A 0%, #3D3228 100%); color:var(--crema);}
+  .historia{background:linear-gradient(180deg, var(--oscuro) 0%, var(--oscuro-2) 100%); color:var(--crema);}
   .historia .eyebrow{color:var(--dorado); text-align:center; display:block;}
-  .historia .quote-mark{font-family:'Cormorant Garamond',serif; font-size:54px; color:var(--dorado); line-height:.5; margin-bottom:6px; text-align:center;}
+  .historia .quote-mark{font-family:'Playfair Display',serif; font-size:54px; color:var(--dorado); line-height:.5; margin-bottom:6px; text-align:center;}
   .historia h2.titulo{color:var(--crema); text-align:center; font-style:italic;}
   .historia p{font-size:15px; color:#EAE1D2; margin-bottom:14px;}
   .historia-firma{margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,.14); text-align:center;}
-  .historia-firma b{font-family:'Cormorant Garamond',serif; font-size:17px; color:var(--dorado); display:block;}
+  .historia-firma b{font-family:'Playfair Display',serif; font-size:17px; color:var(--dorado); display:block;}
   .historia-firma span{font-size:12px; color:#C9BCA6;}
 
   /* ---------- ES PARA TI / NO ES PARA TI ---------- */
   .filtro{background:var(--crema-2);}
   .filtro .eyebrow, .filtro h2.titulo{text-align:center;}
   .filtro-card{background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:18px; margin-bottom:14px;}
-  .filtro-card h3{font-size:15px; font-weight:900; margin-bottom:12px; text-transform:lowercase; font-family:'Cormorant Garamond',serif;}
+  .filtro-card h3{font-size:15px; font-weight:900; margin-bottom:12px; text-transform:lowercase; font-family:'Playfair Display',serif;}
   .filtro-card.si h3{color:var(--acento-2);}
   .filtro-card.no h3{color:var(--acento);}
   .filtro-item{display:flex; gap:9px; align-items:flex-start; font-size:14px; text-transform:lowercase; margin-bottom:8px;}
@@ -283,12 +300,12 @@
   .faq-item.open .faq-a{max-height:260px;}
 
   /* ---------- CTA FINAL ---------- */
-  .cta-final{background:linear-gradient(180deg, var(--cafe) 0%, #2A221A 100%); color:var(--crema); text-align:center;}
+  .cta-final{background:linear-gradient(180deg, var(--cafe) 0%, var(--oscuro) 100%); color:var(--crema); text-align:center;}
   .cta-final .stars{color:var(--dorado); font-size:14px; letter-spacing:6px; margin-bottom:14px;}
   .cta-final p.sub{color:#D9CDBB;}
   .cta-final .ps{font-size:12.5px; color:#C9BCA6; margin-top:18px; font-style:italic; text-transform:lowercase;}
 
-  footer{background:#2A221A; color:#9C8E7A; padding:28px 0; font-size:12px; text-transform:lowercase;}
+  footer{background:var(--oscuro); color:#9C8E7A; padding:28px 0; font-size:12px; text-transform:lowercase;}
   footer .disclaimer{line-height:1.6;}
 
   @media (min-width:600px){ .wrap{max-width:560px;} }
@@ -307,7 +324,15 @@
 <section class="hero">
   <div class="wrap">
     <div class="eyebrow reveal">experiencia interactiva · sanando mi historia familiar</div>
-    <img src="assets/hero-ritual.jpg" alt="ritual de sanación familiar" class="hero-photo reveal">
+    <div class="hero-video-wrap reveal">
+      <video id="hero-video" poster="assets/hero-ritual.jpg" preload="none" playsinline muted loop>
+        <source src="assets/hero-video.mp4" type="video/mp4">
+      </video>
+      <button class="hero-play-btn" id="hero-play-btn" aria-label="reproducir video">
+        <span class="circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="#3C2920"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
+      <div class="hero-video-hint" id="hero-video-hint">toca para reproducir con sonido</div>
+    </div>
     <h1 class="reveal">lo que se repite en tu vida —el dinero que no llega, el amor que duele, lo mismo que vivió tu mamá— no es mala suerte. es tu linaje.</h1>
     <p class="sub reveal">sanando mi historia familiar es una app interactiva que te acompaña, paso a paso, a encontrar el patrón que heredaste y a cerrarlo. para que termine en ti y no lo carguen quienes vienen detrás.</p>
     <ul class="hero-check reveal">
@@ -645,6 +670,19 @@
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  // video del hero: toca para reproducir con sonido
+  const heroVideo = document.getElementById('hero-video');
+  const heroPlayBtn = document.getElementById('hero-play-btn');
+  const heroHint = document.getElementById('hero-video-hint');
+  if(heroVideo && heroPlayBtn){
+    heroPlayBtn.addEventListener('click', () => {
+      heroVideo.muted = false;
+      heroVideo.play();
+      heroPlayBtn.style.display = 'none';
+      if(heroHint) heroHint.style.display = 'none';
+    });
+  }
 </script>
 </body>
 </html>
