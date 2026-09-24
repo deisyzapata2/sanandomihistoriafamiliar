@@ -93,6 +93,11 @@
     border-radius:18px; margin-bottom:22px; box-shadow:0 12px 30px rgba(60,41,32,.18);
     filter:saturate(.9);
   }
+  .hero-blob{
+    display:block; width:190px; height:auto; margin:0 auto 22px;
+    border-radius:62% 38% 55% 45% / 48% 58% 42% 52%;
+    box-shadow:0 12px 30px rgba(60,41,32,.18);
+  }
   .hero-video-wrap{position:relative; border-radius:18px; overflow:hidden; margin-bottom:22px; box-shadow:0 12px 30px rgba(60,41,32,.18);}
   .hero-video-wrap video{width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#000;}
   .hero-sound-btn{
@@ -335,15 +340,7 @@
   <div class="wrap">
     <div class="eyebrow reveal">para mujeres que sienten que repiten la misma historia</div>
     <h1 class="reveal">lo que repites no es mala suerte.<br>es un patrón familiar — y <strong>se puede cerrar</strong>.</h1>
-    <div class="hero-video-wrap reveal">
-      <video id="hero-video" preload="auto" playsinline autoplay muted loop>
-        <source src="assets/hero-video.mp4" type="video/mp4">
-      </video>
-      <button class="hero-sound-btn" id="hero-sound-btn" aria-label="activar sonido">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M3 9v6h4l5 5V4L7 9H3z"/><line x1="19" y1="5" x2="5" y2="19" stroke="#fff" stroke-width="2"/></svg>
-        toca para activar el sonido
-      </button>
-    </div>
+    <img src="assets/hero-blob.jpg" alt="mujer respirando en calma con las manos en el pecho" class="hero-blob reveal" width="336" height="448">
     <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-btn reveal">quiero empezar mi proceso</a>
     <div class="cta-sub reveal">acceso inmediato • desde tu celular • $14.99 usd pago único</div>
     <p class="sub reveal" style="margin-top:22px;">una experiencia guiada para encontrar el origen de lo que repites — sin años de terapia ni procesos interminables.</p>
@@ -678,16 +675,6 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // video del hero: autoplay silencioso, botón pequeño para activar el sonido
-  const heroVideo = document.getElementById('hero-video');
-  const heroSoundBtn = document.getElementById('hero-sound-btn');
-  if(heroVideo && heroSoundBtn){
-    heroSoundBtn.addEventListener('click', () => {
-      heroVideo.muted = false;
-      heroVideo.play();
-      heroSoundBtn.style.display = 'none';
-    });
-  }
 </script>
 </body>
 </html>
