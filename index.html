@@ -78,29 +78,31 @@
   }
 
   /* ---------- HERO ---------- */
-  .hero{background:var(--crema); padding:14px 0 34px;}
-  .hero .eyebrow{text-align:center; display:block;}
+  .hero{background:var(--crema); padding:34px 0 40px;}
+  .hero .wrap{max-width:720px;}
+  .hero-preheader{
+    display:block; text-align:center; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--acento); font-weight:900; margin-bottom:16px;
+  }
+  .hero h1{
+    font-family:'Playfair Display',serif; font-weight:800; font-style:italic;
+    font-size:clamp(34px, 8vw, 64px); line-height:1.15; letter-spacing:-.01em;
+    margin:0 0 22px; text-align:center; color:var(--cafe);
+  }
+  .hero-sub{
+    max-width:640px; margin:0 auto; text-align:center;
+  }
+  .hero-sub p{
+    font-size:clamp(17px, 2.4vw, 20px); line-height:1.6; color:var(--cafe-suave); margin-bottom:16px;
+  }
+  .hero-sub p:last-child{margin-bottom:0;}
   .hero-blob{
-    display:block; width:220px; height:auto; margin:0 auto 20px;
+    display:block; width:220px; height:auto; margin:28px auto 0;
     border-radius:63% 37% 54% 46% / 42% 58% 42% 58%;
     box-shadow:0 12px 30px rgba(60,41,32,.18);
   }
-  .hero h1{
-    font-size:33px; font-weight:800; font-style:italic; line-height:1.22; margin:0 0 14px; text-align:center;
-    letter-spacing:-.01em;
-  }
-  .hero h1 strong{color:var(--acento); font-weight:900;}
-  .hero p.sub{font-size:15.5px; margin-bottom:12px; text-align:center;}
-  .hero-emocional{
-    font-family:'Playfair Display',serif; font-style:italic; font-weight:600; font-size:18px; line-height:1.4;
-    text-align:center; color:var(--cafe); padding:14px 8px; margin:14px 0 18px;
-    border-top:1px solid var(--linea); border-bottom:1px solid var(--linea);
-  }
-  .hero-emocional strong{color:var(--acento);}
-  .hero-precio{text-align:center; margin-bottom:12px;}
-  .hero-precio .monto{font-family:'Playfair Display',serif; font-size:34px; font-weight:700; line-height:1;}
-  .hero-precio .monto small{font-size:14px; font-weight:400; color:var(--cafe-suave);}
-  .hero-precio .micro{font-size:13px; color:var(--cafe-suave); margin-top:4px;}
+  .hero-cta-wrap{max-width:420px; margin:32px auto 0;}
+  .hero-microcopy{font-size:12.5px; color:var(--cafe-suave); text-align:center; margin-top:12px;}
 
   /* ---------- PROBLEMA ---------- */
   .problema{background:var(--crema-2);}
@@ -231,18 +233,18 @@
 <!-- ============ 1. HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow reveal">una experiencia digital de autoconocimiento</div>
-    <h1 class="reveal">Explora tu historia familiar <strong>de una forma diferente</strong></h1>
-    <img src="assets/hero-ritual.jpg" alt="mujer mirando una foto antigua de su familia frente a un árbol de linaje" class="hero-blob reveal" width="1122" height="1402">
-    <p class="sub reveal">Una experiencia digital interactiva basada en constelaciones familiares que reúne mapa familiar, ejercicios guiados, rituales, diario y herramientas de reflexión en un solo lugar.</p>
-    <p class="sub reveal" style="margin-bottom:0;"><strong style="color:var(--cafe);">Explora a tu propio ritmo desde tu celular.</strong></p>
-    <p class="hero-emocional reveal">¿De quién en tu familia heredaste <strong>eso que más te duele repetir</strong>?</p>
-    <div class="hero-precio reveal">
-      <div class="monto">$14.99 <small>USD</small></div>
-      <div class="micro">Pago único · 7 días de garantía</div>
+    <span class="hero-preheader reveal">Hay patrones que parecen empezar en ti</span>
+    <h1 class="reveal">¿Y si eso que llevas tiempo intentando cambiar no empezó contigo?</h1>
+    <div class="hero-sub reveal">
+      <p>A veces repetimos formas de amar, relacionarnos o vivir ciertas situaciones sin entender por qué.</p>
+      <p>Puede que haya algo en tu historia familiar que valga la pena mirar.</p>
+      <p>Sanando Mi Historia Familiar te guía a explorar esos patrones, conocer tu mapa familiar y observar tu historia desde una perspectiva diferente.</p>
     </div>
-    <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-btn reveal">Quiero acceder a la experiencia</a>
-    <div class="cta-sub reveal">acceso inmediato · acceso de por vida</div>
+    <img src="assets/hero-ritual.jpg" alt="mujer mirando una foto antigua de su familia frente a un árbol de linaje" class="hero-blob reveal" width="1122" height="1402">
+    <div class="hero-cta-wrap reveal">
+      <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-btn">Quiero explorar mi historia familiar</a>
+      <div class="hero-microcopy">Experiencia digital interactiva · A tu ritmo · Desde tu celular</div>
+    </div>
   </div>
 </section>
 
