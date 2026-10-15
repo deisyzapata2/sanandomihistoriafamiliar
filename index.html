@@ -129,7 +129,12 @@
   .vista p{font-size:15px; color:var(--cafe-suave); margin-top:4px;}
   .desliza{font-size:13.5px; color:var(--cafe-suave); margin-top:12px;}
 
+  /* ---------- TESTIMONIOS ---------- */
+  .testi-grid{display:grid; gap:18px; max-width:520px; margin:34px auto 0;}
+  .testi-grid img{width:100%; border-radius:20px; box-shadow:0 14px 30px rgba(58,42,34,.18); background:#000;}
+
   /* ---------- OFERTA ---------- */
+  .oferta{background:var(--arena);}
   .oferta-card{background:#fff; border-radius:28px; padding:36px 26px; box-shadow:0 22px 60px rgba(58,42,34,.12); max-width:560px; margin:34px auto 0; text-align:center;}
   .oferta-card .nombre{font-family:var(--serif); font-size:24px; font-weight:600;}
   .oferta-card .precio{font-family:var(--serif); font-size:60px; font-weight:600; line-height:1.1; margin:8px 0 14px;}
@@ -180,6 +185,7 @@
     .galeria-track{margin-inline:0; padding-inline:0; justify-content:center;}
     .vista{width:190px;}
     .pausa-texto{padding-bottom:96px;}
+    .testi-grid{grid-template-columns:repeat(3, 1fr); max-width:none; align-items:start;}
     .centro-desk{text-align:center;}
   }
 </style>
@@ -286,8 +292,23 @@
   </div>
 </section>
 
+<!-- ============ 6.5 TESTIMONIOS ============ -->
+<section class="testimonios">
+  <div class="wrap">
+    <div class="centro">
+      <span class="eyebrow">Mensajes recibidos</span>
+      <h2>De personas que <em>usaron la experiencia.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <img src="assets/testimonio-2.jpg" alt="Mensaje recibido de una usuaria" width="720" height="533" loading="lazy">
+      <img src="assets/testimonio-4.jpg" alt="Mensaje recibido de una usuaria" width="720" height="720" loading="lazy">
+      <img src="assets/testimonio-1.jpg" alt="Mensaje recibido de una usuaria" width="531" height="497" loading="lazy">
+    </div>
+  </div>
+</section>
+
 <!-- ============ 7. OFERTA ============ -->
-<section id="oferta" class="centro">
+<section id="oferta" class="centro oferta">
   <div class="wrap">
     <h2>Tu próximo paso <em>puede empezar aquí.</em></h2>
     <div class="oferta-card">
