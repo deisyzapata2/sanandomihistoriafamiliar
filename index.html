@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sanando Mi Historia Familiar — experiencia digital de autoconocimiento</title>
-<meta name="description" content="Una experiencia digital interactiva para explorar tu historia familiar y observar patrones, también los relacionados con el dinero, a tu propio ritmo.">
+<title>Sanando Mi Historia Familiar — explora tu historia a tu ritmo</title>
+<meta name="description" content="Una experiencia digital para explorar tu historia familiar, observar posibles patrones y reflexionar sobre lo que deseas construir de aquí en adelante.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/hero-ritual.jpg" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -18,470 +18,346 @@
 </script>
 <style>
   :root{
-    --crema:#F8F4ED;
-    --crema-2:#EFE9DC;
-    --cafe:#3C2920;
-    --cafe-suave:#7A6A5C;
-    --linea:rgba(196,159,79,.35);
-    --acento:#C49F4F;
-    --acento-2:#25B12A;
-    --blanco:#FAF7F1;
-    --verde:#25B12A;
-    --oscuro:#1A140E;
+    --marfil:#FBF6EE;
+    --arena:#EFE4D2;
+    --arena-2:#E7D8C0;
+    --cafe:#3A2A22;
+    --cafe-suave:#6E5A4D;
+    --terracota:#9F4B33;
+    --terracota-claro:#C77B5E;
+    --dorado:#B8975A;
+    --linea:rgba(58,42,34,.16);
+    --serif:'Fraunces', Georgia, serif;
+    --sans:'DM Sans', system-ui, sans-serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--crema);
-    color:var(--cafe);
-    font-family:'Lato', system-ui, sans-serif;
-    line-height:1.6;
-    overflow-x:hidden;
+    background:var(--marfil); color:var(--cafe);
+    font-family:var(--sans); font-size:17px; line-height:1.65;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
-  img{max-width:100%; display:block;}
-  h1,h2,.serif{font-family:'Playfair Display', serif;}
-  .wrap{max-width:480px; margin:0 auto; padding:0 22px;}
-  section{padding:46px 0;}
-  h2.titulo{font-size:26px; font-weight:700; line-height:1.25; margin-bottom:16px;}
-  .texto p{font-size:15.5px; color:var(--cafe-suave); margin-bottom:14px;}
-  .texto p:last-child{margin-bottom:0;}
-  .texto strong{color:var(--cafe);}
+  img{max-width:100%; height:auto; display:block;}
+  a:focus-visible, summary:focus-visible, button:focus-visible{outline:3px solid var(--terracota); outline-offset:3px;}
+  .wrap{width:min(100% - 40px, 1040px); margin-inline:auto;}
+  .narrow{max-width:640px; margin-inline:auto;}
+  section{padding:64px 0;}
+  .centro{text-align:center;}
 
-  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
-  .reveal.in{opacity:1; transform:translateY(0);}
+  h1,h2{font-family:var(--serif); font-weight:600; line-height:1.15; letter-spacing:-.01em; text-wrap:balance;}
+  h2{font-size:clamp(28px, 6.4vw, 44px); margin-bottom:20px;}
+  h1 em, h2 em{font-style:italic; font-weight:400; color:var(--terracota);}
+  .eyebrow{display:block; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--terracota); margin-bottom:18px; line-height:1.5;}
+  p.lead{font-size:clamp(18px, 2.4vw, 20px); color:var(--cafe-suave);}
+  p + p{margin-top:16px;}
 
   /* ---------- CTA ---------- */
-  .cta-btn{
-    display:block; width:100%; text-align:center; text-decoration:none;
-    background:var(--verde); color:#fff; font-weight:900; font-size:15.5px;
-    padding:18px 20px; border-radius:999px; letter-spacing:.02em; text-transform:uppercase;
-    box-shadow:0 10px 25px rgba(37,177,42,.35);
-    border:none; cursor:pointer; line-height:1.3;
+  .cta{
+    display:inline-block; width:100%; max-width:440px; text-align:center; text-decoration:none;
+    background:var(--terracota); color:#fff; font-family:var(--sans); font-weight:700; font-size:16px;
+    letter-spacing:.04em; text-transform:uppercase; line-height:1.3;
+    padding:20px 28px; border-radius:999px; box-shadow:0 12px 28px rgba(159,75,51,.28);
+    transition:background .2s ease, transform .2s ease;
   }
-  .cta-micro{font-size:12.5px; color:var(--cafe-suave); text-align:center; margin-top:12px;}
+  .cta:hover{background:#873C27;}
+  .cta-micro{font-size:14px; color:var(--cafe-suave); margin-top:14px;}
 
-  /* ---------- HEADER ---------- */
-  .top-header{
-    position:sticky; top:0; z-index:50; background:var(--crema); border-bottom:1px solid var(--linea);
-    display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 16px;
-  }
-  .top-header .brand{display:flex; align-items:center; gap:8px; font-family:'Playfair Display',serif; font-weight:700; font-size:14px; line-height:1.15;}
-  .top-header .brand img{width:26px; height:26px; border-radius:50%; object-fit:cover;}
-  .top-header .cta-mini{
-    background:var(--verde); color:#fff; font-weight:900; font-size:11.5px; text-transform:uppercase;
-    padding:9px 12px; border-radius:999px; text-decoration:none; white-space:nowrap;
-  }
+  /* ---------- CABECERA ---------- */
+  .marca{padding:20px 0 0; text-align:center;}
+  .marca span{font-family:var(--serif); font-size:17px; font-weight:600; letter-spacing:.01em; display:inline-flex; align-items:center; gap:10px;}
+  .marca img{width:32px; height:32px; border-radius:50%; object-fit:cover;}
 
   /* ---------- HERO ---------- */
-  .hero{background:var(--crema); padding:34px 0 40px;}
-  .hero .wrap{max-width:720px;}
-  .hero-preheader{
-    display:block; text-align:center; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--acento); font-weight:900; margin-bottom:16px; line-height:1.5;
-  }
-  .hero h1{
-    font-weight:800; font-style:italic;
-    font-size:clamp(34px, 9vw, 64px); line-height:1.15; letter-spacing:-.01em;
-    margin:0 0 22px; text-align:center; color:var(--cafe); text-wrap:balance;
-  }
-  .hero h1 strong{color:var(--acento); font-weight:900;}
-  .hero-blob{
-    display:block; width:220px; height:auto; margin:26px auto 26px;
-    border-radius:63% 37% 54% 46% / 42% 58% 42% 58%;
-    box-shadow:0 12px 30px rgba(60,41,32,.18);
-  }
-  .hero-sub{max-width:640px; margin:0 auto; text-align:center;}
-  .hero-sub p{font-size:clamp(17px, 2.4vw, 20px); line-height:1.6; color:var(--cafe-suave); margin-bottom:16px;}
-  .hero-sub p:last-child{margin-bottom:0;}
-  .hero-sub strong{color:var(--acento); font-weight:800;}
-  .hero-cta-wrap{max-width:420px; margin:32px auto 0;}
+  .hero{padding:36px 0 56px;}
+  .hero-grid{display:grid; gap:40px; align-items:center;}
+  .hero h1{font-size:clamp(36px, 9.2vw, 62px); margin-bottom:24px;}
+  .hero p.lead + p.lead{margin-top:14px;}
+  .hero-cta{margin-top:30px;}
+  .hero-precio{margin-top:6px; font-size:15px; color:var(--cafe-suave);}
+  .hero-precio b{color:var(--cafe); font-weight:700;}
+  .hero-art{position:relative; width:min(100%, 360px); margin-inline:auto;}
+  .hero-art .foto{width:100%; height:auto; border-radius:46% 54% 42% 58% / 38% 44% 56% 62%; box-shadow:0 22px 50px rgba(58,42,34,.2);}
+  .hero-art .captura{position:absolute; left:-10px; bottom:-14px; width:98px; border-radius:16px; border:3px solid var(--marfil); box-shadow:0 12px 26px rgba(58,42,34,.28);}
+  .hero-art figcaption{font-size:12.5px; color:var(--cafe-suave); text-align:left; margin-top:22px; padding-left:96px; min-height:40px;}
 
-  /* ---------- PROBLEMA ---------- */
-  .problema{background:var(--crema-2);}
-  .problema h2.titulo{text-align:center;}
-  .problema .intro{font-size:15.5px; color:var(--cafe-suave); margin-bottom:18px; text-align:center;}
-  .problema ul{list-style:none; margin-bottom:22px;}
-  .problema li{
-    font-size:16px; color:var(--cafe); padding:13px 0 13px 16px;
-    border-left:2px solid var(--acento); margin-bottom:4px;
+  /* ---------- RECONOCIMIENTO ---------- */
+  .reconoce{background:var(--arena);}
+  .frase-lista{list-style:none; margin:34px 0 8px;}
+  .frase-lista li{
+    font-family:var(--serif); font-size:clamp(21px, 4.8vw, 28px); line-height:1.35; font-weight:400;
+    padding:22px 0; border-top:1px solid var(--linea);
   }
-  .problema .texto p{text-align:center;}
+  .frase-lista li:last-child{border-bottom:1px solid var(--linea);}
+  .reconoce .cierre{font-family:var(--serif); font-style:italic; font-size:clamp(20px, 4.4vw, 26px); color:var(--terracota); margin-top:30px; line-height:1.4;}
 
-  /* ---------- REENCUADRE ---------- */
-  .reencuadre{background:var(--crema);}
-  .reencuadre h2.titulo{text-align:center;}
-  .reencuadre .texto p.destacado{
-    font-family:'Playfair Display',serif; font-style:italic; font-weight:600; font-size:18px; line-height:1.5;
-    color:var(--cafe); border-top:1px solid var(--linea); padding-top:18px; margin-top:18px;
+  /* ---------- CAMBIO DE PERSPECTIVA ---------- */
+  .pausa{padding:0;}
+  .pausa-imagen{
+    height:clamp(220px, 46vw, 360px);
+    background:linear-gradient(180deg, rgba(251,246,238,0) 55%, var(--marfil) 100%), url('assets/hero-ritual.jpg') center 18% / cover no-repeat;
   }
-
-  /* ---------- MECANISMO ---------- */
-  .mecanismo{background:var(--crema-2);}
-  .mecanismo h2.titulo{text-align:center;}
-  .mecanismo .intro{font-size:15.5px; color:var(--cafe-suave); margin-bottom:22px; text-align:center;}
-  .paso-grid{display:flex; flex-direction:column; gap:10px;}
-  .paso-item{display:flex; gap:14px; align-items:flex-start; background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:16px;}
-  .paso-num{flex:none; width:30px; height:30px; border-radius:50%; background:var(--acento); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:900; font-family:'Playfair Display',serif;}
-  .paso-item h3{font-size:15.5px; font-weight:700; font-family:'Playfair Display',serif; color:var(--cafe); margin-bottom:3px; line-height:1.3;}
-  .paso-item p{font-size:14.5px; color:var(--cafe-suave);}
+  .pausa-texto{padding:8px 0 64px;}
+  .pausa-texto h2{max-width:14em; margin-inline:auto;}
+  .pausa-texto p{max-width:600px; margin-inline:auto;}
 
   /* ---------- PRODUCTO ---------- */
-  .producto{background:var(--crema);}
-  .producto h2.titulo{text-align:center;}
-  .producto .intro{margin-bottom:24px;}
-  .producto h3.sub-titulo{font-size:16px; font-family:'Playfair Display',serif; color:var(--acento); margin-bottom:12px; text-align:center;}
-  .funcion-lista{list-style:none;}
-  .funcion-lista li{padding:13px 0; border-bottom:1px solid var(--linea);}
-  .funcion-lista li:last-child{border-bottom:none;}
-  .funcion-lista b{display:block; font-size:15.5px; color:var(--cafe); margin-bottom:2px;}
-  .funcion-lista span{font-size:14.5px; color:var(--cafe-suave);}
+  .producto{background:var(--arena);}
+  .recursos{list-style:none; margin:32px 0 34px; counter-reset:r;}
+  .recursos li{counter-increment:r; display:grid; grid-template-columns:44px 1fr; gap:6px 12px; padding:18px 0; border-top:1px solid var(--linea);}
+  .recursos li:last-child{border-bottom:1px solid var(--linea);}
+  .recursos li::before{content:counter(r, decimal-leading-zero); font-family:var(--serif); font-size:20px; color:var(--terracota); line-height:1.3;}
+  .recursos b{display:block; font-size:18px; font-weight:700;}
+  .recursos span{color:var(--cafe-suave); font-size:16px; display:block;}
+  .nota{font-size:14.5px; color:var(--cafe-suave); margin-top:22px;}
 
-  /* ---------- DEMOSTRACIÓN ---------- */
-  .carrusel-wrap{background:var(--crema-2); overflow:hidden;}
-  .carrusel-wrap h2.titulo{text-align:center;}
-  .carrusel-wrap .intro{font-size:15.5px; color:var(--cafe-suave); text-align:center; margin-bottom:8px;}
-  .carrusel-track{
-    display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory;
-    padding:4px 22px 14px; -webkit-overflow-scrolling:touch;
-  }
-  .carrusel-track::-webkit-scrollbar{display:none;}
-  .feat-card{
-    scroll-snap-align:center; flex:none; width:78%; max-width:280px;
-    background:var(--cafe); color:var(--crema); border-radius:18px; padding:0 0 18px;
-    display:flex; flex-direction:column; gap:8px;
-  }
-  .feat-card img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; border-radius:18px 18px 0 0;}
-  .feat-card h3{font-size:16.5px; font-weight:700; padding:0 16px;}
-  .feat-card p{font-size:13.5px; color:#D9CDBB; padding:0 16px;}
-  .dots{display:flex; justify-content:center; gap:6px; margin-top:4px;}
-  .dot{width:6px; height:6px; border-radius:50%; background:var(--linea);}
-  .dot.active{background:var(--acento); width:16px; border-radius:4px;}
+  /* ---------- CÓMO FUNCIONA ---------- */
+  .pasos{list-style:none; margin-top:30px; display:grid; gap:26px;}
+  .pasos li{display:grid; grid-template-columns:54px 1fr; gap:14px; align-items:start;}
+  .pasos .n{font-family:var(--serif); font-size:44px; line-height:1; color:var(--terracota-claro); font-style:italic;}
+  .pasos p{font-size:18px; margin:0; padding-top:6px;}
 
-  /* ---------- TESTIMONIOS ---------- */
-  .testimonios{background:var(--crema);}
-  .testimonios h2.titulo{text-align:center;}
-  .testi-img{width:100%; border-radius:16px; margin-bottom:16px; box-shadow:0 10px 30px rgba(0,0,0,.15); background:#000;}
-  .testi-img:last-child{margin-bottom:0;}
+  /* ---------- GALERÍA ---------- */
+  .galeria{background:var(--arena);}
+  .galeria-track{
+    display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+    padding:6px 20px 18px; margin:30px -20px 0;
+  }
+  .galeria-track::-webkit-scrollbar{display:none;}
+  .vista{scroll-snap-align:center; flex:none; width:min(72vw, 270px);}
+  .vista img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:top; border-radius:22px; box-shadow:0 14px 30px rgba(58,42,34,.2); background:var(--cafe);}
+  .vista h3{font-family:var(--serif); font-size:19px; font-weight:600; margin-top:16px;}
+  .vista p{font-size:15px; color:var(--cafe-suave); margin-top:4px;}
+  .desliza{font-size:13.5px; color:var(--cafe-suave); margin-top:12px;}
 
   /* ---------- OFERTA ---------- */
-  .oferta{background:var(--crema-2);}
-  .oferta h2.titulo{text-align:center;}
-  .price-card{
-    background:var(--blanco); border-radius:20px; padding:28px 22px;
-    box-shadow:0 12px 30px rgba(60,41,32,.1); text-align:center; border:1px solid var(--linea);
-  }
-  .price-big{font-family:'Playfair Display',serif; font-size:46px; font-weight:700; line-height:1;}
-  .price-note{font-size:13.5px; color:var(--cafe-suave); margin:10px 0 20px;}
-  .garantia-box{display:flex; gap:14px; align-items:center; text-align:left; margin-top:24px; padding-top:22px; border-top:1px solid var(--linea);}
-  .garantia-box img{flex:none; width:88px; height:auto; aspect-ratio:1/1; object-fit:contain;}
-  .garantia-box h3{font-size:15px; font-family:'Playfair Display',serif; color:var(--acento); margin-bottom:3px;}
-  .garantia-box p{font-size:13.5px; color:var(--cafe-suave);}
+  .oferta-card{background:#fff; border-radius:28px; padding:36px 26px; box-shadow:0 22px 60px rgba(58,42,34,.12); max-width:560px; margin:34px auto 0; text-align:center;}
+  .oferta-card .nombre{font-family:var(--serif); font-size:24px; font-weight:600;}
+  .oferta-card .precio{font-family:var(--serif); font-size:60px; font-weight:600; line-height:1.1; margin:8px 0 14px;}
+  .oferta-card .desc{font-size:16px; color:var(--cafe-suave);}
+  .oferta-card ul{list-style:none; text-align:left; margin:26px 0 8px;}
+  .oferta-card li{padding:9px 0 9px 28px; position:relative; font-size:16px; border-top:1px solid var(--linea);}
+  .oferta-card li::before{content:""; position:absolute; left:4px; top:17px; width:12px; height:7px; border-left:2px solid var(--terracota); border-bottom:2px solid var(--terracota); transform:rotate(-45deg);}
+  .oferta-datos{text-align:left; font-size:15.5px; color:var(--cafe-suave); margin:22px 0 28px; padding-top:18px; border-top:1px solid var(--linea);}
+  .oferta-datos p{margin-top:8px;}
+  .oferta-datos b{color:var(--cafe);}
 
-  /* ---------- PARA QUIÉN ---------- */
-  .filtro{background:var(--crema);}
-  .filtro h2.titulo{text-align:center;}
-  .filtro-card{background:var(--blanco); border:1px solid var(--linea); border-radius:14px; padding:18px; margin-bottom:14px;}
-  .filtro-card h3{font-size:13.5px; font-weight:900; margin-bottom:12px; font-family:'Lato',sans-serif; letter-spacing:.04em;}
-  .filtro-card.si h3{color:var(--acento-2);}
-  .filtro-card.no h3{color:var(--acento);}
-  .filtro-item{display:flex; gap:9px; align-items:flex-start; font-size:14.5px; margin-bottom:9px;}
-  .filtro-item:last-child{margin-bottom:0;}
-  .filtro-item b{flex:none;}
+  /* ---------- GARANTÍA ---------- */
+  .garantia{padding:8px 0 64px;}
+  .garantia-fila{display:flex; gap:20px; align-items:center; max-width:560px; margin:0 auto;}
+  .garantia-fila img{flex:none; width:92px; height:92px; object-fit:contain;}
+  .garantia-fila h3{font-family:var(--serif); font-size:21px; font-weight:600; margin-bottom:4px;}
+  .garantia-fila p{font-size:15.5px; color:var(--cafe-suave); margin:0;}
 
   /* ---------- FAQ ---------- */
-  .faq{background:var(--crema-2);}
-  .faq h2.titulo{text-align:center;}
-  .faq-item{background:var(--blanco); border:1px solid var(--linea); border-radius:14px; margin-bottom:10px; overflow:hidden;}
-  .faq-q{
-    width:100%; text-align:left; background:none; border:none; cursor:pointer;
-    padding:16px 44px 16px 16px; font-size:15px; font-weight:700; color:var(--cafe);
-    font-family:'Lato',sans-serif; position:relative; line-height:1.4;
+  .faq{background:var(--arena);}
+  .faq details{border-top:1px solid var(--linea);}
+  .faq details:last-of-type{border-bottom:1px solid var(--linea);}
+  .faq summary{list-style:none; cursor:pointer; padding:20px 40px 20px 0; font-weight:700; font-size:17px; position:relative; line-height:1.4;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+"; position:absolute; right:4px; top:50%; transform:translateY(-50%); font-size:26px; font-weight:400; color:var(--terracota);}
+  .faq details[open] summary::after{content:"–";}
+  .faq .resp{padding:0 0 22px; color:var(--cafe-suave); font-size:16.5px;}
+
+  /* ---------- CIERRE ---------- */
+  .cierre-final{background:var(--cafe); color:var(--marfil); text-align:center; padding:0;}
+  .cierre-imagen{height:clamp(200px, 42vw, 320px); background:linear-gradient(180deg, rgba(58,42,34,.1) 0%, var(--cafe) 100%), url('assets/hero-ritual.jpg') 70% 60% / cover no-repeat;}
+  .cierre-cuerpo{padding:12px 0 72px;}
+  .cierre-final h2{color:var(--marfil); max-width:15em; margin-inline:auto;}
+  .cierre-final h2 em{color:#E3A98E;}
+  .cierre-final p{color:#E6D9C8; max-width:560px; margin-inline:auto;}
+  .cierre-final .cta{margin-top:30px; background:#D0714F; box-shadow:0 12px 28px rgba(0,0,0,.3);}
+  .cierre-final .cta:hover{background:#B85F3F;}
+  .cierre-final .cta-micro{color:#C9B9A5;}
+
+  footer{background:#241A15; color:#B5A491; padding:30px 0; font-size:13px; line-height:1.7;}
+
+  @media (min-width:860px){
+    section{padding:96px 0;}
+    .hero{padding:56px 0 88px;}
+    .hero-grid{grid-template-columns:1.15fr .85fr; gap:72px;}
+    .hero-art{width:100%; max-width:400px;}
+    .hero-art .captura{width:124px; left:-26px;}
+    .galeria-track{margin-inline:0; padding-inline:0; justify-content:center;}
+    .vista{width:190px;}
+    .pausa-texto{padding-bottom:96px;}
+    .centro-desk{text-align:center;}
   }
-  .faq-q::after{
-    content:"+"; position:absolute; right:16px; top:50%; transform:translateY(-50%);
-    font-size:20px; color:var(--acento); font-weight:900; transition:transform .25s ease;
-  }
-  .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg);}
-  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
-  .faq-a-inner{padding:0 16px 16px; font-size:14.5px; color:var(--cafe-suave);}
-  .faq-item.open .faq-a{max-height:320px;}
-
-  /* ---------- CTA FINAL ---------- */
-  .cta-final{background:linear-gradient(180deg, var(--cafe) 0%, var(--oscuro) 100%); color:var(--crema); text-align:center;}
-  .cta-final h2.titulo{color:var(--crema);}
-  .cta-final p{font-size:15.5px; color:#D9CDBB; margin-bottom:14px;}
-  .cta-final p:last-of-type{margin-bottom:26px;}
-  .cta-final .cta-micro{color:#C9BCA6;}
-
-  footer{background:var(--oscuro); color:#9C8E7A; padding:28px 0; font-size:12px;}
-  footer .disclaimer{line-height:1.6;}
-
-  @media (min-width:600px){ .wrap{max-width:560px;} .hero .wrap{max-width:720px;} }
 </style>
 </head>
 <body>
 
-<div class="top-header">
-  <div class="brand"><img src="assets/logo.jpg" alt="Sanando Mi Historia Familiar"> Sanando Mi Historia Familiar</div>
-  <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-mini">Quiero acceder</a>
-</div>
+<header class="marca">
+  <span><img src="assets/logo.jpg" alt="" width="32" height="32">Sanando Mi Historia Familiar</span>
+</header>
+
+<main>
 
 <!-- ============ 1. HERO ============ -->
 <section class="hero">
-  <div class="wrap">
-    <span class="hero-preheader reveal">Hay historias que no quieres seguir repitiendo</span>
-    <h1 class="reveal">No quieres que tu historia termine siendo <strong>la misma que un día te prometiste cambiar.</strong></h1>
-    <div class="hero-sub reveal">
-      <p>Tal vez has visto repetirse formas de amar, de relacionarte o de vivir situaciones que te duelen. Y aunque deseas hacer las cosas de otra manera, a veces no entiendes por qué vuelves a encontrarte en el mismo lugar.</p>
-      <p><strong>No tienes que tener todas las respuestas hoy.</strong></p>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Hay historias que merecen ser miradas de otra manera</span>
+      <h1>No quieres seguir repitiendo <em>una historia que nunca elegiste.</em></h1>
+      <p class="lead">A veces reconocemos en nuestra vida situaciones, vínculos o formas de reaccionar que nos gustaría comprender mejor.</p>
+      <p class="lead">Sanando Mi Historia Familiar te invita a explorar tu historia, observar posibles patrones familiares y reflexionar sobre lo que deseas construir de aquí en adelante.</p>
+      <div class="hero-cta">
+        <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta">Quiero explorar mi historia</a>
+        <div class="cta-micro">Una experiencia digital · Explórala a tu ritmo</div>
+        <div class="hero-precio"><b>US$14.99</b></div>
+      </div>
     </div>
-    <img src="assets/hero-ritual.jpg" alt="Mujer mirando una foto antigua de su familia frente a un árbol de linaje" class="hero-blob reveal" width="460" height="575" fetchpriority="high">
-    <div class="hero-sub reveal">
-      <p>Con Sanando Mi Historia Familiar puedes <strong>explorar tus vínculos, observar patrones familiares</strong> y mirar tu historia desde una perspectiva diferente.</p>
-    </div>
-    <div class="hero-cta-wrap reveal">
-      <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-btn">Quiero empezar a explorar mi historia</a>
-      <div class="cta-micro">Una experiencia digital interactiva · A tu ritmo · Desde tu celular</div>
-    </div>
+    <figure class="hero-art">
+      <img class="foto" src="assets/hero-ritual.jpg" alt="Mujer mirando una fotografía antigua de su familia frente a un árbol de linaje" width="460" height="575" fetchpriority="high">
+      <img class="captura" src="assets/mockup-mapa.jpg" alt="Captura real del mapa familiar de la aplicación" width="560" height="700" loading="lazy">
+      <figcaption>Imagen ilustrativa · la captura pequeña es de la app real</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ============ 2. IDENTIFICACIÓN DEL PROBLEMA ============ -->
-<section class="problema">
-  <div class="wrap">
-    <h2 class="titulo reveal">¿Te has encontrado otra vez en un lugar que prometiste no repetir?</h2>
-    <p class="intro reveal">Quizá has observado algunas de estas situaciones en tu vida:</p>
-    <ul>
-      <li class="reveal">Repites formas de amar o de relacionarte que te duelen, aunque quieras hacerlo diferente.</li>
-      <li class="reveal">Te cuesta poner límites o hablar de ciertos temas con tu familia.</li>
-      <li class="reveal">Sientes culpa cuando te das algo a ti, incluso cuando puedes permitírtelo.</li>
-      <li class="reveal">Te cuesta sentir tranquilidad cuando piensas en dinero.</li>
-      <li class="reveal">Has aprendido a asociar el dinero con discusiones, miedo o sacrificio.</li>
+<!-- ============ 2. RECONOCIMIENTO EMOCIONAL ============ -->
+<section class="reconoce">
+  <div class="wrap narrow">
+    <h2>A veces sabes que algo se repite. <em>Lo difícil es comprenderlo.</em></h2>
+    <ul class="frase-lista">
+      <li>Hay situaciones en tu vida que te gustaría entender mejor.</li>
+      <li>Algunas dinámicas familiares siguen presentes en tu manera de relacionarte.</li>
+      <li>Quieres mirar tu historia con más conciencia y encontrar nuevas formas de avanzar.</li>
     </ul>
-    <div class="texto reveal">
-      <p>Estas situaciones no tienen una única explicación y no necesariamente se originan en la familia.</p>
-      <p>Sin embargo, explorar lo que aprendiste en tu entorno, incluida tu relación con el dinero, puede ayudarte a observar tu historia desde una perspectiva diferente.</p>
-    </div>
+    <p class="cierre">No necesitas tener todas las respuestas para empezar a hacerte preguntas diferentes.</p>
   </div>
 </section>
 
-<!-- ============ 3. REENCUADRE ============ -->
-<section class="reencuadre">
-  <div class="wrap">
-    <h2 class="titulo reveal">Lo que aprendiste sobre el dinero también forma parte de tu historia</h2>
-    <div class="texto reveal">
-      <p>Nuestra relación con el dinero no se construye únicamente a partir de decisiones económicas.</p>
-      <p>También puede estar influida por lo que vimos en casa, las conversaciones que escuchamos y las creencias que aprendimos sobre el trabajo, el ahorro, el gasto y la seguridad.</p>
-      <p>Tal vez en tu familia el dinero era motivo de preocupación. Tal vez aprendiste que había que sacrificarse para conseguirlo, que hablar de él era incómodo o que disfrutarlo podía generar culpa.</p>
-      <p>No significa que tu historia determine tu futuro ni que todo lo que te sucede venga de tus antepasados.</p>
-      <p class="destacado">Significa que puedes darte un espacio para observar lo aprendido, reconocer qué ideas siguen teniendo sentido para ti y reflexionar sobre cuáles deseas cuestionar.</p>
-    </div>
+<!-- ============ 3. CAMBIO DE PERSPECTIVA ============ -->
+<section class="pausa centro">
+  <div class="pausa-imagen" role="img" aria-label="Detalle de la imagen: un árbol y figuras familiares en una pared"></div>
+  <div class="wrap pausa-texto">
+    <h2>Tu historia tiene muchas capas. <em>Puedes empezar por una.</em></h2>
+    <p class="lead">Explorar tu historia familiar puede abrir un espacio para observar los vínculos, las experiencias y las dinámicas que han formado parte de tu vida.</p>
+    <p class="lead">Sanando Mi Historia Familiar está pensado para acompañarte en esa exploración con las herramientas que incluye la experiencia.</p>
   </div>
 </section>
 
-<!-- ============ 4. MECANISMO ============ -->
-<section class="mecanismo">
-  <div class="wrap">
-    <h2 class="titulo reveal">Empieza por explorar la historia que hay detrás de tus patrones</h2>
-    <p class="intro reveal">Sanando Mi Historia Familiar es una experiencia digital interactiva basada en constelaciones familiares que te permite explorar tu historia familiar mediante herramientas guiadas de reflexión.</p>
-    <div class="paso-grid">
-      <div class="paso-item reveal"><div class="paso-num">1</div><div><h3>Explora tu mapa familiar</h3><p>Conoce y organiza los vínculos familiares con el mapa interactivo de la aplicación.</p></div></div>
-      <div class="paso-item reveal"><div class="paso-num">2</div><div><h3>Observa las historias y creencias</h3><p>Utiliza los rituales y ejercicios guiados para reflexionar sobre lo que aprendiste en tu familia y cómo puede relacionarse con tu forma de vivir determinadas situaciones.</p></div></div>
-      <div class="paso-item reveal"><div class="paso-num">3</div><div><h3>Dedica un espacio a la reflexión</h3><p>Usa el diario y las respiraciones para registrar tus observaciones y continuar explorando a tu propio ritmo.</p></div></div>
-      <div class="paso-item reveal"><div class="paso-num">4</div><div><h3>Decide qué quieres mirar de otra manera</h3><p>La experiencia busca facilitar la reflexión personal. No promete eliminar patrones automáticamente ni sustituye la orientación financiera o psicológica profesional cuando sea necesaria.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5. PRESENTACIÓN DEL PRODUCTO ============ -->
+<!-- ============ 4. PRESENTACIÓN DEL PRODUCTO ============ -->
 <section class="producto">
+  <div class="wrap narrow">
+    <span class="eyebrow">Qué es</span>
+    <h2>Un espacio para explorar tu historia, <em>a tu ritmo.</em></h2>
+    <p class="lead">Una experiencia digital que se usa desde el navegador de tu celular o computador, con estas herramientas:</p>
+    <ol class="recursos">
+      <li><div><b>Hacer mi consulta</b><span>Eliges lo que se repite en tu vida y recibes una primera reflexión para empezar.</span></div></li>
+      <li><div><b>Mapa de mi familia</b><span>Ubicas a las personas de tu familia y observas el sistema que forman.</span></div></li>
+      <li><div><b>Rituales de sanación</b><span>20 rituales organizados por temas, para elegir cuál explorar.</span></div></li>
+      <li><div><b>Detector de exclusiones</b><span>Te ayuda a pensar en quién podría no estar siendo nombrado en tu historia.</span></div></li>
+      <li><div><b>Mi diario</b><span>Un lugar para guardar lo que observas y lo que sientes.</span></div></li>
+    </ol>
+    <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta">Quiero explorar mi historia</a>
+    <p class="nota">Es una experiencia de autoconocimiento: no es terapia ni sustituye la atención profesional.</p>
+  </div>
+</section>
+
+<!-- ============ 5. ASÍ FUNCIONA ============ -->
+<section>
+  <div class="wrap narrow">
+    <span class="eyebrow">Así funciona</span>
+    <h2>Empieza de una forma <em>sencilla.</em></h2>
+    <ol class="pasos">
+      <li><span class="n">1</span><p>Accede a la experiencia digital después de completar tu compra.</p></li>
+      <li><span class="n">2</span><p>Explora las herramientas que incluye y sigue las indicaciones de cada una.</p></li>
+      <li><span class="n">3</span><p>Avanza a tu ritmo, dedicando tiempo a observar y reflexionar.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 6. MIRA LO QUE ENCONTRARÁS DENTRO ============ -->
+<section class="galeria">
+  <div class="wrap centro">
+    <span class="eyebrow">Capturas reales de la app</span>
+    <h2>Mira lo que <em>encontrarás dentro.</em></h2>
+  </div>
   <div class="wrap">
-    <h2 class="titulo reveal">Conoce Sanando Mi Historia Familiar</h2>
-    <div class="texto intro reveal">
-      <p>Una experiencia digital para explorar tu historia familiar, observar patrones y dedicar tiempo a comprender mejor los vínculos y aprendizajes que forman parte de tu vida.</p>
-      <p>Accede a las herramientas disponibles desde tu dispositivo y avanza a tu propio ritmo.</p>
+    <div class="galeria-track" role="region" aria-label="Capturas de la aplicación" tabindex="0">
+      <figure class="vista"><img src="assets/mockup-mapa.jpg" alt="Captura del mapa familiar" width="560" height="700" loading="lazy"><h3>Mapa de mi familia</h3><p>Coloca a los tuyos y observa el sistema.</p></figure>
+      <figure class="vista"><img src="assets/mockup-rituales.jpg" alt="Captura de la biblioteca de rituales" width="560" height="700" loading="lazy"><h3>Rituales de sanación</h3><p>Elige el tema que quieres explorar.</p></figure>
+      <figure class="vista"><img src="assets/mockup-rituales-guiados.jpg" alt="Captura de un ritual guiado" width="560" height="700" loading="lazy"><h3>Rituales guiados</h3><p>Paso a paso, para perdonar y soltar.</p></figure>
+      <figure class="vista"><img src="assets/mockup-aprende.jpg" alt="Captura de la sección Aprende constelaciones" width="560" height="700" loading="lazy"><h3>Aprende constelaciones</h3><p>Entiende qué son, con lenguaje sencillo.</p></figure>
+      <figure class="vista"><img src="assets/mockup-diario.jpg" alt="Captura del diario personal" width="560" height="700" loading="lazy"><h3>Mi diario</h3><p>Guarda lo que vas observando.</p></figure>
     </div>
-    <h3 class="sub-titulo reveal">Qué recibes</h3>
-    <ul class="funcion-lista">
-      <li class="reveal"><b>Test inicial</b><span>Una primera guía para identificar por dónde empezar tu exploración.</span></li>
-      <li class="reveal"><b>Mapa interactivo de tu sistema familiar</b><span>Para ubicar a las personas de tu familia y observar sus vínculos.</span></li>
-      <li class="reveal"><b>Biblioteca de rituales</b><span>Para elegir el tema que quieres explorar en cada momento.</span></li>
-      <li class="reveal"><b>Rituales guiados</b><span>Ejercicios paso a paso para acompañar tu reflexión.</span></li>
-      <li class="reveal"><b>Detector de exclusiones</b><span>Para identificar a quién puede estar faltando en tu mapa familiar.</span></li>
-      <li class="reveal"><b>Sección educativa</b><span>Explica qué haces en cada herramienta y por qué, sin tecnicismos.</span></li>
-      <li class="reveal"><b>Diario interactivo</b><span>Para registrar lo que observas y sientes durante la exploración.</span></li>
-      <li class="reveal"><b>Respiraciones y recursos</b><span>Para volver al cuerpo antes de cada ejercicio.</span></li>
-    </ul>
+    <p class="desliza centro">Desliza para ver más →</p>
   </div>
 </section>
 
-<!-- ============ 6. DEMOSTRACIÓN VISUAL ============ -->
-<section class="carrusel-wrap">
-  <div class="wrap" style="padding-bottom:0;">
-    <h2 class="titulo reveal">Mira cómo es la experiencia por dentro</h2>
-    <p class="intro reveal">Antes de decidir, conoce las herramientas que forman parte de Sanando Mi Historia Familiar.</p>
-    <div class="reveal" style="font-size:13px; color:var(--cafe-suave); margin-bottom:6px; text-align:center;">Desliza para ver más →</div>
-  </div>
-  <div class="carrusel-track" id="carrusel">
-    <div class="feat-card"><img loading="lazy" src="assets/mockup-mapa.jpg" alt="Mapa familiar interactivo"><h3>Tu mapa familiar</h3><p>Ubica a las personas de tu familia y observa sus vínculos.</p></div>
-    <div class="feat-card"><img loading="lazy" src="assets/mockup-rituales.jpg" alt="Biblioteca de rituales"><h3>Biblioteca de rituales</h3><p>Elige el tema que quieres explorar.</p></div>
-    <div class="feat-card"><img loading="lazy" src="assets/mockup-rituales-guiados.jpg" alt="Ritual guiado paso a paso"><h3>Rituales guiados</h3><p>Ejercicios paso a paso para acompañar tu reflexión.</p></div>
-    <div class="feat-card"><img loading="lazy" src="assets/mockup-diario.jpg" alt="Diario personal"><h3>Tu diario</h3><p>Registra lo que observas durante tu exploración.</p></div>
-    <div class="feat-card"><img loading="lazy" src="assets/mockup-aprende.jpg" alt="Sección educativa"><h3>Sección educativa</h3><p>Entiende qué haces en cada herramienta y por qué.</p></div>
-  </div>
-  <div class="dots" id="dots"></div>
-  <div style="height:8px;"></div>
-</section>
-
-<!-- ============ 7. PRUEBA SOCIAL ============ -->
-<section class="testimonios">
+<!-- ============ 7. OFERTA ============ -->
+<section id="oferta" class="centro">
   <div class="wrap">
-    <h2 class="titulo reveal">Mensajes de personas que usaron la experiencia</h2>
-    <img loading="lazy" src="assets/testimonio-2.jpg" alt="Mensaje recibido de una usuaria" class="testi-img reveal">
-    <img loading="lazy" src="assets/testimonio-4.jpg" alt="Mensaje recibido de una usuaria" class="testi-img reveal">
-    <img loading="lazy" src="assets/testimonio-1.jpg" alt="Mensaje recibido de una usuaria" class="testi-img reveal">
+    <h2>Tu próximo paso <em>puede empezar aquí.</em></h2>
+    <div class="oferta-card">
+      <div class="nombre">Sanando Mi Historia Familiar</div>
+      <div class="precio">US$14.99</div>
+      <p class="desc">Una experiencia digital para explorar tu historia familiar, observar posibles patrones y dedicar un espacio a la reflexión personal.</p>
+      <ul>
+        <li>Hacer mi consulta</li>
+        <li>Mapa de mi familia</li>
+        <li>Rituales de sanación (20 rituales por temas)</li>
+        <li>Rituales guiados</li>
+        <li>Detector de exclusiones</li>
+        <li>Aprende constelaciones</li>
+        <li>Mi diario</li>
+      </ul>
+      <div class="oferta-datos">
+        <p><b>Cómo accedes:</b> el pago se hace en Hotmart y, al completarlo, recibes las indicaciones para ingresar a la experiencia.</p>
+        <p><b>Qué necesitas:</b> un celular o computador con conexión a internet.</p>
+      </div>
+      <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta">Quiero empezar a explorar mi historia</a>
+      <div class="cta-micro">Pago procesado por Hotmart. Consulta las condiciones de acceso antes de completar tu compra.</div>
+    </div>
   </div>
 </section>
 
-<!-- ============ 8. OFERTA ============ -->
-<section class="oferta" id="oferta">
+<!-- ============ 8. GARANTÍA ============ -->
+<section class="garantia">
   <div class="wrap">
-    <h2 class="titulo reveal">Empieza a explorar tu historia familiar</h2>
-    <div class="price-card reveal">
-      <div class="price-big">US$14,99</div>
-      <div class="price-note">Pago único</div>
-      <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-btn" style="box-shadow:none;">Quiero explorar mi historia familiar</a>
-      <div class="cta-micro">Consulta las condiciones de acceso y garantía antes de completar tu compra.</div>
-      <div class="garantia-box">
-        <img loading="lazy" src="assets/garantia-7dias.png" alt="Garantía de 7 días" width="180" height="180">
-        <div>
-          <h3>Garantía de 7 días</h3>
-          <p>Puedes explorar la experiencia y, si no es para ti, solicitar la devolución dentro de esos 7 días según la política de garantía aplicable.</p>
-        </div>
+    <div class="garantia-fila">
+      <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="180" height="180" loading="lazy">
+      <div>
+        <h3>Garantía de 7 días</h3>
+        <p>Puedes explorar la experiencia y, si no es para ti, solicitar la devolución dentro de esos 7 días según la política de garantía aplicable.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 9. PARA QUIÉN ES ============ -->
-<section class="filtro">
-  <div class="wrap">
-    <h2 class="titulo reveal">¿Esta experiencia es para ti?</h2>
-    <div class="filtro-card si reveal">
-      <h3>PUEDE SER PARA TI SI:</h3>
-      <div class="filtro-item"><b>✓</b> Quieres explorar tu historia familiar.</div>
-      <div class="filtro-item"><b>✓</b> Te interesa observar creencias aprendidas sobre el dinero.</div>
-      <div class="filtro-item"><b>✓</b> Deseas reflexionar sobre patrones familiares y relacionales.</div>
-      <div class="filtro-item"><b>✓</b> Buscas una experiencia digital de autoconocimiento que puedas utilizar a tu ritmo.</div>
-    </div>
-    <div class="filtro-card no reveal">
-      <h3>NO ES UNA SOLUCIÓN FINANCIERA SI:</h3>
-      <div class="filtro-item"><b>×</b> Buscas un método para ganar dinero.</div>
-      <div class="filtro-item"><b>×</b> Necesitas asesoría para gestionar deudas o inversiones.</div>
-      <div class="filtro-item"><b>×</b> Esperas que una aplicación resuelva automáticamente tus problemas económicos.</div>
-      <div class="filtro-item"><b>×</b> Buscas resultados garantizados o una explicación única para todas tus dificultades.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 10. FAQ ============ -->
+<!-- ============ 9. PREGUNTAS FRECUENTES ============ -->
 <section class="faq">
-  <div class="wrap">
-    <h2 class="titulo reveal">Preguntas frecuentes</h2>
-    <div class="faq-item">
-      <button class="faq-q">¿Qué es Sanando Mi Historia Familiar?</button>
-      <div class="faq-a"><div class="faq-a-inner">Es una experiencia digital interactiva basada en constelaciones familiares para explorar tu historia familiar mediante las herramientas disponibles en la aplicación.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Necesito experiencia previa en constelaciones familiares?</button>
-      <div class="faq-a"><div class="faq-a-inner">No. La experiencia incluye una sección educativa que explica qué haces en cada herramienta y por qué.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Cómo puede ayudarme a explorar mi relación con el dinero?</button>
-      <div class="faq-a"><div class="faq-a-inner">Puede ofrecerte un espacio para observar creencias, aprendizajes y experiencias familiares que quizá influyen en tu manera de relacionarte con el dinero. No garantiza cambios económicos ni determina el origen de tus dificultades.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Qué incluye la compra?</button>
-      <div class="faq-a"><div class="faq-a-inner">Test inicial, mapa interactivo de tu sistema familiar, biblioteca de rituales, rituales guiados, detector de exclusiones, sección educativa, diario interactivo, y respiraciones y recursos.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Cómo accedo después de pagar?</button>
-      <div class="faq-a"><div class="faq-a-inner">El pago se realiza en el checkout de Hotmart. Al completarlo, recibirás las instrucciones para ingresar a la experiencia.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Puedo utilizarlo desde mi celular?</button>
-      <div class="faq-a"><div class="faq-a-inner">Sí, la experiencia está pensada para usarse desde el celular.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Tiene garantía?</button>
-      <div class="faq-a"><div class="faq-a-inner">Sí, 7 días. Puedes solicitar la devolución dentro de ese plazo según la política de garantía aplicable.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Es una herramienta para ganar dinero?</button>
-      <div class="faq-a"><div class="faq-a-inner">No. Es una experiencia de exploración familiar y autoconocimiento. No es un curso de finanzas ni promete aumentar ingresos, eliminar deudas o atraer abundancia.</div></div>
-    </div>
+  <div class="wrap narrow">
+    <h2>Preguntas <em>frecuentes</em></h2>
+    <details><summary>¿Qué es Sanando Mi Historia Familiar?</summary><div class="resp">Es una experiencia digital para explorar tu historia familiar, observar posibles patrones y reflexionar. Se usa desde el navegador.</div></details>
+    <details><summary>¿Qué incluye la experiencia?</summary><div class="resp">Hacer mi consulta, mapa de mi familia, rituales de sanación (20 por temas), rituales guiados, detector de exclusiones, la sección Aprende constelaciones y un diario.</div></details>
+    <details><summary>¿Cómo recibo el acceso después de comprar?</summary><div class="resp">El pago se realiza en Hotmart. Al completarlo, recibes las indicaciones para ingresar a la experiencia.</div></details>
+    <details><summary>¿Necesito experiencia previa para utilizarla?</summary><div class="resp">No. La sección Aprende constelaciones explica qué son las constelaciones familiares con lenguaje sencillo.</div></details>
+    <details><summary>¿Puedo avanzar a mi propio ritmo?</summary><div class="resp">Sí. Las herramientas están disponibles desde el inicio y puedes usarlas cuando quieras.</div></details>
+    <details><summary>¿Cuál es el precio?</summary><div class="resp">US$14.99.</div></details>
+    <details><summary>¿Cómo funciona la garantía de 7 días?</summary><div class="resp">Si la experiencia no es para ti, puedes solicitar la devolución dentro de los 7 días siguientes a tu compra, según la política de garantía aplicable.</div></details>
   </div>
 </section>
 
-<!-- ============ 11. CTA FINAL ============ -->
-<section class="cta-final">
-  <div class="wrap">
-    <h2 class="titulo reveal">Date un espacio para explorar tu historia</h2>
-    <p class="reveal">Tu relación con el dinero tiene una historia. Puedes empezar por observar lo que aprendiste, explorar tus vínculos familiares y reflexionar sobre las creencias que hoy forman parte de tu vida.</p>
-    <p class="reveal">Sanando Mi Historia Familiar te ofrece herramientas digitales para acompañar esa exploración a tu propio ritmo.</p>
-    <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta-btn reveal">Quiero explorar mi historia familiar</a>
-    <div class="cta-micro reveal">Consulta el precio, las condiciones de acceso y la garantía antes de comprar.</div>
+<!-- ============ 10. CIERRE EMOCIONAL ============ -->
+<section class="cierre-final">
+  <div class="cierre-imagen" role="img" aria-label="Mujer sosteniendo una fotografía familiar a la luz cálida de una ventana"></div>
+  <div class="wrap cierre-cuerpo">
+    <h2>No tienes que comprender toda tu historia hoy. <em>Puedes empezar por mirarla.</em></h2>
+    <p>Date un espacio para explorar tus vínculos, observar tu historia y reflexionar sobre lo que deseas llevar contigo hacia el futuro.</p>
+    <a href="https://pay.hotmart.com/P106079287R?off=jkhz2lgc" class="cta">Quiero explorar mi historia</a>
+    <div class="cta-micro">Consulta el contenido, el precio y las condiciones antes de completar tu compra.</div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="disclaimer">Experiencia digital basada en constelaciones familiares. No sustituye la atención psicológica profesional ni el asesoramiento financiero, y no garantiza resultados económicos ni personales: dependen de cómo cada persona aplique la experiencia. Producto y contenido a cargo de Grupo Amart; el pago es procesado por Hotmart, quien no tiene responsabilidad sobre el contenido del producto. © 2026 Sanando Mi Historia Familiar · Vibrasconsentido.</div>
+    Experiencia digital de autoconocimiento basada en constelaciones familiares. No sustituye la atención psicológica profesional y no garantiza resultados emocionales, económicos ni relacionales: dependen de cómo cada persona aplique la experiencia. Producto y contenido a cargo de Grupo Amart; el pago es procesado por Hotmart, quien no tiene responsabilidad sobre el contenido del producto. © 2026 Sanando Mi Historia Familiar · Vibrasconsentido.
   </div>
 </footer>
 
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:.15});
-  reveals.forEach(el=>io.observe(el));
-
-  document.querySelectorAll('.faq-item').forEach(item=>{
-    item.querySelector('.faq-q').addEventListener('click', ()=>{
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(o=>o.classList.remove('open'));
-      if(!wasOpen) item.classList.add('open');
-    });
-  });
-
-  const track = document.getElementById('carrusel');
-  if(track){
-    const dotsWrap = document.getElementById('dots');
-    const cards = track.children.length;
-    for(let i=0;i<cards;i++){
-      const d = document.createElement('div');
-      d.className = 'dot' + (i===0 ? ' active' : '');
-      dotsWrap.appendChild(d);
-    }
-    function updateDots(){
-      const cardWidth = track.children[0].offsetWidth + 14;
-      const idx = Math.round(track.scrollLeft / cardWidth);
-      [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active', i===idx));
-    }
-    track.addEventListener('scroll', ()=>{ requestAnimationFrame(updateDots); });
-
-    let autoIdx = 0;
-    let userInteracted = false;
-    track.addEventListener('touchstart', ()=>userInteracted = true, {passive:true});
-    track.addEventListener('mousedown', ()=>userInteracted = true);
-    setInterval(()=>{
-      if(userInteracted) return;
-      autoIdx = (autoIdx + 1) % cards;
-      const cardWidth = track.children[0].offsetWidth + 14;
-      track.scrollTo({left: autoIdx * cardWidth, behavior:'smooth'});
-    }, 3200);
-  }
-</script>
 </body>
 </html>
