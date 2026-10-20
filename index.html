@@ -113,6 +113,29 @@
   .recursos span{color:var(--cafe-suave); font-size:16px; display:block;}
   .nota{font-size:14.5px; color:var(--cafe-suave); margin-top:22px;}
 
+  /* ---------- 21 DÍAS (protagonista) ---------- */
+  .badge21{display:inline-flex; align-items:center; gap:12px; background:var(--cafe); color:var(--marfil); border-radius:999px; padding:7px 20px 7px 8px; font-size:15px; font-weight:700; margin-bottom:20px; line-height:1.3;}
+  .badge21 b{font-family:var(--serif); font-size:24px; background:var(--terracota); color:#fff; border-radius:999px; min-width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center; padding:0 10px;}
+  .veintiuno{background:var(--cafe); color:var(--marfil); text-align:center;}
+  .veintiuno .eyebrow{color:#E3A98E;}
+  .v-num{font-family:var(--serif); font-size:clamp(120px, 38vw, 220px); line-height:.85; color:#E3A98E; font-weight:600; letter-spacing:-.03em;}
+  .veintiuno h2{color:var(--marfil); max-width:14em; margin:6px auto 18px;}
+  .veintiuno h2 em{color:#E3A98E;}
+  .veintiuno p.lead{color:#E6D9C8; max-width:560px; margin-inline:auto;}
+  .v-puntos{display:grid; grid-template-columns:repeat(7, 1fr); gap:10px; max-width:340px; margin:34px auto 6px;}
+  .v-puntos i{aspect-ratio:1; border-radius:50%; background:rgba(255,255,255,.2);}
+  .v-puntos i.hito{background:var(--terracota-claro); box-shadow:0 0 0 4px rgba(199,123,94,.28);}
+  .v-leyenda{font-size:14px; color:#C9B9A5; margin-bottom:8px;}
+  .v-semanas{display:grid; gap:14px; margin:30px auto 0; max-width:620px; text-align:left;}
+  .v-sem{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); border-radius:20px; padding:20px 22px; display:grid; grid-template-columns:auto 1fr; gap:4px 16px; align-items:center;}
+  .v-sem .n{font-family:var(--serif); font-size:40px; line-height:1; color:#E3A98E; font-style:italic; grid-row:span 2;}
+  .v-sem b{font-size:19px; font-weight:700;}
+  .v-sem span{color:#E6D9C8; font-size:16px;}
+  .veintiuno .cta{margin-top:34px; background:#D0714F; box-shadow:0 12px 28px rgba(0,0,0,.3);}
+  .veintiuno .cta:hover{background:#B85F3F;}
+  .veintiuno .cta-micro{color:#C9B9A5;}
+  footer a{color:#D8C7B2; text-decoration:underline; text-underline-offset:3px;}
+
   /* ---------- CÓMO FUNCIONA ---------- */
   .pasos{list-style:none; margin-top:30px; display:grid; gap:26px;}
   .pasos li{display:grid; grid-template-columns:54px 1fr; gap:14px; align-items:start;}
@@ -219,6 +242,7 @@
       </div>
     </figure>
     <div class="hero-body">
+      <div class="badge21"><b>21</b>días guiados · 5 a 10 minutos al día</div>
       <p class="lead">Arma tu mapa familiar en 5 minutos y recibe tu primera observación gratis. Después, un camino guiado de 21 días para ver qué se repite en tu familia.</p>
       <div class="hero-cta">
         <a href="https://sanando-mi-historia-familiar.vercel.app/empezar" class="cta">Quiero empezar mi mapa</a>
@@ -267,6 +291,25 @@
     </ol>
     <a href="https://sanando-mi-historia-familiar.vercel.app/empezar" class="cta">Quiero empezar mi mapa</a>
     <p class="nota">Es un espacio de reflexión y autoconocimiento: no es terapia ni sustituye la atención profesional.</p>
+  </div>
+</section>
+
+<!-- ============ 4.5 LOS 21 DÍAS ============ -->
+<section class="veintiuno">
+  <div class="wrap narrow">
+    <span class="eyebrow">Tu camino</span>
+    <div class="v-num" aria-hidden="true">21</div>
+    <h2>días para ver <em>qué se repite en tu familia.</em></h2>
+    <p class="lead">Cada día, de 5 a 10 minutos: algo para mirar, un ejercicio guiado, una pregunta para tu diario y una acción pequeña. A tu ritmo, y sin culpa si te saltas un día.</p>
+    <div class="v-puntos" role="img" aria-label="21 días, con un hito al cerrar cada semana"><i></i><i></i><i></i><i></i><i></i><i></i><i class="hito"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hito"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="hito"></i></div>
+    <p class="v-leyenda">Cada semana cierra con un hito.</p>
+    <div class="v-semanas">
+      <div class="v-sem"><span class="n">1</span><b>Semana 1 · Mirar</b><span>Quiénes están y qué se repite.</span></div>
+      <div class="v-sem"><span class="n">2</span><b>Semana 2 · Entender</b><span>El lugar de cada uno y lo que no se dijo.</span></div>
+      <div class="v-sem"><span class="n">3</span><b>Semana 3 · Dar un paso distinto</b><span>Acciones pequeñas y concretas, a tu ritmo.</span></div>
+    </div>
+    <a href="https://sanando-mi-historia-familiar.vercel.app/empezar" class="cta">Quiero empezar mi mapa</a>
+    <div class="cta-micro">Tu primera observación es gratis.</div>
   </div>
 </section>
 
@@ -387,7 +430,7 @@
 
 <footer>
   <div class="wrap">
-    Experiencia digital de autoconocimiento basada en constelaciones familiares. No sustituye la atención psicológica profesional y no garantiza resultados emocionales, económicos ni relacionales: dependen de cómo cada persona aplique la experiencia. Producto y contenido a cargo de Grupo Amart; el pago es procesado por Hotmart, quien no tiene responsabilidad sobre el contenido del producto. © 2026 Sanando Mi Historia Familiar · Vibrasconsentido.
+    Experiencia digital de autoconocimiento basada en constelaciones familiares. No sustituye la atención psicológica profesional y no garantiza resultados emocionales, económicos ni relacionales: dependen de cómo cada persona aplique la experiencia. Producto y contenido a cargo de Grupo Amart; el pago es procesado por Hotmart, quien no tiene responsabilidad sobre el contenido del producto. © 2026 Sanando Mi Historia Familiar · Vibrasconsentido.<br><a href="https://sanando-mi-historia-familiar.vercel.app/terminos">Términos de uso</a> · <a href="https://sanando-mi-historia-familiar.vercel.app/privacidad">Política de privacidad</a>
   </div>
 </footer>
 
