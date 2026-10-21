@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sanando Mi Historia Familiar · 21 días para ver qué se repite en tu familia</title>
-<meta name="description" content="Arma tu mapa familiar, recibe tu primera observación gratis y sigue un camino guiado de 21 días para ver qué se repite en tu familia. Pago único.">
+<meta name="description" content="Arma tu mapa familiar gratis y sigue un camino guiado de 21 días, con una guía de 12 módulos y 4 bonos incluidos, para ver qué se repite en tu familia. Pago único, acceso inmediato.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/hero-ritual.jpg" fetchpriority="high">
@@ -153,6 +153,26 @@
   .oferta-datos p{margin-top:8px;}
   .oferta-datos b{color:var(--cafe);}
 
+  /* ---------- URGENCIA ---------- */
+  .sello{display:inline-block; background:var(--terracota); color:#fff; font-size:12.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:999px; margin-bottom:10px;}
+  .aviso-precio{font-size:14.5px; color:var(--cafe-suave); margin-top:14px; text-align:left; background:var(--marfil); border-radius:14px; padding:12px 14px;}
+  .aviso-precio b{color:var(--terracota);}
+
+  /* ---------- DESGLOSE ---------- */
+  .desglose{background:var(--marfil);}
+  .desglose-lista{list-style:none; margin:30px 0 0; background:#fff; border-radius:24px; padding:8px 22px; box-shadow:0 18px 44px rgba(58,42,34,.1);}
+  .desglose-lista li{display:grid; grid-template-columns:1fr auto; gap:2px 14px; padding:16px 0; border-top:1px solid var(--linea); align-items:baseline;}
+  .desglose-lista li:first-child{border-top:0;}
+  .desglose-lista b{font-size:16.5px; font-weight:700;}
+  .desglose-lista .v{font-family:var(--serif); font-size:19px; font-weight:600; white-space:nowrap;}
+  .desglose-lista span.d{grid-column:1; font-size:14.5px; color:var(--cafe-suave); line-height:1.45;}
+  .desglose-total{max-width:560px; margin:26px auto 0; text-align:center;}
+  .desglose-total .suma{font-size:16px; color:var(--cafe-suave);}
+  .desglose-total .tuprecio{font-family:var(--serif); font-size:clamp(32px, 9vw, 50px); font-weight:600; line-height:1.15; margin:6px 0 4px;}
+  .desglose-total .tuprecio em{font-style:normal; color:var(--terracota);}
+  .desglose-total .ahorro{font-size:16px; font-weight:700; color:var(--terracota);}
+  .desglose .cta{margin-top:26px;}
+
   /* ---------- GARANTÍA ---------- */
   .garantia{padding:8px 0 64px;}
   .garantia-fila{display:flex; gap:20px; align-items:center; max-width:560px; margin:0 auto;}
@@ -228,7 +248,8 @@
       <div class="hero-cta">
         <a href="https://sanando-mi-historia-familiar.vercel.app/empezar" class="cta">Quiero empezar mi mapa</a>
         <div class="cta-micro">Tu primera observación es gratis · Solo tú ves lo que escribes</div>
-        <div class="hero-precio"><b>US$24.99</b> · un solo pago, sin mensualidades</div>
+        <div class="hero-precio"><b>US$24.99</b> · precio de lanzamiento · un solo pago, sin mensualidades</div>
+        <div class="hero-precio">Acceso inmediato: empiezas hoy mismo, desde tu celular.</div>
       </div>
     </div>
   </div>
@@ -261,7 +282,7 @@
 <section class="producto">
   <div class="wrap narrow">
     <span class="eyebrow">Qué es</span>
-    <h2>Tu mapa y un camino de 21 días, <em>a tu ritmo.</em></h2>
+    <h2>Tu mapa, un camino de 21 días y guías para profundizar, <em>a tu ritmo.</em></h2>
     <p class="lead">Una aplicación que se usa desde el navegador de tu celular o computador. Incluye:</p>
     <ol class="recursos">
       <li><div><b>Tu mapa familiar</b><span>Ubicas a las personas de tu familia y anotas lo que sabes de cada una. El mapa crece contigo.</span></div></li>
@@ -269,6 +290,9 @@
       <li><div><b>Camino de 21 días</b><span>Cada día, de 5 a 10 minutos: algo para mirar, un ejercicio guiado, una pregunta para tu diario y una acción pequeña.</span></div></li>
       <li><div><b>Tu diario privado</b><span>Escribes lo que quieras. Solo tú lo ves.</span></div></li>
       <li><div><b>Tu resumen final</b><span>Tu mapa, lo que descubriste y las acciones que hiciste, todo en un solo lugar.</span></div></li>
+      <li><div><b>Guía principal de 12 módulos</b><span>Lecturas, preguntas y ejercicios para profundizar, con espacio para escribir en la misma app.</span></div></li>
+      <li><div><b>4 bonos incluidos</b><span>Dinero y familia, Amor y pareja, Mamá y papá, y Niño o niña interior: 5 módulos cada uno.</span></div></li>
+      <li><div><b>Meditación guiada y frase del día</b><span>Un audio para parar un momento y una frase distinta cada día.</span></div></li>
     </ol>
     <a href="https://sanando-mi-historia-familiar.vercel.app/empezar" class="cta">Quiero empezar mi mapa</a>
     <p class="nota">Es un espacio de reflexión y autoconocimiento: no es terapia ni sustituye la atención profesional.</p>
@@ -326,18 +350,23 @@
   <div class="wrap">
     <h2>Tu próximo paso <em>puede empezar aquí.</em></h2>
     <div class="oferta-card">
+      <span class="sello">Precio de lanzamiento</span>
       <div class="nombre">Sanando Mi Historia Familiar</div>
       <div class="precio">US$24.99</div>
       <div class="desc" style="margin-top:-6px; margin-bottom:14px; font-weight:700; color:var(--cafe);">Pago único</div>
-      <p class="desc">Tu mapa familiar y un camino guiado de 21 días para ver qué se repite en tu familia y dar un paso distinto.</p>
+      <p class="desc">Tu mapa familiar, un camino guiado de 21 días y una guía de 12 módulos con 4 bonos, para ver qué se repite en tu familia y dar un paso distinto.</p>
       <ul>
         <li>Tu mapa familiar, que crece contigo</li>
         <li>Observaciones sobre lo que anotaste</li>
         <li>Camino de 21 días, con ejercicios guiados</li>
         <li>Tu diario privado</li>
         <li>Tu resumen final</li>
+        <li>Guía principal de 12 módulos</li>
+        <li>4 bonos: dinero, pareja, mamá y papá, niño o niña interior</li>
+        <li>Meditación guiada y frase del día</li>
         <li>Pago único, sin mensualidades</li>
       </ul>
+      <div class="aviso-precio"><b>Ahora:</b> US$24.99 por ser el precio de lanzamiento, que puede subir cuando esta etapa termine. Con acceso inmediato y sin renovaciones.</div>
       <div class="oferta-datos">
         <p><b>Cómo empiezas:</b> armas tu mapa y ves tu primera observación gratis. Si quieres seguir, pagas en Hotmart y creas tu clave con el correo que recibes.</p>
         <p><b>Qué necesitas:</b> un celular o computador con conexión a internet.</p>
@@ -361,18 +390,51 @@
   </div>
 </section>
 
+<!-- ============ 8.5 DESGLOSE DE LA OFERTA ============ -->
+<section class="desglose">
+  <div class="wrap narrow">
+    <div class="centro">
+      <span class="eyebrow">Todo lo que incluye</span>
+      <h2>Esto es lo que recibes <em>por un solo pago.</em></h2>
+      <p class="lead">Cada parte tiene un valor de referencia estimado, para que veas cuánto contiene la experiencia.</p>
+    </div>
+    <ul class="desglose-lista">
+      <li><b>Tu mapa familiar y observaciones</b><span class="v">US$15</span><span class="d">Ubicas a las personas y la app te muestra qué se repite entre ellas.</span></li>
+      <li><b>Camino guiado de 21 días</b><span class="v">US$35</span><span class="d">Cada día: algo para mirar, ejercicio, pregunta de diario y una acción pequeña.</span></li>
+      <li><b>Guía principal de 12 módulos</b><span class="v">US$29</span><span class="d">Lecturas, preguntas y ejercicios que se guardan en tu cuenta.</span></li>
+      <li><b>Bono 1 · Dinero y familia</b><span class="v">US$12</span><span class="d">5 módulos sobre lo que aprendiste del dinero en casa.</span></li>
+      <li><b>Bono 2 · Amor y pareja</b><span class="v">US$12</span><span class="d">5 módulos sobre los patrones que se repiten en tus relaciones.</span></li>
+      <li><b>Bono 3 · Mamá y papá</b><span class="v">US$12</span><span class="d">5 módulos para mirar tu vínculo con quienes te criaron, sin presiones.</span></li>
+      <li><b>Bono 4 · Niño o niña interior</b><span class="v">US$12</span><span class="d">5 módulos de escritura para acercarte con ternura a quien fuiste.</span></li>
+      <li><b>Tu diario privado</b><span class="v">US$9</span><span class="d">Escribes lo que quieras y solo tú lo ves.</span></li>
+      <li><b>Meditación guiada</b><span class="v">US$7</span><span class="d">Un audio para parar un momento.</span></li>
+      <li><b>Frase del día</b><span class="v">US$5</span><span class="d">Una frase distinta cada día, con la fecha.</span></li>
+      <li><b>Tu resumen final</b><span class="v">US$6</span><span class="d">Tu mapa, lo que descubriste y lo que hiciste.</span></li>
+    </ul>
+    <div class="desglose-total">
+      <p class="suma">Valor de referencia estimado: <s>US$154</s></p>
+      <p class="tuprecio">Tu precio hoy: <em>US$24.99</em></p>
+      <p class="ahorro">Un solo pago, acceso inmediato y garantía de 7 días.</p>
+      <a href="https://sanando-mi-historia-familiar.vercel.app/empezar" class="cta">Quiero empezar mi mapa</a>
+      <p class="cta-micro">Empiezas gratis. El precio de lanzamiento puede subir más adelante.</p>
+    </div>
+    <p class="nota centro">Los valores son una estimación orientativa del contenido, no precios a los que se haya vendido por separado. Es un espacio de reflexión y autoconocimiento; no es terapia.</p>
+  </div>
+</section>
+
 <!-- ============ 9. PREGUNTAS FRECUENTES ============ -->
 <section class="faq">
   <div class="wrap narrow">
     <h2>Preguntas <em>frecuentes</em></h2>
     <details><summary>¿Qué es Sanando Mi Historia Familiar?</summary><div class="resp">Una aplicación para armar tu mapa familiar y recorrer un camino guiado de 21 días. Te ayuda a ver qué se repite en tu familia y a dar pasos concretos. Se usa desde el navegador.</div></details>
-    <details><summary>¿Qué incluye?</summary><div class="resp">Tu mapa familiar, observaciones sobre lo que anotaste, un camino de 21 días con ejercicios, un diario privado y un resumen final.</div></details>
+    <details><summary>¿Qué incluye?</summary><div class="resp">Tu mapa familiar, observaciones sobre lo que anotaste, un camino de 21 días con ejercicios, una guía principal de 12 módulos, 4 bonos (dinero, pareja, mamá y papá, niño o niña interior), una meditación guiada, una frase del día, un diario privado y un resumen final.</div></details>
     <details><summary>¿Es gratis empezar?</summary><div class="resp">Sí. Armas tu mapa y recibes tu primera observación sin pagar. El camino de 21 días es lo que se desbloquea con el pago.</div></details>
+    <details><summary>¿Cuándo puedo empezar?</summary><div class="resp">En cuanto pagas: te llega un correo para crear tu clave y entras a tu camino ese mismo día. Tu mapa lo puedes armar ahora mismo, gratis.</div></details>
     <details><summary>¿Quién ve lo que escribo?</summary><div class="resp">Solo tú. Tu mapa y tu diario son privados y no se comparten.</div></details>
     <details><summary>¿Cómo recibo el acceso después de comprar?</summary><div class="resp">Pagas en Hotmart y te llega un correo para crear tu clave. Con ese correo y tu clave entras a tu camino.</div></details>
     <details><summary>¿Es terapia?</summary><div class="resp">No. Es un espacio de reflexión y autoconocimiento. No sustituye la atención de un profesional de la salud.</div></details>
     <details><summary>¿Puedo avanzar a mi propio ritmo?</summary><div class="resp">Sí. Cada día dura de 5 a 10 minutos, y no pasa nada si te saltas uno. La app no te presiona.</div></details>
-    <details><summary>¿Cuál es el precio?</summary><div class="resp">US$24.99, en un solo pago. No hay mensualidades.</div></details>
+    <details><summary>¿Cuál es el precio?</summary><div class="resp">US$24.99, en un solo pago. No hay mensualidades. Es el precio de lanzamiento y puede subir más adelante.</div></details>
     <details><summary>¿Cómo funciona la garantía de 7 días?</summary><div class="resp">Si no es para ti, puedes pedir el reembolso del 100% dentro de los 7 días siguientes a tu compra, a través de Hotmart.</div></details>
   </div>
 </section>
@@ -384,7 +446,7 @@
     <h2>No tienes que comprender toda tu historia hoy. <em>Puedes empezar por mirarla.</em></h2>
     <p>Date un espacio para ver tus vínculos, entender lo que se repite y dar un paso distinto, a tu ritmo.</p>
     <a href="https://sanando-mi-historia-familiar.vercel.app/empezar" class="cta">Quiero empezar mi mapa</a>
-    <div class="cta-micro">Tu primera observación es gratis.</div>
+    <div class="cta-micro">Tu primera observación es gratis. Precio de lanzamiento: US$24.99.</div>
   </div>
 </section>
 
