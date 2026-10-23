@@ -177,7 +177,7 @@
   .desglose-lista li{display:grid; grid-template-columns:1fr auto; gap:2px 14px; padding:16px 0; border-top:1px solid var(--linea); align-items:baseline;}
   .desglose-lista li:first-child{border-top:0;}
   .desglose-lista b{font-size:16.5px; font-weight:700;}
-  .desglose-lista .v{font-family:var(--serif); font-size:19px; font-weight:600; white-space:nowrap;}
+  .desglose-lista .v{font-family:var(--serif); font-size:19px; font-weight:600; white-space:nowrap; text-decoration:line-through; text-decoration-thickness:2px; text-decoration-color:var(--terracota); color:var(--cafe-suave);}
   .desglose-lista span.d{grid-column:1; font-size:14.5px; color:var(--cafe-suave); line-height:1.45;}
   .desglose-total{max-width:560px; margin:26px auto 0; text-align:center;}
   .desglose-total .suma{font-size:16px; color:var(--cafe-suave);}
@@ -355,7 +355,7 @@
       <li><b>Tu resumen final</b><span class="v">US$6</span><span class="d">Tu mapa, lo que descubriste y lo que hiciste.</span></li>
     </ul>
     <div class="desglose-total">
-      <p class="suma">Suma de los valores de referencia: US$154</p>
+      <p class="suma">Suma de los valores de referencia: <s style="text-decoration-thickness:2px;text-decoration-color:var(--terracota)">US$154</s></p>
       <p class="tuprecio">Tu precio: <em>US$24.99</em></p>
       <p class="ahorro">Pago único · Acceso de por vida · Sin mensualidades</p>
       <a href="https://pay.hotmart.com/X108098847Y?sck=oferta" class="cta" data-sck="oferta" onclick="window.clarity&&clarity('event','cta_oferta')">Quiero empezar por US$24.99</a>
