@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sanando Mi Historia Familiar · 21 días para ver qué se repite en tu familia</title>
-<meta name="description" content="Arma tu mapa familiar y sigue un camino guiado de 21 días, con una guía de 12 módulos y 4 bonos incluidos, para ver qué se repite en tu familia. Pago único, acceso inmediato.">
+<meta name="description" content="App guiada para anotar a tu familia, ver qué se repite y dar un paso distinto cada día: mapa familiar, camino de 21 días, guía de 12 módulos y 4 bonos. Pago único de US$24.99 y acceso de por vida.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/hero-ritual.jpg" fetchpriority="high">
@@ -69,7 +69,7 @@
 
   /* ---------- HERO ---------- */
   .hero{padding:36px 0 56px;}
-  .hero-grid{display:grid; grid-template-areas:"title" "art" "body"; gap:0;}
+  .hero-grid{display:grid; grid-template-areas:"title" "body" "art"; gap:0;}
   .hero-title{grid-area:title; margin-bottom:28px;}
   .hero-body{grid-area:body;}
   .hero h1{font-size:clamp(38px, 10.4vw, 64px); margin-bottom:0;}
@@ -77,11 +77,11 @@
   .hero-cta{margin-top:24px;}
   .hero-precio{margin-top:6px; font-size:15px; color:var(--cafe-suave);}
   .hero-precio b{color:var(--cafe); font-weight:700;}
-  .hero-art{grid-area:art; position:relative; width:min(100%, 360px); margin-inline:auto;}
+  .hero-art{grid-area:art; position:relative; width:min(100%, 300px); margin-inline:auto;}
   .hero-art .foto{width:100%; height:auto; border-radius:46% 54% 42% 58% / 38% 44% 56% 62%; box-shadow:0 22px 50px rgba(58,42,34,.2);}
   .art-box{position:relative;}
-  .hero-art .mock{position:absolute; left:-8px; bottom:-72px; width:158px; height:auto; filter:drop-shadow(0 16px 22px rgba(58,42,34,.38));}
-  .hero-art{margin-bottom:88px;}
+  .hero-art .mock{position:absolute; left:-8px; bottom:-58px; width:128px; height:auto; filter:drop-shadow(0 16px 22px rgba(58,42,34,.38));}
+  .hero-art{margin-top:44px; margin-bottom:70px;}
 
   /* ---------- RECONOCIMIENTO ---------- */
   .reconoce{background:var(--arena);}
@@ -104,7 +104,7 @@
   .pausa-texto p{max-width:600px; margin-inline:auto;}
 
   /* ---------- PRODUCTO ---------- */
-  .producto{background:var(--arena);}
+  .producto{background:var(--marfil);}
   .recursos{list-style:none; margin:32px 0 34px; counter-reset:r;}
   .recursos li{counter-increment:r; display:grid; grid-template-columns:44px 1fr; gap:6px 12px; padding:18px 0; border-top:1px solid var(--linea);}
   .recursos li:last-child{border-bottom:1px solid var(--linea);}
@@ -153,13 +153,26 @@
   .oferta-datos p{margin-top:8px;}
   .oferta-datos b{color:var(--cafe);}
 
+  /* ---------- BENEFICIOS DEL HERO ---------- */
+  .benef{list-style:none; margin:18px 0 0; display:grid; gap:8px;}
+  .benef li{position:relative; padding-left:26px; font-size:16px; line-height:1.4; color:var(--cafe);}
+  .benef li::before{content:""; position:absolute; left:3px; top:7px; width:11px; height:6px; border-left:2px solid var(--terracota); border-bottom:2px solid var(--terracota); transform:rotate(-45deg);}
+
+  /* ---------- BARRA FIJA DE COMPRA (móvil) ---------- */
+  .barra{position:fixed; left:0; right:0; bottom:0; z-index:50; background:rgba(251,246,238,.97); border-top:1px solid var(--linea); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); display:flex; align-items:center; gap:12px; justify-content:space-between; transform:translateY(110%); transition:transform .25s ease; box-shadow:0 -8px 24px rgba(58,42,34,.1);}
+  .barra.on{transform:translateY(0);}
+  .barra .p{font-size:13px; line-height:1.25; color:var(--cafe-suave);}
+  .barra .p b{display:block; font-family:var(--serif); font-size:22px; color:var(--cafe);}
+  .barra .cta{width:auto; max-width:none; padding:14px 20px; font-size:14px; box-shadow:none;}
+  @media (min-width:860px){.barra{display:none;}}
+
   /* ---------- URGENCIA ---------- */
   .sello{display:inline-block; background:var(--terracota); color:#fff; font-size:12.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:999px; margin-bottom:10px;}
   .aviso-precio{font-size:14.5px; color:var(--cafe-suave); margin-top:14px; text-align:left; background:var(--marfil); border-radius:14px; padding:12px 14px;}
   .aviso-precio b{color:var(--terracota);}
 
   /* ---------- DESGLOSE ---------- */
-  .desglose{background:var(--marfil);}
+  .desglose{background:var(--arena);}
   .desglose-lista{list-style:none; margin:30px 0 0; background:#fff; border-radius:24px; padding:8px 22px; box-shadow:0 18px 44px rgba(58,42,34,.1);}
   .desglose-lista li{display:grid; grid-template-columns:1fr auto; gap:2px 14px; padding:16px 0; border-top:1px solid var(--linea); align-items:baseline;}
   .desglose-lista li:first-child{border-top:0;}
@@ -233,8 +246,20 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-title">
-      <span class="eyebrow">Hay historias que merecen ser miradas de otra manera</span>
-      <h1>No quieres seguir repitiendo <em>una historia que nunca elegiste.</em></h1>
+      <span class="eyebrow">21 días para mirar tu historia familiar</span>
+      <h1>¿Sientes que en tu familia algo se repite? <em>Empieza por verlo en un mapa.</em></h1>
+    </div>
+    <div class="hero-body">
+      <p class="lead">Una app guiada para anotar a tu familia, ver qué se repite y dar un paso distinto cada día, en 5 a 10 minutos. No es terapia: es un espacio para mirarte con calma.</p>
+      <ul class="benef">
+        <li>Tu mapa familiar y observaciones sobre lo que anotes</li>
+        <li>21 días de ejercicios cortos, con diario privado</li>
+        <li>Guía de 12 módulos y 4 bonos incluidos</li>
+      </ul>
+      <div class="hero-cta">
+        <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">Quiero empezar por US$24.99</a>
+        <div class="cta-micro">Pago único, sin mensualidades · Acceso de por vida · Garantía de 7 días</div>
+      </div>
     </div>
     <figure class="hero-art">
       <div class="art-box">
@@ -242,73 +267,35 @@
         <img class="mock" src="assets/app-hero-celular-2.webp" alt="Celular mostrando el mapa familiar de la aplicación, con cuatro personas y una observación" width="640" height="1274" loading="lazy">
       </div>
     </figure>
-    <div class="hero-body">
-      
-      <p class="lead">Arma tu mapa familiar en 5 minutos y recibe tu primera observación. Después, un camino guiado de <span class="resalta">21 días para ver qué se repite en tu familia.</span></p>
-      <div class="hero-cta">
-        <a href="https://pay.hotmart.com/X108098847Y" class="cta">Quiero empezar ahora</a>
-        <div class="cta-micro">Acceso inmediato · Solo tú ves lo que escribes · Garantía de 7 días</div>
-        <div class="hero-precio"><b>US$24.99</b> · precio de lanzamiento · un solo pago, sin mensualidades</div>
-        <div class="hero-precio">Acceso inmediato: empiezas hoy mismo, desde tu celular.</div>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- ============ 2. RECONOCIMIENTO EMOCIONAL ============ -->
 <section class="reconoce">
   <div class="wrap narrow">
-    <h2>A veces sabes que algo se repite. <em>Lo difícil es comprenderlo.</em></h2>
+    <h2>¿Te suena <em>alguna de estas?</em></h2>
     <ul class="frase-lista">
-      <li>Hay situaciones en tu vida que te gustaría entender mejor.</li>
-      <li>Algunas dinámicas familiares siguen presentes en tu manera de relacionarte.</li>
-      <li>Quieres mirar tu historia con más conciencia y encontrar nuevas formas de avanzar.</li>
+      <li>Repites situaciones que ya viste en casa.</li>
+      <li>Sientes culpa cuando piensas en ti.</li>
+      <li>Hay temas de tu familia que nadie nombra.</li>
     </ul>
-    <p class="cierre">No necesitas tener todas las respuestas para empezar a hacerte preguntas diferentes.</p>
+    <p class="cierre">No necesitas tener todas las respuestas para empezar a hacerte preguntas distintas.</p>
   </div>
 </section>
 
-<!-- ============ 3. CAMBIO DE PERSPECTIVA ============ -->
-<section class="pausa centro">
-  <div class="pausa-imagen" role="img" aria-label="Detalle de la imagen: un árbol y figuras familiares en una pared"></div>
-  <div class="wrap pausa-texto">
-    <h2>Tu historia tiene muchas capas. <em>Puedes empezar por una.</em></h2>
-    <p class="lead">Explorar tu historia familiar puede abrir un espacio para observar los vínculos, las experiencias y las dinámicas que han formado parte de tu vida.</p>
-    <p class="lead">Sanando Mi Historia Familiar está pensado para acompañarte en esa exploración con las herramientas que incluye la experiencia.</p>
-  </div>
-</section>
-
-<!-- ============ 4. PRESENTACIÓN DEL PRODUCTO ============ -->
+<!-- ============ 4. QUÉ ES Y CÓMO FUNCIONA ============ -->
 <section class="producto">
   <div class="wrap narrow">
-    <span class="eyebrow">Qué es</span>
-    <h2>Tu mapa, un camino de 21 días y guías para profundizar, <em>a tu ritmo.</em></h2>
-    <p class="lead">Una aplicación que se usa desde el navegador de tu celular o computador. Incluye:</p>
-    <ol class="recursos">
-      <li><div><b>Tu mapa familiar</b><span>Ubicas a las personas de tu familia y anotas lo que sabes de cada una. El mapa crece contigo.</span></div></li>
-      <li><div><b>Observaciones sobre lo que anotaste</b><span>La app te muestra qué se repite entre las personas de tu mapa, con calma y sin diagnósticos.</span></div></li>
-      <li><div><b>Camino de 21 días</b><span>Cada día, de 5 a 10 minutos: algo para mirar, un ejercicio guiado, una pregunta para tu diario y una acción pequeña.</span></div></li>
-      <li><div><b>Tu diario privado</b><span>Escribes lo que quieras. Solo tú lo ves.</span></div></li>
-      <li><div><b>Tu resumen final</b><span>Tu mapa, lo que descubriste y las acciones que hiciste, todo en un solo lugar.</span></div></li>
-      <li><div><b>Guía principal de 12 módulos</b><span>Lecturas, preguntas y ejercicios para profundizar, con espacio para escribir en la misma app.</span></div></li>
-      <li><div><b>4 bonos incluidos</b><span>Dinero y familia, Amor y pareja, Mamá y papá, y Niño o niña interior: 5 módulos cada uno.</span></div></li>
-      <li><div><b>Meditación guiada y frase del día</b><span>Un audio para parar un momento y una frase distinta cada día.</span></div></li>
-    </ol>
-    <a href="https://pay.hotmart.com/X108098847Y" class="cta">Quiero empezar ahora</a>
-    <p class="nota">Es un espacio de reflexión y autoconocimiento: no es terapia ni sustituye la atención profesional.</p>
-  </div>
-</section>
-
-<!-- ============ 5. ASÍ FUNCIONA ============ -->
-<section>
-  <div class="wrap narrow">
-    <span class="eyebrow">Así funciona</span>
-    <h2>Empieza de una forma <em>sencilla.</em></h2>
+    <span class="eyebrow">Cómo funciona</span>
+    <h2>Un mapa familiar y 21 días para mirar tu historia, <em>a tu ritmo.</em></h2>
+    <p class="lead">Una aplicación que usas desde el navegador de tu celular o computador, sin instalar nada.</p>
     <ol class="pasos">
       <li><span class="n">1</span><p>Pagas una sola vez en Hotmart y te llega un correo para crear tu clave.</p></li>
-      <li><span class="n">2</span><p>Entras a la app y armas tu mapa familiar en unos 5 minutos. Recibes tu primera observación.</p></li>
-      <li><span class="n">3</span><p>Haces tu camino de 21 días a tu ritmo, sin presión y sin culpa si te saltas un día.</p></li>
+      <li><span class="n">2</span><p>Armas tu mapa en unos 5 minutos y recibes tu primera observación.</p></li>
+      <li><span class="n">3</span><p>Cada día, de 5 a 10 minutos: algo para mirar, un ejercicio, una pregunta para tu diario y una acción pequeña. Sin presión y sin culpa si te saltas un día.</p></li>
     </ol>
+    <div style="margin-top:34px"><a href="https://pay.hotmart.com/X108098847Y?sck=que-es" class="cta" data-sck="que-es" onclick="window.clarity&&clarity('event','cta_que_es')">Quiero empezar por US$24.99</a></div>
+    <p class="nota">Es un espacio de reflexión y autoconocimiento: no es terapia ni sustituye la atención profesional.</p>
   </div>
 </section>
 
@@ -346,58 +333,13 @@
   </div>
 </section>
 
-<!-- ============ 7. OFERTA ============ -->
-<section id="oferta" class="centro oferta">
-  <div class="wrap">
-    <h2>Tu próximo paso <em>puede empezar aquí.</em></h2>
-    <div class="oferta-card">
-      <span class="sello">Precio de lanzamiento</span>
-      <div class="nombre">Sanando Mi Historia Familiar</div>
-      <div class="precio">US$24.99</div>
-      <div class="desc" style="margin-top:-6px; margin-bottom:14px; font-weight:700; color:var(--cafe);">Pago único</div>
-      <p class="desc">Tu mapa familiar, un camino guiado de 21 días y una guía de 12 módulos con 4 bonos, para ver qué se repite en tu familia y dar un paso distinto.</p>
-      <ul>
-        <li>Tu mapa familiar, que crece contigo</li>
-        <li>Observaciones sobre lo que anotaste</li>
-        <li>Camino de 21 días, con ejercicios guiados</li>
-        <li>Tu diario privado</li>
-        <li>Tu resumen final</li>
-        <li>Guía principal de 12 módulos</li>
-        <li>4 bonos: dinero, pareja, mamá y papá, niño o niña interior</li>
-        <li>Meditación guiada y frase del día</li>
-        <li>Pago único, sin mensualidades</li>
-      </ul>
-      <div class="aviso-precio"><b>Ahora:</b> US$24.99 por ser el precio de lanzamiento, que puede subir cuando esta etapa termine. Con acceso inmediato y sin renovaciones.</div>
-      <div class="oferta-datos">
-        <p><b>Cómo empiezas:</b> pagas en Hotmart, creas tu clave con el correo que recibes y entras a armar tu mapa.</p>
-        <p><b>Qué necesitas:</b> un celular o computador con conexión a internet.</p>
-      </div>
-      <a href="https://pay.hotmart.com/X108098847Y" class="cta">Quiero empezar ahora</a>
-      <div class="cta-micro">Acceso inmediato. El pago lo procesa Hotmart.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. GARANTÍA ============ -->
-<section class="garantia">
-  <div class="wrap">
-    <div class="garantia-fila">
-      <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="180" height="180" loading="lazy">
-      <div>
-        <h3>Garantía de 7 días</h3>
-        <p>Si no es para ti, puedes pedir la devolución del 100% de tu dinero dentro de los 7 días siguientes a tu compra, a través de Hotmart.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8.5 DESGLOSE DE LA OFERTA ============ -->
-<section class="desglose">
+<!-- ============ 7. OFERTA (todo lo que incluye + precio) ============ -->
+<section id="oferta" class="desglose">
   <div class="wrap narrow">
     <div class="centro">
       <span class="eyebrow">Todo lo que incluye</span>
       <h2>Esto es lo que recibes <em>por un solo pago.</em></h2>
-      <p class="lead">Cada parte tiene un valor de referencia estimado, para que veas cuánto contiene la experiencia.</p>
+      <p class="lead">Cada parte tiene un valor de referencia estimado, para que veas cuánto contiene la experiencia: en total, 53 ejercicios guiados.</p>
     </div>
     <ul class="desglose-lista">
       <li><b>Tu mapa familiar y observaciones</b><span class="v">US$15</span><span class="d">Ubicas a las personas y la app te muestra qué se repite entre ellas.</span></li>
@@ -413,13 +355,26 @@
       <li><b>Tu resumen final</b><span class="v">US$6</span><span class="d">Tu mapa, lo que descubriste y lo que hiciste.</span></li>
     </ul>
     <div class="desglose-total">
-      <p class="suma">Valor de referencia estimado: <s>US$154</s></p>
-      <p class="tuprecio">Tu precio hoy: <em>US$24.99</em></p>
-      <p class="ahorro">Un solo pago, acceso inmediato y garantía de 7 días.</p>
-      <a href="https://pay.hotmart.com/X108098847Y" class="cta">Quiero empezar ahora</a>
-      <p class="cta-micro">Acceso inmediato. El precio de lanzamiento puede subir más adelante.</p>
+      <p class="suma">Suma de los valores de referencia: US$154</p>
+      <p class="tuprecio">Tu precio: <em>US$24.99</em></p>
+      <p class="ahorro">Pago único · Acceso de por vida · Sin mensualidades</p>
+      <a href="https://pay.hotmart.com/X108098847Y?sck=oferta" class="cta" data-sck="oferta" onclick="window.clarity&&clarity('event','cta_oferta')">Quiero empezar por US$24.99</a>
+      <p class="cta-micro">En Hotmart verás el precio en tu moneda local: es el mismo monto.</p>
     </div>
-    <p class="nota centro">Los valores son una estimación orientativa del contenido, no precios a los que se haya vendido por separado. Es un espacio de reflexión y autoconocimiento; no es terapia.</p>
+    <p class="nota centro">Los valores de referencia son una estimación orientativa del contenido, no precios a los que se haya vendido por separado. Es un espacio de reflexión y autoconocimiento; no es terapia.</p>
+  </div>
+</section>
+
+<!-- ============ 8. GARANTÍA ============ -->
+<section class="garantia">
+  <div class="wrap">
+    <div class="garantia-fila">
+      <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="180" height="180" loading="lazy">
+      <div>
+        <h3>Garantía de 7 días</h3>
+        <p>Si no es para ti, puedes pedir la devolución del 100% de tu dinero dentro de los 7 días siguientes a tu compra, a través de Hotmart. Tu mapa y tu diario son privados: solo tú los ves.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -431,11 +386,16 @@
     <details><summary>¿Qué incluye?</summary><div class="resp">Tu mapa familiar, observaciones sobre lo que anotaste, un camino de 21 días con ejercicios, una guía principal de 12 módulos, 4 bonos (dinero, pareja, mamá y papá, niño o niña interior), una meditación guiada, una frase del día, un diario privado y un resumen final.</div></details>
     <details><summary>¿Cómo armo mi mapa?</summary><div class="resp">Al entrar a la app, el mapa te lleva unos 5 minutos: eliges quiénes están en tu familia y anotas lo que sabes. Después recibes tu primera observación.</div></details>
     <details><summary>¿Cuándo puedo empezar?</summary><div class="resp">En cuanto pagas: te llega un correo para crear tu clave y entras a tu camino ese mismo día. Después armas tu mapa en unos 5 minutos.</div></details>
+    <details><summary>¿Cuánto tiempo tengo acceso?</summary><div class="resp">Para siempre: es un pago único, sin renovaciones.</div></details>
+    <details><summary>¿Necesito instalar algo?</summary><div class="resp">No. Se usa desde el navegador de tu celular o computador, con conexión a internet.</div></details>
+    <details><summary>¿Qué hago si no me llega el correo de acceso?</summary><div class="resp">Revisa spam y promociones. Si no aparece, en la pantalla de entrada hay un botón para pedirlo de nuevo con el correo con el que pagaste.</div></details>
+    <details><summary>¿En qué se basa?</summary><div class="resp">Es una experiencia de autoconocimiento inspirada en las constelaciones familiares. No es una terapia ni una técnica con validación científica, y no promete resultados.</div></details>
+    <details><summary>¿Sirve para hombres también?</summary><div class="resp">Sí. Los textos hablan en general, para cualquier persona.</div></details>
     <details><summary>¿Quién ve lo que escribo?</summary><div class="resp">Solo tú. Tu mapa y tu diario son privados y no se comparten.</div></details>
     <details><summary>¿Cómo recibo el acceso después de comprar?</summary><div class="resp">Pagas en Hotmart y te llega un correo para crear tu clave. Con ese correo y tu clave entras a tu camino.</div></details>
     <details><summary>¿Es terapia?</summary><div class="resp">No. Es un espacio de reflexión y autoconocimiento. No sustituye la atención de un profesional de la salud.</div></details>
     <details><summary>¿Puedo avanzar a mi propio ritmo?</summary><div class="resp">Sí. Cada día dura de 5 a 10 minutos, y no pasa nada si te saltas uno. La app no te presiona.</div></details>
-    <details><summary>¿Cuál es el precio?</summary><div class="resp">US$24.99, en un solo pago. No hay mensualidades. Es el precio de lanzamiento y puede subir más adelante.</div></details>
+    <details><summary>¿Cuál es el precio?</summary><div class="resp">US$24.99, en un solo pago. No hay mensualidades ni renovaciones, y el acceso es de por vida. En Hotmart verás el monto convertido a tu moneda local.</div></details>
     <details><summary>¿Cómo funciona la garantía de 7 días?</summary><div class="resp">Si no es para ti, puedes pedir el reembolso del 100% dentro de los 7 días siguientes a tu compra, a través de Hotmart.</div></details>
   </div>
 </section>
@@ -446,8 +406,8 @@
   <div class="wrap cierre-cuerpo">
     <h2>No tienes que comprender toda tu historia hoy. <em>Puedes empezar por mirarla.</em></h2>
     <p>Date un espacio para ver tus vínculos, entender lo que se repite y dar un paso distinto, a tu ritmo.</p>
-    <a href="https://pay.hotmart.com/X108098847Y" class="cta">Quiero empezar ahora</a>
-    <div class="cta-micro">Precio de lanzamiento: US$24.99 · Garantía de 7 días.</div>
+    <a href="https://pay.hotmart.com/X108098847Y?sck=cierre" class="cta" data-sck="cierre" onclick="window.clarity&&clarity('event','cta_cierre')">Quiero empezar por US$24.99</a>
+    <div class="cta-micro">Pago único · Acceso de por vida · Garantía de 7 días</div>
   </div>
 </section>
 
@@ -459,5 +419,30 @@
   </div>
 </footer>
 
+<div class="barra" id="barra" aria-hidden="true">
+  <div class="p">Pago único · de por vida<b>US$24.99</b></div>
+  <a href="https://pay.hotmart.com/X108098847Y?sck=barra" class="cta" data-sck="barra" onclick="window.clarity&&clarity('event','cta_barra')">Empezar ahora</a>
+</div>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var fuente = q.get('src') || q.get('utm_source') || '';
+  document.querySelectorAll('a[href^="https://pay.hotmart.com/"]').forEach(function(a){
+    var u = new URL(a.href);
+    var sck = a.getAttribute('data-sck') || 'pagina';
+    if (fuente) sck = sck + '_' + fuente.replace(/[^a-z0-9_-]/gi,'').slice(0,30);
+    u.searchParams.set('sck', sck);
+    a.href = u.toString();
+  });
+  var barra = document.getElementById('barra');
+  var hero = document.querySelector('.hero .cta');
+  var oferta = document.getElementById('oferta');
+  if (!('IntersectionObserver' in window) || !barra || !hero) return;
+  var heroVisto = true, ofertaVista = false;
+  function pinta(){ var on = !heroVisto && !ofertaVista; barra.classList.toggle('on', on); barra.setAttribute('aria-hidden', on ? 'false' : 'true'); }
+  new IntersectionObserver(function(e){ heroVisto = e[0].isIntersecting; pinta(); }).observe(hero);
+  if (oferta) new IntersectionObserver(function(e){ ofertaVista = e[0].isIntersecting; pinta(); }, {threshold:0.05}).observe(oferta);
+})();
+</script>
 </body>
 </html>
