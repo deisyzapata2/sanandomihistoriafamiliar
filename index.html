@@ -190,8 +190,15 @@
   .garantia{padding:8px 0 64px;}
   .garantia-fila{display:flex; gap:20px; align-items:center; max-width:560px; margin:0 auto;}
   .garantia-fila img{flex:none; width:92px; height:92px; object-fit:contain;}
-  .pago-hotmart{max-width:560px; margin:22px auto 0; text-align:center; font-size:14.5px; color:var(--cafe-suave);}
-  .pago-hotmart img{display:block; height:72px; width:auto; margin:0 auto 10px; background:#fff; border-radius:14px; padding:8px 14px;}
+  .garantia-centro{max-width:560px; margin:0 auto; text-align:center;}
+  .garantia-centro h3{font-family:var(--serif); font-size:23px; font-weight:600; margin-bottom:8px;}
+  .garantia-centro p{font-size:15.5px; color:var(--cafe-suave); margin:0;}
+  .sellos{display:flex; justify-content:center; align-items:center; gap:20px; margin-top:24px;}
+  .sellos > img, .sello-hotmart{width:104px; height:104px; flex:none;}
+  .sellos > img{object-fit:contain;}
+  .sello-hotmart{display:flex; align-items:center; justify-content:center; background:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(58,42,34,.12);}
+  .sello-hotmart img{width:62px; height:auto;}
+  .garantia-centro .pago-seguro{margin-top:14px; font-size:14.5px;}
   .garantia-fila h3{font-family:var(--serif); font-size:21px; font-weight:600; margin-bottom:4px;}
   .garantia-fila p{font-size:15.5px; color:var(--cafe-suave); margin:0;}
 
@@ -370,14 +377,15 @@
 <!-- ============ 8. GARANTÍA ============ -->
 <section class="garantia">
   <div class="wrap">
-    <div class="garantia-fila">
-      <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="180" height="180" loading="lazy">
-      <div>
-        <h3>Garantía de 7 días</h3>
-        <p>Si no es para ti, puedes pedir la devolución del 100% de tu dinero dentro de los 7 días siguientes a tu compra, a través de Hotmart. Tu mapa y tu diario son privados: solo tú los ves.</p>
+    <div class="garantia-centro">
+      <h3>Garantía de 7 días</h3>
+      <p>Si no es para ti, puedes pedir la devolución del 100% de tu dinero dentro de los 7 días siguientes a tu compra, a través de Hotmart. Tu mapa y tu diario son privados: solo tú los ves.</p>
+      <div class="sellos">
+        <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="104" height="104" loading="lazy">
+        <span class="sello-hotmart"><img src="assets/hotmart-logo.webp" alt="Hotmart" width="62" height="67" loading="lazy"></span>
       </div>
+      <p class="pago-seguro">Pago seguro procesado por <b>Hotmart</b></p>
     </div>
-    <div class="pago-hotmart"><img src="assets/hotmart-logo.webp" alt="Hotmart" height="72" loading="lazy"><span>Pago seguro procesado por <b>Hotmart</b></span></div>
   </div>
 </section>
 
