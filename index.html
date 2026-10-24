@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sanando Mi Historia Familiar · 21 días para ver qué se repite en tu familia</title>
-<meta name="description" content="App guiada para anotar a tu familia, ver qué se repite y dar un paso distinto cada día: mapa familiar, camino de 21 días, guía de 12 módulos y 4 bonos. Pago único de US$24.99 y acceso de por vida.">
+<title>Sanando Mi Historia Familiar · Un mapa familiar y 21 días para explorar tu historia</title>
+<meta name="description" content="Un mapa familiar, un recorrido guiado de 21 días, una guía de 12 módulos y 4 bonos para explorar tu historia familiar a tu ritmo. US$24.99, pago único.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/hero-ritual.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/app-hero-celular-2.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -18,407 +18,361 @@
 </script>
 <style>
   :root{
-    --marfil:#FBF6EE;
-    --arena:#EFE4D2;
-    --arena-2:#E7D8C0;
-    --cafe:#3A2A22;
-    --cafe-suave:#6E5A4D;
-    --terracota:#9F4B33;
-    --terracota-claro:#C77B5E;
-    --dorado:#B8975A;
-    --linea:rgba(58,42,34,.16);
+    --marfil:#FAF7F2;
+    --salvia:#849681;
+    --salvia-claro:#EDF0EA;
+    --verde:#31483D;
+    --verde-hover:#263A31;
+    --terracota:#C78368;
+    --terracota-texto:#A4573C;
+    --texto:#292B29;
+    --suave:#58605A;
+    --linea:rgba(41,43,41,.14);
     --serif:'Fraunces', Georgia, serif;
     --sans:'DM Sans', system-ui, sans-serif;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  body{
-    background:var(--marfil); color:var(--cafe);
-    font-family:var(--sans); font-size:17px; line-height:1.65;
-    -webkit-font-smoothing:antialiased; overflow-x:hidden;
-  }
+  body{background:var(--marfil); color:var(--texto); font-family:var(--sans); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
   img{max-width:100%; height:auto; display:block;}
-  a:focus-visible, summary:focus-visible, button:focus-visible{outline:3px solid var(--terracota); outline-offset:3px;}
+  a:focus-visible, summary:focus-visible, button:focus-visible{outline:3px solid var(--terracota-texto); outline-offset:3px;}
   .wrap{width:min(100% - 40px, 1040px); margin-inline:auto;}
   .narrow{max-width:640px; margin-inline:auto;}
-  section{padding:64px 0;}
+  section{padding:56px 0;}
   .centro{text-align:center;}
+  h1,h2{font-family:var(--serif); font-weight:600; line-height:1.15; letter-spacing:-.01em; text-wrap:balance; color:var(--verde);}
+  h2{font-size:clamp(26px, 6vw, 40px); margin-bottom:16px;}
+  h1 em, h2 em{font-style:italic; font-weight:400; color:var(--terracota-texto);}
+  .eyebrow{display:block; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--terracota-texto); margin-bottom:14px; line-height:1.5;}
+  p.lead{font-size:clamp(17px, 2.3vw, 19px); color:var(--suave);}
+  p + p{margin-top:12px;}
 
-  h1,h2{font-family:var(--serif); font-weight:600; line-height:1.15; letter-spacing:-.01em; text-wrap:balance;}
-  h2{font-size:clamp(28px, 6.4vw, 44px); margin-bottom:20px;}
-  h1 em, h2 em{font-style:italic; font-weight:400; color:var(--terracota);}
-  .eyebrow{display:block; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--terracota); margin-bottom:18px; line-height:1.5;}
-  p.lead{font-size:clamp(18px, 2.4vw, 20px); color:var(--cafe-suave);}
-  p + p{margin-top:16px;}
+  /* CTA */
+  .cta{display:inline-block; width:100%; max-width:420px; text-align:center; text-decoration:none; background:var(--verde); color:#fff; font-family:var(--sans); font-weight:700; font-size:15px; letter-spacing:.05em; text-transform:uppercase; line-height:1.3; padding:18px 24px; border-radius:999px; box-shadow:0 10px 24px rgba(49,72,61,.25); transition:background .2s ease;}
+  .cta:hover{background:var(--verde-hover);}
+  .cta-micro{font-size:14px; color:var(--suave); margin-top:12px;}
 
-  /* ---------- CTA ---------- */
-  .cta{
-    display:inline-block; width:100%; max-width:440px; text-align:center; text-decoration:none;
-    background:var(--terracota); color:#fff; font-family:var(--sans); font-weight:700; font-size:16px;
-    letter-spacing:.04em; text-transform:uppercase; line-height:1.3;
-    padding:20px 28px; border-radius:999px; box-shadow:0 12px 28px rgba(159,75,51,.28);
-    transition:background .2s ease, transform .2s ease;
-  }
-  .cta:hover{background:#873C27;}
-  .cta-micro{font-size:14px; color:var(--cafe-suave); margin-top:14px;}
+  /* CABECERA */
+  .marca{padding:16px 0 0; text-align:center;}
+  .marca span{font-family:var(--serif); font-size:17px; font-weight:600; display:inline-flex; align-items:center; gap:10px; color:var(--verde);}
+  .marca img{width:30px; height:30px; border-radius:50%; object-fit:cover;}
 
-  /* ---------- CABECERA ---------- */
-  .marca{padding:20px 0 0; text-align:center;}
-  .marca span{font-family:var(--serif); font-size:17px; font-weight:600; letter-spacing:.01em; display:inline-flex; align-items:center; gap:10px;}
-  .marca img{width:32px; height:32px; border-radius:50%; object-fit:cover;}
+  /* 1. HERO */
+  .hero{padding:24px 0 44px;}
+  .hero-grid{display:grid; grid-template-areas:"texto" "arte"; gap:30px;}
+  .hero-texto{grid-area:texto;}
+  .hero h1{font-size:clamp(29px, 8.2vw, 52px); margin-bottom:14px;}
+  .hero p.lead{margin-bottom:0;}
+  .benef{list-style:none; margin:16px 0 0; display:grid; gap:7px;}
+  .benef li{position:relative; padding-left:26px; font-size:16px; line-height:1.4;}
+  .benef li::before{content:""; position:absolute; left:3px; top:7px; width:11px; height:6px; border-left:2px solid var(--verde); border-bottom:2px solid var(--verde); transform:rotate(-45deg);}
+  .hero-cta{margin-top:22px;}
+  .hero-arte{grid-area:arte; position:relative; width:min(100%, 330px); margin-inline:auto; padding-bottom:10px;}
+  .hero-arte .tel{width:212px; margin-left:0; filter:drop-shadow(0 18px 26px rgba(41,43,41,.28));}
+  .hero-arte .tel2{position:absolute; right:0; bottom:0; width:128px; border-radius:20px; box-shadow:0 14px 28px rgba(41,43,41,.28); border:4px solid #fff;}
 
-  /* ---------- HERO ---------- */
-  .hero{padding:36px 0 56px;}
-  .hero-grid{display:grid; grid-template-areas:"title" "body" "art"; gap:0;}
-  .hero-title{grid-area:title; margin-bottom:28px;}
-  .hero-body{grid-area:body;}
-  .hero h1{font-size:clamp(38px, 10.4vw, 64px); margin-bottom:0;}
-  .hero p.lead + p.lead{margin-top:14px;}
-  .hero-cta{margin-top:24px;}
-  .hero-precio{margin-top:6px; font-size:15px; color:var(--cafe-suave);}
-  .hero-precio b{color:var(--cafe); font-weight:700;}
-  .hero-art{grid-area:art; position:relative; width:min(100%, 300px); margin-inline:auto;}
-  .hero-art .foto{width:100%; height:auto; border-radius:46% 54% 42% 58% / 38% 44% 56% 62%; box-shadow:0 22px 50px rgba(58,42,34,.2);}
-  .art-box{position:relative;}
-  .hero-art .mock{position:absolute; left:-8px; bottom:-58px; width:128px; height:auto; filter:drop-shadow(0 16px 22px rgba(58,42,34,.38));}
-  .hero-art{margin-top:44px; margin-bottom:70px;}
+  /* 2. IDENTIFICACIÓN */
+  .ident{background:var(--salvia-claro);}
+  .ident-grid{display:grid; gap:28px; align-items:center;}
+  .ident-foto{border-radius:26px; overflow:hidden; box-shadow:0 16px 36px rgba(41,43,41,.16); aspect-ratio:4/3;}
+  .ident-foto img{width:100%; height:100%; object-fit:cover; object-position:center 30%;}
+  .destacada{font-family:var(--serif); font-style:italic; font-size:clamp(19px, 4.4vw, 23px); line-height:1.4; color:var(--verde); border-left:3px solid var(--terracota); padding-left:16px; margin-top:22px;}
 
-  /* ---------- RECONOCIMIENTO ---------- */
-  .reconoce{background:var(--arena);}
-  .frase-lista{list-style:none; margin:34px 0 8px;}
-  .frase-lista li{
-    font-family:var(--serif); font-size:clamp(21px, 4.8vw, 28px); line-height:1.35; font-weight:400;
-    padding:22px 0; border-top:1px solid var(--linea);
-  }
-  .frase-lista li:last-child{border-bottom:1px solid var(--linea);}
-  .reconoce .cierre{font-family:var(--serif); font-style:italic; font-size:clamp(20px, 4.4vw, 26px); color:var(--terracota); margin-top:30px; line-height:1.4;}
+  /* 3. CÓMO FUNCIONA */
+  .pasos{list-style:none; margin-top:28px; display:grid; gap:14px;}
+  .paso{display:grid; grid-template-columns:84px 1fr; gap:16px; align-items:center; background:#fff; border-radius:22px; padding:14px; box-shadow:0 8px 22px rgba(41,43,41,.07);}
+  .paso img{width:84px; aspect-ratio:39/80; object-fit:cover; object-position:top; border-radius:12px; box-shadow:0 6px 14px rgba(41,43,41,.2);}
+  .paso .n{font-family:var(--serif); font-size:15px; color:var(--terracota-texto); font-weight:600; letter-spacing:.08em;}
+  .paso h3{font-family:var(--serif); font-size:21px; font-weight:600; color:var(--verde); margin:2px 0 4px;}
+  .paso p{font-size:15.5px; color:var(--suave); line-height:1.45;}
+  .despues-pasos{margin-top:30px; text-align:center;}
 
-  /* ---------- CAMBIO DE PERSPECTIVA ---------- */
-  .pausa{padding:0;}
-  .pausa-imagen{
-    height:clamp(220px, 46vw, 360px);
-    background:linear-gradient(180deg, rgba(251,246,238,0) 55%, var(--marfil) 100%), url('assets/hero-ritual.jpg') center 18% / cover no-repeat;
-  }
-  .pausa-texto{padding:8px 0 64px;}
-  .pausa-texto h2{max-width:14em; margin-inline:auto;}
-  .pausa-texto p{max-width:600px; margin-inline:auto;}
+  /* 4. CARRUSEL */
+  .galeria{background:var(--salvia-claro);}
+  .car{position:relative; margin-top:26px;}
+  .car-track{display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; padding:6px 20px 14px; margin:0 -20px; scrollbar-width:none;}
+  .car-track::-webkit-scrollbar{display:none;}
+  .vista{scroll-snap-align:center; flex:none; width:min(70vw, 262px);}
+  .vista button.amp{display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; border-radius:22px;}
+  .vista img{width:100%; aspect-ratio:39/80; object-fit:cover; object-position:top; border-radius:22px; box-shadow:0 14px 30px rgba(41,43,41,.2); background:var(--verde);}
+  .vista h3{font-family:var(--serif); font-size:19px; font-weight:600; color:var(--verde); margin-top:14px;}
+  .vista p{font-size:15px; color:var(--suave); margin-top:4px; line-height:1.45;}
+  .car-ctrl{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:12px;}
+  .car-ctrl button{width:44px; height:44px; border-radius:50%; border:1.5px solid var(--verde); background:#fff; color:var(--verde); font-size:20px; cursor:pointer; line-height:1;}
+  .car-ctrl button:disabled{opacity:.35; cursor:default;}
+  .puntos{display:flex; gap:8px;}
+  .puntos span{width:9px; height:9px; border-radius:50%; background:rgba(49,72,61,.25);}
+  .puntos span.on{background:var(--verde); width:22px; border-radius:6px;}
 
-  /* ---------- PRODUCTO ---------- */
-  .producto{background:var(--marfil);}
-  .recursos{list-style:none; margin:32px 0 34px; counter-reset:r;}
-  .recursos li{counter-increment:r; display:grid; grid-template-columns:44px 1fr; gap:6px 12px; padding:18px 0; border-top:1px solid var(--linea);}
-  .recursos li:last-child{border-bottom:1px solid var(--linea);}
-  .recursos li::before{content:counter(r, decimal-leading-zero); font-family:var(--serif); font-size:20px; color:var(--terracota); line-height:1.3;}
-  .recursos b{display:block; font-size:18px; font-weight:700;}
-  .recursos span{color:var(--cafe-suave); font-size:16px; display:block;}
-  .nota{font-size:14.5px; color:var(--cafe-suave); margin-top:22px;}
+  /* 5. QUÉ RECIBES */
+  .bloque{background:#fff; border-radius:22px; padding:20px 22px; margin-top:16px; box-shadow:0 8px 22px rgba(41,43,41,.07);}
+  .bloque h3{font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--terracota-texto); font-weight:700; margin-bottom:10px;}
+  .bloque ul{list-style:none; display:grid; gap:8px;}
+  .bloque li{position:relative; padding-left:26px; font-size:16.5px;}
+  .bloque li::before{content:""; position:absolute; left:3px; top:8px; width:11px; height:6px; border-left:2px solid var(--verde); border-bottom:2px solid var(--verde); transform:rotate(-45deg);}
+  .bonos{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px;}
+  .bono{background:var(--salvia-claro); border-radius:16px; padding:14px;}
+  .bono b{display:block; font-family:var(--serif); font-size:17px; color:var(--verde); line-height:1.25;}
+  .bono span{display:block; font-size:14px; color:var(--suave); margin-top:4px;}
+  .bloque .nota-bonos{font-size:14.5px; color:var(--suave); margin-top:12px;}
 
-  /* ---------- FRASE DESTACADA DEL HERO ---------- */
-  .resalta{display:inline; font-family:var(--serif); font-style:italic; font-weight:600; font-size:1.2em; line-height:1.35; letter-spacing:-.01em; color:var(--terracota);}
-  footer a{color:#D8C7B2; text-decoration:underline; text-underline-offset:3px;}
+  /* 6. MENSAJES */
+  .msgs{display:grid; gap:16px; max-width:520px; margin:26px auto 0;}
+  .msgs button{display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; border-radius:20px;}
+  .msgs img{width:100%; border-radius:20px; box-shadow:0 12px 26px rgba(41,43,41,.18); background:#000;}
+  .nota{font-size:14.5px; color:var(--suave); margin-top:18px;}
 
-  /* ---------- CÓMO FUNCIONA ---------- */
-  .pasos{list-style:none; margin-top:30px; display:grid; gap:26px;}
-  .pasos li{display:grid; grid-template-columns:54px 1fr; gap:14px; align-items:start;}
-  .pasos .n{font-family:var(--serif); font-size:44px; line-height:1; color:var(--terracota-claro); font-style:italic;}
-  .pasos p{font-size:18px; margin:0; padding-top:6px;}
-
-  /* ---------- GALERÍA ---------- */
-  .galeria{background:var(--arena);}
-  .galeria-track{
-    display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
-    padding:6px 20px 18px; margin:30px -20px 0;
-  }
-  .galeria-track::-webkit-scrollbar{display:none;}
-  .vista{scroll-snap-align:center; flex:none; width:min(72vw, 270px);}
-  .vista img{width:100%; aspect-ratio:39/80; object-fit:cover; object-position:top; border-radius:22px; box-shadow:0 14px 30px rgba(58,42,34,.2); background:var(--cafe);}
-  .vista h3{font-family:var(--serif); font-size:19px; font-weight:600; margin-top:16px;}
-  .vista p{font-size:15px; color:var(--cafe-suave); margin-top:4px;}
-  .desliza{font-size:13.5px; color:var(--cafe-suave); margin-top:12px;}
-
-  /* ---------- TESTIMONIOS ---------- */
-  .testi-grid{display:grid; gap:18px; max-width:520px; margin:34px auto 0;}
-  .testi-grid img{width:100%; border-radius:20px; box-shadow:0 14px 30px rgba(58,42,34,.18); background:#000;}
-
-  /* ---------- OFERTA ---------- */
-  .oferta{background:var(--arena);}
-  .oferta-card{background:#fff; border-radius:28px; padding:36px 26px; box-shadow:0 22px 60px rgba(58,42,34,.12); max-width:560px; margin:34px auto 0; text-align:center;}
-  .oferta-card .nombre{font-family:var(--serif); font-size:24px; font-weight:600;}
-  .oferta-card .precio{font-family:var(--serif); font-size:60px; font-weight:600; line-height:1.1; margin:8px 0 14px;}
-  .oferta-card .desc{font-size:16px; color:var(--cafe-suave);}
-  .oferta-card ul{list-style:none; text-align:left; margin:26px 0 8px;}
+  /* 7. OFERTA */
+  .oferta{background:var(--salvia-claro);}
+  .oferta-card{background:#fff; border-radius:28px; padding:32px 24px; box-shadow:0 20px 50px rgba(41,43,41,.12); max-width:560px; margin:26px auto 0; text-align:center;}
+  .oferta-card .nombre{font-family:var(--serif); font-size:23px; font-weight:600; color:var(--verde);}
+  .oferta-card .precio{font-family:var(--serif); font-size:58px; font-weight:600; line-height:1.1; margin:6px 0 10px; color:var(--texto);}
+  .oferta-card .desc{font-size:16px; color:var(--suave);}
+  .oferta-card ul{list-style:none; text-align:left; margin:20px 0 22px;}
   .oferta-card li{padding:9px 0 9px 28px; position:relative; font-size:16px; border-top:1px solid var(--linea);}
-  .oferta-card li::before{content:""; position:absolute; left:4px; top:17px; width:12px; height:7px; border-left:2px solid var(--terracota); border-bottom:2px solid var(--terracota); transform:rotate(-45deg);}
-  .oferta-datos{text-align:left; font-size:15.5px; color:var(--cafe-suave); margin:22px 0 28px; padding-top:18px; border-top:1px solid var(--linea);}
-  .oferta-datos p{margin-top:8px;}
-  .oferta-datos b{color:var(--cafe);}
-
-  /* ---------- BENEFICIOS DEL HERO ---------- */
-  .benef{list-style:none; margin:18px 0 0; display:grid; gap:8px;}
-  .benef li{position:relative; padding-left:26px; font-size:16px; line-height:1.4; color:var(--cafe);}
-  .benef li::before{content:""; position:absolute; left:3px; top:7px; width:11px; height:6px; border-left:2px solid var(--terracota); border-bottom:2px solid var(--terracota); transform:rotate(-45deg);}
-
-  /* ---------- BARRA FIJA DE COMPRA (móvil) ---------- */
-  .barra{position:fixed; left:0; right:0; bottom:0; z-index:50; background:rgba(251,246,238,.97); border-top:1px solid var(--linea); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); display:flex; align-items:center; gap:12px; justify-content:space-between; transform:translateY(110%); transition:transform .25s ease; box-shadow:0 -8px 24px rgba(58,42,34,.1);}
-  .barra.on{transform:translateY(0);}
-  .barra .p{font-size:13px; line-height:1.25; color:var(--cafe-suave);}
-  .barra .p b{display:block; font-family:var(--serif); font-size:22px; color:var(--cafe);}
-  .barra .cta{width:auto; max-width:none; padding:14px 20px; font-size:14px; box-shadow:none;}
-  @media (min-width:860px){.barra{display:none;}}
-
-  /* ---------- URGENCIA ---------- */
-  .sello{display:inline-block; background:var(--terracota); color:#fff; font-size:12.5px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:6px 14px; border-radius:999px; margin-bottom:10px;}
-  .aviso-precio{font-size:14.5px; color:var(--cafe-suave); margin-top:14px; text-align:left; background:var(--marfil); border-radius:14px; padding:12px 14px;}
-  .aviso-precio b{color:var(--terracota);}
-
-  /* ---------- DESGLOSE ---------- */
-  .desglose{background:var(--arena);}
-  .desglose-lista{list-style:none; margin:30px 0 0; background:#fff; border-radius:24px; padding:8px 22px; box-shadow:0 18px 44px rgba(58,42,34,.1);}
-  .desglose-lista li{display:grid; grid-template-columns:1fr auto; gap:2px 14px; padding:16px 0; border-top:1px solid var(--linea); align-items:baseline;}
-  .desglose-lista li:first-child{border-top:0;}
-  .desglose-lista b{font-size:16.5px; font-weight:700;}
-  .desglose-lista .v{font-family:var(--serif); font-size:19px; font-weight:600; white-space:nowrap; text-decoration:line-through; text-decoration-thickness:2px; text-decoration-color:var(--terracota); color:var(--cafe-suave);}
-  .desglose-lista span.d{grid-column:1; font-size:14.5px; color:var(--cafe-suave); line-height:1.45;}
-  .desglose-total{max-width:560px; margin:26px auto 0; text-align:center;}
-  .desglose-total .suma{font-size:16px; color:var(--cafe-suave);}
-  .desglose-total .tuprecio{font-family:var(--serif); font-size:clamp(32px, 9vw, 50px); font-weight:600; line-height:1.15; margin:6px 0 4px;}
-  .desglose-total .tuprecio em{font-style:normal; color:var(--terracota);}
-  .desglose-total .ahorro{font-size:16px; font-weight:700; color:var(--terracota);}
-  .desglose .cta{margin-top:26px;}
-
-  /* ---------- GARANTÍA ---------- */
-  .garantia{padding:8px 0 64px;}
-  .garantia-fila{display:flex; gap:20px; align-items:center; max-width:560px; margin:0 auto;}
-  .garantia-fila img{flex:none; width:92px; height:92px; object-fit:contain;}
-  .garantia-centro{max-width:560px; margin:0 auto; text-align:center;}
-  .garantia-centro h3{font-family:var(--serif); font-size:23px; font-weight:600; margin-bottom:8px;}
-  .garantia-centro p{font-size:15.5px; color:var(--cafe-suave); margin:0;}
-  .sellos{display:flex; justify-content:center; align-items:center; gap:20px; margin-top:24px;}
-  .sellos > img, .sello-hotmart{width:104px; height:104px; flex:none;}
+  .oferta-card li::before{content:""; position:absolute; left:4px; top:16px; width:12px; height:7px; border-left:2px solid var(--verde); border-bottom:2px solid var(--verde); transform:rotate(-45deg);}
+  .sellos{display:flex; justify-content:center; align-items:center; gap:20px; margin-top:26px;}
+  .sellos > img, .sello-hotmart{width:96px; height:96px; flex:none;}
   .sellos > img{object-fit:contain;}
-  .sello-hotmart{display:flex; align-items:center; justify-content:center; background:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(58,42,34,.12);}
-  .sello-hotmart img{width:62px; height:auto;}
-  .garantia-centro .pago-seguro{margin-top:14px; font-size:14.5px;}
-  .garantia-fila h3{font-family:var(--serif); font-size:21px; font-weight:600; margin-bottom:4px;}
-  .garantia-fila p{font-size:15.5px; color:var(--cafe-suave); margin:0;}
+  .sello-hotmart{display:flex; align-items:center; justify-content:center; background:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(41,43,41,.14);}
+  .sello-hotmart img{width:58px; height:auto;}
 
-  /* ---------- FAQ ---------- */
-  .faq{background:var(--arena);}
+  /* 8. FAQ */
   .faq details{border-top:1px solid var(--linea);}
   .faq details:last-of-type{border-bottom:1px solid var(--linea);}
-  .faq summary{list-style:none; cursor:pointer; padding:20px 40px 20px 0; font-weight:700; font-size:17px; position:relative; line-height:1.4;}
+  .faq summary{list-style:none; cursor:pointer; padding:18px 40px 18px 0; font-weight:700; font-size:17px; position:relative; line-height:1.4; min-height:44px;}
   .faq summary::-webkit-details-marker{display:none;}
-  .faq summary::after{content:"+"; position:absolute; right:4px; top:50%; transform:translateY(-50%); font-size:26px; font-weight:400; color:var(--terracota);}
+  .faq summary::after{content:"+"; position:absolute; right:4px; top:50%; transform:translateY(-50%); font-size:26px; font-weight:400; color:var(--terracota-texto);}
   .faq details[open] summary::after{content:"–";}
-  .faq .resp{padding:0 0 22px; color:var(--cafe-suave); font-size:16.5px;}
+  .faq .resp{padding:0 0 20px; color:var(--suave); font-size:16.5px;}
 
-  /* ---------- CIERRE ---------- */
-  .cierre-final{background:var(--cafe); color:var(--marfil); text-align:center; padding:0;}
-  .cierre-imagen{height:clamp(200px, 42vw, 320px); background:linear-gradient(180deg, rgba(58,42,34,.1) 0%, var(--cafe) 100%), url('assets/hero-ritual.jpg') 70% 60% / cover no-repeat;}
-  .cierre-cuerpo{padding:12px 0 72px;}
+  /* 9. CIERRE */
+  .cierre-final{background:var(--verde); color:var(--marfil); text-align:center; padding:60px 0 56px;}
   .cierre-final h2{color:var(--marfil); max-width:15em; margin-inline:auto;}
-  .cierre-final h2 em{color:#E3A98E;}
-  .cierre-final p{color:#E6D9C8; max-width:560px; margin-inline:auto;}
-  .cierre-final .cta{margin-top:30px; background:#D0714F; box-shadow:0 12px 28px rgba(0,0,0,.3);}
-  .cierre-final .cta:hover{background:#B85F3F;}
-  .cierre-final .cta-micro{color:#C9B9A5;}
+  .cierre-final h2 em{color:#EBB9A3;}
+  .cierre-final p{color:#E3E8E1; max-width:520px; margin-inline:auto;}
+  .cierre-final .cta{margin-top:26px; background:var(--marfil); color:var(--verde); box-shadow:0 10px 24px rgba(0,0,0,.25);}
+  .cierre-final .cta:hover{background:#fff;}
+  .cierre-final .cta-micro{color:#CBD3C9;}
+  .aclaracion{font-size:13px; color:#B9C3B7; margin-top:26px; max-width:520px; margin-inline:auto; line-height:1.55;}
 
-  footer{background:#241A15; color:#B5A491; padding:30px 0; font-size:13px; line-height:1.7;}
+  footer{background:#1F2B25; color:#B8C2B6; padding:28px 0; font-size:13px; line-height:1.7;}
+  footer a{color:#D5DDD3; text-decoration:underline; text-underline-offset:3px;}
+
+  /* BARRA FIJA MÓVIL */
+  .barra{position:fixed; left:0; right:0; bottom:0; z-index:50; background:rgba(250,247,242,.97); border-top:1px solid var(--linea); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); transform:translateY(110%); transition:transform .25s ease; box-shadow:0 -8px 24px rgba(41,43,41,.1);}
+  .barra.on{transform:translateY(0);}
+  .barra .cta{max-width:none; padding:15px 16px; font-size:14px; box-shadow:none;}
+
+  /* VISOR */
+  dialog.visor{border:0; background:transparent; max-width:96vw; max-height:96vh; padding:0; margin:auto;}
+  dialog.visor::backdrop{background:rgba(31,43,37,.82);}
+  dialog.visor img{max-width:92vw; max-height:84vh; width:auto; height:auto; border-radius:16px; margin:0 auto;}
+  dialog.visor button{display:block; margin:12px auto 0; background:#fff; color:var(--verde); border:0; border-radius:999px; padding:12px 26px; font-weight:700; font-size:15px; cursor:pointer; min-height:44px;}
+
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} .barra{transition:none;}}
 
   @media (min-width:860px){
-    section{padding:96px 0;}
-    .hero{padding:56px 0 88px;}
-    .hero-grid{grid-template-columns:1.15fr .85fr; grid-template-areas:"title art" "body art"; column-gap:72px; align-items:start;}
-    .hero-title{align-self:end; margin-bottom:22px;}
-    .hero-body{align-self:start;}
-    .hero-art{align-self:center;}
-    .hero-art{width:100%; max-width:400px;}
-    .hero-art .mock{width:156px; left:-44px; bottom:-60px;}
-    .hero-art{margin-bottom:0;}
-    .galeria-track{margin-inline:0; padding-inline:0; justify-content:center;}
-    .vista{width:190px;}
-    .pausa-texto{padding-bottom:96px;}
-    .testi-grid{grid-template-columns:repeat(3, 1fr); max-width:none; align-items:start;}
-    .centro-desk{text-align:center;}
+    section{padding:84px 0;}
+    .hero{padding:44px 0 80px;}
+    .hero-grid{grid-template-columns:1.1fr .9fr; grid-template-areas:"texto arte"; align-items:center; column-gap:64px;}
+    .hero-arte{width:100%; max-width:380px; margin-inline:0 auto; padding-bottom:0;}
+    .hero-arte .tel{width:250px;}
+    .hero-arte .tel2{width:150px;}
+    .ident-grid{grid-template-columns:.9fr 1.1fr; gap:56px;}
+    .pasos{grid-template-columns:repeat(3,1fr);}
+    .paso{grid-template-columns:1fr; justify-items:start; padding:18px;}
+    .paso img{width:120px;}
+    .car-track{margin:0; padding-inline:0; justify-content:center;}
+    .vista{width:176px;}
+    .car-ctrl{display:none;}
+    .msgs{grid-template-columns:repeat(3,1fr); max-width:none; align-items:start;}
+    .barra{display:none;}
   }
 </style>
 </head>
 <body>
 
 <header class="marca">
-  <span><img src="assets/logo.jpg" alt="" width="32" height="32">Sanando Mi Historia Familiar</span>
+  <span><img src="assets/logo.jpg" alt="" width="30" height="30">Sanando Mi Historia Familiar</span>
 </header>
 
 <main>
 
-<!-- ============ 1. HERO ============ -->
+<!-- ============ 1. HERO EMOCIONAL ============ -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div class="hero-title">
-      <span class="eyebrow">21 días para mirar tu historia familiar</span>
-      <h1>¿Sientes que en tu familia algo se repite? <em>Empieza por verlo en un mapa.</em></h1>
-    </div>
-    <div class="hero-body">
-      <p class="lead">Una app guiada para anotar a tu familia, ver qué se repite y dar un paso distinto cada día, en 5 a 10 minutos. No es terapia: es un espacio para mirarte con calma.</p>
+    <div class="hero-texto">
+      <span class="eyebrow">Un espacio para explorar tu historia familiar</span>
+      <h1>Hay cosas que se repiten en tu vida. <em>Puedes empezar por mirar tu historia de otra manera.</em></h1>
+      <p class="lead">Explora tus vínculos familiares, observa posibles patrones y dedica unos minutos a reflexionar sobre tu historia con un mapa familiar y un recorrido guiado de 21 días.</p>
       <ul class="benef">
-        <li>Tu mapa familiar y observaciones sobre lo que anotes</li>
-        <li>21 días de ejercicios cortos, con diario privado</li>
-        <li>Guía de 12 módulos y 4 bonos incluidos</li>
+        <li>Organiza tu historia en un mapa familiar.</li>
+        <li>Explora preguntas y ejercicios guiados.</li>
+        <li>Avanza a tu ritmo, desde tu celular.</li>
       </ul>
       <div class="hero-cta">
-        <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">Quiero empezar por US$24.99</a>
-        <div class="cta-micro">Pago único, sin mensualidades · Acceso de por vida · Garantía de 7 días</div>
+        <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">QUIERO EXPLORAR MI HISTORIA</a>
+        <div class="cta-micro">US$24.99 · Pago único · Garantía de 7 días</div>
       </div>
     </div>
-    <figure class="hero-art">
-      <div class="art-box">
-        <img class="foto" src="assets/hero-ritual.jpg" alt="Mujer mirando una fotografía antigua de su familia frente a un árbol de linaje" width="460" height="575" fetchpriority="high">
-        <img class="mock" src="assets/app-hero-celular-2.webp" alt="Celular mostrando el mapa familiar de la aplicación, con cuatro personas y una observación" width="640" height="1274" loading="lazy">
-      </div>
-    </figure>
+    <div class="hero-arte">
+      <img class="tel" src="assets/app-hero-celular-2.webp" alt="Celular mostrando el mapa familiar de la aplicación, con cuatro personas y una observación" width="640" height="1274" fetchpriority="high">
+      <img class="tel2" src="assets/app-camino.jpg" alt="Captura del recorrido de 21 días dentro de la aplicación" width="520" height="1067" loading="lazy">
+    </div>
   </div>
 </section>
 
-<!-- ============ 2. RECONOCIMIENTO EMOCIONAL ============ -->
-<section class="reconoce">
-  <div class="wrap narrow">
-    <h2>¿Te suena <em>alguna de estas?</em></h2>
-    <ul class="frase-lista">
-      <li>Repites situaciones que ya viste en casa.</li>
-      <li>Sientes culpa cuando piensas en ti.</li>
-      <li>Hay temas de tu familia que nadie nombra.</li>
-    </ul>
-    <p class="cierre">No necesitas tener todas las respuestas para empezar a hacerte preguntas distintas.</p>
+<!-- ============ 2. IDENTIFICACIÓN EMOCIONAL ============ -->
+<section class="ident">
+  <div class="wrap ident-grid">
+    <div class="ident-foto"><img src="assets/hero-ritual.jpg" alt="Mujer mirando una fotografía antigua de su familia" width="460" height="575" loading="lazy"></div>
+    <div>
+      <h2>A veces, lo que vivimos nos lleva a hacernos preguntas que antes <em>no nos hacíamos.</em></h2>
+      <p>Quizá has reconocido una reacción que no querías repetir. Una dinámica en tus relaciones que te resulta familiar. O la dificultad de elegir algo distinto a lo que aprendiste en casa.</p>
+      <p>No necesitas tener todas las respuestas. Puedes empezar por observar tu historia con más calma.</p>
+      <p class="destacada">No se trata de culpar a tu familia. Se trata de darte un espacio para comprender mejor tu propia historia.</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ 4. QUÉ ES Y CÓMO FUNCIONA ============ -->
-<section class="producto">
-  <div class="wrap narrow">
-    <span class="eyebrow">Cómo funciona</span>
-    <h2>Un mapa familiar y 21 días para mirar tu historia, <em>a tu ritmo.</em></h2>
-    <p class="lead">Una aplicación que usas desde el navegador de tu celular o computador, sin instalar nada.</p>
+<!-- ============ 3. CÓMO FUNCIONA ============ -->
+<section>
+  <div class="wrap">
+    <div class="centro narrow">
+      <h2>Tu historia. Tus preguntas. <em>Tu propio ritmo.</em></h2>
+    </div>
     <ol class="pasos">
-      <li><span class="n">1</span><p>Pagas una sola vez en Hotmart y te llega un correo para crear tu clave.</p></li>
-      <li><span class="n">2</span><p>Armas tu mapa en unos 5 minutos y recibes tu primera observación.</p></li>
-      <li><span class="n">3</span><p>Cada día, de 5 a 10 minutos: algo para mirar, un ejercicio, una pregunta para tu diario y una acción pequeña. Sin presión y sin culpa si te saltas un día.</p></li>
+      <li class="paso"><img src="assets/app-familia.jpg" alt="Captura del mapa familiar" width="520" height="1067" loading="lazy"><div><span class="n">01</span><h3>Organiza</h3><p>Crea tu mapa familiar con la información que conoces.</p></div></li>
+      <li class="paso"><img src="assets/app-resumen.jpg" alt="Captura del resumen con las observaciones" width="520" height="1067" loading="lazy"><div><span class="n">02</span><h3>Explora</h3><p>Consulta las observaciones de la aplicación y utiliza sus preguntas como punto de partida para reflexionar.</p></div></li>
+      <li class="paso"><img src="assets/app-dia.jpg" alt="Captura de un día con ejercicio y diario" width="520" height="1067" loading="lazy"><div><span class="n">03</span><h3>Avanza</h3><p>Recorre los ejercicios guiados, escribe en tu diario y dedica unos minutos al día a tu proceso.</p></div></li>
     </ol>
-    <div style="margin-top:34px"><a href="https://pay.hotmart.com/X108098847Y?sck=que-es" class="cta" data-sck="que-es" onclick="window.clarity&&clarity('event','cta_que_es')">Quiero empezar por US$24.99</a></div>
-    <p class="nota">Es un espacio de reflexión y autoconocimiento: no es terapia ni sustituye la atención profesional.</p>
+    <div class="despues-pasos">
+      <a href="https://pay.hotmart.com/X108098847Y?sck=que-es" class="cta" data-sck="que-es" onclick="window.clarity&&clarity('event','cta_que_es')">QUIERO EXPLORAR MI HISTORIA</a>
+    </div>
   </div>
 </section>
 
-<!-- ============ 6. MIRA LO QUE ENCONTRARÁS DENTRO ============ -->
+<!-- ============ 4. MIRA LA APLICACIÓN POR DENTRO ============ -->
 <section class="galeria">
-  <div class="wrap centro">
-    <span class="eyebrow">Capturas reales de la app</span>
-    <h2>Mira lo que <em>encontrarás dentro.</em></h2>
+  <div class="wrap centro narrow">
+    <h2>Esto es lo que encontrarás <em>al entrar.</em></h2>
+    <p class="lead">Una experiencia digital que reúne tus herramientas de reflexión en un solo lugar.</p>
   </div>
   <div class="wrap">
-    <div class="galeria-track" role="region" aria-label="Capturas de la aplicación" tabindex="0">
-      <figure class="vista"><img src="assets/app-hoy.jpg" alt="Captura de la pantalla Hoy, con el día de tu camino" width="520" height="1067" loading="lazy"><h3>Tu día de hoy</h3><p>Un paso a la vez, de 5 a 10 minutos.</p></figure>
-      <figure class="vista"><img src="assets/app-familia.jpg" alt="Captura del mapa familiar con una observación" width="520" height="1067" loading="lazy"><h3>Mi familia</h3><p>Tu mapa y lo que se repite en él.</p></figure>
-      <figure class="vista"><img src="assets/app-camino.jpg" alt="Captura del camino de 21 días por semanas" width="520" height="1067" loading="lazy"><h3>Camino de 21 días</h3><p>Tres semanas: mirar, entender y dar un paso distinto.</p></figure>
-      <figure class="vista"><img src="assets/app-dia.jpg" alt="Captura de un día con ejercicio, diario y acción" width="520" height="1067" loading="lazy"><h3>Cada día</h3><p>Ejercicio guiado, diario y una acción pequeña.</p></figure>
-      <figure class="vista"><img src="assets/app-guias.jpg" alt="Captura de la pestaña Guías con la guía principal y los bonos" width="520" height="1067" loading="lazy"><h3>Tus guías</h3><p>Guía principal de 12 módulos y 4 bonos.</p></figure>
-      <figure class="vista"><img src="assets/app-resumen.jpg" alt="Captura del resumen con tus días y acciones" width="520" height="1067" loading="lazy"><h3>Tu resumen</h3><p>Lo que descubriste y lo que hiciste.</p></figure>
-    </div>
-    <p class="desliza centro">Desliza para ver más →</p>
-  </div>
-</section>
-
-<!-- ============ 6.5 TESTIMONIOS ============ -->
-<section class="testimonios">
-  <div class="wrap">
-    <div class="centro">
-      <span class="eyebrow">Mensajes recibidos</span>
-      <h2>De personas que <em>usaron Sanando Mi Historia Familiar.</em></h2>
-    </div>
-    <div class="testi-grid">
-      <img src="assets/testimonio-2.jpg" alt="Mensaje recibido de una usuaria" width="720" height="533" loading="lazy">
-      <img src="assets/testimonio-4.jpg" alt="Mensaje recibido de una usuaria" width="720" height="720" loading="lazy">
-      <img src="assets/testimonio-1.jpg" alt="Mensaje recibido de una usuaria" width="531" height="497" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- ============ 7. OFERTA (todo lo que incluye + precio) ============ -->
-<section id="oferta" class="desglose">
-  <div class="wrap narrow">
-    <div class="centro">
-      <span class="eyebrow">Todo lo que incluye</span>
-      <h2>Esto es lo que recibes <em>por un solo pago.</em></h2>
-      <p class="lead">Cada parte tiene un valor de referencia estimado, para que veas cuánto contiene la experiencia: en total, 53 ejercicios guiados.</p>
-    </div>
-    <ul class="desglose-lista">
-      <li><b>Tu mapa familiar y observaciones</b><span class="v">US$15</span><span class="d">Ubicas a las personas y la app te muestra qué se repite entre ellas.</span></li>
-      <li><b>Camino guiado de 21 días</b><span class="v">US$35</span><span class="d">Cada día: algo para mirar, ejercicio, pregunta de diario y una acción pequeña.</span></li>
-      <li><b>Guía principal de 12 módulos</b><span class="v">US$29</span><span class="d">Lecturas, preguntas y ejercicios que se guardan en tu cuenta.</span></li>
-      <li><b>Bono 1 · Dinero y familia</b><span class="v">US$12</span><span class="d">5 módulos sobre lo que aprendiste del dinero en casa.</span></li>
-      <li><b>Bono 2 · Amor y pareja</b><span class="v">US$12</span><span class="d">5 módulos sobre los patrones que se repiten en tus relaciones.</span></li>
-      <li><b>Bono 3 · Mamá y papá</b><span class="v">US$12</span><span class="d">5 módulos para mirar tu vínculo con quienes te criaron, sin presiones.</span></li>
-      <li><b>Bono 4 · Niño o niña interior</b><span class="v">US$12</span><span class="d">5 módulos de escritura para acercarte con ternura a quien fuiste.</span></li>
-      <li><b>Tu diario privado</b><span class="v">US$9</span><span class="d">Escribes lo que quieras y solo tú lo ves.</span></li>
-      <li><b>Meditación guiada</b><span class="v">US$7</span><span class="d">Un audio para parar un momento.</span></li>
-      <li><b>Frase del día</b><span class="v">US$5</span><span class="d">Una frase distinta cada día, con la fecha.</span></li>
-      <li><b>Tu resumen final</b><span class="v">US$6</span><span class="d">Tu mapa, lo que descubriste y lo que hiciste.</span></li>
-    </ul>
-    <div class="desglose-total">
-      <p class="suma">Suma de los valores de referencia: <s style="text-decoration-thickness:2px;text-decoration-color:var(--terracota)">US$154</s></p>
-      <p class="tuprecio">Tu precio: <em>US$24.99</em></p>
-      <p class="ahorro">Pago único · Acceso de por vida · Sin mensualidades</p>
-      <a href="https://pay.hotmart.com/X108098847Y?sck=oferta" class="cta" data-sck="oferta" onclick="window.clarity&&clarity('event','cta_oferta')">Quiero empezar por US$24.99</a>
-      <p class="cta-micro">En Hotmart verás el precio en tu moneda local: es el mismo monto.</p>
-    </div>
-    <p class="nota centro">Los valores de referencia son una estimación orientativa del contenido, no precios a los que se haya vendido por separado. Es un espacio de reflexión y autoconocimiento; no es terapia.</p>
-  </div>
-</section>
-
-<!-- ============ 8. GARANTÍA ============ -->
-<section class="garantia">
-  <div class="wrap">
-    <div class="garantia-centro">
-      <h3>Garantía de 7 días</h3>
-      <p>Si no es para ti, puedes pedir la devolución del 100% de tu dinero dentro de los 7 días siguientes a tu compra, a través de Hotmart. Tu mapa y tu diario son privados: solo tú los ves.</p>
-      <div class="sellos">
-        <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="104" height="104" loading="lazy">
-        <span class="sello-hotmart"><img src="assets/hotmart-logo.webp" alt="Hotmart" width="62" height="67" loading="lazy"></span>
+    <div class="car" role="region" aria-roledescription="carrusel" aria-label="Capturas reales de la aplicación">
+      <div class="car-track" id="track" tabindex="0">
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-hoy.jpg" data-alt="Pantalla Tu día de hoy" aria-label="Ampliar: Tu día de hoy"><img src="assets/app-hoy.jpg" alt="Captura de la pantalla Tu día de hoy" width="520" height="1067" loading="lazy"></button><h3>Tu día de hoy</h3><p>Tu frase del día y el paso que toca hoy.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-familia.jpg" data-alt="Pantalla Mapa familiar" aria-label="Ampliar: Mapa familiar"><img src="assets/app-familia.jpg" alt="Captura del mapa familiar" width="520" height="1067" loading="lazy"></button><h3>Mapa familiar</h3><p>Tus vínculos organizados, con observaciones sobre lo que anotes.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-camino.jpg" data-alt="Pantalla Camino de 21 días" aria-label="Ampliar: Camino de 21 días"><img src="assets/app-camino.jpg" alt="Captura del camino de 21 días" width="520" height="1067" loading="lazy"></button><h3>Camino de 21 días</h3><p>Tres semanas de ejercicios cortos, a tu ritmo.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-dia.jpg" data-alt="Pantalla Ejercicio y diario" aria-label="Ampliar: Ejercicio y diario"><img src="assets/app-dia.jpg" alt="Captura de un día con ejercicio y diario" width="520" height="1067" loading="lazy"></button><h3>Ejercicio y diario</h3><p>Una pregunta para escribir y una acción pequeña.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-guias.jpg" data-alt="Pantalla Guía y bonos" aria-label="Ampliar: Guía y bonos"><img src="assets/app-guias.jpg" alt="Captura de la pestaña Guías con la guía principal y los bonos" width="520" height="1067" loading="lazy"></button><h3>Guía y bonos</h3><p>La guía de 12 módulos y cuatro bonos, en un solo lugar.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-resumen.jpg" data-alt="Pantalla Resumen final" aria-label="Ampliar: Resumen final"><img src="assets/app-resumen.jpg" alt="Captura del resumen con tus días y observaciones" width="520" height="1067" loading="lazy"></button><h3>Resumen final</h3><p>Tu mapa, tus días y lo que fuiste anotando.</p></figure>
       </div>
-      <p class="pago-seguro">Pago seguro procesado por <b>Hotmart</b></p>
+      <div class="car-ctrl">
+        <button type="button" id="ant" aria-label="Captura anterior">‹</button>
+        <div class="puntos" id="puntos" aria-hidden="true"></div>
+        <button type="button" id="sig" aria-label="Captura siguiente">›</button>
+      </div>
+      <p class="sr-only" id="pos" aria-live="polite" style="position:absolute;left:-9999px">Captura 1 de 6</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 9. PREGUNTAS FRECUENTES ============ -->
+<!-- ============ 5. QUÉ RECIBES ============ -->
+<section>
+  <div class="wrap narrow">
+    <h2 class="centro">Todo lo necesario para comenzar, <em>en un solo acceso.</em></h2>
+    <div class="bloque">
+      <h3>Tu experiencia principal</h3>
+      <ul>
+        <li>Mapa familiar y observaciones.</li>
+        <li>Recorrido guiado de 21 días.</li>
+        <li>Guía principal de 12 módulos.</li>
+        <li>Diario privado y resumen final.</li>
+      </ul>
+    </div>
+    <div class="bloque">
+      <h3>Tus cuatro bonos</h3>
+      <div class="bonos">
+        <div class="bono"><b>Dinero y familia</b><span>5 módulos</span></div>
+        <div class="bono"><b>Amor y pareja</b><span>5 módulos</span></div>
+        <div class="bono"><b>Mamá y papá</b><span>5 módulos</span></div>
+        <div class="bono"><b>Niño o niña interior</b><span>5 módulos</span></div>
+      </div>
+      <p class="nota-bonos">Cada bono contiene cinco módulos de reflexión y autoconocimiento.</p>
+    </div>
+    <div class="bloque">
+      <h3>Tus recursos complementarios</h3>
+      <ul>
+        <li>Meditación guiada.</li>
+        <li>Frase del día.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. MENSAJES REALES ============ -->
+<section class="ident">
+  <div class="wrap">
+    <div class="centro narrow">
+      <h2>Experiencias compartidas por personas que <em>utilizaron la aplicación.</em></h2>
+    </div>
+    <div class="msgs">
+      <button type="button" data-ampliar="assets/mensaje-2.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-2.jpg" alt="Mensaje recibido de una persona usuaria" width="720" height="533" loading="lazy"></button>
+      <button type="button" data-ampliar="assets/mensaje-4.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-4.jpg" alt="Mensaje recibido de una persona usuaria" width="720" height="720" loading="lazy"></button>
+      <button type="button" data-ampliar="assets/mensaje-1.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-1.jpg" alt="Mensaje recibido de una persona usuaria" width="531" height="497" loading="lazy"></button>
+    </div>
+    <p class="nota centro">Mensajes reales, sin modificar. Cada experiencia es personal y los resultados no están garantizados.</p>
+  </div>
+</section>
+
+<!-- ============ 7. OFERTA Y COMPRA ============ -->
+<section id="oferta" class="oferta centro">
+  <div class="wrap">
+    <h2>Empieza por darte un espacio para <em>explorar tu historia.</em></h2>
+    <div class="oferta-card">
+      <div class="nombre">Sanando Mi Historia Familiar</div>
+      <div class="precio">US$24.99</div>
+      <p class="desc">Un solo pago para acceder al mapa familiar, el recorrido de 21 días, la guía principal, los cuatro bonos y las herramientas de reflexión.</p>
+      <ul>
+        <li>Acceso digital mediante correo y creación de clave.</li>
+        <li>Uso desde celular o computador.</li>
+        <li>Sin mensualidades y con acceso de por vida.</li>
+        <li>Garantía publicada de 7 días.</li>
+      </ul>
+      <a href="https://pay.hotmart.com/X108098847Y?sck=oferta" class="cta" data-sck="oferta" onclick="window.clarity&&clarity('event','cta_oferta')">QUIERO EMPEZAR MI RECORRIDO</a>
+      <div class="cta-micro">Pago procesado mediante Hotmart.</div>
+      <div class="sellos">
+        <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="96" height="96" loading="lazy">
+        <span class="sello-hotmart"><img src="assets/hotmart-logo.webp" alt="Hotmart" width="58" height="63" loading="lazy"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. PREGUNTAS FRECUENTES ============ -->
 <section class="faq">
   <div class="wrap narrow">
     <h2>Preguntas <em>frecuentes</em></h2>
-    <details><summary>¿Qué es Sanando Mi Historia Familiar?</summary><div class="resp">Una aplicación para armar tu mapa familiar y recorrer un camino guiado de 21 días. Te ayuda a ver qué se repite en tu familia y a dar pasos concretos. Se usa desde el navegador.</div></details>
-    <details><summary>¿Qué incluye?</summary><div class="resp">Tu mapa familiar, observaciones sobre lo que anotaste, un camino de 21 días con ejercicios, una guía principal de 12 módulos, 4 bonos (dinero, pareja, mamá y papá, niño o niña interior), una meditación guiada, una frase del día, un diario privado y un resumen final.</div></details>
-    <details><summary>¿Cómo armo mi mapa?</summary><div class="resp">Al entrar a la app, el mapa te lleva unos 5 minutos: eliges quiénes están en tu familia y anotas lo que sabes. Después recibes tu primera observación.</div></details>
-    <details><summary>¿Cuándo puedo empezar?</summary><div class="resp">En cuanto pagas: te llega un correo para crear tu clave y entras a tu camino ese mismo día. Después armas tu mapa en unos 5 minutos.</div></details>
-    <details><summary>¿Cuánto tiempo tengo acceso?</summary><div class="resp">Para siempre: es un pago único, sin renovaciones.</div></details>
-    <details><summary>¿Necesito instalar algo?</summary><div class="resp">No. Se usa desde el navegador de tu celular o computador, con conexión a internet.</div></details>
-    <details><summary>¿Qué hago si no me llega el correo de acceso?</summary><div class="resp">Revisa spam y promociones. Si no aparece, en la pantalla de entrada hay un botón para pedirlo de nuevo con el correo con el que pagaste.</div></details>
-    <details><summary>¿En qué se basa?</summary><div class="resp">Es una experiencia de autoconocimiento inspirada en las constelaciones familiares. No es una terapia ni una técnica con validación científica, y no promete resultados.</div></details>
-    <details><summary>¿Sirve para hombres también?</summary><div class="resp">Sí. Los textos hablan en general, para cualquier persona.</div></details>
-    <details><summary>¿Quién ve lo que escribo?</summary><div class="resp">Solo tú. Tu mapa y tu diario son privados y no se comparten.</div></details>
-    <details><summary>¿Cómo recibo el acceso después de comprar?</summary><div class="resp">Pagas en Hotmart y te llega un correo para crear tu clave. Con ese correo y tu clave entras a tu camino.</div></details>
-    <details><summary>¿Es terapia?</summary><div class="resp">No. Es un espacio de reflexión y autoconocimiento. No sustituye la atención de un profesional de la salud.</div></details>
-    <details><summary>¿Puedo avanzar a mi propio ritmo?</summary><div class="resp">Sí. Cada día dura de 5 a 10 minutos, y no pasa nada si te saltas uno. La app no te presiona.</div></details>
-    <details><summary>¿Cuál es el precio?</summary><div class="resp">US$24.99, en un solo pago. No hay mensualidades ni renovaciones, y el acceso es de por vida. En Hotmart verás el monto convertido a tu moneda local.</div></details>
-    <details><summary>¿Cómo funciona la garantía de 7 días?</summary><div class="resp">Si no es para ti, puedes pedir el reembolso del 100% dentro de los 7 días siguientes a tu compra, a través de Hotmart.</div></details>
+    <details><summary>¿Necesito saber de constelaciones familiares?</summary><div class="resp">No necesitas conocimientos previos para comenzar a utilizar las herramientas de reflexión de la aplicación.</div></details>
+    <details><summary>¿Cuánto tiempo necesito al día?</summary><div class="resp">El recorrido está planteado para sesiones de aproximadamente 5 a 10 minutos. Puedes avanzar a tu ritmo.</div></details>
+    <details><summary>¿Cómo accedo después de comprar?</summary><div class="resp">Recibirás un correo con las instrucciones para crear tu clave y acceder a la aplicación.</div></details>
+    <details><summary>¿Puedo usarla desde mi celular?</summary><div class="resp">Sí, puedes acceder desde el navegador de tu celular o computador con conexión a internet.</div></details>
+    <details><summary>¿Es una terapia?</summary><div class="resp">No. Es una experiencia de autoconocimiento y reflexión. No sustituye la atención de un profesional de la salud.</div></details>
+    <details><summary>¿Cómo funciona la garantía?</summary><div class="resp">La compra cuenta con una garantía publicada de 7 días. Consulta las condiciones y el procedimiento aplicable en Hotmart.</div></details>
+    <details><summary>¿El pago es mensual?</summary><div class="resp">No. El precio publicado es US$24.99 en un solo pago, sin mensualidades, y el acceso es de por vida.</div></details>
   </div>
 </section>
 
-<!-- ============ 10. CIERRE EMOCIONAL ============ -->
+<!-- ============ 9. CIERRE EMOCIONAL ============ -->
 <section class="cierre-final">
-  <div class="cierre-imagen" role="img" aria-label="Mujer sosteniendo una fotografía familiar a la luz cálida de una ventana"></div>
-  <div class="wrap cierre-cuerpo">
+  <div class="wrap">
     <h2>No tienes que comprender toda tu historia hoy. <em>Puedes empezar por mirarla.</em></h2>
-    <p>Date un espacio para ver tus vínculos, entender lo que se repite y dar un paso distinto, a tu ritmo.</p>
-    <a href="https://pay.hotmart.com/X108098847Y?sck=cierre" class="cta" data-sck="cierre" onclick="window.clarity&&clarity('event','cta_cierre')">Quiero empezar por US$24.99</a>
-    <div class="cta-micro">Pago único · Acceso de por vida · Garantía de 7 días</div>
+    <p>Date un espacio para explorar tus vínculos, escribir lo que observas y avanzar a tu ritmo.</p>
+    <a href="https://pay.hotmart.com/X108098847Y?sck=cierre" class="cta" data-sck="cierre" onclick="window.clarity&&clarity('event','cta_cierre')">QUIERO EXPLORAR MI HISTORIA</a>
+    <div class="cta-micro">US$24.99 · Pago único · Garantía publicada de 7 días</div>
+    <p class="aclaracion">Experiencia digital de autoconocimiento inspirada en las constelaciones familiares. No sustituye la atención profesional ni garantiza resultados específicos.</p>
   </div>
 </section>
 
@@ -431,11 +385,19 @@
 </footer>
 
 <div class="barra" id="barra" aria-hidden="true">
-  <div class="p">Pago único · de por vida<b>US$24.99</b></div>
-  <a href="https://pay.hotmart.com/X108098847Y?sck=barra" class="cta" data-sck="barra" onclick="window.clarity&&clarity('event','cta_barra')">Empezar ahora</a>
+  <a href="https://pay.hotmart.com/X108098847Y?sck=barra" class="cta" data-sck="barra" onclick="window.clarity&&clarity('event','cta_barra')">QUIERO EXPLORAR MI HISTORIA</a>
 </div>
+
+<dialog class="visor" id="visor" aria-label="Imagen ampliada">
+  <img id="visor-img" alt="">
+  <button type="button" id="visor-cerrar">Cerrar</button>
+</dialog>
+
 <script>
 (function(){
+  var ev = function(n){ try{ window.clarity && clarity('event', n); }catch(e){} };
+
+  // Enlaces de compra: etiqueta por botón (+ fuente si la página se abre con ?src=)
   var q = new URLSearchParams(location.search);
   var fuente = q.get('src') || q.get('utm_source') || '';
   document.querySelectorAll('a[href^="https://pay.hotmart.com/"]').forEach(function(a){
@@ -445,14 +407,62 @@
     u.searchParams.set('sck', sck);
     a.href = u.toString();
   });
+
+  // Barra fija: aparece al pasar el primer botón; se oculta en la oferta y el cierre
   var barra = document.getElementById('barra');
   var hero = document.querySelector('.hero .cta');
-  var oferta = document.getElementById('oferta');
-  if (!('IntersectionObserver' in window) || !barra || !hero) return;
-  var heroVisto = true, ofertaVista = false;
-  function pinta(){ var on = !heroVisto && !ofertaVista; barra.classList.toggle('on', on); barra.setAttribute('aria-hidden', on ? 'false' : 'true'); }
-  new IntersectionObserver(function(e){ heroVisto = e[0].isIntersecting; pinta(); }).observe(hero);
-  if (oferta) new IntersectionObserver(function(e){ ofertaVista = e[0].isIntersecting; pinta(); }, {threshold:0.05}).observe(oferta);
+  if ('IntersectionObserver' in window && barra && hero) {
+    var estado = { hero: true, oferta: false, cierre: false };
+    var pinta = function(){ var on = !estado.hero && !estado.oferta && !estado.cierre; barra.classList.toggle('on', on); barra.setAttribute('aria-hidden', on ? 'false' : 'true'); };
+    new IntersectionObserver(function(e){ estado.hero = e[0].isIntersecting; pinta(); }).observe(hero);
+    [['oferta','#oferta'],['cierre','.cierre-final']].forEach(function(p){
+      var el = document.querySelector(p[1]);
+      if (el) new IntersectionObserver(function(e){ estado[p[0]] = e[0].isIntersecting; pinta(); }, {threshold:0.05}).observe(el);
+    });
+  }
+
+  // Carrusel
+  var track = document.getElementById('track');
+  var figs = track ? Array.prototype.slice.call(track.children) : [];
+  var puntos = document.getElementById('puntos');
+  var ant = document.getElementById('ant'), sig = document.getElementById('sig'), pos = document.getElementById('pos');
+  var actual = 0;
+  figs.forEach(function(){ puntos.appendChild(document.createElement('span')); });
+  function pintaPuntos(){
+    Array.prototype.forEach.call(puntos.children, function(s,i){ s.className = i === actual ? 'on' : ''; });
+    ant.disabled = actual === 0; sig.disabled = actual === figs.length - 1;
+    pos.textContent = 'Captura ' + (actual + 1) + ' de ' + figs.length;
+  }
+  function ir(i){
+    i = Math.max(0, Math.min(figs.length - 1, i));
+    var f = figs[i];
+    track.scrollTo({ left: f.offsetLeft - (track.clientWidth - f.clientWidth) / 2, behavior: 'smooth' });
+  }
+  var visto = false;
+  track.addEventListener('scroll', function(){
+    var centro = track.scrollLeft + track.clientWidth / 2, mejor = 0, d = 1e9;
+    figs.forEach(function(f,i){ var c = f.offsetLeft + f.clientWidth / 2, dd = Math.abs(c - centro); if (dd < d){ d = dd; mejor = i; } });
+    if (mejor !== actual){ actual = mejor; pintaPuntos(); if (!visto){ visto = true; ev('carrusel_desliza'); } }
+  }, { passive: true });
+  ant.addEventListener('click', function(){ ir(actual - 1); ev('carrusel_anterior'); });
+  sig.addEventListener('click', function(){ ir(actual + 1); ev('carrusel_siguiente'); });
+  track.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight'){ e.preventDefault(); ir(actual + 1); }
+    if (e.key === 'ArrowLeft'){ e.preventDefault(); ir(actual - 1); }
+  });
+  pintaPuntos();
+
+  // Visor para ampliar imágenes
+  var visor = document.getElementById('visor'), vimg = document.getElementById('visor-img'), ultimo = null;
+  document.querySelectorAll('[data-ampliar]').forEach(function(b){
+    b.addEventListener('click', function(){
+      ultimo = b; vimg.src = b.getAttribute('data-ampliar'); vimg.alt = b.getAttribute('data-alt') || '';
+      if (visor.showModal) visor.showModal(); ev('imagen_ampliada');
+    });
+  });
+  function cerrar(){ if (visor.open) visor.close(); if (ultimo) ultimo.focus(); }
+  document.getElementById('visor-cerrar').addEventListener('click', cerrar);
+  visor.addEventListener('click', function(e){ if (e.target === visor) cerrar(); });
 })();
 </script>
 </body>
