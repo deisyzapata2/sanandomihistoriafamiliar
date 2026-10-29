@@ -169,6 +169,13 @@
   .barra.on{transform:translateY(0);}
   .barra .cta{max-width:none; padding:15px 16px; font-size:14px; box-shadow:none;}
 
+  /* WHATSAPP FLOTANTE */
+  .wa{position:fixed; right:16px; bottom:16px; z-index:60; width:58px; height:58px; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(0,0,0,.28); transition:bottom .25s ease, transform .2s ease; text-decoration:none;}
+  .wa:hover{transform:scale(1.06);}
+  .wa svg{width:30px; height:30px; fill:#fff;}
+  body.hay-barra .wa{bottom:84px;}
+  @media (min-width:860px){.wa{right:24px; bottom:24px;}}
+
   /* VISOR */
   dialog.visor{border:0; background:transparent; max-width:96vw; max-height:96vh; padding:0; margin:auto;}
   dialog.visor::backdrop{background:rgba(31,43,37,.82);}
@@ -391,6 +398,10 @@
   <a href="https://pay.hotmart.com/X108098847Y?sck=barra" class="cta" data-sck="barra" onclick="window.clarity&&clarity('event','cta_barra')">QUIERO EXPLORAR MI HISTORIA</a>
 </div>
 
+<a class="wa" id="wa" href="https://wa.me/573242172226?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20Sanando%20Mi%20Historia%20Familiar" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp" onclick="window.clarity&&clarity('event','whatsapp_click')">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+</a>
+
 <dialog class="visor" id="visor" aria-label="Imagen ampliada">
   <img id="visor-img" alt="">
   <button type="button" id="visor-cerrar">Cerrar</button>
@@ -416,7 +427,7 @@
   var hero = document.querySelector('.hero .cta');
   if ('IntersectionObserver' in window && barra && hero) {
     var estado = { hero: true, oferta: false, cierre: false };
-    var pinta = function(){ var on = !estado.hero && !estado.oferta && !estado.cierre; barra.classList.toggle('on', on); barra.setAttribute('aria-hidden', on ? 'false' : 'true'); };
+    var pinta = function(){ var on = !estado.hero && !estado.oferta && !estado.cierre; barra.classList.toggle('on', on); document.body.classList.toggle('hay-barra', on); barra.setAttribute('aria-hidden', on ? 'false' : 'true'); };
     new IntersectionObserver(function(e){ estado.hero = e[0].isIntersecting; pinta(); }).observe(hero);
     [['oferta','#oferta'],['cierre','.cierre-final']].forEach(function(p){
       var el = document.querySelector(p[1]);
