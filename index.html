@@ -18,16 +18,18 @@
 </script>
 <style>
   :root{
-    --marfil:#FAF7F2;
-    --salvia:#849681;
-    --salvia-claro:#EDF0EA;
-    --verde:#31483D;
-    --verde-hover:#263A31;
+    --marfil:#F4ECDD;          /* Crema: fondo base */
+    --salvia-claro:#EADFC9;    /* Crema oscuro: secciones alternas */
+    --verde:#2A2016;           /* Noche: títulos y bloques oscuros */
+    --arcilla:#B5673F;         /* Arcilla: botones y todo lo clicable */
+    --arcilla-claro:#CE8259;   /* hover del botón */
+    --dorado:#C7A24C;          /* líneas y detalles finos */
+    --malva:#B98A86;           /* acento emocional */
     --terracota:#C78368;
-    --terracota-texto:#A4573C;
-    --texto:#292B29;
-    --suave:#58605A;
-    --linea:rgba(41,43,41,.14);
+    --terracota-texto:#99512F; /* arcilla más profundo, para texto pequeño legible */
+    --texto:#2A2016;
+    --suave:#5C4A39;           /* Café texto suave */
+    --linea:rgba(42,32,22,.14);
     --serif:'Fraunces', Georgia, serif;
     --sans:'DM Sans', system-ui, sans-serif;
   }
@@ -48,8 +50,8 @@
   p + p{margin-top:12px;}
 
   /* CTA */
-  .cta{display:inline-block; width:100%; max-width:420px; text-align:center; text-decoration:none; background:var(--verde); color:#fff; font-family:var(--sans); font-weight:700; font-size:15px; letter-spacing:.05em; text-transform:uppercase; line-height:1.3; padding:18px 24px; border-radius:999px; box-shadow:0 10px 24px rgba(49,72,61,.25); transition:background .2s ease;}
-  .cta:hover{background:var(--verde-hover);}
+  .cta{display:inline-block; width:100%; max-width:420px; text-align:center; text-decoration:none; background:var(--arcilla); color:#F4ECDD; font-family:var(--sans); font-weight:700; font-size:16px; letter-spacing:.05em; text-transform:uppercase; line-height:1.3; padding:18px 24px; border-radius:999px; box-shadow:0 10px 24px rgba(181,103,63,.32); transition:background .2s ease;}
+  .cta:hover{background:var(--arcilla-claro);}
   .cta-micro{font-size:14px; color:var(--suave); margin-top:12px;}
 
   /* CABECERA */
@@ -71,21 +73,21 @@
   .hero-cta{margin-top:16px;}
   .hero-arte{grid-area:arte; position:relative; width:min(100%, 330px); margin-inline:auto; padding-bottom:10px;}
   .hero-arte .tel{margin-inline:auto 0;}
-  .hero-arte .tel{width:236px; margin-left:0; filter:drop-shadow(0 18px 26px rgba(41,43,41,.28));}
-  .hero-arte .tel2{position:absolute; right:0; bottom:0; width:128px; border-radius:20px; box-shadow:0 14px 28px rgba(41,43,41,.28); border:4px solid #fff;}
+  .hero-arte .tel{width:236px; margin-left:0; filter:drop-shadow(0 18px 26px rgba(42,32,22,.28));}
+  .hero-arte .tel2{position:absolute; right:0; bottom:0; width:128px; border-radius:20px; box-shadow:0 14px 28px rgba(42,32,22,.28); border:4px solid #fff;}
 
   /* 2. IDENTIFICACIÓN */
   .ident{background:var(--salvia-claro);}
   .ident-grid{display:grid; gap:28px; align-items:center;}
-  .ident-foto{border-radius:26px; overflow:hidden; box-shadow:0 16px 36px rgba(41,43,41,.16); aspect-ratio:4/3;}
+  .ident-foto{border-radius:26px; overflow:hidden; box-shadow:0 16px 36px rgba(42,32,22,.16); aspect-ratio:4/3;}
   .ident-foto img{width:100%; height:100%; object-fit:cover; object-position:center 30%;}
-  .destacada{font-family:var(--serif); font-style:italic; font-size:clamp(19px, 4.4vw, 23px); line-height:1.4; color:var(--verde); border-left:3px solid var(--terracota); padding-left:16px; margin-top:22px;}
+  .destacada{font-family:var(--serif); font-style:italic; font-size:clamp(19px, 4.4vw, 23px); line-height:1.4; color:var(--verde); border-left:3px solid var(--dorado); padding-left:16px; margin-top:22px;}
 
   /* 3. CÓMO FUNCIONA */
   .pasos{list-style:none; margin-top:28px; display:grid; gap:14px;}
-  .paso{display:grid; grid-template-columns:96px 1fr; gap:16px; align-items:center; background:#fff; border-radius:22px; padding:12px 16px 12px 12px; box-shadow:0 8px 22px rgba(41,43,41,.07);}
+  .paso{display:grid; grid-template-columns:96px 1fr; gap:16px; align-items:center; background:#fff; border-radius:22px; padding:12px 16px 12px 12px; box-shadow:0 8px 22px rgba(42,32,22,.07);}
   .escena{display:flex; align-items:center; justify-content:center; background:var(--salvia-claro); border-radius:16px; padding:10px 0;}
-  .tel-marco{display:block; width:62px; padding:3px; background:linear-gradient(160deg,#4a3d35,#1d1612 60%,#2c211b); border-radius:14px; box-shadow:0 8px 16px rgba(41,43,41,.28);}
+  .tel-marco{display:block; width:62px; padding:3px; background:linear-gradient(160deg,#4a3d35,#1d1612 60%,#2c211b); border-radius:14px; box-shadow:0 8px 16px rgba(42,32,22,.28);}
   .tel-marco img{width:100%; aspect-ratio:39/80; object-fit:cover; object-position:top; border-radius:11px;}
   .paso .n{font-family:var(--serif); font-size:15px; color:var(--terracota-texto); font-weight:600; letter-spacing:.08em;}
   .paso h3{font-family:var(--serif); font-size:21px; font-weight:600; color:var(--verde); margin:2px 0 4px;}
@@ -99,18 +101,18 @@
   .car-track::-webkit-scrollbar{display:none;}
   .vista{scroll-snap-align:center; flex:none; width:min(70vw, 262px);}
   .vista button.amp{display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; border-radius:22px;}
-  .vista img{width:100%; aspect-ratio:39/80; object-fit:cover; object-position:top; border-radius:22px; box-shadow:0 14px 30px rgba(41,43,41,.2); background:var(--verde);}
+  .vista img{width:100%; aspect-ratio:39/80; object-fit:cover; object-position:top; border-radius:22px; box-shadow:0 14px 30px rgba(42,32,22,.2); background:var(--verde);}
   .vista h3{font-family:var(--serif); font-size:19px; font-weight:600; color:var(--verde); margin-top:14px;}
   .vista p{font-size:15px; color:var(--suave); margin-top:4px; line-height:1.45;}
   .car-ctrl{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:12px;}
   .car-ctrl button{width:44px; height:44px; border-radius:50%; border:1.5px solid var(--verde); background:#fff; color:var(--verde); font-size:20px; cursor:pointer; line-height:1;}
   .car-ctrl button:disabled{opacity:.35; cursor:default;}
   .puntos{display:flex; gap:8px;}
-  .puntos span{width:9px; height:9px; border-radius:50%; background:rgba(49,72,61,.25);}
+  .puntos span{width:9px; height:9px; border-radius:50%; background:rgba(42,32,22,.25);}
   .puntos span.on{background:var(--verde); width:22px; border-radius:6px;}
 
   /* 5. QUÉ RECIBES */
-  .bloque{background:#fff; border-radius:22px; padding:20px 22px; margin-top:16px; box-shadow:0 8px 22px rgba(41,43,41,.07);}
+  .bloque{background:#fff; border-radius:22px; padding:20px 22px; margin-top:16px; box-shadow:0 8px 22px rgba(42,32,22,.07);}
   .bloque h3{font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--terracota-texto); font-weight:700; margin-bottom:10px;}
   .bloque ul{list-style:none; display:grid; gap:8px;}
   .bloque li{position:relative; padding-left:26px; font-size:16.5px;}
@@ -124,12 +126,12 @@
   /* 6. MENSAJES */
   .msgs{display:grid; gap:16px; max-width:520px; margin:26px auto 0;}
   .msgs button{display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; border-radius:20px;}
-  .msgs img{width:100%; border-radius:20px; box-shadow:0 12px 26px rgba(41,43,41,.18); background:#000;}
+  .msgs img{width:100%; border-radius:20px; box-shadow:0 12px 26px rgba(42,32,22,.18); background:#000;}
   .nota{font-size:14.5px; color:var(--suave); margin-top:18px;}
 
   /* 7. OFERTA */
   .oferta{background:var(--salvia-claro);}
-  .oferta-card{background:#fff; border-radius:28px; padding:32px 24px; box-shadow:0 20px 50px rgba(41,43,41,.12); max-width:560px; margin:26px auto 0; text-align:center;}
+  .oferta-card{background:#fff; border-radius:28px; padding:32px 24px; box-shadow:0 20px 50px rgba(42,32,22,.12); max-width:560px; margin:26px auto 0; text-align:center;}
   .oferta-card .nombre{font-family:var(--serif); font-size:23px; font-weight:600; color:var(--verde);}
   .oferta-card .precio{font-family:var(--serif); font-size:58px; font-weight:600; line-height:1.1; margin:6px 0 10px; color:var(--texto);}
   .oferta-card .desc{font-size:16px; color:var(--suave);}
@@ -139,7 +141,7 @@
   .sellos{display:flex; justify-content:center; align-items:center; gap:20px; margin-top:26px;}
   .sellos > img, .sello-hotmart{width:96px; height:96px; flex:none;}
   .sellos > img{object-fit:contain;}
-  .sello-hotmart{display:flex; align-items:center; justify-content:center; background:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(41,43,41,.14);}
+  .sello-hotmart{display:flex; align-items:center; justify-content:center; background:#fff; border-radius:50%; box-shadow:0 6px 18px rgba(42,32,22,.14);}
   .sello-hotmart img{width:58px; height:auto;}
 
   /* 8. FAQ */
@@ -154,18 +156,18 @@
   /* 9. CIERRE */
   .cierre-final{background:var(--verde); color:var(--marfil); text-align:center; padding:60px 0 56px;}
   .cierre-final h2{color:var(--marfil); max-width:15em; margin-inline:auto;}
-  .cierre-final h2 em{color:#EBB9A3;}
-  .cierre-final p{color:#E3E8E1; max-width:520px; margin-inline:auto;}
-  .cierre-final .cta{margin-top:26px; background:var(--marfil); color:var(--verde); box-shadow:0 10px 24px rgba(0,0,0,.25);}
-  .cierre-final .cta:hover{background:#fff;}
-  .cierre-final .cta-micro{color:#CBD3C9;}
-  .aclaracion{font-size:13px; color:#B9C3B7; margin-top:26px; max-width:520px; margin-inline:auto; line-height:1.55;}
+  .cierre-final h2 em{color:var(--dorado);}
+  .cierre-final p{color:#EADFC9; max-width:520px; margin-inline:auto;}
+  .cierre-final .cta{margin-top:26px; box-shadow:0 10px 24px rgba(0,0,0,.35);}
+  .cierre-final .cta:hover{background:var(--arcilla-claro);}
+  .cierre-final .cta-micro{color:#CDBFA6;}
+  .aclaracion{font-size:13px; color:#CDBFA6; margin-top:26px; max-width:520px; margin-inline:auto; line-height:1.55;}
 
-  footer{background:#1F2B25; color:#B8C2B6; padding:28px 0; font-size:13px; line-height:1.7;}
-  footer a{color:#D5DDD3; text-decoration:underline; text-underline-offset:3px;}
+  footer{background:#1C140D; color:#CDBFA6; padding:28px 0; font-size:13px; line-height:1.7;}
+  footer a{color:#EADFC9; text-decoration:underline; text-underline-offset:3px;}
 
   /* BARRA FIJA MÓVIL */
-  .barra{position:fixed; left:0; right:0; bottom:0; z-index:50; background:rgba(250,247,242,.97); border-top:1px solid var(--linea); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); transform:translateY(110%); transition:transform .25s ease; box-shadow:0 -8px 24px rgba(41,43,41,.1);}
+  .barra{position:fixed; left:0; right:0; bottom:0; z-index:50; background:rgba(244,236,221,.97); border-top:1px solid var(--linea); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); transform:translateY(110%); transition:transform .25s ease; box-shadow:0 -8px 24px rgba(42,32,22,.1);}
   .barra.on{transform:translateY(0);}
   .barra .cta{max-width:none; padding:15px 16px; font-size:14px; box-shadow:none;}
 
@@ -178,7 +180,7 @@
 
   /* VISOR */
   dialog.visor{border:0; background:transparent; max-width:96vw; max-height:96vh; padding:0; margin:auto;}
-  dialog.visor::backdrop{background:rgba(31,43,37,.82);}
+  dialog.visor::backdrop{background:rgba(28,20,13,.82);}
   dialog.visor img{max-width:92vw; max-height:84vh; width:auto; height:auto; border-radius:16px; margin:0 auto;}
   dialog.visor button{display:block; margin:12px auto 0; background:#fff; color:var(--verde); border:0; border-radius:999px; padding:12px 26px; font-weight:700; font-size:15px; cursor:pointer; min-height:44px;}
 
@@ -194,8 +196,8 @@
     .ident-grid{grid-template-columns:.9fr 1.1fr; gap:56px;}
     .pasos{grid-template-columns:repeat(3,1fr);}
     .paso{grid-template-columns:1fr; gap:20px; padding:14px 14px 26px; align-items:start; align-content:start;}
-    .escena{padding:28px 0 22px; border-radius:18px; background:linear-gradient(180deg,var(--salvia-claro),#E3E9E0);}
-    .tel-marco{width:158px; padding:6px; border-radius:30px; box-shadow:0 22px 34px rgba(41,43,41,.3);}
+    .escena{padding:28px 0 22px; border-radius:18px; background:linear-gradient(180deg,#EADFC9,#E0D1B2);}
+    .tel-marco{width:158px; padding:6px; border-radius:30px; box-shadow:0 22px 34px rgba(42,32,22,.3);}
     .tel-marco img{border-radius:24px;}
     .paso-txt{padding:0 8px;}
     .car-track{margin:0; padding-inline:0; justify-content:center;}
