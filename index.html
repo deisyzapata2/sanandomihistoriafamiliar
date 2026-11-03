@@ -181,6 +181,28 @@
   body.hay-barra .wa{bottom:84px;}
   @media (min-width:860px){.wa{right:24px; bottom:24px;}}
 
+  /* POPUP DE SALIDA */
+  dialog.salida{border:0; padding:0; background:transparent; width:min(92vw, 440px); max-height:96vh; margin:auto; overflow:visible;}
+  dialog.salida::backdrop{background:rgba(28,20,13,.78);}
+  .salida-caja{background:#fff; border-radius:22px; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.45); max-height:94vh; overflow-y:auto; position:relative; text-align:center;}
+  .salida-x{position:absolute; top:8px; right:8px; width:44px; height:44px; border:0; border-radius:50%; background:rgba(255,255,255,.22); color:#fff; font-size:26px; line-height:1; cursor:pointer; z-index:2;}
+  .salida-espera{background:#D32F2F; color:#fff; font-family:var(--serif); font-weight:600; font-size:clamp(34px, 9vw, 44px); letter-spacing:.02em; padding:18px 56px 16px; line-height:1.1;}
+  .salida-texto{color:#000; font-size:18px; line-height:1.4; padding:16px 22px 4px;}
+  .salida-texto b{font-weight:700;}
+  .salida-mockup{padding:6px 22px 0; display:flex; justify-content:center;}
+  .salida-mockup img{width:132px; height:auto; filter:drop-shadow(0 12px 18px rgba(0,0,0,.3));}
+  .salida-incluye{font-size:13.5px; color:#444; padding:8px 22px 0; line-height:1.4;}
+  .salida-oferta{margin:14px 18px 0; border-radius:14px; background:linear-gradient(135deg,#1B7F3E,#34B36B); color:#fff; padding:14px 12px;}
+  .salida-oferta .t{font-weight:800; font-size:17px; letter-spacing:.03em; text-transform:uppercase;}
+  .salida-oferta .normal{font-size:15px; margin-top:6px; opacity:.95;}
+  .salida-oferta .normal s{text-decoration-thickness:2px;}
+  .salida-oferta .ahora{font-size:25px; font-weight:800; margin-top:2px;}
+  .salida-oferta .ahorro{font-size:13px; margin-top:2px; opacity:.95;}
+  .salida-cta{padding:16px 18px 6px;}
+  .salida-cta .cta{max-width:none; font-size:15px; padding:17px 14px;}
+  @media (max-height:820px){.salida-mockup img{width:92px;} .salida-espera{padding:12px 52px 10px;} .salida-texto{font-size:17px; padding-top:10px;} .salida-oferta{padding:10px 10px; margin-top:8px;} .salida-oferta .ahora{font-size:22px;} .salida-cta{padding-top:10px;} .salida-nota{padding-bottom:12px;}}
+  .salida-nota{font-size:13px; color:#555; padding:2px 22px 18px; line-height:1.4;}
+
   /* VISOR */
   dialog.visor{border:0; background:transparent; max-width:96vw; max-height:96vh; padding:0; margin:auto;}
   dialog.visor::backdrop{background:rgba(28,20,13,.82);}
@@ -412,6 +434,24 @@
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
 </a>
 
+<dialog class="salida" id="salida" aria-labelledby="salida-titulo">
+  <div class="salida-caja">
+    <button type="button" class="salida-x" id="salida-cerrar" aria-label="Cerrar">&times;</button>
+    <div class="salida-espera" id="salida-titulo">¡ESPERA!</div>
+    <p class="salida-texto">No te vayas, tenemos un <b>DESCUENTO DEL 50%</b> especial para ti</p>
+    <div class="salida-mockup"><img src="assets/app-hero-celular-2.webp" alt="Mockup de la aplicación Sanando Mi Historia Familiar" width="132" height="263" loading="lazy"></div>
+    <p class="salida-incluye">Paquete completo: mapa familiar, 21 días, guía de 12 módulos y 4 bonos.</p>
+    <div class="salida-oferta">
+      <div class="t">APROVECHA DESCUENTO DEL 50%</div>
+      <div class="normal">PRECIO NORMAL: <s>$24.99</s></div>
+      <div class="ahora">AHORA SOLO: $12.50</div>
+      <div class="ahorro">(te ahorras $12,49 USD)</div>
+    </div>
+    <div class="salida-cta"><a href="https://pay.hotmart.com/X108098847Y?off=mx9wp543" class="cta" data-sck="salida50" id="salida-cta">APROVECHAR OFERTA DEL 50%</a></div>
+    <p class="salida-nota">Si te sales de esta página, el descuento desaparece para siempre</p>
+  </div>
+</dialog>
+
 <dialog class="visor" id="visor" aria-label="Imagen ampliada">
   <img id="visor-img" alt="">
   <button type="button" id="visor-cerrar">Cerrar</button>
@@ -475,6 +515,41 @@
     if (e.key === 'ArrowLeft'){ e.preventDefault(); ir(actual - 1); }
   });
   pintaPuntos();
+
+  // Popup de salida (una sola vez por visitante; no aparece si ya fue al pago)
+  var salida = document.getElementById('salida');
+  var CLAVE_VISTO = 'sanando_salida_visto', CLAVE_PAGO = 'sanando_fue_al_pago';
+  var lectura = function(k, almacen){ try { return (almacen || localStorage).getItem(k); } catch(e){ return null; } };
+  var escritura = function(k, v, almacen){ try { (almacen || localStorage).setItem(k, v); } catch(e){} };
+  document.querySelectorAll('a[href^="https://pay.hotmart.com/"]').forEach(function(a){
+    a.addEventListener('click', function(){ escritura(CLAVE_PAGO, '1', sessionStorage); });
+  });
+  var abierto = false, llegoA = Date.now();
+  function mostrarSalida(){
+    if (abierto || !salida || !salida.showModal) return;
+    if (lectura(CLAVE_VISTO) || lectura(CLAVE_PAGO, sessionStorage)) return;
+    if (document.getElementById('visor') && document.getElementById('visor').open) return;
+    abierto = true; escritura(CLAVE_VISTO, String(Date.now()));
+    salida.showModal(); ev('popup_salida_visto');
+  }
+  function cerrarSalida(){ if (salida.open) salida.close(); ev('popup_salida_cerrar'); }
+  if (salida) {
+    document.getElementById('salida-cerrar').addEventListener('click', cerrarSalida);
+    salida.addEventListener('click', function(e){ if (e.target === salida) cerrarSalida(); });
+    document.getElementById('salida-cta').addEventListener('click', function(){ ev('popup_salida_cta'); });
+    // Escritorio: el cursor sale por arriba de la ventana
+    document.addEventListener('mouseout', function(e){
+      if (!e.relatedTarget && e.clientY <= 0 && Date.now() - llegoA > 5000) mostrarSalida();
+    });
+    // Celular: sube rápido hacia arriba después de haber leído buena parte de la página
+    var ultimoY = window.scrollY, ultimoT = Date.now();
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY, t = Date.now(), dy = ultimoY - y, dt = Math.max(1, t - ultimoT);
+      var profundidad = (y + window.innerHeight) / document.documentElement.scrollHeight;
+      if (dy > 0 && dy / dt > 2.2 && profundidad > 0.25 && Date.now() - llegoA > 8000 && window.matchMedia('(max-width: 859px)').matches) mostrarSalida();
+      ultimoY = y; ultimoT = t;
+    }, { passive: true });
+  }
 
   // Visor para ampliar imágenes
   var visor = document.getElementById('visor'), vimg = document.getElementById('visor-img'), ultimo = null;
