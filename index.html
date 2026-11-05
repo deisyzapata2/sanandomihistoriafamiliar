@@ -250,6 +250,17 @@
     .hero-arte .tel2{width:108px;}
   }
 
+  /* ESPEJO Y PREGUNTAS */
+  .espejo{list-style:none; display:grid; gap:12px; margin:6px 0 4px;}
+  .espejo li{position:relative; padding-left:28px; font-size:18px; line-height:1.45;}
+  .espejo li::before{content:"\201C"; position:absolute; left:0; top:-4px; font-family:var(--serif); font-size:34px; color:var(--terracota); line-height:1;}
+  .frase-grande{font-family:var(--serif); font-weight:600; font-size:clamp(23px, 5.6vw, 30px); line-height:1.25; color:var(--verde); margin-top:24px;}
+  .preguntas{background:var(--marfil);}
+  .tres-q{list-style:none; display:grid; gap:12px; margin-top:22px; text-align:left;}
+  .tres-q li{display:grid; grid-template-columns:36px 1fr; gap:14px; align-items:start; background:#fff; border-radius:20px; padding:18px; font-family:var(--serif); font-size:19px; line-height:1.35; color:var(--verde); box-shadow:0 8px 22px rgba(42,32,22,.07);}
+  .tres-q li span{display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--salvia-claro); color:var(--terracota-texto); font-family:var(--sans); font-weight:700; font-size:15px;}
+  .preguntas .nota{margin-top:20px;}
+
   /* VISOR */
   dialog.visor{border:0; background:transparent; max-width:96vw; max-height:96vh; padding:0; margin:auto;}
   dialog.visor::backdrop{background:rgba(28,20,13,.82);}
@@ -314,11 +325,29 @@
   <div class="wrap ident-grid">
     <div class="ident-foto"><img src="assets/hero-ritual.jpg" alt="Mujer mirando una fotografía antigua de su familia" width="460" height="575" loading="lazy"></div>
     <div>
-      <h2>A veces, hay preguntas sobre nuestra historia que aparecen <em>una y otra vez.</em></h2>
-      <p>¿Por qué ciertas situaciones te afectan tanto? ¿Por qué algunas dinámicas te resultan familiares?</p>
-      <p>No tienes que tener todas las respuestas. A veces el primer paso es darte un espacio para mirar lo que has vivido.</p>
+      <h2>¿Te reconoces en <em>alguna de estas?</em></h2>
+      <ul class="espejo">
+        <li>Cargas con todos y a ti casi nadie te sostiene.</li>
+        <li>Repites con tu pareja algo que viste en casa, aunque dijiste que no.</li>
+        <li>Sientes culpa cuando piensas en ti.</li>
+        <li>Hay algo o alguien en tu familia de lo que nunca se habló.</li>
+      </ul>
+      <p class="frase-grande">No tienes que repetir una historia que ya no quieres vivir.</p>
       <p class="destacada">No se trata de culpar a tu familia. Se trata de comprender mejor tu propia historia.</p>
     </div>
+  </div>
+</section>
+
+<!-- ============ TRES PREGUNTAS PARA EMPEZAR ============ -->
+<section class="preguntas">
+  <div class="wrap narrow centro">
+    <h2>Tres preguntas para <em>empezar hoy mismo.</em></h2>
+    <ol class="tres-q">
+      <li><span>1</span>¿Qué lugar ocupo en mi familia que no elegí y sigo sosteniendo?</li>
+      <li><span>2</span>¿Qué se repite en mi familia y yo no quiero repetir?</li>
+      <li><span>3</span>¿A quién estoy protegiendo, aunque me cueste a mí?</li>
+    </ol>
+    <p class="nota">Dentro de la aplicación encontrarás preguntas como estas para escribir en tu diario, a tu ritmo.</p>
   </div>
 </section>
 
