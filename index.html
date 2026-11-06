@@ -74,9 +74,9 @@
   .benef li::before{content:""; position:absolute; left:3px; top:7px; width:11px; height:6px; border-left:2px solid var(--verde); border-bottom:2px solid var(--verde); transform:rotate(-45deg);}
   .rs{color:var(--terracota-texto); font-weight:700;}
   .hero-cta{margin-top:0;}
-  .hero-arte{grid-area:arte; position:relative; width:min(100%, 330px); margin-inline:auto; padding-bottom:10px;}
+  .hero-arte{grid-area:arte; position:relative; width:min(100%, 330px); margin-inline:auto; padding-bottom:10px; text-align:center;}
   .hero-arte .tel{margin-inline:auto 0;}
-  .hero-arte .tel{width:236px; margin-left:0; filter:drop-shadow(0 18px 26px rgba(42,32,22,.28));}
+  .hero-arte .tel{width:240px; margin-inline:auto; filter:drop-shadow(0 18px 26px rgba(42,32,22,.22));}
   .hero-arte .tel2{position:absolute; right:0; bottom:0; width:128px; border-radius:20px; box-shadow:0 14px 28px rgba(42,32,22,.28); border:4px solid #fff;}
 
   /* 2. IDENTIFICACIÓN */
@@ -246,8 +246,7 @@
   }
   @media (max-width:859px){
     .hero-cta{grid-area:cta; text-align:left;}
-    .hero-arte .tel{width:200px;}
-    .hero-arte .tel2{width:108px;}
+    .hero-arte .tel{width:220px;}
   }
 
   /* ESPEJO Y PREGUNTAS */
@@ -274,8 +273,7 @@
     .hero{padding:44px 0 80px;}
     .hero-grid{grid-template-columns:1.1fr .9fr; grid-template-areas:"texto arte" "cta arte"; align-items:center; column-gap:64px;}
     .hero-arte{width:100%; max-width:380px; margin-inline:0 auto; padding-bottom:0;}
-    .hero-arte .tel{width:250px;}
-    .hero-arte .tel2{width:150px;}
+    .hero-arte .tel{width:290px;}
     .ident-grid{grid-template-columns:.9fr 1.1fr; gap:56px;}
     .pasos{grid-template-columns:repeat(3,1fr);}
     .paso{grid-template-columns:1fr; gap:20px; padding:14px 14px 26px; align-items:start; align-content:start;}
@@ -310,7 +308,6 @@
     </div>
     <div class="hero-arte">
       <img class="tel" src="assets/app-hero-celular-2.webp" alt="Celular mostrando el mapa familiar de la aplicación, con cuatro personas y una observación" width="640" height="1274" fetchpriority="high">
-      <img class="tel2" src="assets/app-camino.jpg" alt="Captura del recorrido de 21 pasos dentro de la aplicación" width="520" height="1067" loading="lazy">
     </div>
     <div class="hero-cta">
       <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">QUIERO EXPLORAR MI HISTORIA</a>
@@ -379,9 +376,9 @@
       <div class="car-track" id="track" tabindex="0">
         <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-hoy.jpg" data-alt="Pantalla Tu día de hoy" aria-label="Ampliar: Tu día de hoy"><img src="assets/app-hoy.jpg" alt="Captura de la pantalla Tu día de hoy" width="520" height="1067" loading="lazy"></button><h3>Tu día de hoy</h3><p>Tu frase y tu paso de hoy.</p></figure>
         <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-familia.jpg" data-alt="Pantalla Mapa familiar" aria-label="Ampliar: Mapa familiar"><img src="assets/app-familia.jpg" alt="Captura del mapa familiar" width="520" height="1067" loading="lazy"></button><h3>Mapa familiar</h3><p>Tu mapa y sus observaciones.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-camino.jpg" data-alt="Pantalla Camino de 21 pasos" aria-label="Ampliar: Camino de 21 pasos"><img src="assets/app-camino.jpg" alt="Captura del camino de 21 pasos" width="520" height="1067" loading="lazy"></button><h3>Camino de 21 pasos</h3><p>21 pasos de ejercicios breves.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-camino.jpg" data-alt="Pantalla Tu viaje en 5 etapas" aria-label="Ampliar: Tu viaje en 5 etapas"><img src="assets/app-camino.jpg" alt="Captura del camino de 21 pasos" width="520" height="1067" loading="lazy"></button><h3>Tu viaje en 5 etapas</h3><p>21 pasos breves, a tu ritmo.</p></figure>
         <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-dia.jpg" data-alt="Pantalla Ejercicio y diario" aria-label="Ampliar: Ejercicio y diario"><img src="assets/app-dia.jpg" alt="Captura de un día con ejercicio y diario" width="520" height="1067" loading="lazy"></button><h3>Ejercicio y diario</h3><p>Preguntas para escribir.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-guias.jpg" data-alt="Pantalla Guía y bonos" aria-label="Ampliar: Guía y bonos"><img src="assets/app-guias.jpg" alt="Captura de la pestaña Guías con la guía principal y los bonos" width="520" height="1067" loading="lazy"></button><h3>Guía y bonos</h3><p>Guía y 4 bonos.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-guias.jpg" data-alt="Pantalla Herramientas" aria-label="Ampliar: Herramientas"><img src="assets/app-guias.jpg" alt="Captura de la pestaña Herramientas con el mapa, las cargas, las guías y la meditación" width="520" height="1067" loading="lazy"></button><h3>Herramientas</h3><p>Mapa, cargas, guías y meditación.</p></figure>
         <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-resumen.jpg" data-alt="Pantalla Resumen final" aria-label="Ampliar: Resumen final"><img src="assets/app-resumen.jpg" alt="Captura del resumen con tus días y observaciones" width="520" height="1067" loading="lazy"></button><h3>Resumen final</h3><p>Tu mapa, tus días y lo que anotaste.</p></figure>
       </div>
       <div class="car-ctrl">
