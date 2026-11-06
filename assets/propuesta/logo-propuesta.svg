@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Sanando Mi Historia Familiar">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D08A63"/><stop offset="1" stop-color="#99512F"/></linearGradient>
+  </defs>
+  <path d="M53 310 A210 210 0 1 1 220 463" fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="256" cy="168" r="32" fill="#B5673F"/>
+  <path d="M190 196 C190 266 222 312 256 314 C290 312 322 266 322 196 C304 236 282 258 256 258 C230 258 208 236 190 196Z" fill="#B5673F"/>
+  <circle cx="150" cy="250" r="24" fill="#CE8259"/>
+  <path d="M104 282 C106 324 128 350 154 352 C180 350 198 328 202 292 C188 314 172 322 154 322 C134 322 116 308 104 282Z" fill="#CE8259"/>
+  <circle cx="362" cy="250" r="24" fill="#CE8259"/>
+  <path d="M408 282 C406 324 384 350 358 352 C332 350 314 328 310 292 C324 314 340 322 358 322 C378 322 396 308 408 282Z" fill="#CE8259"/>
+  <path d="M130 408 C196 364 290 404 352 372" fill="none" stroke="#B5673F" stroke-width="18" stroke-linecap="round"/>
+  <path d="M178 436 C250 396 340 424 390 388" fill="none" stroke="#99512F" stroke-width="18" stroke-linecap="round"/>
+</svg>
