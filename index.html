@@ -10,7 +10,6 @@
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/app-hero-celular-2.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -249,6 +248,21 @@
     .hero-arte .tel{width:220px;}
   }
 
+  /* AUDIO DEL INICIO */
+  .audio-card{background:#fff; border-radius:26px; padding:26px 22px 22px; box-shadow:0 16px 40px rgba(42,32,22,.12); text-align:center; max-width:340px; margin-inline:auto; border:1px solid #E8DCC4;}
+  .audio-logo{width:72px; height:72px; margin:0 auto 12px; border-radius:50%;}
+  .audio-t{font-family:var(--serif); font-size:23px; font-weight:600; color:var(--verde); line-height:1.2;}
+  .audio-s{font-size:15px; color:var(--suave); margin-top:4px;}
+  .audio-ctrl{display:flex; align-items:center; gap:14px; margin-top:20px; text-align:left;}
+  .audio-play{flex:none; width:60px; height:60px; border-radius:50%; border:0; background:var(--arcilla); color:#F4ECDD; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(181,103,63,.35);}
+  .audio-play:hover{background:var(--arcilla-claro);}
+  .audio-play svg{width:26px; height:26px; fill:#F4ECDD;}
+  .audio-play .i-pause{display:none;}
+  .audio-card.suena .i-play{display:none;} .audio-card.suena .i-pause{display:block;}
+  .audio-barra{flex:1; min-width:0;}
+  .audio-barra input[type=range]{width:100%; height:28px; accent-color:var(--arcilla); background:transparent; cursor:pointer;}
+  .audio-tiempo{display:flex; justify-content:space-between; font-size:13px; color:var(--suave); margin-top:-2px;}
+
   /* ESPEJO Y PREGUNTAS */
   .espejo{list-style:none; display:grid; gap:12px; margin:6px 0 4px;}
   .espejo li{position:relative; padding-left:28px; font-size:18px; line-height:1.45;}
@@ -307,7 +321,22 @@
       <p class="lead">No prometo que llegues al final con todo resuelto. Sí busco que llegues con <b class="rs">más liviandad</b>, <b class="rs">más conciencia</b> y <b class="rs">tareas claras</b> para seguir día a día.</p>
     </div>
     <div class="hero-arte">
-      <img class="tel" src="assets/app-hero-celular-2.webp" alt="Celular mostrando el mapa familiar de la aplicación, con cuatro personas y una observación" width="640" height="1274" fetchpriority="high">
+      <div class="audio-card" id="audio-card">
+        <img class="audio-logo" src="assets/logo.png" alt="" width="72" height="72">
+        <p class="audio-t">Un mensaje para ti</p>
+        <p class="audio-s">Escúchalo antes de seguir.</p>
+        <div class="audio-ctrl">
+          <button type="button" class="audio-play" id="audio-play" aria-label="Reproducir el mensaje">
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+          </button>
+          <div class="audio-barra">
+            <input type="range" id="audio-rango" min="0" max="100" value="0" step="0.1" aria-label="Avance del mensaje">
+            <div class="audio-tiempo"><span id="audio-act">0:00</span><span id="audio-dur">0:00</span></div>
+          </div>
+        </div>
+        <audio id="audio-inicio" preload="metadata" src="assets/audio-inicio.mp3"></audio>
+      </div>
     </div>
     <div class="hero-cta">
       <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">QUIERO EXPLORAR MI HISTORIA</a>
@@ -659,6 +688,23 @@
   document.querySelectorAll('.faq details').forEach(function(d, i){
     d.addEventListener('toggle', function(){ if (d.open) ev('faq_abre_' + (i + 1)); });
   });
+
+  // Audio del inicio
+  var au = document.getElementById('audio-inicio');
+  if (au) {
+    var card = document.getElementById('audio-card'), bp = document.getElementById('audio-play');
+    var rango = document.getElementById('audio-rango'), tAct = document.getElementById('audio-act'), tDur = document.getElementById('audio-dur');
+    var fmt = function(s){ if (!isFinite(s)) return ''; s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); };
+    var empezo = false;
+    au.addEventListener('loadedmetadata', function(){ tDur.textContent = fmt(au.duration); });
+    au.addEventListener('timeupdate', function(){ if (au.duration) { rango.value = (au.currentTime / au.duration) * 100; } tAct.textContent = fmt(au.currentTime); });
+    au.addEventListener('ended', function(){ card.classList.remove('suena'); bp.setAttribute('aria-label', 'Volver a escuchar el mensaje'); ev('audio_inicio_fin'); });
+    bp.addEventListener('click', function(){
+      if (au.paused) { au.play(); card.classList.add('suena'); bp.setAttribute('aria-label', 'Pausar el mensaje'); if (!empezo) { empezo = true; ev('audio_inicio_play'); } }
+      else { au.pause(); card.classList.remove('suena'); bp.setAttribute('aria-label', 'Reproducir el mensaje'); }
+    });
+    rango.addEventListener('input', function(){ if (au.duration) au.currentTime = (rango.value / 100) * au.duration; });
+  }
 
   // Visor para ampliar imágenes
   var visor = document.getElementById('visor'), vimg = document.getElementById('visor-img'), ultimo = null;
