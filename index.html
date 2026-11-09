@@ -63,7 +63,7 @@
 
   /* 1. HERO */
   .hero{padding:12px 0 36px;}
-  .hero-grid{display:grid; grid-template-areas:"texto" "arte" "cta"; gap:20px;}
+  .hero-grid{display:grid; grid-template-areas:"texto" "arte" "promesa" "cta"; gap:20px;}
   .hero-texto{grid-area:texto;}
   .hero h1{font-size:clamp(30px, 8.6vw, 52px); margin-bottom:10px;}
   .hero .eyebrow{margin-bottom:10px;}
@@ -73,6 +73,8 @@
   .benef li::before{content:""; position:absolute; left:3px; top:7px; width:11px; height:6px; border-left:2px solid var(--verde); border-bottom:2px solid var(--verde); transform:rotate(-45deg);}
   .rs{color:var(--terracota-texto); font-weight:700;}
   .hero-cta{margin-top:0;}
+  .hero-promesa{grid-area:promesa;}
+  .hero-promesa .lead{margin:0;}
   .hero-arte{grid-area:arte; position:relative; width:min(100%, 330px); margin-inline:auto; padding-bottom:10px; text-align:center;}
   .hero-arte .tel{margin-inline:auto 0;}
   .hero-arte .tel{width:240px; margin-inline:auto; filter:drop-shadow(0 18px 26px rgba(42,32,22,.22));}
@@ -238,7 +240,7 @@
   .co-garantia{font-size:14px; color:#CDBFA6; margin-top:2px;}
   .aviso-legal{margin-bottom:12px; color:#EADFC9;}
   @media (min-width:860px){
-    .hero-grid{grid-template-areas:"texto arte" "cta arte";}
+    .hero-grid{grid-template-areas:"texto arte" "promesa arte" "cta arte";}
     .hero-cta{grid-area:cta; align-self:start;}
     .bonos{grid-template-columns:1fr 1fr;}
     .para-grid{grid-template-columns:1fr 1fr; gap:24px;}
@@ -285,7 +287,7 @@
   @media (min-width:860px){
     section{padding:84px 0;}
     .hero{padding:44px 0 80px;}
-    .hero-grid{grid-template-columns:1.1fr .9fr; grid-template-areas:"texto arte" "cta arte"; align-items:center; column-gap:64px;}
+    .hero-grid{grid-template-columns:1.1fr .9fr; grid-template-areas:"texto arte" "promesa arte" "cta arte"; align-items:center; column-gap:64px;}
     .hero-arte{width:100%; max-width:380px; margin-inline:0 auto; padding-bottom:0;}
     .hero-arte .tel{width:290px;}
     .ident-grid{grid-template-columns:.9fr 1.1fr; gap:56px;}
@@ -318,7 +320,6 @@
       <span class="eyebrow">Un espacio para explorar tu historia familiar</span>
       <h1>Hay historias que no elegimos vivir, <em>pero podemos empezar a mirar de otra manera.</em></h1>
       <p class="lead">Un viaje por tu historia familiar, con una meditación guiada y ejercicios prácticos, a través de las personas y los sucesos que te han marcado.</p>
-      <p class="lead">No prometo que llegues al final con todo resuelto. Sí busco que llegues con <b class="rs">más liviandad</b>, <b class="rs">más conciencia</b> y <b class="rs">tareas claras</b> para seguir día a día.</p>
     </div>
     <div class="hero-arte">
       <div class="audio-card" id="audio-card">
@@ -337,6 +338,9 @@
         </div>
         <audio id="audio-inicio" preload="metadata" src="assets/audio-inicio.mp3"></audio>
       </div>
+    </div>
+    <div class="hero-promesa">
+  <p class="lead">No prometo que llegues al final con todo resuelto. Sí busco que llegues con <b class="rs">más liviandad</b>, <b class="rs">más conciencia</b> y <b class="rs">tareas claras</b> para seguir día a día.</p>
     </div>
     <div class="hero-cta">
       <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">QUIERO EXPLORAR MI HISTORIA</a>
