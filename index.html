@@ -265,6 +265,14 @@
   .audio-barra input[type=range]{width:100%; height:28px; accent-color:var(--arcilla); background:transparent; cursor:pointer;}
   .audio-tiempo{display:flex; justify-content:space-between; font-size:13px; color:var(--suave); margin-top:-2px;}
 
+  .audio-texto{margin-top:14px; text-align:left; border-top:1px solid var(--linea); padding-top:6px;}
+  .audio-texto summary{cursor:pointer; list-style:none; min-height:44px; display:flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-size:15px; color:var(--terracota-texto);}
+  .audio-texto summary::-webkit-details-marker{display:none;}
+  .audio-texto summary::after{content:"+"; font-size:20px; font-weight:400;}
+  .audio-texto[open] summary::after{content:"–";}
+  .audio-texto-cuerpo{padding:4px 2px 4px; font-size:15.5px; color:var(--suave); line-height:1.55;}
+  .audio-texto-cuerpo p + p{margin-top:10px;}
+
   /* ESPEJO Y PREGUNTAS */
   .espejo{list-style:none; display:grid; gap:12px; margin:6px 0 4px;}
   .espejo li{position:relative; padding-left:28px; font-size:18px; line-height:1.45;}
@@ -337,6 +345,17 @@
           </div>
         </div>
         <audio id="audio-inicio" preload="metadata" src="assets/audio-inicio.mp3"></audio>
+        <details class="audio-texto" id="audio-texto">
+          <summary>Leer el texto</summary>
+          <div class="audio-texto-cuerpo">
+            <p>Hola. Antes de que sigas leyendo, quiero decirte algo.</p>
+            <p>Quizás hay cosas de tu historia familiar que llevas tiempo sintiendo y no sabes bien de dónde vienen. Una forma de relacionarte, un peso que cargas, algo que se repite.</p>
+            <p>No tienes que tener todas las respuestas. Y no se trata de culpar a nadie.</p>
+            <p>Hice este espacio para que puedas mirar tu historia con calma, a tu ritmo, con ejercicios cortos y una tarea pequeña cada día.</p>
+            <p>No te prometo que vas a llegar al final con todo resuelto. Lo que sí busco es que llegues con más liviandad, más conciencia y pasos claros para seguir.</p>
+            <p>Si quieres, empieza por aquí.</p>
+          </div>
+        </details>
       </div>
     </div>
     <div class="hero-promesa">
@@ -709,6 +728,9 @@
     });
     rango.addEventListener('input', function(){ if (au.duration) au.currentTime = (rango.value / 100) * au.duration; });
   }
+
+  var tx = document.getElementById('audio-texto');
+  if (tx) tx.addEventListener('toggle', function(){ if (tx.open) ev('audio_inicio_texto'); });
 
   // Visor para ampliar imágenes
   var visor = document.getElementById('visor'), vimg = document.getElementById('visor-img'), ultimo = null;
