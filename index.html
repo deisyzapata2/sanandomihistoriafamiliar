@@ -8,6 +8,7 @@
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preload" as="image" href="assets/fotos/mesa.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -276,6 +277,24 @@
   .tres-q li span{display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--salvia-claro); color:var(--terracota-texto); font-family:var(--sans); font-weight:700; font-size:15px;}
   .preguntas .nota{margin-top:20px;}
 
+  /* ESTILO EDITORIAL (fotos a todo el ancho, serif, botones rectangulares) */
+  .hero{position:relative; color:#fff; padding:56px 0 52px; background:linear-gradient(180deg,rgba(45,28,18,.5) 0%,rgba(45,28,18,.84) 100%), url(assets/fotos/mesa.jpg) center 35%/cover;}
+  .hero h1{color:#fff;} .hero h1 em{color:#f3d6b3;}
+  .hero .eyebrow{color:#f3d6b3;}
+  .hero p.lead{color:rgba(255,255,255,.93);}
+  .hero .rs{color:#f6d9b8;}
+  .hero .precio-linea{color:#fff;}
+  .hero .cta-micro{color:rgba(255,255,255,.86);}
+  .hero .chip-digital{background:rgba(255,255,255,.16); color:#fff;}
+  .cta{border-radius:6px; letter-spacing:.14em; font-size:14px; box-shadow:none;}
+  .paso,.bloque,.bono,.para-card,.oferta-card,.audio-card,.tres-q li{border-radius:10px;}
+  .ident-foto{border-radius:10px; aspect-ratio:4/3;}
+  .bono{padding:0; overflow:hidden;}
+  .bono-foto{height:130px; background-size:cover; background-position:center;}
+  .bono-txt{padding:16px 18px 18px;}
+  .cierre-final{background:linear-gradient(180deg,rgba(35,22,14,.8),rgba(35,22,14,.88)), url(assets/fotos/camino.jpg) center 30%/cover;}
+  @media (min-width:860px){.hero{padding:92px 0 96px;} .bono-foto{height:150px;}}
+
   /* VISOR */
   dialog.visor{border:0; background:transparent; max-width:96vw; max-height:96vh; padding:0; margin:auto;}
   dialog.visor::backdrop{background:rgba(28,20,13,.82);}
@@ -354,7 +373,7 @@
 <!-- ============ 2. IDENTIFICACIÓN EMOCIONAL ============ -->
 <section class="ident">
   <div class="wrap ident-grid">
-    <div class="ident-foto"><img src="assets/hero-ritual.jpg" alt="Mujer mirando una fotografía antigua de su familia" width="460" height="575" loading="lazy"></div>
+    <div class="ident-foto"><img src="assets/fotos/manos.jpg" alt="Manos sosteniendo una fotografía familiar antigua junto a una taza de té" width="1400" height="787" loading="lazy"></div>
     <div>
       <h2>¿Te reconoces en <em>alguna de estas?</em></h2>
       <ul class="espejo">
@@ -444,10 +463,10 @@
     </div>
     <h3 class="sub-bonos">Tus cuatro bonos complementarios</h3>
     <div class="bonos">
-      <div class="bono"><span class="num">BONO 1</span><b>Dinero y familia</b><span>5 módulos</span></div>
-      <div class="bono"><span class="num">BONO 2</span><b>Amor y pareja</b><span>5 módulos</span></div>
-      <div class="bono"><span class="num">BONO 3</span><b>Mamá y papá</b><span>5 módulos · también si ya no están</span></div>
-      <div class="bono"><span class="num">BONO 4</span><b>Niño o niña interior</b><span>5 módulos</span></div>
+      <div class="bono"><div class="bono-foto" style="background-image:url(assets/fotos/lino.jpg)" aria-hidden="true"></div><div class="bono-txt"><span class="num">BONO 1</span><b>Dinero y familia</b><span>5 módulos</span></div></div>
+      <div class="bono"><div class="bono-foto" style="background-image:url(assets/fotos/hojas.jpg)" aria-hidden="true"></div><div class="bono-txt"><span class="num">BONO 2</span><b>Amor y pareja</b><span>5 módulos</span></div></div>
+      <div class="bono"><div class="bono-foto" style="background-image:url(assets/fotos/manos.jpg)" aria-hidden="true"></div><div class="bono-txt"><span class="num">BONO 3</span><b>Mamá y papá</b><span>5 módulos · también si ya no están</span></div></div>
+      <div class="bono"><div class="bono-foto" style="background-image:url(assets/fotos/jarron.jpg)" aria-hidden="true"></div><div class="bono-txt"><span class="num">BONO 4</span><b>Niño o niña interior</b><span>5 módulos</span></div></div>
     </div>
     <div class="despues-pasos centro">
       <a href="https://pay.hotmart.com/X108098847Y?sck=bonos" class="cta" data-sck="bonos" onclick="window.clarity&&clarity('event','cta_bonos')">QUIERO CONOCER LA EXPERIENCIA</a>
