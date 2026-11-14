@@ -186,9 +186,10 @@
   .barra .cta{max-width:none; padding:15px 16px; font-size:14px; box-shadow:none;}
 
   /* WHATSAPP FLOTANTE */
-  .wa{position:fixed; right:16px; bottom:16px; z-index:60; width:58px; height:58px; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(0,0,0,.28); transition:bottom .25s ease, transform .2s ease; text-decoration:none;}
+  .wa{position:fixed; right:16px; bottom:16px; z-index:60; width:52px; height:52px; opacity:0; pointer-events:none; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(0,0,0,.28); transition:bottom .25s ease, transform .2s ease; text-decoration:none;}
+  .wa.on{opacity:1; pointer-events:auto;}
   .wa:hover{transform:scale(1.06);}
-  .wa svg{width:34px; height:34px; fill:#fff;}
+  .wa svg{width:30px; height:30px; fill:#fff;}
   body.hay-barra .wa{bottom:84px;}
   @media (min-width:860px){.wa{right:24px; bottom:24px;}}
 
@@ -412,11 +413,7 @@
       <p class="destacada">No se trata de culpar a tu familia. Se trata de comprender mejor tu propia historia.</p>
     </div>
   </div>
-</section>
-
-<!-- ============ TRES PREGUNTAS PARA EMPEZAR ============ -->
-<section class="preguntas">
-  <div class="wrap narrow centro">
+  <div class="wrap narrow centro q-dentro">
     <h2>Tres preguntas para <em>empezar hoy mismo.</em></h2>
     <ol class="tres-q">
       <li><span>1</span>¿Qué lugar ocupo en mi familia que no elegí y sigo sosteniendo?</li>
@@ -424,23 +421,6 @@
       <li><span>3</span>¿A quién estoy protegiendo, aunque me cueste a mí?</li>
     </ol>
     <p class="nota">Dentro de la aplicación encontrarás preguntas como estas para escribir en tu diario, a tu ritmo.</p>
-  </div>
-</section>
-
-<!-- ============ 3. MECANISMO ============ -->
-<section>
-  <div class="wrap">
-    <div class="centro narrow">
-      <h2>Tu historia. Tus preguntas. <em>Tu propio ritmo.</em></h2>
-    </div>
-    <ol class="pasos">
-      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-familia.webp" alt="Captura del mapa familiar" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 01</span><h3>Organiza</h3><p>Crea tu mapa familiar con lo que sabes.</p></div></li>
-      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-resumen.webp" alt="Captura del resumen con las observaciones" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 02</span><h3>Explora</h3><p>Lee las observaciones y usa sus preguntas para reflexionar.</p></div></li>
-      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-dia.webp" alt="Captura de un día con ejercicio y diario" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 03</span><h3>Avanza</h3><p>Un ejercicio y una tarea pequeña al día, de 5 a 10 minutos.</p></div></li>
-    </ol>
-    <div class="despues-pasos">
-      <a href="https://pay.hotmart.com/X108098847Y?sck=que-es" class="cta" data-sck="que-es" onclick="window.clarity&&clarity('event','cta_que_es')">QUIERO CONOCER LA EXPERIENCIA</a>
-    </div>
   </div>
 </section>
 
@@ -466,9 +446,21 @@
       </div>
       <p class="sr-only" id="pos" aria-live="polite" style="position:absolute;left:-9999px">Captura 1 de 6</p>
     </div>
-    <div class="despues-pasos centro">
-      <a href="https://pay.hotmart.com/X108098847Y?sck=demo" class="cta" data-sck="demo" onclick="window.clarity&&clarity('event','cta_demo')">QUIERO EXPLORAR MI HISTORIA</a>
+  </div>
+</section>
+
+<!-- ============ 6. TESTIMONIOS ============ -->
+<section class="ident">
+  <div class="wrap">
+    <div class="centro narrow">
+      <h2>Experiencias compartidas por personas que <em>utilizaron la aplicación.</em></h2>
     </div>
+    <div class="msgs">
+      <button type="button" data-ampliar="assets/mensaje-2.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-2.jpg" alt="Mensaje recibido de una persona usuaria" width="720" height="533" loading="lazy"></button>
+      <button type="button" data-ampliar="assets/mensaje-4.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-4.jpg" alt="Mensaje recibido de una persona usuaria" width="720" height="720" loading="lazy"></button>
+      <button type="button" data-ampliar="assets/mensaje-1.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-1.jpg" alt="Mensaje recibido de una persona usuaria" width="531" height="497" loading="lazy"></button>
+    </div>
+    <p class="nota centro">Cada experiencia es personal. No garantiza resultados específicos.</p>
   </div>
 </section>
 
@@ -489,29 +481,11 @@
     </div>
     <h3 class="sub-bonos">Tus cuatro bonos complementarios</h3>
     <div class="bonos">
-      <div class="bono"><img class="bono-foto" src="assets/fotos/lino-600.webp" alt="" width="600" height="400" loading="lazy" decoding="async"><div class="bono-txt"><span class="num">BONO 1</span><b>Dinero y familia</b><span>5 módulos</span></div></div>
-      <div class="bono"><img class="bono-foto" src="assets/fotos/hojas-600.webp" alt="" width="600" height="400" loading="lazy" decoding="async"><div class="bono-txt"><span class="num">BONO 2</span><b>Amor y pareja</b><span>5 módulos</span></div></div>
-      <div class="bono"><img class="bono-foto" src="assets/fotos/manos-600.webp" alt="" width="600" height="400" loading="lazy" decoding="async"><div class="bono-txt"><span class="num">BONO 3</span><b>Mamá y papá</b><span>5 módulos · también si ya no están</span></div></div>
-      <div class="bono"><img class="bono-foto" src="assets/fotos/jarron-600.webp" alt="" width="600" height="400" loading="lazy" decoding="async"><div class="bono-txt"><span class="num">BONO 4</span><b>Niño o niña interior</b><span>5 módulos</span></div></div>
+      <div class="bono"><div class="bono-txt"><span class="num">BONO 1</span><b>Dinero y familia</b><span>5 módulos</span></div></div>
+      <div class="bono"><div class="bono-txt"><span class="num">BONO 2</span><b>Amor y pareja</b><span>5 módulos</span></div></div>
+      <div class="bono"><div class="bono-txt"><span class="num">BONO 3</span><b>Mamá y papá</b><span>5 módulos · también si ya no están</span></div></div>
+      <div class="bono"><div class="bono-txt"><span class="num">BONO 4</span><b>Niño o niña interior</b><span>5 módulos</span></div></div>
     </div>
-    <div class="despues-pasos centro">
-      <a href="https://pay.hotmart.com/X108098847Y?sck=bonos" class="cta" data-sck="bonos" onclick="window.clarity&&clarity('event','cta_bonos')">QUIERO CONOCER LA EXPERIENCIA</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 6. TESTIMONIOS ============ -->
-<section class="ident">
-  <div class="wrap">
-    <div class="centro narrow">
-      <h2>Experiencias compartidas por personas que <em>utilizaron la aplicación.</em></h2>
-    </div>
-    <div class="msgs">
-      <button type="button" data-ampliar="assets/mensaje-2.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-2.jpg" alt="Mensaje recibido de una persona usuaria" width="720" height="533" loading="lazy"></button>
-      <button type="button" data-ampliar="assets/mensaje-4.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-4.jpg" alt="Mensaje recibido de una persona usuaria" width="720" height="720" loading="lazy"></button>
-      <button type="button" data-ampliar="assets/mensaje-1.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-1.jpg" alt="Mensaje recibido de una persona usuaria" width="531" height="497" loading="lazy"></button>
-    </div>
-    <p class="nota centro">Cada experiencia es personal. No garantiza resultados específicos.</p>
   </div>
 </section>
 
@@ -523,14 +497,6 @@
       <div class="nombre">SANANDO MI HISTORIA FAMILIAR</div>
       <div class="precio">US$24,99</div>
       <p class="desc"><b>Un solo pago. Sin mensualidades. Acceso de por vida.</b><br>Garantía publicada de 7 días.</p>
-      <p class="incluye-t">Incluye:</p>
-      <ul>
-        <li>Mapa familiar.</li>
-        <li>21 pasos de ejercicios.</li>
-        <li>Guía de 12 módulos.</li>
-        <li>4 bonos de 5 módulos cada uno.</li>
-        <li>Diario, resumen, meditación y frase del día.</li>
-      </ul>
       <a href="https://pay.hotmart.com/X108098847Y?sck=oferta" class="cta" data-sck="oferta" onclick="window.clarity&&clarity('event','cta_oferta')">QUIERO EMPEZAR MI RECORRIDO</a>
       <p class="cta-micro" style="max-width:420px;margin-inline:auto">Tu pago se procesa mediante Hotmart. Recibirás las instrucciones para acceder después de realizar tu compra.</p>
       <div class="sellos">
@@ -541,39 +507,11 @@
   </div>
 </section>
 
-<!-- ============ 8. PARA QUIÉN ES ============ -->
-<section class="para">
-  <div class="wrap">
-    <h2 class="centro narrow">Un espacio para ti, si sientes que ha llegado el momento de <em>mirar tu historia con más atención.</em></h2>
-    <div class="para-grid">
-      <div class="para-card si">
-        <h3>Puede ser para ti si:</h3>
-        <ul>
-          <li>Quieres explorar tu historia familiar.</li>
-          <li>Quieres reflexionar sobre tus vínculos.</li>
-          <li>Puedes dedicar unos minutos al día.</li>
-        </ul>
-      </div>
-      <div class="para-card saber">
-        <h3>Es importante que sepas:</h3>
-        <ul>
-          <li>No necesitas saber de constelaciones.</li>
-          <li>No necesitas que participe tu familia.</li>
-          <li>No tienes que perdonar a nadie.</li>
-          <li>No todo lo que sientes viene de tu familia: tú decides qué dejas.</li>
-          <li>No sustituye la terapia.</li>
-          <li>No promete resultados.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="destacada narrow">Explorar tu historia no significa justificar lo que viviste ni renunciar a tus propios límites.</p>
-  </div>
-</section>
-
 <!-- ============ 9. PREGUNTAS FRECUENTES ============ -->
 <section class="faq">
   <div class="wrap narrow">
     <h2>Quizás te estés <em>preguntando...</em></h2>
+    <details><summary>¿Es para mí?</summary><div class="resp">Puede serlo si quieres explorar tu historia familiar, reflexionar sobre tus vínculos y dedicar unos minutos al día. No necesitas saber de constelaciones, que participe tu familia ni perdonar a nadie, y no todo lo que sientes viene de tu familia: tú decides qué dejas. Explorar tu historia no significa justificar lo que viviste ni renunciar a tus propios límites. No sustituye la terapia ni promete resultados.</div></details>
     <details><summary>¿Necesito saber de constelaciones familiares?</summary><div class="resp">No. No necesitas conocimientos previos. Hombres y mujeres pueden usar la aplicación.</div></details>
     <details><summary>¿Cuánto tiempo necesito al día y puedo usarla desde el celular?</summary><div class="resp">Unos 5 a 10 minutos al día, a tu ritmo. Sí, funciona desde el navegador de tu celular o computador con internet.</div></details>
     <details><summary>¿Cómo accedo después de comprar?</summary><div class="resp">Después de pagar por Hotmart, recibirás un correo para crear tu clave y entrar a la aplicación.</div></details>
@@ -754,6 +692,13 @@
       else { au.pause(); card.classList.remove('suena'); bp.setAttribute('aria-label', 'Reproducir el mensaje'); }
     });
     rango.addEventListener('input', function(){ if (au.duration) au.currentTime = (rango.value / 100) * au.duration; });
+  }
+
+  // WhatsApp: aparece cuando la persona ya recorrió parte de la página
+  var wa = document.getElementById('wa');
+  if (wa) {
+    var mostrarWa = function(){ wa.classList.toggle('on', window.scrollY > window.innerHeight * 1.6); };
+    window.addEventListener('scroll', mostrarWa, { passive: true }); mostrarWa();
   }
 
   // Visor para ampliar imágenes
