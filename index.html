@@ -8,16 +8,25 @@
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
-<link rel="preload" as="image" href="assets/fotos/mesa.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/fotos/mesa-800.webp" media="(max-width: 859px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/fotos/mesa-1400.webp" media="(min-width: 860px)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xu3at5303h");
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+(function(){
+  window.clarity=window.clarity||function(){(window.clarity.q=window.clarity.q||[]).push(arguments)};
+  var cargar=function(){
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "xu3at5303h");
+  };
+  var tarde=function(){ if ('requestIdleCallback' in window) requestIdleCallback(cargar,{timeout:3000}); else setTimeout(cargar,1500); };
+  if (document.readyState==='complete') tarde(); else window.addEventListener('load',tarde);
+})();
 </script>
 <style>
   :root{
@@ -278,7 +287,7 @@
   .preguntas .nota{margin-top:20px;}
 
   /* ESTILO EDITORIAL (fotos a todo el ancho, serif, botones rectangulares) */
-  .hero{position:relative; color:#fff; padding:56px 0 52px; background:linear-gradient(180deg,rgba(45,28,18,.5) 0%,rgba(45,28,18,.84) 100%), url(assets/fotos/mesa.jpg) center 35%/cover;}
+  .hero{position:relative; color:#fff; padding:56px 0 52px; background:linear-gradient(180deg,rgba(45,28,18,.5) 0%,rgba(45,28,18,.84) 100%), url(assets/fotos/mesa-800.webp) center 35%/cover;}
   .hero h1{color:#fff;} .hero h1 em{color:#f3d6b3;}
   .hero .eyebrow{color:#f3d6b3;}
   .hero p.lead{color:rgba(255,255,255,.93);}
@@ -290,10 +299,12 @@
   .paso,.bloque,.bono,.para-card,.oferta-card,.audio-card,.tres-q li{border-radius:10px;}
   .ident-foto{border-radius:10px; aspect-ratio:4/3;}
   .bono{padding:0; overflow:hidden;}
-  .bono-foto{height:130px; background-size:cover; background-position:center;}
+  .bono-foto{display:block; width:100%; height:130px; object-fit:cover;}
   .bono-txt{padding:16px 18px 18px;}
-  .cierre-final{background:linear-gradient(180deg,rgba(35,22,14,.8),rgba(35,22,14,.88)), url(assets/fotos/camino.jpg) center 30%/cover;}
-  @media (min-width:860px){.hero{padding:92px 0 96px;} .bono-foto{height:150px;}}
+  .cierre-final{position:relative; isolation:isolate; background:#23160e;}
+  .cierre-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; z-index:-2;}
+  .cierre-final::before{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(35,22,14,.8),rgba(35,22,14,.88));}
+  @media (min-width:860px){.hero{padding:92px 0 96px; background-image:linear-gradient(180deg,rgba(45,28,18,.5) 0%,rgba(45,28,18,.84) 100%), url(assets/fotos/mesa-1400.webp);} .bono-foto{height:150px;}}
 
   /* GALERÍA OSCURA: un celular a la vez, centrado y con marco */
   .galeria{background:#3a2619; color:#fbf1e4;}
@@ -370,7 +381,7 @@
             <div class="audio-tiempo"><span id="audio-act">0:00</span><span id="audio-dur">0:00</span></div>
           </div>
         </div>
-        <audio id="audio-inicio" preload="metadata" src="assets/audio-inicio.mp3"></audio>
+        <audio id="audio-inicio" preload="none" src="assets/audio-inicio.mp3"></audio>
       </div>
     </div>
     <div class="hero-promesa">
@@ -388,7 +399,7 @@
 <!-- ============ 2. IDENTIFICACIÓN EMOCIONAL ============ -->
 <section class="ident">
   <div class="wrap ident-grid">
-    <div class="ident-foto"><img src="assets/fotos/manos.jpg" alt="Manos sosteniendo una fotografía familiar antigua junto a una taza de té" width="1400" height="787" loading="lazy"></div>
+    <div class="ident-foto"><img src="assets/fotos/manos-800.webp" alt="Manos sosteniendo una fotografía familiar antigua junto a una taza de té" width="800" height="450" decoding="async" loading="lazy"></div>
     <div>
       <h2>¿Te reconoces en <em>alguna de estas?</em></h2>
       <ul class="espejo">
@@ -423,9 +434,9 @@
       <h2>Tu historia. Tus preguntas. <em>Tu propio ritmo.</em></h2>
     </div>
     <ol class="pasos">
-      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-familia.jpg" alt="Captura del mapa familiar" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 01</span><h3>Organiza</h3><p>Crea tu mapa familiar con lo que sabes.</p></div></li>
-      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-resumen.jpg" alt="Captura del resumen con las observaciones" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 02</span><h3>Explora</h3><p>Lee las observaciones y usa sus preguntas para reflexionar.</p></div></li>
-      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-dia.jpg" alt="Captura de un día con ejercicio y diario" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 03</span><h3>Avanza</h3><p>Un ejercicio y una tarea pequeña al día, de 5 a 10 minutos.</p></div></li>
+      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-familia.webp" alt="Captura del mapa familiar" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 01</span><h3>Organiza</h3><p>Crea tu mapa familiar con lo que sabes.</p></div></li>
+      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-resumen.webp" alt="Captura del resumen con las observaciones" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 02</span><h3>Explora</h3><p>Lee las observaciones y usa sus preguntas para reflexionar.</p></div></li>
+      <li class="paso"><span class="escena"><span class="tel-marco"><img src="assets/app-dia.webp" alt="Captura de un día con ejercicio y diario" width="520" height="1067" loading="lazy"></span></span><div class="paso-txt"><span class="n">PASO 03</span><h3>Avanza</h3><p>Un ejercicio y una tarea pequeña al día, de 5 a 10 minutos.</p></div></li>
     </ol>
     <div class="despues-pasos">
       <a href="https://pay.hotmart.com/X108098847Y?sck=que-es" class="cta" data-sck="que-es" onclick="window.clarity&&clarity('event','cta_que_es')">QUIERO CONOCER LA EXPERIENCIA</a>
@@ -441,12 +452,12 @@
   <div class="wrap">
     <div class="car" role="region" aria-roledescription="carrusel" aria-label="Capturas reales de la aplicación">
       <div class="car-track" id="track" tabindex="0">
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-hoy.jpg" data-alt="Pantalla Tu día de hoy" aria-label="Ampliar: Tu día de hoy"><img src="assets/app-hoy.jpg" alt="Captura de la pantalla Tu día de hoy" width="520" height="1067" loading="lazy"></button><h3>Tu día de hoy</h3><p>Tu frase y tu paso de hoy.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-familia.jpg" data-alt="Pantalla Mapa familiar" aria-label="Ampliar: Mapa familiar"><img src="assets/app-familia.jpg" alt="Captura del mapa familiar" width="520" height="1067" loading="lazy"></button><h3>Mapa familiar</h3><p>Tu mapa y sus observaciones.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-camino.jpg" data-alt="Pantalla Tu viaje en 5 etapas" aria-label="Ampliar: Tu viaje en 5 etapas"><img src="assets/app-camino.jpg" alt="Captura del camino de 21 pasos" width="520" height="1067" loading="lazy"></button><h3>Tu viaje en 5 etapas</h3><p>21 pasos breves, a tu ritmo.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-dia.jpg" data-alt="Pantalla Ejercicio y diario" aria-label="Ampliar: Ejercicio y diario"><img src="assets/app-dia.jpg" alt="Captura de un día con ejercicio y diario" width="520" height="1067" loading="lazy"></button><h3>Ejercicio y diario</h3><p>Preguntas para escribir.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-guias.jpg" data-alt="Pantalla Herramientas" aria-label="Ampliar: Herramientas"><img src="assets/app-guias.jpg" alt="Captura de la pestaña Herramientas con el mapa, las cargas, las guías y la meditación" width="520" height="1067" loading="lazy"></button><h3>Herramientas</h3><p>Mapa, cargas, guías y meditación.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-resumen.jpg" data-alt="Pantalla Resumen final" aria-label="Ampliar: Resumen final"><img src="assets/app-resumen.jpg" alt="Captura del resumen con tus días y observaciones" width="520" height="1067" loading="lazy"></button><h3>Resumen final</h3><p>Tu mapa, tus días y lo que anotaste.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-hoy.webp" data-alt="Pantalla Tu día de hoy" aria-label="Ampliar: Tu día de hoy"><img src="assets/app-hoy.webp" alt="Captura de la pantalla Tu día de hoy" width="520" height="1067" loading="lazy"></button><h3>Tu día de hoy</h3><p>Tu frase y tu paso de hoy.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-familia.webp" data-alt="Pantalla Mapa familiar" aria-label="Ampliar: Mapa familiar"><img src="assets/app-familia.webp" alt="Captura del mapa familiar" width="520" height="1067" loading="lazy"></button><h3>Mapa familiar</h3><p>Tu mapa y sus observaciones.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-camino.webp" data-alt="Pantalla Tu viaje en 5 etapas" aria-label="Ampliar: Tu viaje en 5 etapas"><img src="assets/app-camino.webp" alt="Captura del camino de 21 pasos" width="520" height="1067" loading="lazy"></button><h3>Tu viaje en 5 etapas</h3><p>21 pasos breves, a tu ritmo.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-dia.webp" data-alt="Pantalla Ejercicio y diario" aria-label="Ampliar: Ejercicio y diario"><img src="assets/app-dia.webp" alt="Captura de un día con ejercicio y diario" width="520" height="1067" loading="lazy"></button><h3>Ejercicio y diario</h3><p>Preguntas para escribir.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-guias.webp" data-alt="Pantalla Herramientas" aria-label="Ampliar: Herramientas"><img src="assets/app-guias.webp" alt="Captura de la pestaña Herramientas con el mapa, las cargas, las guías y la meditación" width="520" height="1067" loading="lazy"></button><h3>Herramientas</h3><p>Mapa, cargas, guías y meditación.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-resumen.webp" data-alt="Pantalla Resumen final" aria-label="Ampliar: Resumen final"><img src="assets/app-resumen.webp" alt="Captura del resumen con tus días y observaciones" width="520" height="1067" loading="lazy"></button><h3>Resumen final</h3><p>Tu mapa, tus días y lo que anotaste.</p></figure>
       </div>
       <div class="car-ctrl">
         <button type="button" id="ant" aria-label="Captura anterior">‹</button>
@@ -478,10 +489,10 @@
     </div>
     <h3 class="sub-bonos">Tus cuatro bonos complementarios</h3>
     <div class="bonos">
-      <div class="bono"><div class="bono-foto" style="background-image:url(assets/fotos/lino.jpg)" aria-hidden="true"></div><div class="bono-txt"><span class="num">BONO 1</span><b>Dinero y familia</b><span>5 módulos</span></div></div>
-      <div class="bono"><div class="bono-foto" style="background-image:url(assets/fotos/hojas.jpg)" aria-hidden="true"></div><div class="bono-txt"><span class="num">BONO 2</span><b>Amor y pareja</b><span>5 módulos</span></div></div>
-      <div class="bono"><div class="bono-foto" style="background-image:url(assets/fotos/manos.jpg)" aria-hidden="true"></div><div class="bono-txt"><span class="num">BONO 3</span><b>Mamá y papá</b><span>5 módulos · también si ya no están</span></div></div>
-      <div class="bono"><div class="bono-foto" style="background-image:url(assets/fotos/jarron.jpg)" aria-hidden="true"></div><div class="bono-txt"><span class="num">BONO 4</span><b>Niño o niña interior</b><span>5 módulos</span></div></div>
+      <div class="bono"><img class="bono-foto" src="assets/fotos/lino-600.webp" alt="" width="600" height="400" loading="lazy" decoding="async"><div class="bono-txt"><span class="num">BONO 1</span><b>Dinero y familia</b><span>5 módulos</span></div></div>
+      <div class="bono"><img class="bono-foto" src="assets/fotos/hojas-600.webp" alt="" width="600" height="400" loading="lazy" decoding="async"><div class="bono-txt"><span class="num">BONO 2</span><b>Amor y pareja</b><span>5 módulos</span></div></div>
+      <div class="bono"><img class="bono-foto" src="assets/fotos/manos-600.webp" alt="" width="600" height="400" loading="lazy" decoding="async"><div class="bono-txt"><span class="num">BONO 3</span><b>Mamá y papá</b><span>5 módulos · también si ya no están</span></div></div>
+      <div class="bono"><img class="bono-foto" src="assets/fotos/jarron-600.webp" alt="" width="600" height="400" loading="lazy" decoding="async"><div class="bono-txt"><span class="num">BONO 4</span><b>Niño o niña interior</b><span>5 módulos</span></div></div>
     </div>
     <div class="despues-pasos centro">
       <a href="https://pay.hotmart.com/X108098847Y?sck=bonos" class="cta" data-sck="bonos" onclick="window.clarity&&clarity('event','cta_bonos')">QUIERO CONOCER LA EXPERIENCIA</a>
@@ -576,6 +587,7 @@
 
 <!-- ============ 10. CIERRE EMOCIONAL ============ -->
 <section class="cierre-final">
+  <img class="cierre-bg" src="assets/fotos/camino-1000.webp" alt="" width="1000" height="563" loading="lazy" decoding="async">
   <div class="wrap">
     <h2>No tienes que comprender toda tu historia hoy. <em>Puedes empezar por mirarla.</em></h2>
     <p>Puedes comenzar por darte un espacio para explorar tus vínculos, escribir lo que observas y avanzar a tu ritmo.</p>
