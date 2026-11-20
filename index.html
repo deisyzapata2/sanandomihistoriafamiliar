@@ -30,17 +30,17 @@
 </script>
 <style>
   :root{
-    --marfil:#F4ECDD;          /* Crema: fondo base */
-    --salvia-claro:#EADFC9;    /* Crema oscuro: secciones alternas */
-    --verde:#2A2016;           /* Noche: títulos y bloques oscuros */
+    --marfil:#F5EFE6;          /* Crema: fondo base */
+    --salvia-claro:#E8DDCF;    /* Crema oscuro: secciones alternas */
+    --verde:#493329;           /* Noche: títulos y bloques oscuros */
     --arcilla:#B5673F;         /* Arcilla: botones y todo lo clicable */
     --arcilla-claro:#CE8259;   /* hover del botón */
-    --dorado:#C7A24C;          /* líneas y detalles finos */
+    --dorado:#D6BE91;          /* líneas y detalles finos */
     --malva:#B98A86;           /* acento emocional */
     --terracota:#C78368;
-    --terracota-texto:#99512F; /* arcilla más profundo, para texto pequeño legible */
-    --texto:#2A2016;
-    --suave:#5C4A39;           /* Café texto suave */
+    --terracota-texto:#9a5340; /* arcilla más profundo, para texto pequeño legible */
+    --texto:#493329;
+    --suave:#6a5446;           /* Café texto suave */
     --linea:rgba(42,32,22,.14);
     --serif:'Fraunces', Georgia, serif;
     --sans:'DM Sans', system-ui, sans-serif;
@@ -73,7 +73,7 @@
 
   /* 1. HERO */
   .hero{padding:12px 0 36px;}
-  .hero-grid{display:grid; grid-template-areas:"texto" "arte" "promesa" "cta"; gap:20px;}
+  .hero-grid{display:grid; grid-template-areas:"texto" "arte" "cta"; gap:20px;}
   .hero-texto{grid-area:texto;}
   .hero h1{font-size:clamp(30px, 8.6vw, 52px); margin-bottom:10px;}
   .hero .eyebrow{margin-bottom:10px;}
@@ -244,7 +244,7 @@
   .co-garantia{font-size:14px; color:#CDBFA6; margin-top:2px;}
   .aviso-legal{margin-bottom:12px; color:#EADFC9;}
   @media (min-width:860px){
-    .hero-grid{grid-template-areas:"texto arte" "promesa arte" "cta arte";}
+    .hero-grid{grid-template-areas:"texto arte" "cta arte";}
     .hero-cta{grid-area:cta; align-self:start;}
     .bonos{grid-template-columns:1fr 1fr;}
     .para-grid{grid-template-columns:1fr 1fr; gap:24px;}
@@ -310,6 +310,49 @@
   .galeria .despues-pasos .cta{background:#fbf1e4; color:#4a2f20;}
   @media (min-width:860px){.car-track{padding:10px 0 18px; justify-content:center; gap:14px; overflow:visible; margin:0;} .vista{width:150px;} .vista img{border-width:6px; border-radius:26px;} .vista h3{font-size:17px;} .vista p{font-size:14px;}}
 
+  /* REDISEÑO ESTRATÉGICO */
+  .cta{background:#493329; color:#F5EFE6;}
+  .cta:hover{background:#5c4234;}
+  .barra .cta{background:#493329;}
+  .micro-hero{font-size:14px; color:var(--suave); margin-top:12px;}
+  .espejo li::before{color:#B56D54;}
+  .idea{background:#493329; color:#F5EFE6; padding:72px 0;}
+  .idea h2{color:#fff; font-size:clamp(28px,6.4vw,42px);} .idea h2 em{color:#D6BE91;}
+  .idea p{color:rgba(245,239,230,.88); font-size:18px;}
+  .idea p + p{margin-top:14px;}
+  .idea .idea-cierre{font-family:var(--serif); font-style:italic; font-size:clamp(21px,4.6vw,26px); line-height:1.35; color:#D6BE91; margin-top:30px; padding-top:26px; border-top:1px solid rgba(214,190,145,.4);}
+  .tres{display:grid; gap:36px; margin-top:34px;}
+  .tres article{text-align:center;}
+  .tres img{width:100%; max-width:300px; aspect-ratio:4/5; object-fit:cover; object-position:top; margin:0 auto 14px; border-radius:10px; box-shadow:0 14px 30px rgba(73,51,41,.14);}
+  .tres h3, .herr-grid h3, .recor-lista h3, .etapas h3{font-family:var(--serif); font-size:21px; color:var(--verde); margin-bottom:4px;}
+  .tres p, .herr-grid p{font-size:16px; color:var(--suave);}
+  .etapas{list-style:none; margin-top:28px; display:grid; gap:0; border-top:1px solid var(--linea);}
+  .etapas li{display:flex; gap:16px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--linea);}
+  .etapas .rom{flex:none; width:46px; height:46px; border:1px solid #D6BE91; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-style:italic; font-size:19px; color:var(--terracota-texto); background:#fbf6ec;}
+  .etapas .n{font-size:13.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--terracota-texto); margin-bottom:4px;}
+  .etapas p{font-size:16px; color:var(--suave);}
+  .herr-grid{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:26px 16px; margin-top:30px;}
+  .herr-grid li{text-align:left;}
+  .herr-grid img{width:100%; aspect-ratio:4/5; object-fit:contain; object-position:top; border-radius:8px; margin-bottom:10px; background:#E8DDCF; box-shadow:0 8px 20px rgba(73,51,41,.1);}
+  .herr-grid h3{font-size:17px; line-height:1.25;}
+  .herr-grid p{font-size:14.5px; line-height:1.45;}
+  .herr-grid li:last-child{grid-column:1 / -1;} .herr-grid li:last-child img{aspect-ratio:16/10;}
+  .recor{background:#E8DDCF;}
+  .recor-lista{display:grid; gap:0; margin-top:26px; border-top:1px solid rgba(73,51,41,.18);}
+  .recor-lista > div{padding:20px 0; border-bottom:1px solid rgba(73,51,41,.18);}
+  .recor-lista .num{display:block; font-size:12.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--terracota-texto); margin-bottom:6px;}
+  .recor-lista p{font-size:16px; color:var(--suave);}
+  .incluye{list-style:none; text-align:left; margin:18px 0 22px;}
+  .incluye li{padding:9px 0 9px 26px; position:relative; font-size:15.5px; border-top:1px solid var(--linea);}
+  .incluye li::before{content:""; position:absolute; left:3px; top:15px; width:11px; height:6px; border-left:2px solid var(--verde); border-bottom:2px solid var(--verde); transform:rotate(-45deg);}
+  .cierre-final .cta{background:#F5EFE6; color:#493329;}
+  .galeria{background:#493329;}
+  @media (min-width:860px){
+    .tres{grid-template-columns:repeat(3,1fr); gap:40px;}
+    .herr-grid{grid-template-columns:repeat(4,1fr);} .herr-grid li:last-child{grid-column:auto;} .herr-grid li:last-child img{aspect-ratio:4/5;}
+    .recor-lista{grid-template-columns:1fr 1fr; column-gap:48px;}
+  }
+
   /* VISOR */
   dialog.visor{border:0; background:transparent; max-width:96vw; max-height:96vh; padding:0; margin:auto;}
   dialog.visor::backdrop{background:rgba(28,20,13,.82);}
@@ -321,7 +364,7 @@
   @media (min-width:860px){
     section{padding:84px 0;}
     .hero{padding:44px 0 80px;}
-    .hero-grid{grid-template-columns:1.1fr .9fr; grid-template-areas:"texto arte" "promesa arte" "cta arte"; align-items:center; column-gap:64px;}
+    .hero-grid{grid-template-columns:1.1fr .9fr; grid-template-areas:"texto arte" "cta arte"; align-items:center; column-gap:64px;}
     .hero-arte{width:100%; max-width:380px; margin-inline:0 auto; padding-bottom:0;}
     .hero-arte .tel{width:290px;}
     .ident-grid{grid-template-columns:.9fr 1.1fr; gap:56px;}
@@ -351,9 +394,10 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-texto">
-      <span class="eyebrow">Un espacio para explorar tu historia familiar</span>
-      <h1>Hay historias que no elegimos vivir, <em>pero podemos empezar a mirar de otra manera.</em></h1>
-      <p class="lead">Un viaje por tu historia familiar, con una meditación guiada y ejercicios prácticos, a través de las personas y los sucesos que te han marcado.</p>
+      <span class="eyebrow">Sanando Mi Historia Familiar</span>
+      <h1>Hay historias que se repiten. <em>Comprender la tuya puede ser el comienzo de una nueva mirada.</em></h1>
+      <p class="lead">A veces reconoces en tu vida situaciones, vínculos o dinámicas que te gustaría comprender mejor.</p>
+      <p class="lead">Sanando Mi Historia Familiar te invita a explorar tus vínculos, observar patrones familiares y reflexionar sobre lo que deseas hacer diferente, a través de un recorrido guiado que puedes vivir a tu propio ritmo.</p>
     </div>
     <div class="hero-arte">
       <div class="audio-card" id="audio-card">
@@ -373,14 +417,9 @@
         <audio id="audio-inicio" preload="none" src="assets/audio-inicio.mp3"></audio>
       </div>
     </div>
-    <div class="hero-promesa">
-  <p class="lead">No prometo que llegues al final con todo resuelto. Sí busco que llegues con <b class="rs">más liviandad</b>, <b class="rs">más conciencia</b> y <b class="rs">tareas claras</b> para seguir día a día.</p>
-    </div>
     <div class="hero-cta">
-      <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">QUIERO EXPLORAR MI HISTORIA</a>
-      <div class="precio-linea">US$24,99 · Pago único · Acceso de por vida</div>
-      <p class="cta-micro">Pago seguro mediante Hotmart. Acceso digital desde celular o computador. Garantía publicada de 7 días.</p>
-      <span class="chip-digital">Experiencia digital · no hay nada que instalar</span>
+      <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">QUIERO COMENZAR MI RECORRIDO</a>
+      <p class="micro-hero">Experiencia digital interactiva · 21 pasos · A tu ritmo</p>
     </div>
   </div>
 </section>
@@ -388,27 +427,90 @@
 <!-- ============ 2. IDENTIFICACIÓN EMOCIONAL ============ -->
 <section class="ident">
   <div class="wrap ident-grid">
-    <div class="ident-foto"><img src="assets/fotos/manos-800.webp" alt="Manos sosteniendo una fotografía familiar antigua junto a una taza de té" width="800" height="450" decoding="async" loading="lazy"></div>
+    <div class="ident-foto"><img src="assets/fotos/manos-800.webp" alt="Manos sosteniendo una fotografía familiar antigua junto a una taza de té" width="800" height="450" loading="lazy" decoding="async"></div>
     <div>
-      <h2>¿Te reconoces en <em>alguna de estas?</em></h2>
+      <h2>Tal vez hay partes de tu historia que todavía <em>necesitas comprender.</em></h2>
       <ul class="espejo">
-        <li>Cargas con todos y a ti casi nadie te sostiene.</li>
-        <li>Repites con tu pareja algo que viste en casa, aunque dijiste que no.</li>
-        <li>Sientes culpa cuando piensas en ti.</li>
-        <li>Hay algo o alguien en tu familia de lo que nunca se habló.</li>
+        <li>Siempre estás para los demás, pero a veces te cuesta permitirte recibir.</li>
+        <li>Has reconocido en tus relaciones dinámicas que también viste en tu familia.</li>
+        <li>Hay situaciones de tu historia familiar que todavía despiertan preguntas.</li>
+        <li>Quieres construir una forma diferente de relacionarte con las personas que amas.</li>
       </ul>
-      <p class="frase-grande">No tienes que repetir una historia que ya no quieres vivir.</p>
-      <p class="destacada">No se trata de culpar a tu familia. Se trata de comprender mejor tu propia historia.</p>
+      <p class="destacada">No se trata de culpar a tu familia ni de encontrar un responsable. Se trata de darte un espacio para mirar tu historia con más conciencia.</p>
     </div>
   </div>
-  <div class="wrap narrow centro q-dentro">
-    <h2>Tres preguntas para <em>empezar hoy mismo.</em></h2>
-    <ol class="tres-q">
-      <li><span>1</span>¿Qué lugar ocupo en mi familia que no elegí y sigo sosteniendo?</li>
-      <li><span>2</span>¿Qué se repite en mi familia y yo no quiero repetir?</li>
-      <li><span>3</span>¿A quién estoy protegiendo, aunque me cueste a mí?</li>
+</section>
+
+<!-- ============ 3. LA GRAN IDEA ============ -->
+<section class="idea">
+  <div class="wrap narrow centro">
+    <h2>Tu historia forma parte de ti, pero <em>no tiene que decidir cada paso de tu futuro.</em></h2>
+    <p>Comprender tu historia familiar no significa justificar todo lo que ocurrió, olvidar lo que dolió ni sentir que tienes que reconciliarte con alguien.</p>
+    <p>Significa darte la oportunidad de observar tus experiencias, reconocer lo que deseas comprender y decidir qué lugar quieres darle a cada parte de tu historia.</p>
+    <p>Puedes honrar lo que recibiste y también elegir vivir de una manera diferente.</p>
+    <p class="idea-cierre">No tienes que cambiar tu pasado. Puedes comenzar por cambiar la manera en que lo miras y decides continuar.</p>
+  </div>
+</section>
+
+<!-- ============ 4. UNA EXPERIENCIA PARA EXPLORAR ============ -->
+<section class="exper">
+  <div class="wrap">
+    <div class="centro narrow">
+      <h2>No solo recibes información. <em>Participas en tu propio recorrido.</em></h2>
+      <p class="lead">Sanando Mi Historia Familiar reúne preguntas, ejercicios y herramientas interactivas en un proceso organizado para que puedas explorar tu historia, escribir tus reflexiones y avanzar paso a paso.</p>
+    </div>
+    <div class="tres">
+      <article><img src="assets/herr-mapa.webp" alt="Captura del mapa familiar interactivo" width="560" height="747" loading="lazy" decoding="async"><h3>Explora tu mapa familiar</h3><p>Observa y representa tus vínculos familiares mediante el mapa interactivo.</p></article>
+      <article><img src="assets/herr-diario.webp" alt="Captura del diario con una pregunta para reflexionar" width="560" height="500" loading="lazy" decoding="async"><h3>Reflexiona sobre tu historia</h3><p>Responde preguntas guiadas, realiza ejercicios y registra tus propias observaciones.</p></article>
+      <article><img src="assets/app-camino.webp" alt="Captura del recorrido organizado en etapas" width="520" height="1067" loading="lazy" decoding="async"><h3>Avanza a tu ritmo</h3><p>Sigue un recorrido organizado en etapas para saber por dónde empezar y cómo continuar.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. LOS 21 PASOS ============ -->
+<section class="pasos21">
+  <div class="wrap narrow">
+    <div class="centro">
+      <h2>Un recorrido guiado para mirar tu historia desde <em>diferentes perspectivas.</em></h2>
+      <p class="lead">No necesitas saber por dónde empezar ni tener todas las respuestas. La experiencia organiza la exploración en etapas y pasos que te invitan a observar, responder, escribir y reflexionar.</p>
+    </div>
+    <ol class="etapas">
+      <li><span class="rom">I</span><div><h3>Semilla</h3><p class="n">Comprender lo que me pasa · pasos 1 y 2</p><p>Quiénes están y quién cargó antes que tú.</p></div></li>
+      <li><span class="rom">II</span><div><h3>Raíces</h3><p class="n">Explorar mi historia · pasos 3 al 7</p><p>Lo que se repite, lo que no se dijo y quién falta.</p></div></li>
+      <li><span class="rom">III</span><div><h3>Tronco</h3><p class="n">Reconocer patrones · pasos 8 al 13</p><p>El lugar de cada uno y lo que aprendiste para pertenecer.</p></div></li>
+      <li><span class="rom">IV</span><div><h3>Ramas</h3><p class="n">Decidir qué cambiar · pasos 14 al 16</p><p>Qué quieres cuidar y qué te gustaría hacer distinto.</p></div></li>
+      <li><span class="rom">V</span><div><h3>Hojas</h3><p class="n">Integrar y elegir diferente · pasos 17 al 21</p><p>Un límite, una conversación y tu cierre.</p></div></li>
     </ol>
-    <p class="nota">Dentro de la aplicación encontrarás preguntas como estas para escribir en tu diario, a tu ritmo.</p>
+  </div>
+</section>
+
+<!-- ============ 6. QUÉ ENCONTRARÁS DENTRO ============ -->
+<section class="herr">
+  <div class="wrap">
+    <div class="centro narrow"><h2>Herramientas para acompañar <em>tu exploración personal.</em></h2></div>
+    <ul class="herr-grid">
+      <li><img src="assets/herr-mapa.webp" alt="Captura del mapa familiar" width="560" height="747" loading="lazy" decoding="async"><h3>Mapa familiar interactivo</h3><p>Arrastra círculos de colores para representar a tu familia como tú la ves.</p></li>
+      <li><img src="assets/herr-guia.webp" alt="Captura de la guía principal de 12 módulos" width="560" height="777" loading="lazy" decoding="async"><h3>Guía principal de 12 módulos</h3><p>Un contenido organizado para acompañar tu exploración y reflexión personal.</p></li>
+      <li><img src="assets/herr-ejercicio.webp" alt="Captura de un ejercicio guiado" width="560" height="570" loading="lazy" decoding="async"><h3>Preguntas y ejercicios guiados</h3><p>Un ejercicio breve en cada paso, de 5 a 10 minutos.</p></li>
+      <li><img src="assets/herr-diario.webp" alt="Captura del diario privado" width="560" height="500" loading="lazy" decoding="async"><h3>Diario privado</h3><p>Un espacio para escribir y registrar tus propias reflexiones.</p></li>
+      <li><img src="assets/herr-meditacion.webp" alt="Captura de la meditación guiada" width="560" height="777" loading="lazy" decoding="async"><h3>Meditación guiada</h3><p>Un audio para detenerte un momento y acompañar tu reflexión.</p></li>
+      <li><img src="assets/herr-frase.webp" alt="Captura de la frase del día" width="560" height="358" loading="lazy" decoding="async"><h3>Frase del día</h3><p>Una frase para comenzar tu día con calma.</p></li>
+      <li><img src="assets/herr-resumen.webp" alt="Captura del resumen final" width="560" height="777" loading="lazy" decoding="async"><h3>Resumen final</h3><p>Consulta lo que fuiste observando y registrando en tu recorrido.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 7. RECORRIDOS COMPLEMENTARIOS ============ -->
+<section class="recor">
+  <div class="wrap narrow">
+    <div class="centro"><h2>También puedes explorar <em>aspectos específicos de tu historia.</em></h2></div>
+    <div class="recor-lista">
+      <div><span class="num">Recorrido 1</span><h3>Dinero y familia</h3><p>Cinco módulos para explorar tus reflexiones sobre el dinero y su relación con tu historia familiar.</p></div>
+      <div><span class="num">Recorrido 2</span><h3>Amor y pareja</h3><p>Cinco módulos para reflexionar sobre tus vínculos, experiencias y formas de relacionarte.</p></div>
+      <div><span class="num">Recorrido 3</span><h3>Mamá y papá</h3><p>Cinco módulos para explorar tu historia y los vínculos con tus figuras parentales. También puedes usarlos aunque tus padres ya no estén presentes o no tengas relación con ellos.</p></div>
+      <div><span class="num">Recorrido 4</span><h3>Niño o niña interior</h3><p>Cinco módulos de reflexión y autoconocimiento para explorar recuerdos y experiencias de tu historia personal.</p></div>
+    </div>
+    <p class="nota centro">Son contenidos complementarios incluidos en la oferta, sin costo adicional.</p>
   </div>
 </section>
 
@@ -441,7 +543,7 @@
 <section class="ident">
   <div class="wrap">
     <div class="centro narrow">
-      <h2>Experiencias compartidas por personas que <em>utilizaron la aplicación.</em></h2>
+      <h2>Personas que decidieron <em>darse este espacio.</em></h2>
     </div>
     <div class="msgs">
       <button type="button" data-ampliar="assets/mensaje-2.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-2.jpg" alt="Mensaje recibido de una persona usuaria" width="720" height="533" loading="lazy"></button>
@@ -449,31 +551,6 @@
       <button type="button" data-ampliar="assets/mensaje-1.jpg" data-alt="Mensaje recibido de una persona usuaria" aria-label="Ampliar mensaje"><img src="assets/mensaje-1.jpg" alt="Mensaje recibido de una persona usuaria" width="531" height="497" loading="lazy"></button>
     </div>
     <p class="nota centro">Cada experiencia es personal. No garantiza resultados específicos.</p>
-  </div>
-</section>
-
-<!-- ============ 5. TODO LO QUE RECIBES ============ -->
-<section class="recibes">
-  <div class="wrap narrow">
-    <h2 class="centro">Todo lo que necesitas para comenzar, <em>en un solo acceso.</em></h2>
-    <div class="bloque">
-      <h3>Tu experiencia principal</h3>
-      <ul class="detalle">
-        <li><b>Mapa familiar interactivo</b></li>
-        <li><b>Recorrido guiado de 21 pasos</b></li>
-        <li><b>Guía principal de 12 módulos</b></li>
-        <li><b>Diario privado</b></li>
-        <li><b>Resumen final</b></li>
-        <li><b>Frase del día y meditación guiada</b></li>
-      </ul>
-    </div>
-    <h3 class="sub-bonos">Tus cuatro bonos complementarios</h3>
-    <div class="bonos">
-      <div class="bono"><div class="bono-txt"><span class="num">BONO 1</span><b>Dinero y familia</b><span>5 módulos</span></div></div>
-      <div class="bono"><div class="bono-txt"><span class="num">BONO 2</span><b>Amor y pareja</b><span>5 módulos</span></div></div>
-      <div class="bono"><div class="bono-txt"><span class="num">BONO 3</span><b>Mamá y papá</b><span>5 módulos · también si ya no están</span></div></div>
-      <div class="bono"><div class="bono-txt"><span class="num">BONO 4</span><b>Niño o niña interior</b><span>5 módulos</span></div></div>
-    </div>
   </div>
 </section>
 
@@ -485,7 +562,14 @@
       <div class="nombre">SANANDO MI HISTORIA FAMILIAR</div>
       <div class="precio">US$24,99</div>
       <p class="desc"><b>Un solo pago. Sin mensualidades. Acceso de por vida.</b><br>Garantía publicada de 7 días.</p>
-      <a href="https://pay.hotmart.com/X108098847Y?sck=oferta" class="cta" data-sck="oferta" onclick="window.clarity&&clarity('event','cta_oferta')">QUIERO EMPEZAR MI RECORRIDO</a>
+      <ul class="incluye">
+        <li>Mapa familiar interactivo.</li>
+        <li>Recorrido de 21 pasos en 5 etapas.</li>
+        <li>Guía principal de 12 módulos.</li>
+        <li>4 recorridos complementarios de 5 módulos cada uno.</li>
+        <li>Diario privado, meditación guiada, frase del día y resumen final.</li>
+      </ul>
+      <a href="https://pay.hotmart.com/X108098847Y?sck=oferta" class="cta" data-sck="oferta" onclick="window.clarity&&clarity('event','cta_oferta')">QUIERO COMENZAR MI RECORRIDO</a>
       <p class="cta-micro" style="max-width:420px;margin-inline:auto">Tu pago se procesa mediante Hotmart. Recibirás las instrucciones para acceder después de realizar tu compra.</p>
       <div class="sellos">
         <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="96" height="96" loading="lazy">
@@ -517,7 +601,7 @@
   <div class="wrap">
     <h2>No tienes que comprender toda tu historia hoy. <em>Puedes empezar por mirarla.</em></h2>
     <p>Puedes comenzar por darte un espacio para explorar tus vínculos, escribir lo que observas y avanzar a tu ritmo.</p>
-    <a href="https://pay.hotmart.com/X108098847Y?sck=cierre" class="cta" data-sck="cierre" onclick="window.clarity&&clarity('event','cta_cierre')">QUIERO EXPLORAR MI HISTORIA</a>
+    <a href="https://pay.hotmart.com/X108098847Y?sck=cierre" class="cta" data-sck="cierre" onclick="window.clarity&&clarity('event','cta_cierre')">QUIERO COMENZAR MI RECORRIDO</a>
     <div class="cta-micro">US$24,99 · Pago único · Garantía publicada de 7 días · Pago seguro por Hotmart</div>
   </div>
 </section>
@@ -532,7 +616,7 @@
 </footer>
 
 <div class="barra" id="barra" aria-hidden="true">
-  <a href="https://pay.hotmart.com/X108098847Y?sck=barra" class="cta" data-sck="barra" onclick="window.clarity&&clarity('event','cta_barra')">QUIERO EXPLORAR MI HISTORIA</a>
+  <a href="https://pay.hotmart.com/X108098847Y?sck=barra" class="cta" data-sck="barra" onclick="window.clarity&&clarity('event','cta_barra')">QUIERO COMENZAR MI RECORRIDO</a>
 </div>
 
 
