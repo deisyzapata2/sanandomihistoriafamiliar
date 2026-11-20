@@ -281,8 +281,8 @@
   .preguntas .nota{margin-top:20px;}
 
   /* ESTILO EDITORIAL (fotos a todo el ancho, serif, botones rectangulares) */
-  .hero{position:relative; padding:168px 0 40px;}
-  .hero::before{content:""; position:absolute; inset:0 0 auto 0; height:300px; background:url(assets/fotos/mesa-800.webp) center 38%/cover; -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 38%,transparent 100%); mask-image:linear-gradient(to bottom,#000 0%,#000 38%,transparent 100%);}
+  .hero{position:relative; padding:196px 0 40px;}
+  .hero::before{content:""; position:absolute; inset:0 0 auto 0; height:210px; background:url(assets/fotos/mesa-800.webp) center 40%/cover; -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 50%,transparent 100%); mask-image:linear-gradient(to bottom,#000 0%,#000 50%,transparent 100%);}
   .hero .wrap{position:relative; z-index:1;}
   .cta{border-radius:6px; letter-spacing:.14em; font-size:14px; box-shadow:none;}
   .paso,.bloque,.bono,.para-card,.oferta-card,.audio-card,.tres-q li{border-radius:10px;}
@@ -293,7 +293,7 @@
   .cierre-final{position:relative; isolation:isolate; background:#23160e;}
   .cierre-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; z-index:-2;}
   .cierre-final::before{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(35,22,14,.8),rgba(35,22,14,.88));}
-  @media (min-width:860px){.hero{padding:250px 0 80px;} .hero::before{height:390px; background-image:url(assets/fotos/mesa-1400.webp); -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 18%,transparent 78%); mask-image:linear-gradient(to bottom,#000 0%,#000 18%,transparent 78%);} .bono-foto{height:150px;}}
+  @media (min-width:860px){section.hero{padding:300px 0 80px;} .hero::before{height:310px; background-image:url(assets/fotos/mesa-1400.webp); -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 45%,transparent 100%); mask-image:linear-gradient(to bottom,#000 0%,#000 45%,transparent 100%);} .bono-foto{height:150px;}}
 
   /* GALERÍA OSCURA: un celular a la vez, centrado y con marco */
   .galeria{background:#3a2619; color:#fbf1e4;}
@@ -323,7 +323,7 @@
   .idea .idea-cierre{font-family:var(--serif); font-style:italic; font-size:clamp(21px,4.6vw,26px); line-height:1.35; color:#D6BE91; margin-top:30px; padding-top:26px; border-top:1px solid rgba(214,190,145,.4);}
   .tres{display:grid; gap:36px; margin-top:34px;}
   .tres article{text-align:center;}
-  .tres img{width:100%; max-width:300px; aspect-ratio:4/5; object-fit:cover; object-position:top; margin:0 auto 14px; border-radius:10px; box-shadow:0 14px 30px rgba(73,51,41,.14);}
+  .tres img{display:block; width:100%; max-width:230px; aspect-ratio:39/80; object-fit:cover; object-position:top; margin:0 auto 16px; border:7px solid #1b120c; border-radius:32px; background:#1b120c; box-shadow:0 18px 34px rgba(73,51,41,.28);}
   .tres h3, .herr-grid h3, .recor-lista h3, .etapas h3{font-family:var(--serif); font-size:21px; color:var(--verde); margin-bottom:4px;}
   .tres p, .herr-grid p{font-size:16px; color:var(--suave);}
   .etapas{list-style:none; margin-top:28px; display:grid; gap:0; border-top:1px solid var(--linea);}
@@ -460,8 +460,8 @@
       <p class="lead">Sanando Mi Historia Familiar reúne preguntas, ejercicios y herramientas interactivas en un proceso organizado para que puedas explorar tu historia, escribir tus reflexiones y avanzar paso a paso.</p>
     </div>
     <div class="tres">
-      <article><img src="assets/herr-mapa.webp" alt="Captura del mapa familiar interactivo" width="560" height="747" loading="lazy" decoding="async"><h3>Explora tu mapa familiar</h3><p>Observa y representa tus vínculos familiares mediante el mapa interactivo.</p></article>
-      <article><img src="assets/herr-diario.webp" alt="Captura del diario con una pregunta para reflexionar" width="560" height="500" loading="lazy" decoding="async"><h3>Reflexiona sobre tu historia</h3><p>Responde preguntas guiadas, realiza ejercicios y registra tus propias observaciones.</p></article>
+      <article><img src="assets/app-familia.webp" alt="Captura del mapa familiar interactivo" width="520" height="1067" loading="lazy" decoding="async"><h3>Explora tu mapa familiar</h3><p>Observa y representa tus vínculos familiares mediante el mapa interactivo.</p></article>
+      <article><img src="assets/app-dia.webp" alt="Captura de un paso con ejercicio y diario" width="520" height="1067" loading="lazy" decoding="async"><h3>Reflexiona sobre tu historia</h3><p>Responde preguntas guiadas, realiza ejercicios y registra tus propias observaciones.</p></article>
       <article><img src="assets/app-camino.webp" alt="Captura del recorrido organizado en etapas" width="520" height="1067" loading="lazy" decoding="async"><h3>Avanza a tu ritmo</h3><p>Sigue un recorrido organizado en etapas para saber por dónde empezar y cómo continuar.</p></article>
     </div>
   </div>
