@@ -406,6 +406,40 @@
   @media (min-width:860px){.car-track{flex-wrap:wrap; overflow:visible; gap:26px 20px; justify-content:center;} .vista{width:190px;}}
   .galeria .cta{background:#F5EFE6; color:#493329;}
   @media (min-width:860px){.galeria .car-track{max-width:680px; margin-inline:auto;}}
+
+  /* MENOS TEXTO, MÁS ÉNFASIS Y RITMO (2026-11-27) */
+  main strong, main b{color:#8E4A36; font-weight:700;}
+  .idea strong, .idea b, .galeria strong, .cierre-final strong, .cierre-final b{color:#D6BE91;}
+  .hero p.lead strong{background:linear-gradient(transparent 62%, rgba(214,190,145,.6) 62%); color:var(--verde); padding:0 2px;}
+  .lead strong, .cierre-sec b{background:linear-gradient(transparent 62%, rgba(214,190,145,.5) 62%); color:var(--verde); padding:0 2px;}
+  .galeria .lead strong{background:none; color:#D6BE91;}
+  .idea p strong{background:none; color:#D6BE91; font-size:1.06em;}
+  h2{font-size:clamp(30px,7.4vw,46px); line-height:1.12;}
+  .hero p.lead{font-size:clamp(18px,4.6vw,21px); line-height:1.45;}
+  .cifras{padding:0; background:#493329; margin-top:-6px;}
+  .cifras ul{list-style:none; display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
+  .cifras li{text-align:center; padding:22px 6px; border-left:1px solid rgba(214,190,145,.25);}
+  .cifras li:first-child{border-left:0;}
+  .cifras b{display:block; font-family:var(--serif); font-size:clamp(34px,9vw,52px); line-height:1; color:#D6BE91; font-weight:600;}
+  .cifras span{display:block; margin-top:6px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:rgba(245,239,230,.85); line-height:1.25;}
+  .lista-b li{font-size:18.5px;}
+  .lista-b b{color:#8E4A36;}
+  .destacada{font-size:clamp(20px,4.8vw,25px);}
+  .etapas-lite li{padding:14px 0; align-items:center;}
+  .etapas-lite h3{font-size:19px; margin:0;}
+  .etapas-lite .n{margin:2px 0 0;}
+  .tres p{font-size:17px;}
+  .oferta h2{margin-bottom:6px;}
+  .oferta-card .incluye li{font-size:16px;}
+  .pq-grid li{font-size:17.5px;}
+  .faq details summary{font-size:17.5px;}
+  .cierre-final p{font-size:18px;}
+  /* BONOS EN LISTADO VERTICAL */
+  .bonos-pdf{display:grid !important; grid-template-columns:1fr !important; gap:12px !important; max-width:560px !important; margin:26px auto 0 !important;}
+  .bonos-pdf li{grid-column:auto !important; display:flex; align-items:center; gap:18px; background:#fff; border:1px solid #E8DCC4; border-radius:14px; padding:12px 16px 12px 12px; box-shadow:0 6px 16px rgba(73,51,41,.07);}
+  .bonos-pdf img{width:78px !important; flex:none; margin:0 !important;}
+  .bonos-pdf h3{font-size:19px !important; line-height:1.25;}
+  .bonos-pdf .num{margin-bottom:3px !important;}
 </style>
 </head>
 <body>
@@ -416,23 +450,33 @@
 
 <main>
 
-<!-- ============ 1. HERO — CONEXIÓN EMOCIONAL Y PROMESA ============ -->
+<!-- ============ 1. HERO ============ -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-texto">
-      <span class="eyebrow">Una experiencia para mirar tu historia con más conciencia</span>
+      <span class="eyebrow">Una experiencia guiada e interactiva</span>
       <h1>Hay historias que se repiten. <em>Comprender la tuya puede ser el comienzo de una nueva mirada.</em></h1>
-      <p class="lead">A veces hay situaciones, vínculos o emociones de tu vida que deseas comprender mejor.</p>
-      <p class="lead">Sanando Mi Historia Familiar es una experiencia guiada e interactiva que te invita a explorar tu historia familiar, observar dinámicas que han marcado tu vida y reflexionar sobre la manera en que deseas continuar.</p>
-      <p class="lead">No necesitas tener todas las respuestas. Solo necesitas un espacio para comenzar a hacerte nuevas preguntas.</p>
+      <p class="lead">Explora tu historia familiar, observa tus vínculos y reflexiona sobre cómo quieres continuar. <strong>Sin culpas y a tu ritmo.</strong></p>
     </div>
     <div class="hero-arte">
       <img class="hero-tel" src="assets/app-hoy.webp?v=4" alt="Pantalla de inicio de la experiencia Sanando Mi Historia Familiar en un celular" width="520" height="1067" decoding="async">
     </div>
     <div class="hero-cta">
       <a href="https://pay.hotmart.com/X108098847Y?sck=hero" class="cta" data-sck="hero" onclick="window.clarity&&clarity('event','cta_hero')">QUIERO COMENZAR MI RECORRIDO</a>
-      <p class="micro-hero">21 pasos guiados · Experiencia interactiva · Avanza a tu propio ritmo.</p>
+      <p class="micro-hero">Experiencia interactiva · Avanza a tu propio ritmo</p>
     </div>
+  </div>
+</section>
+
+<!-- ============ CIFRAS ============ -->
+<section class="cifras" aria-label="Qué incluye, en cifras">
+  <div class="wrap">
+    <ul>
+      <li><b>21</b><span>pasos guiados</span></li>
+      <li><b>7</b><span>etapas</span></li>
+      <li><b>8</b><span>audios</span></li>
+      <li><b>5</b><span>bonos en PDF</span></li>
+    </ul>
   </div>
 </section>
 
@@ -441,17 +485,15 @@
   <div class="wrap ident-grid">
     <div class="ident-foto"><img src="assets/fotos/manos-800.webp" alt="Manos sosteniendo una fotografía familiar antigua junto a una taza de té" width="800" height="450" loading="lazy" decoding="async"></div>
     <div>
-      <h2>Tal vez hay cosas de tu historia que <em>todavía estás intentando comprender...</em></h2>
-      <p>No siempre es fácil explicar por qué algunas situaciones nos afectan tanto, por qué ciertos vínculos nos cuestan o por qué hay experiencias familiares que siguen ocupando un lugar en nuestra vida.</p>
-      <p class="intro-lista">Quizás te identifiques con alguna de estas situaciones:</p>
+      <h2>¿Te suena <em>familiar?</em></h2>
       <ul class="lista-b">
-        <li>Te descubres repitiendo comportamientos que alguna vez dijiste que no querías repetir.</li>
-        <li>A veces te cuesta poner límites sin sentir culpa.</li>
-        <li>Hay relaciones familiares que despiertan preguntas que no sabes cómo expresar.</li>
-        <li>Te gustaría comprender mejor la relación que tienes con tu mamá, tu papá o tu historia familiar.</li>
-        <li>Quieres construir relaciones diferentes y tomar decisiones más conscientes.</li>
+        <li><b>Repites</b> lo que dijiste que nunca repetirías.</li>
+        <li><b>Poner límites</b> te llena de culpa.</li>
+        <li>Tienes <b>preguntas sobre tu familia</b> que no sabes cómo hacer.</li>
+        <li>Quieres <b>entender tu relación con mamá o papá</b>.</li>
+        <li>Quieres <b>decidir distinto</b> en tus relaciones.</li>
       </ul>
-      <p class="destacada">No se trata de culpar a tu familia ni de encontrar responsables. Se trata de darte un espacio para observar tu historia y comprender qué lugar quieres darle en tu presente.</p>
+      <p class="destacada">No se trata de culpar a nadie. Se trata de <b>mirar tu historia con más conciencia</b>.</p>
     </div>
   </div>
 </section>
@@ -459,16 +501,14 @@
 <!-- ============ 3. NUEVA PERSPECTIVA ============ -->
 <section class="idea">
   <div class="wrap narrow centro">
-    <h2>Tu historia forma parte de ti, pero <em>no tiene que decidir cómo quieres continuar.</em></h2>
-    <p>No puedes cambiar lo que ocurrió antes de ti.</p>
-    <p>Pero sí puedes comenzar a mirar tu historia desde otra perspectiva, reconocer lo que deseas comprender y reflexionar sobre las decisiones que quieres tomar en tu presente.</p>
-    <p>A veces, el primer paso no es tener una respuesta. Es encontrar las preguntas adecuadas.</p>
+    <h2>Tu historia forma parte de ti, pero <em>no decide cómo continúas.</em></h2>
+    <p>No puedes cambiar lo que pasó antes de ti. <strong>Sí puedes elegir cómo continuar.</strong></p>
     <ul class="frases3">
       <li>Explorar lo que viviste.</li>
       <li>Reconocer lo que deseas observar.</li>
       <li>Elegir cómo quieres continuar.</li>
     </ul>
-    <p class="idea-cierre">No necesitas resolverlo todo en un día. Puedes comenzar poco a poco, con respeto por tu propio proceso.</p>
+    <p class="idea-cierre">Poco a poco, con respeto por tu propio proceso.</p>
   </div>
 </section>
 
@@ -476,15 +516,14 @@
 <section class="exper">
   <div class="wrap">
     <div class="centro narrow">
-      <h2>Un recorrido para explorar tu historia, <em>paso a paso.</em></h2>
-      <p class="lead">No es solamente contenido para leer. Es una experiencia en la que puedes participar, escribir, observar y avanzar a tu ritmo.</p>
+      <h2>Explora. Reflexiona. <em>Registra.</em></h2>
     </div>
     <div class="tres">
-      <article><img src="assets/app-familia.webp?v=4" alt="Captura del mapa familiar interactivo" width="520" height="1067" loading="lazy" decoding="async"><span class="num3">01</span><h3>EXPLORA</h3><p>Recorre las preguntas y herramientas que te invitan a observar tu historia familiar, tus vínculos y las experiencias que deseas comprender mejor.</p></article>
-      <article><img src="assets/app-dia.webp?v=4" alt="Captura de un paso con ejercicio y preguntas" width="520" height="1067" loading="lazy" decoding="async"><span class="num3">02</span><h3>REFLEXIONA</h3><p>Realiza ejercicios prácticos, responde preguntas y dedica unos minutos a reconocer tus propias observaciones.</p></article>
-      <article><img src="assets/app-diario.webp?v=4" alt="Captura del diario personal" width="520" height="1067" loading="lazy" decoding="async"><span class="num3">03</span><h3>REGISTRA</h3><p>Utiliza tu diario personal y el mapa familiar para guardar tus reflexiones y construir tu propio registro del recorrido.</p></article>
+      <article><img src="assets/app-familia.webp?v=4" alt="Captura del mapa familiar interactivo" width="520" height="1067" loading="lazy" decoding="async"><span class="num3">01</span><h3>EXPLORA</h3><p>Preguntas y herramientas para <b>mirar tu historia y tus vínculos</b>.</p></article>
+      <article><img src="assets/app-dia.webp?v=4" alt="Captura de un paso con ejercicio y preguntas" width="520" height="1067" loading="lazy" decoding="async"><span class="num3">02</span><h3>REFLEXIONA</h3><p>Ejercicios de <b>5 a 10 minutos</b> y tus propias observaciones.</p></article>
+      <article><img src="assets/app-diario.webp?v=4" alt="Captura del diario personal" width="520" height="1067" loading="lazy" decoding="async"><span class="num3">03</span><h3>REGISTRA</h3><p>Tu <b>diario</b> y tu <b>mapa familiar</b> guardan tu recorrido.</p></article>
     </div>
-    <p class="cierre-sec">No hay respuestas que debas aceptar por obligación. Este espacio está diseñado para acompañarte a explorar, no para decidir por ti lo que significa tu historia.</p>
+    <p class="cierre-sec">Aquí nadie decide por ti qué significa tu historia.</p>
     <div class="cta-centro"><a href="https://pay.hotmart.com/X108098847Y?sck=solucion" class="cta" data-sck="solucion" onclick="window.clarity&&clarity('event','cta_solucion')">QUIERO COMENZAR MI RECORRIDO</a></div>
   </div>
 </section>
@@ -493,24 +532,17 @@
 <section class="pasos21">
   <div class="wrap narrow">
     <div class="centro">
-      <h2>21 pasos para dedicarte un espacio y explorar tu historia <em>a tu propio ritmo.</em></h2>
-      <p class="lead">No tienes que hacerlo todo de una vez. La experiencia está organizada en 7 etapas y 21 pasos breves que puedes realizar poco a poco, según tu disponibilidad. Cada paso te invita a detenerte, observar, responder preguntas y registrar lo que descubres.</p>
+      <h2>21 pasos breves, <em>a tu propio ritmo.</em></h2>
+      <p class="lead">7 etapas. <strong>Sin prisa.</strong> Retoma cuando quieras.</p>
     </div>
-    <ul class="chips">
-      <li>Recorrido guiado</li>
-      <li>Progreso de los pasos</li>
-      <li>Ejercicios y preguntas</li>
-      <li>Espacio para escribir</li>
-      <li>A tu propio ritmo</li>
-    </ul>
-    <ol class="etapas">
-      <li><span class="rom">I</span><div><h3>Mi punto de partida</h3><p class="n">Pasos 1 y 2</p><p>Dónde estás hoy y qué te trajo hasta aquí.</p></div></li>
-      <li><span class="rom">II</span><div><h3>Mi historia familiar</h3><p class="n">Pasos 3 al 6</p><p>Lo que se repite, lo que no se dijo y quién falta.</p></div></li>
-      <li><span class="rom">III</span><div><h3>Mis relaciones</h3><p class="n">Pasos 7 al 10</p><p>Lo que viste y el lugar de mamá y de papá.</p></div></li>
-      <li><span class="rom">IV</span><div><h3>Lo que reconozco que se repite</h3><p class="n">Pasos 11 al 13</p><p>Lo que aprendiste para pertenecer y lo que llevas.</p></div></li>
-      <li><span class="rom">V</span><div><h3>Nuevas perspectivas</h3><p class="n">Pasos 14 y 15</p><p>Lo que entendiste y qué quieres cuidar.</p></div></li>
-      <li><span class="rom">VI</span><div><h3>Lo que quiero hacer diferente</h3><p class="n">Pasos 16 al 18</p><p>Un límite y una conversación pendiente.</p></div></li>
-      <li><span class="rom">VII</span><div><h3>Mi siguiente paso</h3><p class="n">Pasos 19 al 21</p><p>Una carta, lo que quieres transmitir y tu cierre.</p></div></li>
+    <ol class="etapas etapas-lite">
+      <li><span class="rom">I</span><div><h3>Mi punto de partida</h3><p class="n">Pasos 1 y 2</p></div></li>
+      <li><span class="rom">II</span><div><h3>Mi historia familiar</h3><p class="n">Pasos 3 al 6</p></div></li>
+      <li><span class="rom">III</span><div><h3>Mis relaciones</h3><p class="n">Pasos 7 al 10</p></div></li>
+      <li><span class="rom">IV</span><div><h3>Lo que reconozco que se repite</h3><p class="n">Pasos 11 al 13</p></div></li>
+      <li><span class="rom">V</span><div><h3>Nuevas perspectivas</h3><p class="n">Pasos 14 y 15</p></div></li>
+      <li><span class="rom">VI</span><div><h3>Lo que quiero hacer diferente</h3><p class="n">Pasos 16 al 18</p></div></li>
+      <li><span class="rom">VII</span><div><h3>Mi siguiente paso</h3><p class="n">Pasos 19 al 21</p></div></li>
     </ol>
   </div>
 </section>
@@ -518,18 +550,18 @@
 <!-- ============ 6. TODO LO QUE RECIBES (capturas reales) ============ -->
 <section class="galeria">
   <div class="wrap centro narrow">
-    <h2>Todo lo que necesitas para comenzar tu recorrido, <em>en un solo acceso.</em></h2>
-    <p class="lead">Así es la experiencia por dentro. Toca una imagen para verla en grande.</p>
+    <h2>Todo en <em>un solo acceso.</em></h2>
+    <p class="lead">Así se ve por dentro. Toca una imagen para ampliarla.</p>
   </div>
   <div class="wrap">
     <div class="car" role="region" aria-roledescription="carrusel" aria-label="Capturas reales de la aplicación">
       <div class="car-track" id="track" tabindex="0">
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-familia.webp?v=4" data-alt="Captura del mapa familiar interactivo" aria-label="Ampliar: Mapa familiar interactivo"><img src="assets/app-familia.webp?v=4" alt="Captura del mapa familiar interactivo" width="520" height="1067" loading="lazy"></button><h3>Mapa familiar interactivo</h3><p>Organiza y observa los vínculos de tu historia.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-camino.webp?v=4" data-alt="Captura del recorrido de 21 pasos en 7 etapas" aria-label="Ampliar: Recorrido de 21 pasos en 7 etapas"><img src="assets/app-camino.webp?v=4" alt="Captura del recorrido de 21 pasos en 7 etapas" width="520" height="1067" loading="lazy"></button><h3>Recorrido de 21 pasos en 7 etapas</h3><p>Avanza a tu ritmo, paso a paso.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-dia.webp?v=4" data-alt="Captura de un ejercicio con preguntas" aria-label="Ampliar: Preguntas y ejercicios"><img src="assets/app-dia.webp?v=4" alt="Captura de un ejercicio con preguntas" width="520" height="1067" loading="lazy"></button><h3>Preguntas y ejercicios</h3><p>Un ejercicio breve en cada paso, de 5 a 10 minutos.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-diario.webp?v=4" data-alt="Captura del diario personal" aria-label="Ampliar: Diario personal"><img src="assets/app-diario.webp?v=4" alt="Captura del diario personal" width="520" height="1067" loading="lazy"></button><h3>Diario personal</h3><p>Escribe lo que sientes. Solo tú lo ves.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-audios.webp?v=4" data-alt="Captura de los 8 audios guiados" aria-label="Ampliar: 8 audios guiados"><img src="assets/app-audios.webp?v=4" alt="Captura de los 8 audios guiados" width="520" height="1067" loading="lazy"></button><h3>8 audios guiados</h3><p>Pausas de unos 3 minutos para detenerte y reflexionar.</p></figure>
-        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-resumen.webp?v=4" data-alt="Captura del resumen final" aria-label="Ampliar: Resumen final"><img src="assets/app-resumen.webp?v=4" alt="Captura del resumen final" width="520" height="1067" loading="lazy"></button><h3>Resumen final</h3><p>Consulta tu mapa, tus pasos y tus anotaciones.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-familia.webp?v=4" data-alt="Captura del mapa familiar interactivo" aria-label="Ampliar: Mapa familiar interactivo"><img src="assets/app-familia.webp?v=4" alt="Captura del mapa familiar interactivo" width="520" height="1067" loading="lazy"></button><h3>Mapa familiar interactivo</h3><p>Organiza y observa tus vínculos.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-camino.webp?v=4" data-alt="Captura del recorrido de 21 pasos en 7 etapas" aria-label="Ampliar: Recorrido de 21 pasos en 7 etapas"><img src="assets/app-camino.webp?v=4" alt="Captura del recorrido de 21 pasos en 7 etapas" width="520" height="1067" loading="lazy"></button><h3>Recorrido de 21 pasos en 7 etapas</h3><p>Avanza paso a paso.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-dia.webp?v=4" data-alt="Captura de un ejercicio con preguntas" aria-label="Ampliar: Preguntas y ejercicios"><img src="assets/app-dia.webp?v=4" alt="Captura de un ejercicio con preguntas" width="520" height="1067" loading="lazy"></button><h3>Preguntas y ejercicios</h3><p>De 5 a 10 minutos por paso.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-diario.webp?v=4" data-alt="Captura del diario personal" aria-label="Ampliar: Diario personal"><img src="assets/app-diario.webp?v=4" alt="Captura del diario personal" width="520" height="1067" loading="lazy"></button><h3>Diario personal</h3><p>Solo tú lo ves.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-audios.webp?v=4" data-alt="Captura de los 8 audios guiados" aria-label="Ampliar: 8 audios guiados"><img src="assets/app-audios.webp?v=4" alt="Captura de los 8 audios guiados" width="520" height="1067" loading="lazy"></button><h3>8 audios guiados</h3><p>Pausas de unos 3 minutos.</p></figure>
+        <figure class="vista"><button class="amp" type="button" data-ampliar="assets/app-resumen.webp?v=4" data-alt="Captura del resumen final" aria-label="Ampliar: Resumen final"><img src="assets/app-resumen.webp?v=4" alt="Captura del resumen final" width="520" height="1067" loading="lazy"></button><h3>Resumen final</h3><p>Tu mapa, tus pasos y tus notas.</p></figure>
       </div>
       <div class="car-ctrl">
         <button type="button" id="ant" aria-label="Captura anterior">‹</button>
@@ -546,21 +578,20 @@
 <section class="recor">
   <div class="wrap">
     <div class="centro narrow">
-      <p class="etiqueta-sec">Materiales complementarios</p>
-      <h2>Y además, <em>5 bonos en PDF</em> para profundizar.</h2>
-      <p class="lead">Cuadernos para descargar, imprimir y escribir a mano, a tu ritmo. Van incluidos en tu acceso, sin costo adicional.</p>
+      <h2>Y además, <em>5 bonos en PDF.</em></h2>
+      <p class="lead">Para descargar, imprimir y escribir a mano. <strong>Incluidos, sin costo adicional.</strong></p>
     </div>
     <ul class="bonos-pdf">
-      <li><img src="assets/bonos/bono-1.webp?v=2" alt="Portada del Bono 1: Cuaderno de autoconocimiento" width="800" height="1200" loading="lazy" decoding="async"><span class="num">Bono 1</span><h3>Cuaderno de autoconocimiento</h3></li>
-      <li><img src="assets/bonos/bono-2.webp?v=2" alt="Portada del Bono 2: Mi relación con el dinero" width="800" height="1200" loading="lazy" decoding="async"><span class="num">Bono 2</span><h3>Mi relación con el dinero</h3></li>
-      <li><img src="assets/bonos/bono-3.webp?v=2" alt="Portada del Bono 3: Mi historia en las relaciones de pareja" width="800" height="1200" loading="lazy" decoding="async"><span class="num">Bono 3</span><h3>Mi historia en las relaciones de pareja</h3></li>
-      <li><img src="assets/bonos/bono-4.webp?v=2" alt="Portada del Bono 4: Mi relación con mamá y papá" width="800" height="1200" loading="lazy" decoding="async"><span class="num">Bono 4</span><h3>Mi relación con mamá y papá</h3></li>
-      <li><img src="assets/bonos/bono-5.webp?v=2" alt="Portada del Bono 5: Un encuentro con mi infancia" width="800" height="1200" loading="lazy" decoding="async"><span class="num">Bono 5</span><h3>Un encuentro con mi infancia</h3></li>
+      <li><img src="assets/bonos/bono-1.webp?v=2" alt="Portada del Bono 1: Cuaderno de autoconocimiento" width="800" height="1200" loading="lazy" decoding="async"><div><span class="num">Bono 1</span><h3>Cuaderno de autoconocimiento</h3></div></li>
+      <li><img src="assets/bonos/bono-2.webp?v=2" alt="Portada del Bono 2: Mi relación con el dinero" width="800" height="1200" loading="lazy" decoding="async"><div><span class="num">Bono 2</span><h3>Mi relación con el dinero</h3></div></li>
+      <li><img src="assets/bonos/bono-3.webp?v=2" alt="Portada del Bono 3: Mi historia en las relaciones de pareja" width="800" height="1200" loading="lazy" decoding="async"><div><span class="num">Bono 3</span><h3>Mi historia en las relaciones de pareja</h3></div></li>
+      <li><img src="assets/bonos/bono-4.webp?v=2" alt="Portada del Bono 4: Mi relación con mamá y papá" width="800" height="1200" loading="lazy" decoding="async"><div><span class="num">Bono 4</span><h3>Mi relación con mamá y papá</h3></div></li>
+      <li><img src="assets/bonos/bono-5.webp?v=2" alt="Portada del Bono 5: Un encuentro con mi infancia" width="800" height="1200" loading="lazy" decoding="async"><div><span class="num">Bono 5</span><h3>Un encuentro con mi infancia</h3></div></li>
     </ul>
   </div>
 </section>
 
-<!-- ============ RECURSO COMPLEMENTARIO: MENSAJE EN AUDIO ============ -->
+<!-- ============ MENSAJE EN AUDIO ============ -->
 <section class="audio-sec">
   <div class="wrap narrow centro">
     <h2>Antes de continuar, <em>quiero compartirte un mensaje.</em></h2>
@@ -583,12 +614,12 @@
   </div>
 </section>
 
-<!-- ============ 8. UNA EXPERIENCIA PERSONAL + MENSAJES ============ -->
+<!-- ============ MENSAJES DE PERSONAS ============ -->
 <section class="ident">
   <div class="wrap">
     <div class="centro narrow">
       <h2>Una experiencia personal, <em>a tu manera.</em></h2>
-      <p class="lead">Cada historia familiar es diferente. Por eso, esta experiencia no busca darte una interpretación única ni decirte qué debes sentir o pensar. Te ofrece preguntas, herramientas y espacios para que puedas realizar tu propia exploración.</p>
+      <p class="lead">Cada historia es distinta. Esta experiencia no te dice qué pensar: <strong>te da preguntas y herramientas.</strong></p>
       <p class="etiqueta-sec">Personas que decidieron darse este espacio</p>
     </div>
     <div class="msgs">
@@ -600,22 +631,20 @@
   </div>
 </section>
 
-<!-- ============ 9. OFERTA ============ -->
+<!-- ============ OFERTA ============ -->
 <section id="oferta" class="oferta centro">
   <div class="wrap">
-    <h2>Tu espacio para comenzar a explorar tu historia <em>está aquí.</em></h2>
-    <p class="lead narrow">Accede a una experiencia interactiva que reúne herramientas, ejercicios y materiales complementarios para acompañarte en tu recorrido personal.</p>
+    <h2>Tu espacio para empezar <em>está aquí.</em></h2>
     <div class="oferta-card">
       <div class="nombre">SANANDO MI HISTORIA FAMILIAR</div>
       <div class="precio">US$24,99</div>
       <p class="desc"><b>Pago único. Sin mensualidades. Acceso de por vida.</b><br>Garantía publicada de 7 días.</p>
       <p class="incluye-t">Experiencia principal</p>
       <ul class="incluye">
-        <li><b>La app:</b> recorrido guiado de 21 pasos en 7 etapas.</li>
+        <li><b>La app:</b> 21 pasos en 7 etapas.</li>
         <li>Mapa familiar interactivo.</li>
-        <li>Ejercicios y preguntas de reflexión, con una acción pequeña en cada paso.</li>
-        <li>Diario personal.</li>
-        <li>Resumen final de tu recorrido.</li>
+        <li>Ejercicios y preguntas de reflexión.</li>
+        <li>Diario personal y resumen final.</li>
       </ul>
       <p class="incluye-t">Recursos de acompañamiento</p>
       <ul class="incluye">
@@ -630,7 +659,7 @@
         <li><b>Bono 5:</b> Un encuentro con mi infancia.</li>
       </ul>
       <a href="https://pay.hotmart.com/X108098847Y?sck=oferta" class="cta" data-sck="oferta" onclick="window.clarity&&clarity('event','cta_oferta')">QUIERO ACCEDER A LA EXPERIENCIA</a>
-      <p class="cta-micro" style="max-width:420px;margin-inline:auto">Pago procesado de forma segura por Hotmart. Recibirás las instrucciones de acceso según el proceso de compra vigente. Funciona desde el navegador de tu celular o computador.</p>
+      <p class="cta-micro" style="max-width:420px;margin-inline:auto">Pago seguro por Hotmart. Funciona desde tu celular o computador.</p>
       <div class="sellos">
         <img src="assets/garantia-7dias.png" alt="Sello de garantía de 7 días" width="96" height="96" loading="lazy">
         <span class="sello-hotmart"><img src="assets/hotmart-logo-t.webp" alt="Hotmart" width="333" height="360" loading="lazy" decoding="async"></span>
@@ -639,64 +668,57 @@
   </div>
 </section>
 
-<!-- ============ 10. PARA QUIÉN ES Y PARA QUIÉN NO ============ -->
+<!-- ============ PARA QUIÉN ES ============ -->
 <section class="paraquien">
   <div class="wrap narrow">
-    <h2 class="centro">¿Esta experiencia es <em>para ti?</em></h2>
+    <h2 class="centro">¿Es <em>para ti?</em></h2>
     <div class="pq-grid">
       <div class="pq-si">
-        <h3>Puede ser para ti si:</h3>
+        <h3>Sí, si:</h3>
         <ul>
-          <li>Quieres explorar tu historia familiar.</li>
-          <li>Deseas reflexionar sobre tus vínculos y experiencias.</li>
-          <li>Te interesa observar patrones que quisieras comprender mejor.</li>
-          <li>Buscas ejercicios y preguntas para escribir y reflexionar.</li>
-          <li>Quieres avanzar a tu propio ritmo.</li>
-          <li>Prefieres una experiencia en la que puedas participar activamente.</li>
+          <li>Quieres <b>explorar tu historia familiar</b>.</li>
+          <li>Quieres <b>reflexionar y escribir</b>.</li>
+          <li>Prefieres avanzar <b>a tu ritmo</b>.</li>
         </ul>
       </div>
       <div class="pq-no">
-        <h3>Puede que no sea lo que buscas si:</h3>
+        <h3>Quizá no, si:</h3>
         <ul>
-          <li>Esperas que alguien te dé una explicación definitiva de tu historia.</li>
-          <li>Buscas una solución instantánea a situaciones personales complejas.</li>
-          <li>Necesitas atención psicológica o tratamiento profesional.</li>
-          <li>No tienes interés en realizar ejercicios o dedicar tiempo a la reflexión.</li>
+          <li>Esperas una <b>explicación definitiva</b>.</li>
+          <li>Buscas una <b>solución instantánea</b>.</li>
+          <li>Necesitas <b>atención psicológica</b> profesional.</li>
         </ul>
       </div>
     </div>
-    <p class="cierre-sec centro">Este recorrido no pretende sustituir tu criterio ni tus decisiones. Es un espacio de exploración personal que puedes utilizar según tus necesidades y límites.</p>
+    <p class="cierre-sec centro">Es un espacio de exploración personal. Tú decides.</p>
   </div>
 </section>
 
-<!-- ============ 11. PREGUNTAS FRECUENTES ============ -->
+<!-- ============ PREGUNTAS FRECUENTES ============ -->
 <section class="faq">
   <div class="wrap narrow">
-    <h2>Resuelve tus dudas <em>antes de comenzar.</em></h2>
-    <details><summary>¿Necesito saber sobre constelaciones familiares?</summary><div class="resp">No. La experiencia está diseñada para que puedas comenzar sin conocimientos previos. Hombres y mujeres pueden usarla.</div></details>
-    <details><summary>¿Necesito que mi familia participe?</summary><div class="resp">No. Puedes realizar tu recorrido de manera individual, sin necesitar la participación de otras personas.</div></details>
-    <details><summary>¿Puedo hacerlo si mis padres ya fallecieron o no tengo contacto con ellos?</summary><div class="resp">Sí. El recorrido es personal y no requiere que tus padres estén presentes ni que participen. Puedes usar las herramientas desde tu propia experiencia.</div></details>
-    <details><summary>¿Cuánto tiempo necesito dedicarle?</summary><div class="resp">Puedes avanzar a tu propio ritmo. Se sugiere dedicar entre 5 y 10 minutos al día, pero no es obligatorio seguir un horario fijo.</div></details>
-    <details><summary>¿Puedo utilizarlo desde mi celular?</summary><div class="resp">Sí. Funciona desde el navegador de tu celular o de tu computador, con conexión a internet.</div></details>
-    <details><summary>¿Es una terapia psicológica?</summary><div class="resp">No. Es una experiencia de exploración y reflexión personal. No sustituye la atención psicológica, psicoterapéutica ni médica.</div></details>
-    <details><summary>¿Tengo que perdonar o reconciliarme con alguien?</summary><div class="resp">No. Explorar tu historia no significa justificar lo ocurrido, renunciar a tus límites ni retomar relaciones que no deseas mantener.</div></details>
-    <details><summary>¿Qué sucede si un ejercicio me genera malestar?</summary><div class="resp">Puedes detenerte, dejar el ejercicio y retomarlo cuando te sientas preparada o preparado. No tienes que avanzar a la fuerza. Si una situación te genera un malestar importante, busca acompañamiento de un profesional cualificado.</div></details>
-    <details><summary>¿Cómo recibo el acceso después de pagar?</summary><div class="resp">Después de pagar por Hotmart, recibirás un correo para crear tu clave y entrar a la aplicación.</div></details>
-    <details><summary>¿Dónde están los audios y los bonos en PDF?</summary><div class="resp">Todo está dentro de la app. Los audios están en "Mis audios" y los bonos en la pestaña "Regalos", donde puedes descargarlos e imprimirlos.</div></details>
-    <details><summary>¿Cómo es el pago y cómo funciona la garantía?</summary><div class="resp">Es un solo pago de US$24,99, sin mensualidades y con acceso de por vida. Tiene una garantía publicada de 7 días; las condiciones y la forma de solicitarla las define Hotmart, y puedes consultarlas en tu compra.</div></details>
+    <h2>Preguntas <em>frecuentes</em></h2>
+    <details><summary>¿Necesito saber de constelaciones familiares?</summary><div class="resp">No. Puedes comenzar sin conocimientos previos.</div></details>
+    <details><summary>¿Necesito que mi familia participe?</summary><div class="resp">No. Lo haces tú, de forma individual.</div></details>
+    <details><summary>¿Y si mis padres ya fallecieron o no tengo contacto con ellos?</summary><div class="resp">Sí funciona. No necesitas que estén presentes.</div></details>
+    <details><summary>¿Cuánto tiempo necesito y desde dónde la uso?</summary><div class="resp">Unos 5 a 10 minutos al día, a tu ritmo, desde el navegador de tu celular o computador.</div></details>
+    <details><summary>¿Es una terapia?</summary><div class="resp">No. Es una experiencia de reflexión personal y no sustituye la atención psicológica ni médica.</div></details>
+    <details><summary>¿Tengo que perdonar o reconciliarme con alguien?</summary><div class="resp">No. Explorar tu historia no es justificar lo ocurrido ni retomar relaciones que no quieres.</div></details>
+    <details><summary>¿Y si un ejercicio me genera malestar?</summary><div class="resp">Puedes pausarlo y retomarlo cuando quieras. Si el malestar es importante, busca acompañamiento profesional.</div></details>
+    <details><summary>¿Cómo accedo después de pagar?</summary><div class="resp">Recibirás un correo para crear tu clave y entrar. Los audios están en "Mis audios" y los bonos en "Regalos".</div></details>
+    <details><summary>¿Cómo es el pago y la garantía?</summary><div class="resp">Un solo pago de US$24,99, con acceso de por vida. La garantía publicada es de 7 días; Hotmart define sus condiciones.</div></details>
   </div>
 </section>
 
-<!-- ============ 12. CIERRE EMOCIONAL ============ -->
+<!-- ============ CIERRE EMOCIONAL ============ -->
 <section class="cierre-final">
   <img class="cierre-bg" src="assets/fotos/camino-1000.webp" alt="" width="1000" height="563" loading="lazy" decoding="async">
   <div class="wrap">
     <h2>No tienes que comprender toda tu historia hoy. <em>Puedes empezar por mirarla.</em></h2>
-    <p>Hay preguntas que merecen un espacio. Un espacio para detenerte, observar, escribir y explorar aquello que deseas comprender mejor.</p>
-    <p>Sanando Mi Historia Familiar te invita a comenzar ese recorrido con herramientas prácticas, preguntas guiadas y la libertad de avanzar a tu propio ritmo.</p>
+    <p>Hay preguntas que merecen un espacio.</p>
     <a href="https://pay.hotmart.com/X108098847Y?sck=cierre" class="cta" data-sck="cierre" onclick="window.clarity&&clarity('event','cta_cierre')">QUIERO COMENZAR MI RECORRIDO</a>
     <div class="cta-micro">US$24,99 · Pago único · Acceso digital · Pago seguro por Hotmart.</div>
-    <p class="aviso-cierre">Esta experiencia está orientada a la reflexión y exploración personal. No constituye terapia ni sustituye la atención de profesionales de salud mental. Cada persona vive su proceso de manera diferente.</p>
+    <p class="aviso-cierre">Orientada a la reflexión personal. No constituye terapia ni sustituye la atención de profesionales de salud mental.</p>
   </div>
 </section>
 
